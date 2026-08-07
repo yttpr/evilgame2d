@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://2ybi2egd60da"]
+
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="1_kfdhl"]
+[ext_resource type="Texture2D" uid="uid://62rtmd67a0ml" path="res://sprites/enemies/gibs/eye_gib.png" id="1_nhjcs"]
+[ext_resource type="Texture2D" uid="uid://bwi4wxbnwwej" path="res://sprites/objects/gibs/wood_gib_1.png" id="2_s7oy3"]
+[ext_resource type="Texture2D" uid="uid://b4umhmtjsu4lq" path="res://sprites/objects/gibs/wood_gib_2.png" id="3_o3swm"]
+[ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="4_rnjjm"]
+[ext_resource type="Texture2D" uid="uid://cky4o4bc8s47e" path="res://sprites/enemies/gibs/cross.png" id="5_quwkl"]
+[ext_resource type="Texture2D" uid="uid://cmus8eiud5cec" path="res://sprites/weapons/projectiles/star_bullet.png" id="6_22w4e"]
+
+[resource]
+script = ExtResource("1_kfdhl")
+blood_amt = 3
+blood_color_1 = Color(0.23921569, 0.23921569, 0.23921569, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_nhjcs"), ExtResource("2_s7oy3"), ExtResource("3_o3swm"), ExtResource("4_rnjjm"), ExtResource("5_quwkl"), ExtResource("6_22w4e")])
+img_amts = Array[int]([3, 3, 5, 2, 2, 4])
+weights = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 0.8])
+does_rotate = Array[bool]([true, true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

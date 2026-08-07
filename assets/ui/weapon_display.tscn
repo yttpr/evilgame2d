@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://oc46cmw3myhk"]
+
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="1_5frv2"]
+[ext_resource type="Texture2D" uid="uid://dfmtgq5at0i75" path="res://sprites/ui/weapon_frame.png" id="1_78mei"]
+[ext_resource type="Script" uid="uid://ch0ipx8hiu6js" path="res://scripts/player/weapon_display.gd" id="1_rk0cn"]
+[ext_resource type="Script" uid="uid://b0ybj1gixsp4a" path="res://scripts/player/weapon_icon.gd" id="2_0axah"]
+[ext_resource type="Texture2D" uid="uid://o77tpc5rh57k" path="res://sprites/weapons/EvilGame2D_Sniper_WIP.png" id="2_jglkh"]
+[ext_resource type="Texture2D" uid="uid://c402sdeegs6vv" path="res://sprites/ui/reload.png" id="3_jokgr"]
+[ext_resource type="Texture2D" uid="uid://pkw34oukcabh" path="res://sprites/weapons/placeholder_weapon.png" id="3_oj31e"]
+
+[node name="WeaponDisplay" type="Node2D" unique_id=1940058706 node_paths=PackedStringArray("displays", "reload")]
+material = ExtResource("1_5frv2")
+script = ExtResource("1_rk0cn")
+displays = [NodePath("primary"), NodePath("secondary")]
+offset = 90.0
+reload = NodePath("reload")
+active = Color(1, 1, 1, 1)
+inactive = Color(0.5294118, 0.5294118, 0.5294118, 1)
+
+[node name="reload" type="Sprite2D" parent="." unique_id=1478970388]
+z_index = 2
+material = ExtResource("1_5frv2")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_jokgr")
+
+[node name="primary" type="Node2D" parent="." unique_id=353433729 node_paths=PackedStringArray("frame", "weapon", "cooldown")]
+material = ExtResource("1_5frv2")
+script = ExtResource("2_0axah")
+frame = NodePath("frame")
+weapon = NodePath("weapon")
+cooldown = NodePath("cooldown")
+
+[node name="frame" type="Sprite2D" parent="primary" unique_id=1515207231]
+material = ExtResource("1_5frv2")
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("1_78mei")
+
+[node name="weapon" type="Sprite2D" parent="primary" unique_id=725724225]
+z_index = 1
+material = ExtResource("1_5frv2")
+rotation = -0.62137437
+scale = Vector2(0.999, 0.999)
+texture = ExtResource("2_jglkh")
+hframes = 2
+frame = 1
+
+[node name="cooldown" type="Node2D" parent="primary" unique_id=103444967]
+position = Vector2(0, 42)
+
+[node name="ColorRect" type="ColorRect" parent="primary/cooldown" unique_id=2123657596]
+z_index = -1
+material = ExtResource("1_5frv2")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = -84.0
+offset_right = 42.0
+grow_horizontal = 2
+color = Color(0.7490196, 0.7490196, 0.7490196, 0.4862745)
+
+[node name="secondary" type="Node2D" parent="." unique_id=843991189 node_paths=PackedStringArray("frame", "weapon", "cooldown")]
+material = ExtResource("1_5frv2")
+position = Vector2(90, 0)
+script = ExtResource("2_0axah")
+frame = NodePath("frame")
+weapon = NodePath("weapon")
+cooldown = NodePath("cooldown")
+
+[node name="frame" type="Sprite2D" parent="secondary" unique_id=326102357]
+material = ExtResource("1_5frv2")
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("1_78mei")
+
+[node name="weapon" type="Sprite2D" parent="secondary" unique_id=1304458719]
+z_index = 1
+material = ExtResource("1_5frv2")
+rotation = -0.62137437
+scale = Vector2(0.999, 0.999)
+texture = ExtResource("3_oj31e")
+hframes = 2
+frame = 1
+
+[node name="cooldown" type="Node2D" parent="secondary" unique_id=1638080]
+position = Vector2(0, 42)
+
+[node name="ColorRect" type="ColorRect" parent="secondary/cooldown" unique_id=115979892]
+z_index = -1
+material = ExtResource("1_5frv2")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = -84.0
+offset_right = 42.0
+grow_horizontal = 2
+color = Color(0.7490196, 0.7490196, 0.7490196, 0.4862745)

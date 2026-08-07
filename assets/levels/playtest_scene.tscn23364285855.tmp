@@ -1,0 +1,35 @@
+[gd_scene format=4 uid="uid://cpeydck870coc"]
+
+[ext_resource type="TileSet" uid="uid://oacgil812dq3" path="res://assets/map/basic_ground_tileset.tres" id="1_2c0um"]
+[ext_resource type="PackedScene" uid="uid://do3ontetdl2fy" path="res://assets/characters/player_character.tscn" id="1_3yhon"]
+[ext_resource type="TileSet" uid="uid://keyvkswwarhx" path="res://assets/map/basic_walls_tileset.tres" id="2_vd3y4"]
+[ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/map/hanging_light.tscn" id="6_h1x2h"]
+
+[node name="PlaytestScene" type="Node2D" unique_id=1232676836]
+y_sort_enabled = true
+
+[node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
+z_index = -5
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAJAAMAAQACAAAAAAAKAAMAAQACAAAAAAALAAMAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAIAAQACAAAAAAALAAIAAQAAAAAAAAAJAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQADAAAAAAAFAAQAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAQACAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQADAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAA=")
+tile_set = ExtResource("1_2c0um")
+physics_quadrant_size = 64
+
+[node name="display_layer" type="TileMapLayer" parent="." unique_id=1468246740]
+light_mask = 4
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAIAAEAAwAGAAIAAAAJAAEAAwAHAAIAAAAKAAEAAwAIAAIAAAAKAAAAAwAIAAAAAAAFAAMAAwAJAAgAAAAFAAIAAQAJAAcAAAAEAAIAAwAJAAgAAAAEAAEAAQAJAAcAAAAIAAMAAwAGAAMAAAAJAAMAAwAHAAMAAAAKAAMAAwAIAAMAAAA=")
+tile_set = ExtResource("2_vd3y4")
+physics_quadrant_size = 64
+
+[node name="PlayerCharacter" parent="." unique_id=1327791293 instance=ExtResource("1_3yhon")]
+position = Vector2(465, 230)
+
+[node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("6_h1x2h")]
+position = Vector2(471, 211)
+
+[node name="HangingLight2" parent="." unique_id=392104346 instance=ExtResource("6_h1x2h")]
+position = Vector2(273, 203)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=503539911]
+color = Color(0.28, 0.28, 0.28, 1)

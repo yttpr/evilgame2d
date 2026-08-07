@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b4q2rpje4jrrw"]
+
+[ext_resource type="Script" uid="uid://dhre2u0cmb7ek" path="res://scripts/player/health_display.gd" id="1_l8w5f"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_kojvo"]
+[ext_resource type="Texture2D" uid="uid://ckrme788cy7vt" path="res://sprites/ui/heart_icon.png" id="2_l8w5f"]
+
+[node name="HealthDisplay" type="Node2D" unique_id=687447478 node_paths=PackedStringArray("icons")]
+material = ExtResource("2_kojvo")
+script = ExtResource("1_l8w5f")
+icons = [NodePath("HeartIcon"), NodePath("HeartIcon2")]
+offset = 32.0
+able = Color(1, 1, 1, 1)
+spent = Color(0.36078432, 0.36078432, 0.36078432, 1)
+
+[node name="HeartIcon2" type="Sprite2D" parent="." unique_id=1506603947]
+material = ExtResource("2_kojvo")
+position = Vector2(32, 0)
+texture = ExtResource("2_l8w5f")
+
+[node name="HeartIcon" type="Sprite2D" parent="." unique_id=777845541]
+material = ExtResource("2_kojvo")
+texture = ExtResource("2_l8w5f")

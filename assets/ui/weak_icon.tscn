@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://4g3ntoqgore"]
+
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="1_co4ak"]
+[ext_resource type="Texture2D" uid="uid://g5bif3duh7cb" path="res://sprites/ui/weak.png" id="2_co4ak"]
+[ext_resource type="Script" uid="uid://cq1brg3g4m7ni" path="res://scripts/game/damage_animator.gd" id="3_2hjvy"]
+
+[node name="DamageIcon" type="Sprite2D" unique_id=1192352144]
+y_sort_enabled = true
+material = ExtResource("1_co4ak")
+texture = ExtResource("2_co4ak")
+offset = Vector2(0, -120)
+script = ExtResource("3_2hjvy")
+max_height = 75.0
+time = 1.5
+cos = Color(1, 0, 1, 1)
+sin = Color(1, 0, 0, 1)
+start_range = 5.0
+start_height = 130.0
+height_range = 20.0
+done_color = Color(0, 0, 0, 0)
+dont_flip = true

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://brvt7f8ck5bo"]
+
+[ext_resource type="Script" uid="uid://71j5awutvofc" path="res://scripts/weapons/exploding_projectile.gd" id="1_xesio"]
+[ext_resource type="PackedScene" uid="uid://bhlqq75m1pg73" path="res://assets/projectile/FloorFire.tscn" id="2_xesio"]
+[ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="3_xesio"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_c7utq"]
+[ext_resource type="Texture2D" uid="uid://bn0s126pygna3" path="res://sprites/weapons/projectiles/fireball_bullet.png" id="5_xesio"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_xesio")
+bullet = ExtResource("2_xesio")
+source_name = "Player_AOE_0"
+shoot_from = NodePath("Sprite2D")
+amount = 1
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 24.0
+rot_spd = 60.0
+gravity = -256.0
+grav_accel = 600.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("3_xesio")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"AAAAAAHHHH\"", "\"It burns!!!!\"", "\"Your flesh melts off your bones...\"", "\"Your face dissolves...\"", "\"Skin and tissue...\"", "\"Body no more.\"", "\"Charred beyond recognition...\"", "\"If you play with fire... you're going to get burned.\"", "\"Don't leave me here!\"", "\"Die in a fire.\"", "\"We're all just kindling...\"", "\"Candle of death.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("4_c7utq")
+texture = ExtResource("5_xesio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

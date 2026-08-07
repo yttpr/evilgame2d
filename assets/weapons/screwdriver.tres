@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dm4u1g48yypka"]
+
+[ext_resource type="PackedScene" uid="uid://bndluw3i3afpo" path="res://assets/projectile/ProjectileBullet.tscn" id="1_crjbg"]
+[ext_resource type="AudioStream" uid="uid://dpik2nf4yv4h7" path="res://audio/noise/weapon/screwdriver_clink.ogg" id="2_ont8e"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_bgqat"]
+[ext_resource type="Texture2D" uid="uid://c35j4i3xp3ohk" path="res://sprites/weapons/screwdriver.png" id="3_ont8e"]
+
+[resource]
+script = ExtResource("3_bgqat")
+id = "Screwdriver"
+weapon_img = ExtResource("3_ont8e")
+bullet = ExtResource("1_crjbg")
+bullet_type = "None"
+weapon_type = "Bullet"
+damage_type = "NULL"
+pierce_amt = -1
+ready_audio = ExtResource("2_ont8e")
+audio_mod = -4.0
+inert = true
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

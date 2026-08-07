@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://balo25ctlc1nm"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_fgxn0"]
+[ext_resource type="AudioStream" uid="uid://dl28u8q1f3jw5" path="res://audio/noise/weapon/gun_sin_weak.wav" id="2_fgxn0"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_05hrg"]
+[ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="4_fgxn0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_fgxn0")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 12.0
+rot_spd = 10.0
+by_lifetime = true
+lifetime = 2.0
+tracer_width = 12.0
+shot_sound = ExtResource("2_fgxn0")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"Me when I get drafted to the skeleton war\"", "\"No bones about it!\"", "\"Headless hunter\"", "\"Gotcha.\"", "\"Nothing to report.\"", "\"Nothing of interest.\"", "\"Have some backbone.\"", "\"Everything you stand for will fall.\"", "\"Is this really all we amount to?\"", "\"Me and my groupies gonna get you!\"", "\"Why did we deserve to die?\"", "\"Is it me or you?\"", "\"Who killed you this time?\"", "\"Only following orders.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_05hrg")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_fgxn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

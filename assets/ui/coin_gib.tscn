@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ctep8q0xdlplt"]
+
+[ext_resource type="Script" uid="uid://ctlbpin0yd487" path="res://scripts/game/coin_gib.gd" id="1_dg777"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_2t781"]
+[ext_resource type="Texture2D" uid="uid://bxxjdfrh8vt1q" path="res://sprites/ui/coin_icon.png" id="2_dg777"]
+[ext_resource type="AudioStream" uid="uid://bk22dqrrgmie6" path="res://audio/noise/ui/coin.wav" id="2_ihlrc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="CoinGib" type="CharacterBody2D" unique_id=2055752230 node_paths=PackedStringArray("img")]
+modulate = Color(0.95, 0.83916664, 0, 1)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_dg777")
+gain_time = 2.0
+noise = ExtResource("2_ihlrc")
+img = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://bitqyjw5ri3lb"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414170836]
+material = ExtResource("2_2t781")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_dg777")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872023762]
+shape = SubResource("CircleShape2D_hv2lo")

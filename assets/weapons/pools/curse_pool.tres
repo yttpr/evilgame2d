@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopPoolData" format=3 uid="uid://c8frp082q6h6k"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_mg8pj"]
+[ext_resource type="Resource" uid="uid://dvi2h04chhf8d" path="res://assets/weapons/the_nail.tres" id="2_5dysp"]
+[ext_resource type="Script" uid="uid://1r25lpvdp18l" path="res://scripts/weapons/shop_pool_data.gd" id="2_tnldn"]
+[ext_resource type="Resource" uid="uid://5a45guwc0uy0" path="res://assets/weapons/antigun.tres" id="3_2hqdi"]
+[ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="4_luth6"]
+[ext_resource type="Resource" uid="uid://bl02jt1aujxh" path="res://assets/weapons/sord.tres" id="5_2hqdi"]
+[ext_resource type="Resource" uid="uid://cmni55jnxc7ma" path="res://assets/weapons/placeholder.tres" id="6_luth6"]
+[ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="7_x6d74"]
+
+[resource]
+script = ExtResource("2_tnldn")
+base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("2_5dysp"), ExtResource("3_2hqdi"), ExtResource("4_luth6"), ExtResource("5_2hqdi"), ExtResource("6_luth6"), ExtResource("7_x6d74")])
+metadata/_custom_type_script = "uid://1r25lpvdp18l"

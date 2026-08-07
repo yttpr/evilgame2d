@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bn1ng0f277ttl"]
+
+[ext_resource type="PackedScene" uid="uid://byo8do5kdw6qg" path="res://assets/projectile/FishBullet.tscn" id="1_m4ufa"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_3kxec"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_vbp6y"]
+[ext_resource type="Texture2D" uid="uid://ddt4xdg372cmh" path="res://sprites/weapons/drowning_high_weapon.png" id="4_3kxec"]
+
+[resource]
+script = ExtResource("3_vbp6y")
+id = "DrowningHigh"
+weapon_img = ExtResource("4_3kxec")
+bullet = ExtResource("1_m4ufa")
+bullet_type = "Projectile"
+weapon_type = "Magic"
+damage_amt = 3
+damage_type = "Cos"
+knockback = 650.0
+full_auto = true
+clip_size = 9
+shot_delay = 0.3
+reload_time = 4.0
+ready_audio = ExtResource("2_3kxec")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

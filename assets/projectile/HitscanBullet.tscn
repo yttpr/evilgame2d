@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ctuxxy6clrgtt"]
+
+[ext_resource type="Script" uid="uid://c76pjlipw2flx" path="res://scripts/weapons/hitscan_projectile.gd" id="1_qnqcv"]
+[ext_resource type="AudioStream" uid="uid://c33yhritp7h8q" path="res://audio/noise/weapon/gun_cos_big.wav" id="2_fjpsq"]
+
+[node name="HitscanBullet" type="Node2D" unique_id=13675771]
+script = ExtResource("1_qnqcv")
+collider_duration = 0.05
+bounces = true
+length = 2500.0
+type = "Cos"
+dmg = 5
+knockback_mod = 3000.0
+by_lifetime = true
+lifetime = 0.5
+tracer_width = 5.0
+tracer_color = Color(1, 0, 0, 1)
+tracer_time = 0.5
+shot_sound = ExtResource("2_fjpsq")
+audio_mod = 15.0
+death_quote = Array[String](["\"I see no gods above me.\"", "\"Look to the stars.\"", "\"Awaken me.\""])

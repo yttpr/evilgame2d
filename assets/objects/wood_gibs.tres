@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://dpss8dou12lqo"]
+
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="1_kmsg7"]
+[ext_resource type="Texture2D" uid="uid://bwi4wxbnwwej" path="res://sprites/objects/gibs/wood_gib_1.png" id="1_wqlwb"]
+[ext_resource type="Texture2D" uid="uid://b4umhmtjsu4lq" path="res://sprites/objects/gibs/wood_gib_2.png" id="2_v56i8"]
+
+[resource]
+script = ExtResource("1_kmsg7")
+images = Array[Texture2D]([ExtResource("1_wqlwb"), ExtResource("2_v56i8")])
+img_amts = Array[int]([4, 8])
+weights = Array[float]([0.2, 0.2])
+does_rotate = Array[bool]([true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

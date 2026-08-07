@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://oywo6rinrcd7"]
+
+[ext_resource type="Script" uid="uid://clao3q81tdtw7" path="res://scripts/weapons/homing_projectile.gd" id="1_t6ml1"]
+[ext_resource type="AudioStream" uid="uid://by0jeqlyb1dw5" path="res://audio/noise/weapon/magic_med.wav" id="2_t6ml1"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_golhp"]
+[ext_resource type="Texture2D" uid="uid://b3lkvqih6y6o6" path="res://sprites/weapons/projectiles/pointing_bullet.png" id="4_t6ml1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xa2y"]
+radius = 511.17
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("detection", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_t6ml1")
+detection = NodePath("Area2D")
+turn_spd = 6.0
+track_mouse_instead = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 500.0
+radius = 32.0
+by_lifetime = true
+lifetime = 5.0
+tracer_width = 12.0
+shot_sound = ExtResource("2_t6ml1")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"The hunter has become the hunter.\"", "\"Look at me.\"", "\"All you had to do...\"", "\"Follow the signs...\"", "\"He's here he's there he's everywhere...\"", "\"Willingly caught in her web\"", "\"Give up your autonomy.\"", "\"You are more than just an animal.\"", "\"Exit Left\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_golhp")
+texture = ExtResource("4_t6ml1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=449690862]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1952246366]
+shape = SubResource("CircleShape2D_4xa2y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_body_exited"]

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://kdr7gvrk2hd"]
+
+[ext_resource type="PackedScene" uid="uid://36c07spj5o4x" path="res://assets/projectile/MagicLineBullet.tscn" id="1_vdi40"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_8qy3s"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_3s5ds"]
+[ext_resource type="Texture2D" uid="uid://11wyts3ncade" path="res://sprites/weapons/toygun.png" id="4_8qy3s"]
+
+[resource]
+script = ExtResource("3_3s5ds")
+id = "ToyGunCos"
+weapon_img = ExtResource("4_8qy3s")
+bullet = ExtResource("1_vdi40")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 800.0
+pierce_amt = -1
+clip_size = 4
+shot_delay = 0.4
+reload_time = 5.0
+aim_length = 50.0
+ready_audio = ExtResource("2_8qy3s")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

@@ -1,0 +1,91 @@
+class_name GibBody
+
+extends CharacterBody2D
+
+@export var img : Sprite2D
+@export var start_height : float = -15.0
+
+var start_tick : int = -1
+var tick_time : int = 5
+
+var time : float
+var height : float = -35.0
+
+var weight : float = 1.0
+
+func _set_lifetime(delta : float) -> void:
+	var up = get_tree().create_tween()
+	up.set_ease(Tween.EASE_IN)
+	up.tween_property(img, "scale", Vector2.ZERO, delta)
+	up.tween_callback(self.queue_free)
+func _remove(delta : float) -> void:
+	var up = get_tree().create_tween()
+	up.set_ease(Tween.EASE_IN)
+	up.tween_property(img, "modulate", Color(1.0, 1.0, 1.0, 0.0), delta)
+	up.tween_callback(self.queue_free)
+
+func _randomize_scale() -> void:
+	var num = randf_range(1.0, 2.0)
+	img.scale = Vector2(num, num)
+func _random_rotate() -> void:
+	img.rotation = randf_range(0.0, 2 * PI)
+func _random_flip() -> void:
+	if randf_range(0.0, 1.0) < 0.5:
+		img.flip_h = true
+
+func _prep(inertia : Vector2, vertical : bool = false) -> void:
+	start_tick = Manager._get_world().ticks
+	
+	var spd = randf_range(10, 75)
+	if inertia.length() > 200:
+		spd = randf_range(spd, inertia.length() / 3)
+		inertia = inertia.normalized() * randf_range(200, inertia.length())
+	
+	velocity = Vector2.from_angle(randf_range(0.0, 2 * PI)) * spd + (inertia)
+	velocity /= weight
+	time = randf_range(0.1, 0.5)
+	var moving = get_tree().create_tween()
+	moving.tween_property(self, "velocity", Vector2(0, 0), time)
+	
+	if !vertical:
+		return
+	var i = start_height + randf_range(-8.0, 5.0)
+	img.position = Vector2(0.0, i)
+	var up = get_tree().create_tween()
+	up.set_ease(Tween.EASE_OUT)
+	up.set_trans(Tween.TRANS_QUAD)
+	up.tween_property(img, "position", Vector2(0.0, randf_range(0, height) + i), time / 1.8)
+	up.tween_callback(_down)
+
+func _down() -> void:
+	var down = get_tree().create_tween()
+	down.set_ease(Tween.EASE_IN)
+	down.set_trans(Tween.TRANS_QUAD)
+	down.tween_property(img, "position", Vector2.ZERO, time / 1.8)
+	if fall_in_pit:
+		down.tween_callback(_check_pit)
+
+func _process(delta : float) -> void:
+	move_and_slide()
+	if start_tick < 0:
+		return
+	if Manager._get_world().ticks >= start_tick + tick_time:
+		if self.global_position.distance_to(Manager.Player.global_position) < 1000:
+			tick_time += 3
+		else:
+			_remove(8)
+
+var fall_in_pit : bool
+func _set_fall_in_pit(value : bool = true) -> void:
+	fall_in_pit = value
+
+func _check_pit() -> void:
+	if Manager._check_in_pit(self):
+		_fall()
+
+func _fall() -> void:
+	var down = get_tree().create_tween()
+	down.tween_property(img, "scale", Vector2.ZERO, 1.0)
+	if Manager._check_in_pit_top(self):
+		down.parallel().tween_property(img, "position", img.position + Vector2(0, 32), 1.0)
+	down.tween_callback(self.queue_free)

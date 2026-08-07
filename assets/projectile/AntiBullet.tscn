@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://5061ptad1ejb"]
+
+[ext_resource type="Script" uid="uid://cum8n6dqjqbbk" path="res://scripts/weapons/anti_moving_projectile.gd" id="1_clij7"]
+[ext_resource type="AudioStream" uid="uid://dfb57wtsr6hy1" path="res://audio/noise/weapon/gun_sin_med.ogg" id="2_0q5h3"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_655v4"]
+[ext_resource type="Texture2D" uid="uid://druscbp3rqsqc" path="res://sprites/weapons/projectiles/anti_bullet.png" id="4_0q5h3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_clij7")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1500.0
+radius = 24.0
+rot_spd = 2.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 2.4
+tracer_width = 12.0
+tracer_time = 0.1
+shot_sound = ExtResource("2_0q5h3")
+audio_mod = 10.0
+death_quote = Array[String](["\"From Antiworld.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_655v4")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_0q5h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

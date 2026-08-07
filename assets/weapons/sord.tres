@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bl02jt1aujxh"]
+
+[ext_resource type="PackedScene" uid="uid://bccjwn3n7ok3w" path="res://assets/projectile/NailBullet.tscn" id="1_kvm4e"]
+[ext_resource type="AudioStream" uid="uid://dynauqbkce8l8" path="res://audio/noise/weapon/sword_ready.ogg" id="2_kvm4e"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_b86i1"]
+[ext_resource type="Texture2D" uid="uid://djpb76bckj7ij" path="res://sprites/weapons/sord.png" id="4_kvm4e"]
+
+[resource]
+script = ExtResource("3_b86i1")
+id = "Sord"
+weapon_img = ExtResource("4_kvm4e")
+bullet = ExtResource("1_kvm4e")
+bullet_type = "Melee"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 750.0
+pierce_amt = -1
+ready_audio = ExtResource("2_kvm4e")
+inert = true
+melee = true
+melee_range = 128.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

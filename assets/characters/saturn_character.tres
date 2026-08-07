@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://ccvx42sahnmdq"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_lbiv5"]
+[ext_resource type="Resource" uid="uid://e3c04oph7jau" path="res://assets/weapons/radioscope.tres" id="2_a0i0f"]
+[ext_resource type="Texture2D" uid="uid://6vph331f52kx" path="res://sprites/characters/EvilGame2D_Saturn_Wip.png" id="2_egiet"]
+[ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="2_hqakt"]
+[ext_resource type="Resource" uid="uid://cmjw3ypxm44ph" path="res://assets/weapons/shotgun.tres" id="3_xtfo6"]
+[ext_resource type="Resource" uid="uid://2ybi2egd60da" path="res://assets/characters/gibs/saturn_gibs.tres" id="4_kstea"]
+
+[resource]
+script = ExtResource("2_hqakt")
+id = "Saturn"
+character = "Saturn"
+image = ExtResource("2_egiet")
+HP = 10
+healthtype = "Cos"
+base_weapons = Array[ExtResource("1_lbiv5")]([ExtResource("2_a0i0f"), ExtResource("3_xtfo6")])
+gibs = ExtResource("4_kstea")
+metadata/_custom_type_script = "uid://csfhp445ba2j"

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://5kp31fdh2vim"]
+
+[ext_resource type="Script" uid="uid://71j5awutvofc" path="res://scripts/weapons/exploding_projectile.gd" id="1_3hqlw"]
+[ext_resource type="AudioStream" uid="uid://dl28u8q1f3jw5" path="res://audio/noise/weapon/gun_sin_weak.wav" id="2_3hqlw"]
+[ext_resource type="PackedScene" uid="uid://iylywpqirrmv" path="res://assets/projectile/RocketSubBullet.tscn" id="2_ja71s"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_q5hra"]
+[ext_resource type="Texture2D" uid="uid://crhlgvoajx823" path="res://sprites/weapons/projectiles/block_bullet.png" id="5_ja71s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_3hqlw")
+bullet = ExtResource("2_ja71s")
+source_name = "Player_Projectile_0"
+shoot_from = NodePath("Sprite2D")
+amount = 24
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 285.0
+radius = 24.0
+rot_spd = 14.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("2_3hqlw")
+audio_mod = 10.0
+death_quote = Array[String](["\"You blew it...\"", "\"Collateral!\"", "\"Take cover!!\"", "\"Uh oh...\"", "\"Did I do that..?\"", "\"Legalize nuclear bombs.\"", "\"Spudow!\"", "\"Boom.\"", "\"Oops...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_q5hra")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_ja71s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

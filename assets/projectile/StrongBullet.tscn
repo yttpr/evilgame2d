@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bgo77un2lds6"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_ew6nm"]
+[ext_resource type="AudioStream" uid="uid://dyrrpejx5xgwo" path="res://audio/noise/weapon/magic_heavy.wav" id="2_ew6nm"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_wgrp0"]
+[ext_resource type="Texture2D" uid="uid://cu68a1iu5ayl3" path="res://sprites/weapons/projectiles/skull_bullet.png" id="4_ew6nm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_ew6nm")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1000.0
+radius = 15.0
+rot_spd = 7.0
+by_lifetime = true
+lifetime = 2.0
+tracer_width = 8.0
+tracer_time = 0.2
+shot_sound = ExtResource("2_ew6nm")
+audio_mod = 15.0
+make_gibs = true
+death_quote = Array[String](["\"I'm always watching you.\"", "\"Want to learn about immortality?\"", "\"I care for you... so much.\"", "\"Death gives\"", "\"This is no fairy tale.\"", "\"I love you.\"", "\"I will remember you forever.\"", "\"Forever and ever and ever...\"", "\"Who will protect you now?\"", "\"Do you remember me?\"", "\"That dream... a nightmare.\"", "\"That nightmare... a dream.\"", "\"I'm always in your shadow...\"", "\"It's over.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_wgrp0")
+texture = ExtResource("4_ew6nm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

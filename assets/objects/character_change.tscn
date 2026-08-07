@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dfw318cf5oiwh"]
+
+[ext_resource type="Script" uid="uid://yk45lcj37g81" path="res://scripts/objects/chara_interactible.gd" id="1_djkd4"]
+[ext_resource type="Texture2D" uid="uid://6vph331f52kx" path="res://sprites/characters/EvilGame2D_Saturn_Wip.png" id="2_djkd4"]
+[ext_resource type="AudioStream" uid="uid://b2gdw5ibab1yo" path="res://audio/noise/ui/swap_made.wav" id="2_eswfa"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="5_iqjpu"]
+[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="6_4lqet"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="7_7fglp"]
+[ext_resource type="Script" uid="uid://cvil36t7bqgcp" path="res://scripts/enemy/wander_pathfinding.gd" id="12_srenx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[node name="Character" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("image")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("1_djkd4")
+image = NodePath("image")
+noise = ExtResource("2_eswfa")
+hit_mod = 6.0
+mov_spd = 60
+inertia_decay = 0.5
+despawn_time = -1.0
+despawn_length = -1.0
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "audio")]
+light_mask = 8
+texture = ExtResource("2_djkd4")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("5_iqjpu")
+body = NodePath("..")
+walk_time = 0.3
+footstep = ExtResource("6_4lqet")
+audio_mod = 8.5
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("7_7fglp")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "nav_agent")]
+script = ExtResource("12_srenx")
+vision_range = 0.0
+limit_range = 0.0
+max_range = 0.0
+can_target_delay = 1.0
+bored_time = 5.0
+bored_chance = 0.5
+wander_time = 10.0
+wander_chance = 0.5
+wander_speed = 45.0
+Movable = NodePath("..")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+navigation_layers = 4
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

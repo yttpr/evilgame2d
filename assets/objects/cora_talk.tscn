@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://lt1i2xqi3o12"]
+
+[ext_resource type="Script" uid="uid://c7t1jnkgbjv2l" path="res://scripts/objects/talking_interactible.gd" id="1_ku4ow"]
+[ext_resource type="Texture2D" uid="uid://cdngucr0h6f1d" path="res://sprites/characters/EvilGame2D_Cora_Wip.png" id="2_jsajx"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="4_vu2s7"]
+[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="5_ytg18"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="6_s1kdi"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="7_jsajx"]
+[ext_resource type="Script" uid="uid://cvil36t7bqgcp" path="res://scripts/enemy/wander_pathfinding.gd" id="7_tcmja"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[node name="Character" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("label")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("1_ku4ow")
+label = NodePath("Label")
+dialogue = Array[String](["\"My magic is beyond your comprehension.\"", "\"Everything comes at a price...\"", "\"Does it hurt? Good... good...\"", "\"Are they cursed? My bad...\"", "\"Guns for hearts...\"", "\"If you're gonna take these guns, you clearly don't need the health as much as I do...\"", "\"Make your choice now or forever hold your silence...\"", "\"You're alive still?\"", "\"...Huh? ...\"", "\"You can never have too much blood.\"", "\"Life is a resource to be spent.\"", "\"Another weapon might save you in a pinch those three hearts wouldn't be able to...\""])
+talk_time = 3.0
+hit_mod = 6.0
+mov_spd = 60
+inertia_decay = 0.5
+despawn_time = -1.0
+despawn_length = -1.0
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "audio")]
+light_mask = 8
+texture = ExtResource("2_jsajx")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("4_vu2s7")
+body = NodePath("..")
+walk_time = 0.3
+footstep = ExtResource("5_ytg18")
+audio_mod = 8.5
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("6_s1kdi")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "nav_agent")]
+script = ExtResource("7_tcmja")
+vision_range = 0.0
+limit_range = 0.0
+max_range = 0.0
+can_target_delay = 1.0
+bored_time = 25.0
+bored_chance = 0.5
+wander_time = 60.0
+wander_chance = 1.0
+wander_speed = 45.0
+Movable = NodePath("..")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+navigation_layers = 4
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=216954861]
+z_index = 6
+material = ExtResource("7_jsajx")
+offset_left = -423.0
+offset_top = -125.0
+offset_right = 137.66669
+offset_bottom = -102.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.44313726)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "\"If you're gonna take these guns, you clearly don't need the health as much as I do...\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

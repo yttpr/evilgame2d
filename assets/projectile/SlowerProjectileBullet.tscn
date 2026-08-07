@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d0fls0kew8msc"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_si6o7"]
+[ext_resource type="AudioStream" uid="uid://dfb57wtsr6hy1" path="res://audio/noise/weapon/gun_sin_med.ogg" id="2_w1dgw"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_6h2xu"]
+[ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_uwb06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_si6o7")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 12.0
+by_lifetime = true
+lifetime = 5.0
+tracer_width = 12.0
+tracer_time = 0.3
+shot_sound = ExtResource("2_w1dgw")
+audio_mod = 10.0
+death_quote = Array[String](["\"Get off my screen!!!\"", "\"Every photon has a partner...\"", "\"MissingNo\"", "\"Damn dead pixels...\"", "\"Toggle flip-flop\"", "\"GoobleDoobleMoobleSoobleGrooblePlooble\"", "\"I want to exist\"", "\"Will i remain tomorrow?\"", "\"What are we, if not pixels?\"", "\"Continue? Exit?\"", "\"What happened to my copy??\"", "\"Sin or Cos...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_6h2xu")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_uwb06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

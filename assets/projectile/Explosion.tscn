@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dljmvt5158o54"]
+
+[ext_resource type="Script" uid="uid://df78b2fe2wuil" path="res://scripts/weapons/weaponsexplosion_projectile.gd" id="1_2gm5c"]
+[ext_resource type="Texture2D" uid="uid://n6x7fhrgcc42" path="res://sprites/weapons/projectiles/explosion_projectile.png" id="1_qfp2n"]
+[ext_resource type="Texture2D" uid="uid://d1bfh5bx7lxof" path="res://sprites/weapons/projectiles/magic_explosion_proj.png" id="2_kwofl"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_r1k26"]
+[ext_resource type="Texture2D" uid="uid://co3uqqyi5xmuu" path="res://sprites/weapons/projectiles/explosion_smoke.png" id="3_e2uxi"]
+
+[node name="Explosion" type="Node2D" unique_id=2015489815 node_paths=PackedStringArray("sin_image", "cos_image", "smoke_img")]
+script = ExtResource("1_2gm5c")
+sin_image = NodePath("ExplosionProjectile")
+cos_image = NodePath("MagicExplosionProj")
+smoke_img = NodePath("ExplosionSmoke")
+radius = 64.0
+explosion_time = 0.2
+smoke_time = 2.0
+lifetime = 1.0
+death_quote = Array[String](["\"You blew it...\"", "\"Collateral!\"", "\"Take cover!!\"", "\"Uh oh...\"", "\"Did I do that..?\"", "\"Legalize nuclear bombs.\"", "\"Spudow!\"", "\"Boom.\"", "\"Oops...\""])
+
+[node name="ExplosionSmoke" type="Sprite2D" parent="." unique_id=717971347]
+texture = ExtResource("3_e2uxi")
+
+[node name="ExplosionProjectile" type="Sprite2D" parent="." unique_id=1113450997]
+material = ExtResource("2_r1k26")
+texture = ExtResource("1_qfp2n")
+
+[node name="MagicExplosionProj" type="Sprite2D" parent="." unique_id=1463948618]
+material = ExtResource("2_r1k26")
+texture = ExtResource("2_kwofl")

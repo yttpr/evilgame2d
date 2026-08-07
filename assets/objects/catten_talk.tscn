@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b0jxtl4c6wxo5"]
+
+[ext_resource type="Script" uid="uid://c7t1jnkgbjv2l" path="res://scripts/objects/talking_interactible.gd" id="1_ygvy1"]
+[ext_resource type="Texture2D" uid="uid://dprw0rodn7ayw" path="res://sprites/characters/EvilGame2D_Catten_Wip.png" id="2_ygvy1"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="3_ng2gj"]
+[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="4_3bmvu"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="5_k3pma"]
+[ext_resource type="Script" uid="uid://cvil36t7bqgcp" path="res://scripts/enemy/wander_pathfinding.gd" id="6_e8osw"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="7_qjm6a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[node name="Character" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("label")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("1_ygvy1")
+label = NodePath("Label")
+dialogue = Array[String](["\"I'm only here because I need to be.\"", "\"I don't wanna work...\"", "\"Can you hurry up? I'm on the clock here...\"", "\"When you're done here I get to leave.\"", "\"I'm gonna dissolve soon... don't worry about it.\"", "\"You need to move faster we're running out of time.\"", "\"One shot... ?Sorry I was talking to myself.\"", "\"It's getting quiter... oh dear...\"", "\"I hope I didn't mess anything up, I don't wanna be working overtime.\"", "\"I'm clocking out the literal instant I'm allowed to.\"", "\"When you're off work, you're off work.\"", "\"That screwdriver is completely useless by the way.\"", "\"You can use the screwdriver to rearrange your inventory if you wanted to, I suppose.\"", "\"Please don't take the screwdriver with you... It's really not worth it...\""])
+talk_time = 3.0
+hit_mod = 6.0
+mov_spd = 60
+inertia_decay = 0.5
+despawn_time = -1.0
+despawn_length = -1.0
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "audio")]
+light_mask = 8
+texture = ExtResource("2_ygvy1")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("3_ng2gj")
+body = NodePath("..")
+walk_time = 0.3
+footstep = ExtResource("4_3bmvu")
+audio_mod = 8.5
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("5_k3pma")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "nav_agent")]
+script = ExtResource("6_e8osw")
+vision_range = 0.0
+limit_range = 0.0
+max_range = 0.0
+can_target_delay = 1.0
+bored_time = 25.0
+bored_chance = 0.5
+wander_time = 60.0
+wander_chance = 1.0
+wander_speed = 45.0
+Movable = NodePath("..")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+navigation_layers = 4
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=216954861]
+z_index = 6
+material = ExtResource("7_qjm6a")
+offset_left = -423.0
+offset_top = -125.0
+offset_right = 137.66669
+offset_bottom = -102.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.44313726)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "\"If you're gonna take these guns, you clearly don't need the health as much as I do...\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

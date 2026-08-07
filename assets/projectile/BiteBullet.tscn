@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dqxkmmh0hteyn"]
+
+[ext_resource type="Script" uid="uid://daoprfpn4d6hu" path="res://scripts/weapons/FadeoutProjectile.gd" id="1_am8mo"]
+[ext_resource type="AudioStream" uid="uid://gl8ar22cfu3f" path="res://audio/noise/weapon/bite.wav" id="2_am8mo"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_6f4ek"]
+[ext_resource type="Texture2D" uid="uid://bn8svlyggbywy" path="res://sprites/weapons/projectiles/bite_bullet.png" id="4_am8mo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="BiteBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_am8mo")
+collider_time = 0.1
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1.0
+radius = 30.0
+by_lifetime = true
+lifetime = 1.0
+tracer_width = 8.0
+shot_sound = ExtResource("2_am8mo")
+audio_mod = 13.0
+pitch_mod = 0.4
+death_quote = Array[String](["\"So HUNGRY!!!!\"", "\"Nom nom nom.\"", "\"Feed me more of you\"", "\"I want you always\"", "\"See me?\"", "\"Don't touch me.\"", "\"Don't see me.\"", "\"Don't hear me.\"", "\"Don't notice me.\"", "\"Get away from me!\"", "\"Don't look at me.\"", "\"Look at me!\"", "\"Listen to me!\"", "\"Hey! Listen!\"", "\"I want your eyes...\"", "\"I want your hands...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_6f4ek")
+texture = ExtResource("4_am8mo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

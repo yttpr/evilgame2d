@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://du5bvf4dm5t2l"]
+
+[ext_resource type="Script" uid="uid://cikawduj6p7wp" path="res://scripts/enemy/ReactiveBody.gd" id="1_q2g43"]
+[ext_resource type="PackedScene" uid="uid://dhufhkr5f7dlv" path="res://assets/projectile/SmallBullet.tscn" id="2_k8nka"]
+[ext_resource type="Resource" uid="uid://dbqf5px76mmkn" path="res://assets/enemies/gibs/touch_gibs.tres" id="2_q2g43"]
+[ext_resource type="Texture2D" uid="uid://b102a8c0sfhsn" path="res://sprites/enemies/EvilGame2D_Touch_WIP.png" id="3_q2g43"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="4_6smlg"]
+[ext_resource type="AudioStream" uid="uid://csbxw5ludojra" path="res://audio/noise/enemies/touch_hit.ogg" id="4_xk10k"]
+[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="5_c2p5y"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="6_qyxqh"]
+[ext_resource type="Script" uid="uid://uvpai4td262g" path="res://scripts/player/character_hitbox.gd" id="7_oi56s"]
+[ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="8_wogeo"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="9_yyn5f"]
+[ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="10_r8q4r"]
+[ext_resource type="Script" uid="uid://e5jajlehler3" path="res://scripts/enemy/screen_monitoring_pathfinding.gd" id="11_q2g43"]
+[ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_ne6g4"]
+[ext_resource type="PackedScene" uid="uid://dqxkmmh0hteyn" path="res://assets/projectile/BiteBullet.tscn" id="13_q2g43"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
+size = Vector2(61, 70.5)
+
+[node name="Freud" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("brain", "weapon", "sprites", "marker")]
+collision_layer = 544
+collision_mask = 8
+script = ExtResource("1_q2g43")
+brain = NodePath("brain")
+bullet = ExtResource("2_k8nka")
+weapon = NodePath("EnemyWeapon")
+dmg_amt = 1
+damage_type = "Sin"
+knockback = 300.0
+source_name = "Enemy_Projectile"
+cooldown_time = 0.7
+sprites = NodePath("image")
+HP = 13
+healthtype = "Sin"
+points = 3
+gibs = ExtResource("2_q2g43")
+hit_sound = ExtResource("4_xk10k")
+hit_mod = 2.0
+marker = NodePath("marker_holder/marker")
+mov_spd = 225
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
+light_mask = 8
+texture = ExtResource("3_q2g43")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("4_6smlg")
+body = NodePath("..")
+hitbox = NodePath("../hitbox")
+walk_time = 0.05
+footstep = ExtResource("5_c2p5y")
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("6_qyxqh")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=340127500 node_paths=PackedStringArray("body")]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("7_oi56s")
+body = NodePath("..")
+hitbox_type = "Single"
+sources = Array[String](["Hitscan"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=72484899]
+position = Vector2(-1, 4.25)
+shape = SubResource("RectangleShape2D_nubg3")
+
+[node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]
+position = Vector2(0, -100)
+script = ExtResource("8_wogeo")
+marker = NodePath("marker")
+max = 6.0
+time = 4.0
+
+[node name="marker" type="Sprite2D" parent="marker_holder" unique_id=1398509414]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 5
+material = ExtResource("9_yyn5f")
+texture = ExtResource("10_r8q4r")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
+script = ExtResource("11_q2g43")
+lock_on_range = 300.0
+special = true
+limit_range = -1.0
+max_range = 35.0
+can_target_delay = 0.0
+bored_time = 1.0
+bored_chance = 1.0
+wander_time = 3.0
+wander_chance = 0.8
+wander_speed = 120.0
+Movable = NodePath("..")
+Weapon = NodePath("../EnemyWeapon")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+navigation_layers = 4
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="EnemyWeapon" type="Node2D" parent="." unique_id=1496392314 node_paths=PackedStringArray("weapon", "brain")]
+script = ExtResource("12_ne6g4")
+weapon = NodePath("pointer")
+bullet = ExtResource("13_q2g43")
+source_name = "Enemy_Melee"
+knockback = 3500.0
+damage_type = "Sin"
+dmg_amt = 3
+pierce_amt = -1
+max_clip = 1
+reload_time = 1.0
+move_during_reload = true
+brain = NodePath("../brain")
+max_aim_width = 1.0
+metadata/_custom_type_script = "uid://dap3uvgj16hat"
+
+[node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
+position = Vector2(0, -36)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1161542037]
+position = Vector2(-25, -102)
+rect = Rect2(-10, -10, 64, 128)
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="brain" method="_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="brain" method="_screen_exited"]

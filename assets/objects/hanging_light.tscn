@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cnfhgvboy6531"]
+
+[ext_resource type="Texture2D" uid="uid://30sirfsfw232" path="res://sprites/objects/hanging_light.png" id="1_6d00x"]
+
+[sub_resource type="Gradient" id="Gradient_gxmte"]
+offsets = PackedFloat32Array(0, 0.8918269, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2i7g7"]
+gradient = SubResource("Gradient_gxmte")
+fill = 1
+fill_from = Vector2(0.5086806, 0.5190972)
+fill_to = Vector2(0.8350694, 0.8315972)
+
+[node name="HangingLight" type="Node2D" unique_id=1485522281]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140620617]
+light_mask = 2
+position = Vector2(1, -315)
+texture = ExtResource("1_6d00x")
+
+[node name="floor_light" type="PointLight2D" parent="." unique_id=468489898]
+z_index = -1
+color = Color(0.84, 0.84, 0.18480001, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_2i7g7")
+texture_scale = 4.5
+
+[node name="wall_light" type="PointLight2D" parent="." unique_id=1133249212]
+z_index = -1
+color = Color(0.84, 0.84, 0.18480001, 1)
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_2i7g7")
+texture_scale = 4.5
+
+[node name="light_light" type="PointLight2D" parent="." unique_id=1951616185]
+z_index = -1
+position = Vector2(0, -90)
+color = Color(0.84, 0.84, 0.18480001, 1)
+range_item_cull_mask = 2
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_2i7g7")
+texture_scale = 4.5
+
+[node name="chara_light" type="PointLight2D" parent="." unique_id=2120337750]
+z_index = -1
+color = Color(0.84, 0.84, 0.18480001, 1)
+range_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_2i7g7")
+texture_scale = 4.5

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://yn0d6ywnkyfh"]
+
+[ext_resource type="Script" uid="uid://b8o3nkg766swt" path="res://scripts/weapons/multi_hitscan_projectile.gd" id="1_gwfr2"]
+[ext_resource type="AudioStream" uid="uid://c33yhritp7h8q" path="res://audio/noise/weapon/gun_cos_big.wav" id="2_l660b"]
+
+[node name="MultiHitscanBullet" type="Node2D" unique_id=13675771]
+script = ExtResource("1_gwfr2")
+shot_amount = 6
+shot_variance = 0.5
+collider_duration = 0.02
+length = 225.0
+type = "Cos"
+dmg = 5
+knockback_mod = 3000.0
+by_lifetime = true
+lifetime = 0.3
+tracer_width = 3.0
+tracer_color = Color(1, 0, 0, 1)
+tracer_time = 0.2
+shot_sound = ExtResource("2_l660b")
+audio_mod = 15.0
+death_quote = Array[String](["\"Only thing good in life is a shotgun.\"", "\"Muzzle in my mouth and I pull the trigger.\"", "\"I'll shoot myself in the head first.\"", "\"Your turn.\"", "\"Lovely bloodsplatter!\""])

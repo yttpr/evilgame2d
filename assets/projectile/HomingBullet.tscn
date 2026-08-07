@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c82sgimrp6gcy"]
+
+[ext_resource type="Script" uid="uid://clao3q81tdtw7" path="res://scripts/weapons/homing_projectile.gd" id="1_ymyeb"]
+[ext_resource type="AudioStream" uid="uid://cnqcj6kfy74ie" path="res://audio/noise/weapon/magic_long.ogg" id="2_ymyeb"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_pg3pa"]
+[ext_resource type="Texture2D" uid="uid://bclh5cud4adjn" path="res://sprites/weapons/projectiles/arrow_bullet.png" id="4_ymyeb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xa2y"]
+radius = 479.42
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("detection", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_ymyeb")
+detection = NodePath("Area2D")
+turn_spd = 0.6
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 150.0
+radius = 12.0
+by_lifetime = true
+lifetime = 5.0
+tracer_width = 12.0
+shot_sound = ExtResource("2_ymyeb")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"What a beautiful projection.\"", "\"How beautiful\"", "\"Yours, truly\"", "\"What a beautiful world.\"", "\"Magnum opus\"", "\"How lovely.\"", "\"Adore me.\"", "\"A present for you.\"", "\"Would you like to watch with me?\"", "\"What a wonderful world...\"", "\"A rose... for me?\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_pg3pa")
+texture = ExtResource("4_ymyeb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=449690862]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1952246366]
+shape = SubResource("CircleShape2D_4xa2y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_body_exited"]

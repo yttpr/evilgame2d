@@ -1,0 +1,1047 @@
+[gd_scene format=3 uid="uid://bbc1soalmy43w"]
+
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="1_eroip"]
+[ext_resource type="Script" uid="uid://cvwwekxpit8tf" path="res://scripts/game/menu_handler.gd" id="1_ugq0a"]
+[ext_resource type="Texture2D" uid="uid://4c5pnbqmsir" path="res://sprites/ui/respawn_unpressed.png" id="2_0i6ep"]
+[ext_resource type="Texture2D" uid="uid://bwuxang0bwb56" path="res://sprites/ui/respawn_pressed.png" id="3_l0v7b"]
+[ext_resource type="Script" uid="uid://dh2fbtagsrtgt" path="res://scripts/game/continue_button.gd" id="4_0i6ep"]
+[ext_resource type="Texture2D" uid="uid://c3sn8ugg1nfss" path="res://sprites/ui/exit_unpressed.png" id="5_xpjlo"]
+[ext_resource type="Texture2D" uid="uid://plykaoulggvb" path="res://sprites/ui/exit_pressed.png" id="6_kfuqq"]
+[ext_resource type="Script" uid="uid://dikl55ykqd6am" path="res://scripts/game/exit_button.gd" id="7_ugq0a"]
+[ext_resource type="Texture2D" uid="uid://b5ovy3llkrq0h" path="res://sprites/ui/blobby.png" id="8_kfuqq"]
+[ext_resource type="Script" uid="uid://cok3ntukgso4r" path="res://scripts/game/death_handler.gd" id="10_2qw5y"]
+[ext_resource type="Script" uid="uid://b8p32uhnx1syq" path="res://scripts/game/vibrate_label.gd" id="11_lf07f"]
+
+[node name="Menu" type="Control" unique_id=1451568578 node_paths=PackedStringArray("border", "buttons", "death_handler")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ugq0a")
+border = NodePath("TextureRect")
+buttons = [NodePath("TextureButton"), NodePath("ExitButton")]
+death_handler = NodePath("text_holder")
+in_time = 1.0
+anim_spd = 2.0
+in_size = Vector2(1.5, 1.5)
+out_size = Vector2(2.2, 2.2)
+leave_size = Vector2(4.5, 4.5)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1555963291]
+z_index = 12
+material = ExtResource("1_eroip")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = -234.0
+offset_right = 253.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_0i6ep")
+texture_hover = ExtResource("3_l0v7b")
+script = ExtResource("4_0i6ep")
+
+[node name="ExitButton" type="TextureButton" parent="." unique_id=1376340284]
+z_index = 12
+material = ExtResource("1_eroip")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -12.0
+offset_right = 272.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_xpjlo")
+texture_hover = ExtResource("6_kfuqq")
+script = ExtResource("7_ugq0a")
+metadata/_custom_type_script = "uid://dikl55ykqd6am"
+
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=571275672]
+z_index = 8
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_kfuqq")
+hframes = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="TextureRect" unique_id=578894200]
+position = Vector2(300, 0)
+scale = Vector2(0.2, 1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 225, 0, -225, 3175, -225, 3175, 225)
+
+[node name="Polygon2D2" type="Polygon2D" parent="TextureRect" unique_id=1200534976]
+position = Vector2(-300, 0)
+scale = Vector2(-0.2, 1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 225, 0, -225, 3175, -225, 3175, 225)
+
+[node name="Polygon2D3" type="Polygon2D" parent="TextureRect" unique_id=32076381]
+position = Vector2(0, 225)
+scale = Vector2(0.2, 0.2)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-3471, 0, 3471, 0, 3471, 2077, -3471, 2077)
+
+[node name="Polygon2D4" type="Polygon2D" parent="TextureRect" unique_id=1986542840]
+position = Vector2(0, -225)
+scale = Vector2(0.2, -0.2)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-3471, 0, 3471, 0, 3471, 2077, -3471, 2077)
+
+[node name="text_holder" type="Node2D" parent="." unique_id=282911733 node_paths=PackedStringArray("points_display", "quote_holders")]
+z_index = 8
+position = Vector2(1, 0)
+scale = Vector2(1.7, 1.7)
+script = ExtResource("10_2qw5y")
+points_display = NodePath("pointes")
+quote_holders = [NodePath("quote_holder/quote1"), NodePath("quote_holder/quote2"), NodePath("quote_holder/quote3"), NodePath("quote_holder/quote4"), NodePath("quote_holder/quote5"), NodePath("quote_holder/quote6"), NodePath("quote_holder/quote7"), NodePath("quote_holder/quote8"), NodePath("quote_holder/quote9"), NodePath("quote_holder/quote10"), NodePath("quote_holder/quote11"), NodePath("quote_holder/quote12"), NodePath("quote_holder/quote13"), NodePath("quote_holder/quote14"), NodePath("quote_holder/quote15"), NodePath("quote_holder/quote16"), NodePath("quote_holder/quote17"), NodePath("quote_holder/quote18"), NodePath("quote_holder/quote19"), NodePath("quote_holder/quote20"), NodePath("quote_holder/quote21"), NodePath("quote_holder/quote22"), NodePath("quote_holder/quote23"), NodePath("quote_holder/quote24"), NodePath("quote_holder/quote25"), NodePath("quote_holder/quote26"), NodePath("quote_holder/quote27"), NodePath("quote_holder/quote28"), NodePath("quote_holder/quote29"), NodePath("quote_holder/quote30"), NodePath("quote_holder/quote31"), NodePath("quote_holder/quote32"), NodePath("quote_holder/quote33"), NodePath("quote_holder/quote34"), NodePath("quote_holder/quote35"), NodePath("quote_holder/quote36"), NodePath("quote_holder/quote38")]
+
+[node name="pointes" type="Label" parent="text_holder" unique_id=340611439]
+z_index = 1
+material = ExtResource("1_eroip")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -246.66667
+offset_top = -170.0
+offset_right = -46.66667
+offset_bottom = -95.0
+grow_horizontal = 2
+scale = Vector2(2.5, 2.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 16
+text = "Saturn : 100"
+horizontal_alignment = 1
+
+[node name="quote_holder" type="Node2D" parent="text_holder" unique_id=1605686834]
+
+[node name="quote1" type="Label" parent="text_holder/quote_holder" unique_id=1112511581]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -438.66666
+offset_top = -121.99999
+offset_right = -188.66666
+offset_bottom = -98.99999
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.3324869
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote2" type="Label" parent="text_holder/quote_holder" unique_id=1057890560]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.18182
+offset_top = 138.18184
+offset_right = 36.818176
+offset_bottom = 161.18184
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.04804843
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote3" type="Label" parent="text_holder/quote_holder" unique_id=945396864]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 156.66667
+offset_right = 220.0
+offset_bottom = 179.66667
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.15877637
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote4" type="Label" parent="text_holder/quote_holder" unique_id=1692936806]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 217.33334
+offset_top = -15.9999695
+offset_right = 467.3333
+offset_bottom = 7.0000305
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.8539777
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote5" type="Label" parent="text_holder/quote_holder" unique_id=1917385165]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 470.66672
+offset_top = -43.99997
+offset_right = 720.6666
+offset_bottom = -20.99997
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.9210144
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote6" type="Label" parent="text_holder/quote_holder" unique_id=1360683516]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = 62.000015
+offset_right = 55.99997
+offset_bottom = 85.000015
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.9157219
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote38" type="Label" parent="text_holder/quote_holder" unique_id=23991622]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 125.333374
+offset_top = 62.000015
+offset_right = 375.33334
+offset_bottom = 85.00002
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.910583
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote7" type="Label" parent="text_holder/quote_holder" unique_id=392646133]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = 55.33333
+offset_right = 39.99997
+offset_bottom = 78.33333
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.3343599
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote8" type="Label" parent="text_holder/quote_holder" unique_id=1497682785]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0001
+offset_top = 19.333344
+offset_right = -122.00012
+offset_bottom = 42.333344
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.4701455
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote9" type="Label" parent="text_holder/quote_holder" unique_id=557075691]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.00003
+offset_top = -217.99997
+offset_right = -212.00006
+offset_bottom = -194.99997
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.10931134
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote10" type="Label" parent="text_holder/quote_holder" unique_id=536291915]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 106.00006
+offset_top = -308.6667
+offset_right = 356.00003
+offset_bottom = -285.6667
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.37169632
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote11" type="Label" parent="text_holder/quote_holder" unique_id=1418142349]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.72723
+offset_top = 30.45456
+offset_right = -167.72726
+offset_bottom = 53.454556
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.15071093
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote12" type="Label" parent="text_holder/quote_holder" unique_id=1937209507]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.272736
+offset_top = 109.54549
+offset_right = 222.72725
+offset_bottom = 132.54549
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.12304078
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote13" type="Label" parent="text_holder/quote_holder" unique_id=389470562]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 10.454559
+offset_top = -51.81819
+offset_right = 260.45456
+offset_bottom = -28.818192
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.4050883
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote14" type="Label" parent="text_holder/quote_holder" unique_id=742579389]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.66666
+offset_top = -228.00006
+offset_right = 135.33333
+offset_bottom = -205.00006
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.12174566
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote15" type="Label" parent="text_holder/quote_holder" unique_id=91437950]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 177.33334
+offset_top = -68.00001
+offset_right = 427.33334
+offset_bottom = -45.000008
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.06380981
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote16" type="Label" parent="text_holder/quote_holder" unique_id=655383]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.3334
+offset_top = 90.000015
+offset_right = -317.33337
+offset_bottom = 113.000015
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.30236727
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote17" type="Label" parent="text_holder/quote_holder" unique_id=1093180373]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -426.3637
+offset_top = -74.09091
+offset_right = -176.36371
+offset_bottom = -51.09091
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.07233964
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote18" type="Label" parent="text_holder/quote_holder" unique_id=766040789]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.99997
+offset_top = -218.00002
+offset_right = 8.0000305
+offset_bottom = -195.00002
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.05449204
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote19" type="Label" parent="text_holder/quote_holder" unique_id=159827451]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.66675
+offset_top = 116.6667
+offset_right = -288.66675
+offset_bottom = 139.66672
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.3919016
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote20" type="Label" parent="text_holder/quote_holder" unique_id=1272736132]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = 151.33333
+offset_right = 82.0
+offset_bottom = 174.33331
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.26147187
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote21" type="Label" parent="text_holder/quote_holder" unique_id=1248334580]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.00003
+offset_top = 64.000015
+offset_right = 492.00006
+offset_bottom = 87.00001
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.13735537
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote22" type="Label" parent="text_holder/quote_holder" unique_id=78747901]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 281.3334
+offset_top = -174.00003
+offset_right = 531.33344
+offset_bottom = -151.00003
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.8742841
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote23" type="Label" parent="text_holder/quote_holder" unique_id=343472407]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.00006
+offset_top = -107.99998
+offset_right = -304.00006
+offset_bottom = -84.99998
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.6836871
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote24" type="Label" parent="text_holder/quote_holder" unique_id=1261298965]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -7.3333435
+offset_right = -368.0
+offset_bottom = 15.6666565
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.4041943
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote25" type="Label" parent="text_holder/quote_holder" unique_id=1450821816]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.00003
+offset_top = -286.6667
+offset_right = 219.99997
+offset_bottom = -263.6667
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.32997447
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote26" type="Label" parent="text_holder/quote_holder" unique_id=306268213]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.00006
+offset_top = 217.99998
+offset_right = -278.00006
+offset_bottom = 240.99998
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.26254773
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote27" type="Label" parent="text_holder/quote_holder" unique_id=684792662]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -635.3334
+offset_top = -217.33336
+offset_right = -385.33337
+offset_bottom = -194.33336
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.051466882
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote28" type="Label" parent="text_holder/quote_holder" unique_id=771718446]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -503.33344
+offset_top = 329.33325
+offset_right = -253.33344
+offset_bottom = 352.33325
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.1327024
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote29" type="Label" parent="text_holder/quote_holder" unique_id=1902291944]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.3333
+offset_top = 246.00005
+offset_right = -173.33331
+offset_bottom = 269.00003
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.06756182
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote30" type="Label" parent="text_holder/quote_holder" unique_id=573286815]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.00003
+offset_top = 180.00002
+offset_right = 470.0
+offset_bottom = 203.00002
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.06756182
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote31" type="Label" parent="text_holder/quote_holder" unique_id=1043083355]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 161.33337
+offset_top = 55.33333
+offset_right = 411.33337
+offset_bottom = 78.33333
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.8154843
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote32" type="Label" parent="text_holder/quote_holder" unique_id=149473210]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 311.3334
+offset_top = -330.6667
+offset_right = 561.33344
+offset_bottom = -307.6667
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.0794325
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote33" type="Label" parent="text_holder/quote_holder" unique_id=394205423]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 118.66672
+offset_top = -269.3333
+offset_right = 368.66675
+offset_bottom = -246.33331
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.044480443
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote34" type="Label" parent="text_holder/quote_holder" unique_id=832972812]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.33337
+offset_top = -316.6667
+offset_right = -141.33334
+offset_bottom = -293.6667
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.31804484
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote35" type="Label" parent="text_holder/quote_holder" unique_id=958648319]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -628.6666
+offset_top = -23.999985
+offset_right = -378.6666
+offset_bottom = -0.99998474
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.015070468
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote36" type="Label" parent="text_holder/quote_holder" unique_id=2117055780]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 89.54544
+offset_top = 17.272736
+offset_right = 339.54547
+offset_bottom = 40.272736
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.015070468
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[node name="quote37" type="Label" parent="text_holder/quote_holder" unique_id=389722]
+material = ExtResource("1_eroip")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 222.00003
+offset_top = -95.333336
+offset_right = 472.00003
+offset_bottom = -72.333336
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.015070468
+scale = Vector2(1.75, 1.75)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "\"I see no gods above me. \""
+horizontal_alignment = 1
+script = ExtResource("11_lf07f")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_botton_pressed"]
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="_botton_pressed"]

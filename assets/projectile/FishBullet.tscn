@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://byo8do5kdw6qg"]
+
+[ext_resource type="Script" uid="uid://8jtmb1ah0wcv" path="res://scripts/weapons/random_accel_projectile.gd" id="1_co1ks"]
+[ext_resource type="AudioStream" uid="uid://cnqcj6kfy74ie" path="res://audio/noise/weapon/magic_long.ogg" id="2_co1ks"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_jpnuf"]
+[ext_resource type="Texture2D" uid="uid://cr4a6lr6p2gue" path="res://sprites/weapons/projectiles/fish_bullet.png" id="4_co1ks"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_co1ks")
+max_accel = 1024.0
+change_time = 0.1
+change_chance = 0.6
+slow_chance = 0.5
+life_chance = 0.5
+life_inc = 0.05
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 24.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("2_co1ks")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"Glub glub?\"", "\"The endless battle against entropy...\"", "\"Can't predict unpredictable\"", "\"Let's have some fun!\"", "\"Blub blub...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_jpnuf")
+texture = ExtResource("4_co1ks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

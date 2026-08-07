@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://dbqf5px76mmkn"]
+
+[ext_resource type="Texture2D" uid="uid://caoshqn804g0v" path="res://sprites/enemies/gibs/cube.png" id="1_bkwku"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="3_cccc4"]
+
+[resource]
+script = ExtResource("3_cccc4")
+coins = 2
+blood_amt = 3
+blood_color_1 = Color(0.8509804, 0, 0, 1)
+blood_color_2 = Color(0.34117648, 0, 0.08627451, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_bkwku")])
+img_amts = Array[int]([11])
+weights = Array[float]([1.0])
+does_rotate = Array[bool]([true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

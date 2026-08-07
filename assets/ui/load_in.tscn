@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://y0vlg11e8aqo"]
+
+[ext_resource type="Script" uid="uid://ch1ae5l4ypyuy" path="res://scripts/game/in_loader.gd" id="1_l1acc"]
+[ext_resource type="Texture2D" uid="uid://b5ovy3llkrq0h" path="res://sprites/ui/blobby.png" id="1_xkkto"]
+
+[node name="LoadIn" type="Node2D" unique_id=2117594357 node_paths=PackedStringArray("image")]
+script = ExtResource("1_l1acc")
+image = NodePath("TextureRect")
+
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=711510143]
+z_index = 15
+texture = ExtResource("1_xkkto")
+hframes = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="TextureRect" unique_id=715915118]
+position = Vector2(350, 0)
+scale = Vector2(50, 1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-1, 225, -1, -225, 3175, -225, 3175, 225)
+
+[node name="Polygon2D2" type="Polygon2D" parent="TextureRect" unique_id=1479777063]
+position = Vector2(-350, 0)
+scale = Vector2(-50, 1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-1, 225, -1, -225, 3175, -225, 3175, 225)
+
+[node name="Polygon2D3" type="Polygon2D" parent="TextureRect" unique_id=1064991024]
+position = Vector2(0, 225)
+scale = Vector2(50, 50)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-3471, 0, 3471, 0, 3471, 2077, -3471, 2077)
+
+[node name="Polygon2D4" type="Polygon2D" parent="TextureRect" unique_id=106215332]
+position = Vector2(0, -225)
+scale = Vector2(50, -50)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-3471, 0, 3471, 0, 3471, 2077, -3471, 2077)

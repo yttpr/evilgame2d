@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cyrj4fo6cb6f3"]
+
+[ext_resource type="Script" uid="uid://clao3q81tdtw7" path="res://scripts/weapons/homing_projectile.gd" id="1_ipnbw"]
+[ext_resource type="AudioStream" uid="uid://bdnuuvpugkoul" path="res://audio/noise/weapon/magic_light.wav" id="2_ipnbw"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_f05fo"]
+[ext_resource type="Texture2D" uid="uid://cu68a1iu5ayl3" path="res://sprites/weapons/projectiles/skull_bullet.png" id="4_ipnbw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xa2y"]
+radius = 916.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("detection", "img", "body")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ipnbw")
+detection = NodePath("Area2D")
+turn_spd = 6.66
+img_rotate_spd = 32.0
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 400.0
+radius = 16.0
+by_lifetime = true
+lifetime = 6.666
+tracer_width = 12.0
+tracer_time = 0.3
+shot_sound = ExtResource("2_ipnbw")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"What a beautiful projection.\"", "\"How beautiful\"", "\"Yours, truly\"", "\"What a beautiful world.\"", "\"Magnum opus\"", "\"How lovely.\"", "\"Adore me.\"", "\"A present for you.\"", "\"Would you like to watch with me?\"", "\"What a wonderful world...\"", "\"A rose... for me?\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_f05fo")
+texture = ExtResource("4_ipnbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=449690862]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1952246366]
+shape = SubResource("CircleShape2D_4xa2y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_body_exited"]

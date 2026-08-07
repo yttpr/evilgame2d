@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://do3ontetdl2fy"]
+
+[ext_resource type="Script" uid="uid://d4mwt7bgbsjjr" path="res://scripts/player/player_body.gd" id="1_kdlwy"]
+[ext_resource type="Resource" uid="uid://2ybi2egd60da" path="res://assets/characters/gibs/saturn_gibs.tres" id="2_3aegb"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="2_kdlwy"]
+[ext_resource type="Resource" uid="uid://ccvx42sahnmdq" path="res://assets/characters/saturn_character.tres" id="2_lcnx2"]
+[ext_resource type="Texture2D" uid="uid://6vph331f52kx" path="res://sprites/characters/EvilGame2D_Saturn_Wip.png" id="3_5pd7k"]
+[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="4_o4qoj"]
+[ext_resource type="Script" uid="uid://c7qcyoba567pv" path="res://scripts/player/player_camera.gd" id="5_5pd7k"]
+[ext_resource type="Script" uid="uid://cfavdq3m66op4" path="res://scripts/player/weapon_animator.gd" id="6_aqv63"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="6_o4qoj"]
+[ext_resource type="Texture2D" uid="uid://c402sdeegs6vv" path="res://sprites/ui/reload.png" id="7_ahdnu"]
+[ext_resource type="Texture2D" uid="uid://o77tpc5rh57k" path="res://sprites/weapons/EvilGame2D_Sniper_WIP.png" id="7_o4qoj"]
+[ext_resource type="Script" uid="uid://dpg8ly6y0vj36" path="res://scripts/player/weapon_handler.gd" id="9_088tr"]
+[ext_resource type="Texture2D" uid="uid://pkw34oukcabh" path="res://sprites/weapons/placeholder_weapon.png" id="10_g7yvp"]
+[ext_resource type="PackedScene" uid="uid://ctuxxy6clrgtt" path="res://assets/projectile/HitscanBullet.tscn" id="10_sheqp"]
+[ext_resource type="Script" uid="uid://bhrha2whv1k5o" path="res://scripts/weapons/damage_collider.gd" id="11_6q24c"]
+[ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="11_tc657"]
+[ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="11_tn02o"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="12_ayaf2"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="12_hembm"]
+[ext_resource type="Resource" uid="uid://e3c04oph7jau" path="res://assets/weapons/radioscope.tres" id="12_xnclt"]
+[ext_resource type="Resource" uid="uid://cmjw3ypxm44ph" path="res://assets/weapons/shotgun.tres" id="15_g7yvp"]
+[ext_resource type="Resource" uid="uid://cof8aewqlh05i" path="res://assets/weapons/revolver_sin.tres" id="18_gbbdu"]
+[ext_resource type="Script" uid="uid://wmeuqrwmgsqj" path="res://scripts/game/fps_counter.gd" id="20_tlwws"]
+[ext_resource type="PackedScene" uid="uid://y0vlg11e8aqo" path="res://assets/ui/load_in.tscn" id="21_qa25k"]
+[ext_resource type="PackedScene" uid="uid://dii3hjvpfspxj" path="res://assets/ui/player_ui.tscn" id="22_7vkm2"]
+[ext_resource type="Script" uid="uid://dfbo5cmcmn5ye" path="res://scripts/player/interaction_zone.gd" id="25_rcrbx"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hv2lo"]
+b = Vector2(100, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tqpvn"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(61, 101)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sheqp"]
+light_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 85.41
+
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("img", "Hitbox", "camera", "ui", "weapon_handler", "sprites")]
+collision_layer = 1030
+collision_mask = 4232
+script = ExtResource("1_kdlwy")
+data = ExtResource("2_lcnx2")
+character = "Saturn"
+img = NodePath("image")
+Hitbox = NodePath("hitbox")
+camera = NodePath("camera")
+ui = NodePath("camera/PlayerUi")
+weapon_handler = NodePath("weapon_manager")
+sprites = NodePath("image")
+HP = 10
+healthtype = "Cos"
+points = 0
+gibs = ExtResource("2_3aegb")
+i_frame_time = 0.25
+despawn_time = -1.0
+despawn_length = -1.0
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
+light_mask = 8
+texture = ExtResource("3_5pd7k")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("2_kdlwy")
+body = NodePath("..")
+hitbox = NodePath("../hitbox")
+footstep = ExtResource("4_o4qoj")
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="weapon" type="Sprite2D" parent="image" unique_id=1863313371 node_paths=PackedStringArray("player", "pointer", "secondary")]
+light_mask = 8
+position = Vector2(0, -48)
+texture = ExtResource("7_o4qoj")
+hframes = 2
+script = ExtResource("6_aqv63")
+player = NodePath("..")
+pointer_length = 59.0
+pointer = NodePath("end_point_marker")
+secondary = NodePath("../secondary_holder")
+
+[node name="end_point_marker" type="Node2D" parent="image/weapon" unique_id=128473510]
+position = Vector2(59, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="image/weapon/end_point_marker" unique_id=2089593594]
+visible = false
+z_index = 5
+material = ExtResource("12_ayaf2")
+texture = ExtResource("7_ahdnu")
+
+[node name="DamageCollider" type="Area2D" parent="image/weapon" unique_id=2139577975 node_paths=PackedStringArray("collider")]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("11_6q24c")
+collider = NodePath("CollisionShape2D")
+exclude_extra = true
+check_line_walls = true
+damage_amt = 1
+damage_source = "Player_Melee"
+inertia = Vector2(800, 0)
+pierce = -1.0
+duration = 999.0
+radial_knockback = true
+death_quote = Array[String](["\"When I whip out my claymore...\"", "\"Japanese forged kitchen knife\"", "\"One thousand degrees!\"", "\"Rock, paper, scissors... I win!\""])
+metadata/_custom_type_script = "uid://bhrha2whv1k5o"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="image/weapon/DamageCollider" unique_id=544764657]
+position = Vector2(59, 0)
+shape = SubResource("SegmentShape2D_hv2lo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("6_o4qoj")
+
+[node name="secondary_holder" type="Node2D" parent="image" unique_id=700194487]
+visible = false
+show_behind_parent = true
+
+[node name="secondary" type="Sprite2D" parent="image/secondary_holder" unique_id=224977014]
+position = Vector2(18, -57)
+rotation = 2.443461
+texture = ExtResource("10_g7yvp")
+hframes = 2
+
+[node name="camera" type="Camera2D" parent="." unique_id=1559194128 node_paths=PackedStringArray("follow_node", "ui")]
+script = ExtResource("5_5pd7k")
+follow_node = NodePath("../cam_follow_node")
+cam_speed = 5.0
+ui_offset = Vector2(-556, -305)
+ui = NodePath("PlayerUi")
+
+[node name="PlayerUi" parent="camera" unique_id=433024491 instance=ExtResource("22_7vkm2")]
+z_index = 6
+position = Vector2(-556, -305)
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_tqpvn")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=340127500]
+collision_layer = 0
+collision_mask = 288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=72484899]
+position = Vector2(-0.5, -50.5)
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="player_ear" type="AudioListener2D" parent="." unique_id=1202993138]
+current = true
+
+[node name="weapon_manager" type="Node2D" parent="." unique_id=1051347548 node_paths=PackedStringArray("Player", "weapon", "secondary", "pointer", "audio_player", "reload_icon", "melee_collider", "melee_line")]
+material = SubResource("CanvasItemMaterial_sheqp")
+script = ExtResource("9_088tr")
+Player = NodePath("..")
+weilder_name = "Player"
+weapon = NodePath("../image/weapon")
+secondary = NodePath("../image/secondary_holder/secondary")
+pointer = NodePath("../image/weapon/end_point_marker")
+audio_player = NodePath("BasicAudio")
+weapons = Array[ExtResource("12_hembm")]([ExtResource("12_xnclt"), ExtResource("15_g7yvp"), ExtResource("18_gbbdu")])
+bullet = ExtResource("10_sheqp")
+source_name = "Player_Hitscan"
+aim_color = Color(1, 0, 0, 1)
+aim_width = 1.0
+does_bounce = true
+line_length = 1500.0
+max_clip = 1
+reload_icon = NodePath("../image/weapon/end_point_marker/Sprite2D")
+reload_time = 3.0
+knockback = 3000.0
+damage_type = "Cos"
+dmg_amt = 5
+melee_collider = NodePath("../image/weapon/DamageCollider")
+melee_line = NodePath("../image/weapon/DamageCollider/CollisionShape2D")
+
+[node name="BasicAudio" type="AudioStreamPlayer2D" parent="weapon_manager" unique_id=1852529134]
+script = ExtResource("6_o4qoj")
+metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]
+position = Vector2(0, -133)
+script = ExtResource("11_tn02o")
+marker = NodePath("marker")
+max = 6.0
+time = 4.0
+
+[node name="marker" type="Sprite2D" parent="marker_holder" unique_id=1398509414]
+self_modulate = Color(1, 1, 0, 1)
+z_index = 5
+material = ExtResource("12_ayaf2")
+texture = ExtResource("11_tc657")
+
+[node name="FPS_Counter" type="Label" parent="." unique_id=1899489816]
+z_index = 10
+material = ExtResource("12_ayaf2")
+offset_left = 30.0
+offset_top = -123.0
+offset_right = 70.0
+offset_bottom = -100.0
+text = "60"
+script = ExtResource("20_tlwws")
+metadata/_custom_type_script = "uid://wmeuqrwmgsqj"
+
+[node name="LoadIn" parent="." unique_id=2117594357 instance=ExtResource("21_qa25k")]
+visible = false
+position = Vector2(0, -50)
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=2006238614 node_paths=PackedStringArray("indicator")]
+collision_layer = 0
+collision_mask = 2048
+script = ExtResource("25_rcrbx")
+indicator = NodePath("Node2D")
+metadata/_custom_type_script = "uid://dfbo5cmcmn5ye"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=598990593]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="Node2D" type="Node2D" parent="InteractionZone" unique_id=1306620085]
+
+[node name="marker_holder2" type="Node2D" parent="InteractionZone/Node2D" unique_id=1349428795 node_paths=PackedStringArray("marker")]
+position = Vector2(0, -133)
+script = ExtResource("11_tn02o")
+marker = NodePath("marker")
+max = 6.0
+time = 4.0
+
+[node name="marker" type="Sprite2D" parent="InteractionZone/Node2D/marker_holder2" unique_id=803467349]
+self_modulate = Color(1, 1, 0, 1)
+z_index = 5
+material = ExtResource("12_ayaf2")
+texture = ExtResource("11_tc657")
+
+[node name="cam_follow_node" type="Node2D" parent="." unique_id=1992406294]
+position = Vector2(0, -45)
+
+[connection signal="area_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]
+[connection signal="body_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]
+[connection signal="body_entered" from="InteractionZone" to="InteractionZone" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="InteractionZone" method="_on_body_exited"]

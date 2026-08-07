@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://ddvih253ffg2u"]
+
+[ext_resource type="Texture2D" uid="uid://ccupt348ex6a7" path="res://sprites/objects/gibs/shadow_wood.png" id="1_mdu8q"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="3_8efvj"]
+
+[resource]
+script = ExtResource("3_8efvj")
+images = Array[Texture2D]([ExtResource("1_mdu8q")])
+img_amts = Array[int]([12])
+weights = Array[float]([0.2])
+does_rotate = Array[bool]([true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

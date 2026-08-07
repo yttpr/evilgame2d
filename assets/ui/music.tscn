@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dyojaegkmo33x"]
+
+[ext_resource type="Script" uid="uid://5oysppy3vco8" path="res://scripts/game/music_audio.gd" id="1_u2awc"]
+[ext_resource type="AudioStream" uid="uid://ceerdlmfigaph" path="res://audio/music/ambience/a_hum.mp3" id="2_m1sxk"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="3_qcb5h"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=1765401943 node_paths=PackedStringArray("noise")]
+script = ExtResource("1_u2awc")
+ambience = Array[AudioStream]([ExtResource("2_m1sxk")])
+ambi_vols = Array[float]([5.0])
+noise = NodePath("BasicAudio")
+metadata/_custom_type_script = "uid://5oysppy3vco8"
+
+[node name="BasicAudio" type="AudioStreamPlayer2D" parent="." unique_id=1828835900]
+script = ExtResource("3_qcb5h")
+metadata/_custom_type_script = "uid://dbrac607rkeer"

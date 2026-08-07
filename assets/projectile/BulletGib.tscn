@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b58t0gvpcj3g"]
+
+[ext_resource type="Script" uid="uid://bojc2kqton6uy" path="res://scripts/weapons/bullet_gib_animator.gd" id="1_dwc7d"]
+[ext_resource type="Texture2D" uid="uid://bcrj62cpgct6t" path="res://sprites/weapons/projectiles/bullet_gibs.png" id="1_wrn1i"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_r4p17"]
+
+[node name="BulletGib" type="Node2D" unique_id=648902740 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_dwc7d")
+sprite = NodePath("Sprite2D")
+tick_spd = 0.08
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=571297780]
+material = ExtResource("3_r4p17")
+texture = ExtResource("1_wrn1i")
+hframes = 4

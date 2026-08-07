@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dcbtfqlnh03y4"]
+
+[ext_resource type="PackedScene" uid="uid://5kp31fdh2vim" path="res://assets/projectile/GrenadeBullet.tscn" id="1_jtreb"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_kuum7"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_f7wnt"]
+[ext_resource type="Texture2D" uid="uid://dfjlub7a04j7i" path="res://sprites/weapons/evilgame2d_rocketlauncher.png" id="4_kuum7"]
+
+[resource]
+script = ExtResource("3_f7wnt")
+id = "RocketLauncher"
+weapon_img = ExtResource("4_kuum7")
+bullet = ExtResource("1_jtreb")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 1500.0
+clip_size = 1
+reload_time = 4.5
+aim_length = 75.0
+ready_audio = ExtResource("2_kuum7")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

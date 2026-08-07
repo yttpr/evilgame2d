@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://dl7u0fglil8yw"]
+
+[ext_resource type="Texture2D" uid="uid://bk8e4ue62yqoa" path="res://sprites/enemies/gibs/pixel/a.png" id="1_0xkxv"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="2_4q4ll"]
+[ext_resource type="Texture2D" uid="uid://bi4fb6ehjh2is" path="res://sprites/enemies/gibs/pixel/b.png" id="2_vff8r"]
+[ext_resource type="Texture2D" uid="uid://bqbl6gdvk4b1s" path="res://sprites/enemies/gibs/pixel/c.png" id="3_8vuo1"]
+[ext_resource type="Texture2D" uid="uid://jl86ibl0oj27" path="res://sprites/enemies/gibs/pixel/d.png" id="4_0qcst"]
+[ext_resource type="Texture2D" uid="uid://bds3cdfq1areu" path="res://sprites/enemies/gibs/pixel/e.png" id="5_d2uuh"]
+[ext_resource type="Texture2D" uid="uid://bm4ytoa6of8xo" path="res://sprites/enemies/gibs/pixel/f.png" id="6_7ydp6"]
+[ext_resource type="Texture2D" uid="uid://m2qp1u76fohk" path="res://sprites/enemies/gibs/pixel/g.png" id="7_178tp"]
+[ext_resource type="Texture2D" uid="uid://cwqm2mwtrjirk" path="res://sprites/enemies/gibs/pixel/h.png" id="8_dfw4f"]
+[ext_resource type="Texture2D" uid="uid://d1f20u5x1652u" path="res://sprites/enemies/gibs/pixel/i.png" id="9_ubn8a"]
+[ext_resource type="Texture2D" uid="uid://jybln7xqsviy" path="res://sprites/enemies/gibs/pixel/j.png" id="10_mp3m0"]
+[ext_resource type="Texture2D" uid="uid://b6kbewi3f204m" path="res://sprites/enemies/gibs/pixel/k.png" id="11_vvb4w"]
+[ext_resource type="Texture2D" uid="uid://cd0o3kq6q3jg4" path="res://sprites/enemies/gibs/pixel/l.png" id="12_ryac5"]
+[ext_resource type="Texture2D" uid="uid://wixtlh5x8fle" path="res://sprites/enemies/gibs/pixel/m.png" id="13_xde8w"]
+[ext_resource type="Texture2D" uid="uid://v045bpq50bsi" path="res://sprites/enemies/gibs/pixel/n.png" id="14_e12nb"]
+[ext_resource type="Texture2D" uid="uid://8bvyks5e8gu8" path="res://sprites/enemies/gibs/pixel/o.png" id="15_3btnf"]
+
+[resource]
+script = ExtResource("2_4q4ll")
+coins = 1
+images = Array[Texture2D]([ExtResource("1_0xkxv"), ExtResource("2_vff8r"), ExtResource("3_8vuo1"), ExtResource("4_0qcst"), ExtResource("5_d2uuh"), ExtResource("6_7ydp6"), ExtResource("7_178tp"), ExtResource("8_dfw4f"), ExtResource("9_ubn8a"), ExtResource("10_mp3m0"), ExtResource("11_vvb4w"), ExtResource("12_ryac5"), ExtResource("13_xde8w"), ExtResource("14_e12nb"), ExtResource("15_3btnf")])
+img_amts = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+weights = Array[float]([0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

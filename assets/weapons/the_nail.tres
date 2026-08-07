@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dvi2h04chhf8d"]
+
+[ext_resource type="PackedScene" uid="uid://bccjwn3n7ok3w" path="res://assets/projectile/NailBullet.tscn" id="1_uvsxi"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_c0g8f"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_13uq0"]
+[ext_resource type="Texture2D" uid="uid://rc1p8fv5551y" path="res://sprites/weapons/nail_staff_weapon.png" id="4_c0g8f"]
+
+[resource]
+script = ExtResource("3_13uq0")
+id = "TheNail"
+weapon_img = ExtResource("4_c0g8f")
+bullet = ExtResource("1_uvsxi")
+bullet_type = "Projectile"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 400.0
+pierce_amt = -1
+full_auto = true
+clip_size = 13
+shot_delay = 0.1
+reload_time = 5.0
+ready_audio = ExtResource("2_c0g8f")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

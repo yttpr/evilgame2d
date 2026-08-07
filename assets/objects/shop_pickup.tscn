@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bijphins3giqr"]
+
+[ext_resource type="Script" uid="uid://dj6pcft3ure2q" path="res://scripts/objects/shop_pool_interactible.gd" id="1_5myax"]
+[ext_resource type="Texture2D" uid="uid://i0bhmeupm3to" path="res://sprites/weapons/EvilGame2D_Revolver_WIP.png" id="2_jslsh"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_4471l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[node name="Gun" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("image", "label")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("1_5myax")
+image = NodePath("image")
+max_hotbar_size = 10
+label = NodePath("Label")
+label_off_time = 0.5
+marker_offset = Vector2(0, 100)
+HP = 0
+points = 0
+i_frame_time = 0.0
+mov_spd = 0
+inertia_decay = 0.0
+despawn_time = -1.0
+despawn_length = -1.0
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009]
+light_mask = 8
+texture = ExtResource("2_jslsh")
+hframes = 2
+frame = 1
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="Label" type="Label" parent="." unique_id=1940473861]
+z_index = 7
+material = ExtResource("3_4471l")
+offset_left = -420.00003
+offset_top = -103.00001
+offset_right = 140.66666
+offset_bottom = -66.00001
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.44313726)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "3 hearts
+3 coins"
+horizontal_alignment = 1
+vertical_alignment = 2

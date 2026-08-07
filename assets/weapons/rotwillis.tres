@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bo4j8dct6yic8"]
+
+[ext_resource type="PackedScene" uid="uid://cyrj4fo6cb6f3" path="res://assets/projectile/RotwillisBullet.tscn" id="1_7q42c"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_wk4d8"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_tejaj"]
+[ext_resource type="Texture2D" uid="uid://ya78omy144hx" path="res://sprites/weapons/rotwillis.png" id="4_7q42c"]
+
+[resource]
+script = ExtResource("3_tejaj")
+id = "Rotwillis"
+weapon_img = ExtResource("4_7q42c")
+bullet = ExtResource("1_7q42c")
+bullet_type = "Projectile"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 300.0
+pierce_amt = -1
+full_auto = true
+clip_size = 6
+shot_delay = 0.3
+reload_time = 12.0
+ready_audio = ExtResource("2_wk4d8")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

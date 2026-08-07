@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://nxm37u7fyw6g"]
+
+[ext_resource type="PackedScene" uid="uid://dpflg22kbannv" path="res://assets/projectile/BouncyBall.tscn" id="1_r124s"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_i017b"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_lyfde"]
+[ext_resource type="Texture2D" uid="uid://wk43awfwibol" path="res://sprites/weapons/ballwand.png" id="4_i017b"]
+
+[resource]
+script = ExtResource("3_lyfde")
+id = "BubbleWand"
+weapon_img = ExtResource("4_i017b")
+bullet = ExtResource("1_r124s")
+bullet_type = "Projectile"
+weapon_type = "Magic"
+damage_amt = 2
+damage_type = "Sin"
+knockback = 500.0
+pierce_amt = -1
+full_auto = true
+clip_size = 8
+shot_delay = 1.0
+reload_time = 5.0
+ready_audio = ExtResource("2_i017b")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

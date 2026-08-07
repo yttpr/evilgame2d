@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cyt7ns085e1uw"]
+
+[ext_resource type="Script" uid="uid://d1htkwex8rk0i" path="res://scripts/objects/base_destructible.gd" id="1_4aemi"]
+[ext_resource type="Resource" uid="uid://dpss8dou12lqo" path="res://assets/objects/wood_gibs.tres" id="2_hlh0s"]
+[ext_resource type="Texture2D" uid="uid://dwumdie2ommqa" path="res://sprites/objects/crate.png" id="3_4aemi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(64, 64)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
+
+[node name="Crate" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("image")]
+collision_layer = 44
+collision_mask = 0
+script = ExtResource("1_4aemi")
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_hlh0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337640463]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562283018]
+texture = ExtResource("3_4aemi")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 4
