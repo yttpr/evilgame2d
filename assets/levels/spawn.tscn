@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="11_57oe7"]
 [ext_resource type="PackedScene" uid="uid://cqb5h3id802a0" path="res://assets/objects/gun_pickup.tscn" id="12_fnjer"]
 [ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="13_fnjer"]
+[ext_resource type="Resource" uid="uid://dvi2h04chhf8d" path="res://assets/weapons/the_nail.tres" id="13_lxhbm"]
+[ext_resource type="Resource" uid="uid://5a45guwc0uy0" path="res://assets/weapons/antigun.tres" id="14_yiqvs"]
+[ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="15_nf8dc"]
+[ext_resource type="Resource" uid="uid://bl02jt1aujxh" path="res://assets/weapons/sord.tres" id="16_yq6k7"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -78,3 +82,19 @@ position = Vector2(800, 928)
 [node name="PlaytestWeapon" parent="." unique_id=1551303413 instance=ExtResource("12_fnjer")]
 position = Vector2(512, 480)
 weapon = ExtResource("13_fnjer")
+
+[node name="PlaytestWeapon2" parent="." unique_id=1730599539 instance=ExtResource("12_fnjer")]
+position = Vector2(576, 544)
+weapon = ExtResource("14_yiqvs")
+
+[node name="PlaytestWeapon3" parent="." unique_id=789311851 instance=ExtResource("12_fnjer")]
+position = Vector2(640, 416)
+weapon = ExtResource("15_nf8dc")
+
+[node name="PlaytestWeapon4" parent="." unique_id=2052392941 instance=ExtResource("12_fnjer")]
+position = Vector2(704, 480)
+weapon = ExtResource("16_yq6k7")
+
+[node name="PlaytestWeapon5" parent="." unique_id=1299257703 instance=ExtResource("12_fnjer")]
+position = Vector2(768, 544)
+weapon = ExtResource("13_lxhbm")

@@ -12,6 +12,7 @@ func _botton_pressed() -> void:
 			Manager._reset_points()
 			Manager._reset_run_data()
 			Manager.coins = 0
+			Manager.spawn_loc = 0
 			Manager.current_weapons.assign(Manager.current_chara.base_weapons)
 			if Manager.current_gun_index >= Manager.current_weapons.size():
 				Manager.current_gun_index = 0

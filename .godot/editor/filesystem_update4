@@ -79,3 +79,15 @@ res://assets/weapons/revolver_sin.tres
 res://assets/objects/cora_talk.tscn
 res://assets/map/iloveyou_tileset.tres
 res://assets/levels/level1/untitled/iloveyou/iloveyou_room.tscn
+res://scripts/game/music_audio.gd
+res://assets/characters/gibs/clerk_gibs.tres
+res://assets/characters/clerk_character.tres
+res://assets/characters/gibs/xet_gibs.tres
+res://assets/characters/xet_character.tres
+res://scripts/enemy/jumpscareguy_pathfinding.gd
+res://assets/projectile/ProjectileBullet.tscn
+res://assets/projectile/EyeballBullet.tscn
+res://scripts/weapons/rounding_projectile.gd
+res://assets/enemies/lullaby.tscn
+res://scripts/enemy/GeneralPathfinding.gd
+res://assets/ui/menu.tscn

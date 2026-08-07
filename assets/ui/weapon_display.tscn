@@ -57,7 +57,7 @@ offset_left = -42.0
 offset_top = -84.0
 offset_right = 42.0
 grow_horizontal = 2
-color = Color(0.7490196, 0.7490196, 0.7490196, 0.4862745)
+color = Color(1, 1, 1, 0.4862745)
 
 [node name="secondary" type="Node2D" parent="." unique_id=843991189 node_paths=PackedStringArray("frame", "weapon", "cooldown")]
 material = ExtResource("1_5frv2")
@@ -94,4 +94,4 @@ offset_left = -42.0
 offset_top = -84.0
 offset_right = 42.0
 grow_horizontal = 2
-color = Color(0.7490196, 0.7490196, 0.7490196, 0.4862745)
+color = Color(1, 1, 1, 0.4862745)

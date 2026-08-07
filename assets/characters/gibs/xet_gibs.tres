@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://bsl5u4v07vbjc"]
+
+[ext_resource type="Texture2D" uid="uid://u3nluklobs0e" path="res://sprites/enemies/gibs/big_gear.png" id="1_162gh"]
+[ext_resource type="Texture2D" uid="uid://bwi4wxbnwwej" path="res://sprites/objects/gibs/wood_gib_1.png" id="2_jwt33"]
+[ext_resource type="Texture2D" uid="uid://b4umhmtjsu4lq" path="res://sprites/objects/gibs/wood_gib_2.png" id="3_hslyq"]
+[ext_resource type="Texture2D" uid="uid://dubufnt3pk1mu" path="res://sprites/enemies/gibs/bolt.png" id="4_144je"]
+[ext_resource type="Texture2D" uid="uid://bgi5ye3mkr3ls" path="res://sprites/enemies/gibs/screw.png" id="5_cjw6f"]
+[ext_resource type="Texture2D" uid="uid://psunyvywxmxb" path="res://sprites/enemies/gibs/small_gear.png" id="6_vmq6t"]
+[ext_resource type="Texture2D" uid="uid://bh3yja2iag6ab" path="res://sprites/enemies/gibs/spring.png" id="7_demuc"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="7_vmq6t"]
+[ext_resource type="Texture2D" uid="uid://bi1h28qacx4rb" path="res://sprites/objects/gibs/metal_shard.png" id="8_o5041"]
+[ext_resource type="Texture2D" uid="uid://c402sdeegs6vv" path="res://sprites/ui/reload.png" id="9_iovkw"]
+
+[resource]
+script = ExtResource("7_vmq6t")
+blood_amt = 3
+blood_color_1 = Color(0.23921569, 0.23921569, 0.23921569, 1)
+blood_color_2 = Color(1, 1, 1, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_162gh"), ExtResource("2_jwt33"), ExtResource("3_hslyq"), ExtResource("4_144je"), ExtResource("5_cjw6f"), ExtResource("6_vmq6t"), ExtResource("7_demuc"), ExtResource("8_o5041"), ExtResource("9_iovkw")])
+img_amts = Array[int]([1, 2, 2, 2, 2, 1, 1, 3, 2])
+weights = Array[float]([1.3, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0])
+does_rotate = Array[bool]([true, true, true, true, true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

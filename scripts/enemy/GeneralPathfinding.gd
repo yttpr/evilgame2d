@@ -27,17 +27,21 @@ func _set_moving(field : bool) -> void:
 	can_move = field
 
 func _set_follow(field : Node2D, need_see := false) -> void:
+	var old = Follow_Target
 	Follow_Target = field
 	require_see = need_see
 	did_see = false
 	tick = process_tick
+	if Follow_Target != old:
+		_set_target(Vector2(Follow_Target.global_position))
 
 func _ready() -> void:
 	speed = Movable.mov_spd * randf_range(0.85, 1.15)
 	can_move = true
 	# Wait for the navigation map to be ready
 	await get_tree().physics_frame
-	await Manager.world != null
+	if !Manager.world:
+		await get_tree().process_frame
 	Manager._get_world().Enemies.append(Movable)
 
 	nav_agent.path_desired_distance = 4.0

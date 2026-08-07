@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_0sc60"]
 [ext_resource type="Resource" uid="uid://drm67rm73bpch" path="res://assets/weapons/huntsman.tres" id="2_0sc60"]
 [ext_resource type="Resource" uid="uid://nxm37u7fyw6g" path="res://assets/weapons/bubblewand.tres" id="3_0sc60"]
-[ext_resource type="Resource" uid="uid://2ybi2egd60da" path="res://assets/characters/gibs/saturn_gibs.tres" id="4_t7jhl"]
+[ext_resource type="Resource" uid="uid://b3xhfir678tnw" path="res://assets/characters/gibs/clerk_gibs.tres" id="4_0sc60"]
 [ext_resource type="Texture2D" uid="uid://cxue1yf7fv4hd" path="res://sprites/characters/EvilGame2D_Clerk.png" id="5_oa0nx"]
 [ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="6_8jnfs"]
 
@@ -15,5 +15,5 @@ image = ExtResource("5_oa0nx")
 HP = 10
 healthtype = "Sin"
 base_weapons = Array[ExtResource("1_0sc60")]([ExtResource("2_0sc60"), ExtResource("3_0sc60")])
-gibs = ExtResource("4_t7jhl")
+gibs = ExtResource("4_0sc60")
 metadata/_custom_type_script = "uid://csfhp445ba2j"

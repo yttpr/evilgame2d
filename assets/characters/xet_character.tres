@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_kldn3"]
 [ext_resource type="Resource" uid="uid://dcbtfqlnh03y4" path="res://assets/weapons/rocket_launcher.tres" id="2_kldn3"]
 [ext_resource type="Resource" uid="uid://5v41agjoyo5q" path="res://assets/weapons/flamethrower.tres" id="3_kldn3"]
-[ext_resource type="Resource" uid="uid://2ybi2egd60da" path="res://assets/characters/gibs/saturn_gibs.tres" id="4_fo2vy"]
+[ext_resource type="Resource" uid="uid://bsl5u4v07vbjc" path="res://assets/characters/gibs/xet_gibs.tres" id="4_kldn3"]
 [ext_resource type="Texture2D" uid="uid://fqarns6gbtvl" path="res://sprites/characters/EvilGame2D_Xet.png" id="5_kldn3"]
 [ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="6_ernsq"]
 
@@ -15,5 +15,5 @@ image = ExtResource("5_kldn3")
 HP = 10
 healthtype = "Sin"
 base_weapons = Array[ExtResource("1_kldn3")]([ExtResource("2_kldn3"), ExtResource("3_kldn3")])
-gibs = ExtResource("4_fo2vy")
+gibs = ExtResource("4_kldn3")
 metadata/_custom_type_script = "uid://csfhp445ba2j"

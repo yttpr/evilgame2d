@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://buqi37xokegaj"]
+
+[ext_resource type="Script" uid="uid://yhl7tclhkrj" path="res://scripts/weapons/rounding_projectile.gd" id="1_5nhgg"]
+[ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="2_5nhgg"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_xhuns"]
+[ext_resource type="Texture2D" uid="uid://b21mtas1qx4o3" path="res://sprites/weapons/projectiles/eyeball_bullet.png" id="4_5nhgg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_5nhgg")
+max_rot = 24.0
+max_spd = 650.0
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 24.0
+rot_spd = 12.0
+bounces = true
+by_lifetime = true
+lifetime = 1.8
+shot_sound = ExtResource("2_5nhgg")
+audio_mod = -10.0
+make_gibs = true
+death_quote = Array[String](["\"I LOVE YOU.\"", "\"Close your eyes.\"", "\"When you wake up, it'll be all over.\"", "\"I used to sing this to you...\"", "\"It never needed to be perfect.\"", "\"FOREVER.\"", "\"<3\"", "\"Don't you want to play with me?\"", "\"Imperfect dream...\"", "\"Imperfect lullaby...\"", "\"Rock-a-bye baby...\"", "\"One sheep, two sheep, three sheep...\"", "\"SLEEP.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_xhuns")
+texture = ExtResource("4_5nhgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

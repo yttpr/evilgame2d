@@ -9,6 +9,7 @@ var orig_color : Color
 @export var entries : Array[Vector2]
 
 @export var songs : Array[AudioStream]
+@export var volumes : Array[float]
 
 @export var Enemies : Array[BaseBody] = []
 

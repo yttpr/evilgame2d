@@ -8,6 +8,7 @@ var current_ambient_index : int
 func _next_song() -> void:
 	if Manager.world and Manager._get_world().songs:
 		ambience = Manager._get_world().songs
+		ambi_vols = Manager._get_world().volumes
 		current_ambient_index = randi_range(0, ambience.size() - 1)
 
 
@@ -23,6 +24,7 @@ func _play_sound(sound : AudioStream, mod : float = 0.0, pitch : float = 1.0) ->
 func _ready() -> void:
 	bus = "Music"
 	current_ambient_index = randi_range(0, ambience.size() - 1)
+	_next_song()
 
 var play_ambience : bool
 func _set_ambience(value : bool) -> void:
@@ -31,5 +33,8 @@ func _set_ambience(value : bool) -> void:
 func _process(delta: float) -> void:
 	if play_ambience:
 		if !playing:
-			_play_sound(ambience[current_ambient_index], ambi_vols[current_ambient_index])
 			_next_song()
+			var volume = 0.0
+			if current_ambient_index < ambi_vols.size():
+				volume = ambi_vols[current_ambient_index]
+			_play_sound(ambience[current_ambient_index], volume)

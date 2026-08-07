@@ -59,3 +59,7 @@ room = "res://assets/levels/level1/playtest_scene.tscn"
 
 [node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("13_chgnh")]
 position = Vector2(196, -519)
+
+[node name="Door2" parent="." unique_id=2080272173 instance=ExtResource("12_28bhb")]
+position = Vector2(0, -448)
+room = "res://assets/levels/level1/untitled/iloveyou/iloveyou_room.tscn"
