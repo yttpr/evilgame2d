@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://blvarey1nypm2"]
+
+[ext_resource type="Texture2D" uid="uid://bi1h28qacx4rb" path="res://sprites/objects/gibs/metal_shard.png" id="1_176xf"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="2_7kqkt"]
+
+[resource]
+script = ExtResource("2_7kqkt")
+coins = 1
+blood_color_1 = Color(0.85490197, 0, 0, 1)
+blood_color_2 = Color(0.47, 0, 0.235, 1)
+images = Array[Texture2D]([ExtResource("1_176xf")])
+img_amts = Array[int]([8])
+weights = Array[float]([0.2])
+does_rotate = Array[bool]([true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

@@ -91,3 +91,16 @@ res://scripts/weapons/rounding_projectile.gd
 res://assets/enemies/lullaby.tscn
 res://scripts/enemy/GeneralPathfinding.gd
 res://assets/ui/menu.tscn
+res://assets/enemies/gibs/lullaby_gibs.tres
+res://scripts/enemy/superhot_pathfinding.gd
+res://assets/projectile/ScytheProjectile.tscn
+res://assets/enemies/reaper.tscn
+res://scripts/weapons/falling_projectile.gd
+res://assets/projectile/AirstrikeBullet.tscn
+res://assets/enemies/sign.tscn
+res://assets/enemies/gibs/sign_gibs.tres
+res://assets/enemies/gibs/reaper_gibs.tres
+res://assets/enemies/delusion.tscn
+res://assets/projectile/HollowBullet.tscn
+res://assets/enemies/gibs/delusion_gibs.tres
+res://assets/enemies/spawns/spawns_scary.tres

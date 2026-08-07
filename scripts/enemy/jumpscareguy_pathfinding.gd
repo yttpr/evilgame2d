@@ -31,7 +31,6 @@ var stop : bool
 
 func _process(delta : float) -> void:
 	super._process(delta)
-	
 	if on_screen and _check_look_at():
 		_set_moving(false)
 		stop = true
@@ -39,7 +38,7 @@ func _process(delta : float) -> void:
 		#print("cant move ", scare_tick)
 		if scare_tick <= 0:
 			_teleport()
-			scare_tick = scare_time
+			scare_tick = scare_time * randf_range(0.8, 1.2)
 	else:
 		_set_moving(true)
 		#print("movin")
@@ -60,3 +59,6 @@ func _teleport() -> void:
 		Movable.global_position = locs[randi_range(0, locs.size() - 1)]
 	else:
 		Movable.global_position = Manager._get_world().entries[randi_range(0, Manager._get_world().entries.size() - 1)]
+
+func _get_speed() -> float:
+	return speed

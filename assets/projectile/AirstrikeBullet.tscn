@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://5opr4mem67ww"]
+
+[ext_resource type="Script" uid="uid://evne26vmx7d5" path="res://scripts/weapons/falling_projectile.gd" id="1_p5flc"]
+[ext_resource type="AudioStream" uid="uid://btcv6uvdu85km" path="res://audio/noise/weapon/explosion_low.ogg" id="2_53yqo"]
+[ext_resource type="AudioStream" uid="uid://bc7un0a3hbqx7" path="res://audio/noise/weapon/magic_low.ogg" id="2_p5flc"]
+[ext_resource type="Texture2D" uid="uid://d3nnlvfraf6fy" path="res://sprites/weapons/projectiles/marker_bullet.png" id="3_ys23j"]
+[ext_resource type="Texture2D" uid="uid://c3mxekjx5h163" path="res://sprites/weapons/projectiles/bomb_bullet.png" id="4_53yqo"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_htccx"]
+
+[node name="AirstrikeBullet" type="Node2D" unique_id=13675771 node_paths=PackedStringArray("marker", "falling")]
+script = ExtResource("1_p5flc")
+track_player = true
+marker = NodePath("marker")
+falling = NodePath("bomb")
+delay = 3.0
+height = -1024.0
+radius = 16.0
+hit_time = 0.15
+bomb_sound = ExtResource("2_53yqo")
+bomb_mod = 20.0
+type = "Cos"
+dmg = 5
+knockback_mod = 2500.0
+tracer_color = Color(1, 0, 0, 1)
+shot_sound = ExtResource("2_p5flc")
+audio_mod = 20.0
+make_gibs = true
+death_quote = Array[String](["\"Causality...\"", "\"[CENSORED]\"", "\"Hide from myself\"", "\"Visage of despair...\"", "\"Please don't invade my privacy.\"", "\"I need this. Sorry.\"", "\"It just happened to happen this way...\"", "\"Please no hard feelings. I don't truly mean it.\"", "\"Please don't blame me.\"", "\"It's not my fault...\"", "\"The will of the universe...\""])
+
+[node name="marker" type="Sprite2D" parent="." unique_id=1976052016]
+z_index = -1
+material = ExtResource("4_htccx")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_ys23j")
+
+[node name="bomb" type="Sprite2D" parent="." unique_id=1375373157]
+material = ExtResource("4_htccx")
+texture = ExtResource("4_53yqo")

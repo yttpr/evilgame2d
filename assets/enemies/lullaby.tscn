@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b711c87l3q4l7"]
 
 [ext_resource type="Script" uid="uid://r4tnof8jady5" path="res://scripts/player/base_body.gd" id="1_gmk8a"]
-[ext_resource type="Resource" uid="uid://cgxd50pvs3q3e" path="res://assets/enemies/gibs/pawn_gibs.tres" id="2_0odm0"]
-[ext_resource type="AudioStream" uid="uid://g4l4258oojx4" path="res://audio/noise/enemies/plastic_hit.wav" id="3_5hbxb"]
+[ext_resource type="Resource" uid="uid://tp82mk5jylrj" path="res://assets/enemies/gibs/lullaby_gibs.tres" id="2_0odm0"]
+[ext_resource type="AudioStream" uid="uid://bn58rdb6gt46c" path="res://audio/noise/enemies/lullaby_hit.ogg" id="3_0odm0"]
 [ext_resource type="Texture2D" uid="uid://djmrnrdejlwje" path="res://sprites/enemies/EvilGame2D_Lullaby_WIP.png" id="4_gmk8a"]
 [ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="5_gkdo6"]
 [ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="6_0odm0"]
@@ -28,11 +28,11 @@ script = ExtResource("1_gmk8a")
 sprites = NodePath("image")
 HP = 66
 healthtype = "Sin"
-points = 2
+points = 6
 gibs = ExtResource("2_0odm0")
-hit_sound = ExtResource("3_5hbxb")
+hit_sound = ExtResource("3_0odm0")
 marker = NodePath("marker_holder/marker")
-mov_spd = 500
+mov_spd = 400
 despawn_time = -1.0
 despawn_length = -1.0
 
@@ -86,9 +86,9 @@ look_degrees = 45.0
 scare_time = 3.0
 teleport_length = 1000.0
 always = true
-vision_range = 200.0
+vision_range = 150.0
 limit_range = 15.0
-max_range = 350.0
+max_range = 150.0
 bored_time = 999.0
 bored_chance = 0.0
 wander_time = 999.0

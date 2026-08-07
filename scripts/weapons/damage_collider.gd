@@ -79,6 +79,8 @@ func _on_body_entered(body) -> void:
 		var k = inertia
 		if radial_knockback:
 			k = self.global_position.direction_to(body.global_position) * inertia.length()
+			if k.length() <= 0:
+				k = Vector2.from_angle(randf_range(0.0, 2*PI)) * inertia.length()
 		if body._get_hit(damage_amt, damage_type, damage_source, k):
 			if projectile:
 				projectile._hit_made()

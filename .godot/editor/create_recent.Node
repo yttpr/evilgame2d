@@ -1,3 +1,4 @@
+Sprite2D
 Node2D
 ColorRect
 CollisionShape2D
@@ -6,7 +7,6 @@ Label
 EnemySpawner
 BasicAudio
 AudioStreamPlayer2D
-Sprite2D
 InteractionZone
 MusicAudio
 DashHandler

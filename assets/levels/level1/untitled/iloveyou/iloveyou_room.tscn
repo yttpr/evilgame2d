@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="6_ov6os"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="8_bmmbq"]
 [ext_resource type="PackedScene" uid="uid://b711c87l3q4l7" path="res://assets/enemies/lullaby.tscn" id="10_tq1cr"]
+[ext_resource type="Script" uid="uid://c4l3txmv6gpvl" path="res://scripts/enemy/enemy_spawner.gd" id="11_y62k5"]
+[ext_resource type="Resource" uid="uid://dii2n2mufyd43" path="res://assets/enemies/spawns/spawns_scary.tres" id="12_l6dpd"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -56,7 +58,7 @@ position = Vector2(32, -96)
 position = Vector2(-45, -73)
 
 [node name="Lullaby" parent="." unique_id=2045354792 instance=ExtResource("10_tq1cr")]
-position = Vector2(-657, 151)
+position = Vector2(-800, 736)
 
 [node name="WIP2" parent="." unique_id=68694751 instance=ExtResource("6_ov6os")]
 position = Vector2(-3671, -1835)
@@ -67,17 +69,35 @@ position = Vector2(3809, -675)
 [node name="WIP4" parent="." unique_id=1409831432 instance=ExtResource("6_ov6os")]
 position = Vector2(546, 1821)
 
-[node name="Lullaby2" parent="." unique_id=211659372 instance=ExtResource("10_tq1cr")]
-position = Vector2(3309, 1270)
-
 [node name="Lullaby3" parent="." unique_id=343904886 instance=ExtResource("10_tq1cr")]
 position = Vector2(2076, -1699)
 
 [node name="Lullaby4" parent="." unique_id=578936713 instance=ExtResource("10_tq1cr")]
 position = Vector2(-3590, -644)
 
-[node name="Lullaby5" parent="." unique_id=1381157167 instance=ExtResource("10_tq1cr")]
-position = Vector2(-3010, 1518)
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=937405113]
+position = Vector2(-3360, 1504)
+script = ExtResource("11_y62k5")
+range_from_player = 1200.0
+spawn_cap = 5
+data = ExtResource("12_l6dpd")
+spawn_time = 45.0
+metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 
-[node name="Lullaby6" parent="." unique_id=17237871 instance=ExtResource("10_tq1cr")]
-position = Vector2(-497, -1647)
+[node name="EnemySpawner2" type="Node2D" parent="." unique_id=1937791010]
+position = Vector2(3680, 1056)
+script = ExtResource("11_y62k5")
+range_from_player = 1200.0
+spawn_cap = 5
+data = ExtResource("12_l6dpd")
+spawn_time = 45.0
+metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
+
+[node name="EnemySpawner3" type="Node2D" parent="." unique_id=223613925]
+position = Vector2(-160, -2368)
+script = ExtResource("11_y62k5")
+range_from_player = 1200.0
+spawn_cap = 5
+data = ExtResource("12_l6dpd")
+spawn_time = 45.0
+metadata/_custom_type_script = "uid://c4l3txmv6gpvl"

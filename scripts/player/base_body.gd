@@ -69,6 +69,8 @@ func _physics_process(delta: float) -> void:
 	despawn_tick -= delta
 
 func _make_movement(delta : float = 0.0) -> void:
+	if inertia_decay == 0:
+		inertia *= 0
 	velocity += inertia
 	inertia *= 1.0 - (1.0 - inertia_decay) * delta * 60
 	if inertia.length() < 0.5:
@@ -169,3 +171,6 @@ func _fall() -> void:
 	if Manager._check_in_pit_top(self):
 		down.parallel().tween_property(sprites, "position", sprites.position + Vector2(0, 32), 1.0)
 	down.tween_callback(self._cleanup)
+
+
+@export var cause_darkening : bool

@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://4wvcw573d26o"]
 
 [ext_resource type="Script" uid="uid://dyfcvkwftq7qy" path="res://scripts/game/level.gd" id="1_xsh00"]
-[ext_resource type="AudioStream" uid="uid://ceerdlmfigaph" path="res://audio/music/ambience/a_hum.mp3" id="2_t2gou"]
 [ext_resource type="TileSet" uid="uid://oacgil812dq3" path="res://assets/map/basic_ground_tileset.tres" id="3_et60j"]
 [ext_resource type="TileSet" uid="uid://keyvkswwarhx" path="res://assets/map/basic_walls_tileset.tres" id="4_gu0xk"]
 [ext_resource type="PackedScene" uid="uid://do3ontetdl2fy" path="res://assets/characters/player_character.tscn" id="5_8x2vd"]
@@ -14,7 +13,6 @@ y_sort_enabled = true
 script = ExtResource("1_xsh00")
 canvasmodulate = NodePath("CanvasModulate")
 entries = Array[Vector2]([Vector2(384, -433)])
-songs = Array[AudioStream]([ExtResource("2_t2gou")])
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
 z_index = -5

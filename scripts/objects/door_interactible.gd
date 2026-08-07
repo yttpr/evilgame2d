@@ -9,7 +9,8 @@ extends BaseInteractible
 
 func _run() -> void:
 	if locked:
-		Music.noise._play_sound(Manager.door_shake, 20)
+		Manager._play_oneshot(self.global_position, Manager.door_shake, 20)
+		#Music.noise._play_sound(Manager.door_shake, 20)
 		return
 	Manager.current_weapons.assign(Manager.Player.weapon_handler.weapons)
 	Manager.spawn_loc = spawn_pos

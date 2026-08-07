@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bxmu5tijdob0"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_g8kox"]
+[ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="2_g8kox"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_7s7mp"]
+[ext_resource type="Texture2D" uid="uid://cwd62ljt2gtwa" path="res://sprites/weapons/projectiles/empty_bullet.png" id="4_g8kox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_g8kox")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 800.0
+radius = 16.0
+rot_spd = 12.0
+by_lifetime = true
+lifetime = 3.0
+tracer_width = 5.0
+tracer_time = 0.2
+shot_sound = ExtResource("2_g8kox")
+audio_mod = 15.0
+make_gibs = true
+death_quote = Array[String](["\"Emptiness, emptiness, emptiness...\"", "\"It's not real, it's not real, it's not real...\"", "\"It can't hurt, it can't hurt, it can't hurt...\"", "\"In my head, in my head, in my head...\"", "\"Get out, get out, get out!\"", "\"Go away, go away, go away!\"", "\"Visions of visions of visions...\"", "\"Darkness, darkness, darkness.\"", "\"Nothing, nothing, nothing.\"", "\"Nihilism, nihilism, nihilism.\"", "\"It's okay, it's okay, it's okay.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_7s7mp")
+texture = ExtResource("4_g8kox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
