@@ -80,10 +80,12 @@ z_index = 5
 material = ExtResource("9_ybpa7")
 texture = ExtResource("10_4eqm7")
 
-[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("sprite", "Movable", "Weapon", "nav_agent")]
 script = ExtResource("11_gmk8a")
 look_degrees = 45.0
 scare_time = 3.0
+sprite = NodePath("../image")
+afterimage_time = 0.1
 teleport_length = 1000.0
 always = true
 vision_range = 150.0

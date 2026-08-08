@@ -104,3 +104,16 @@ res://assets/enemies/delusion.tscn
 res://assets/projectile/HollowBullet.tscn
 res://assets/enemies/gibs/delusion_gibs.tres
 res://assets/enemies/spawns/spawns_scary.tres
+res://assets/map/iloveyou_walls_tileset.tres
+res://sprites/map/iloveyou_wall_normalize.tres
+res://scripts/objects/pool_list_door.gd
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_base.tscn
+res://assets/objects/chance_door.tscn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks.tscn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dark.tscn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_chaser.tscn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks2.tscn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_bridge.tscn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_null.tscn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dead.tscn
+res://scripts/objects/after_image.gd

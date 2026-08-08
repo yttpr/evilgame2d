@@ -29,6 +29,10 @@ func _screen_exited() -> void:
 var scare_tick : float
 var stop : bool
 
+@export var sprite : Sprite2D
+@export var afterimage_time : float
+var afterimage_tick : float
+
 func _process(delta : float) -> void:
 	super._process(delta)
 	if on_screen and _check_look_at():
@@ -47,6 +51,12 @@ func _process(delta : float) -> void:
 	
 	if stop:
 		Weapon.is_agro = false
+		afterimage_tick = 0
+	else:
+		afterimage_tick -= delta
+		if afterimage_tick <= 0:
+			afterimage_tick = afterimage_time
+			Manager._make_afterimage(sprite)
 
 @export var teleport_length : float
 

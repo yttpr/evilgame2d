@@ -332,3 +332,10 @@ func _check_save_bool(arg : String) -> bool:
 	if save_bools.has(arg):
 		return save_bools[arg]
 	return false
+
+
+func _make_afterimage(img : Sprite2D, lifetime : float = 0.8) -> void:
+	var a : AfterImage = AfterImage.new()
+	_get_world().add_child(a)
+	a._copy_info(img)
+	a._set_lifetime(lifetime)

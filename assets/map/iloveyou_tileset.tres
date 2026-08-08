@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://b2hdp278s43ih"]
 
 [ext_resource type="Texture2D" uid="uid://c730imrhm5f3x" path="res://sprites/map/tileset_iloveyou.png" id="1_gkeyv"]
-[ext_resource type="Texture2D" uid="uid://cyve36nk83h2u" path="res://sprites/map/tileset_walls.png" id="2_1ij1k"]
+[ext_resource type="Texture2D" uid="uid://dleh3l6fvnytb" path="res://sprites/map/tileset_iloveyou_walls.png" id="2_gkeyv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vd3y4"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
@@ -51,7 +51,7 @@ texture_region_size = Vector2i(64, 64)
 5:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lmxj"]
-texture = ExtResource("2_1ij1k")
+texture = ExtResource("2_gkeyv")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/y_sort_origin = -32
