@@ -49,6 +49,11 @@ func _ready() -> void:
 	nav_agent.max_speed = speed
 
 func _process(delta: float) -> void:
+	if Movable.is_dead:
+		Weapon.is_agro = false
+		Weapon.process_mode = Node.PROCESS_MODE_DISABLED
+		Movable.velocity = Vector2.ZERO
+		return
 	
 	if !Follow_Target:
 		return

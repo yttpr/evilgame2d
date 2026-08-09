@@ -25,7 +25,7 @@ by_lifetime = true
 lifetime = 20.0
 shot_sound = ExtResource("2_4y7nh")
 audio_mod = 10.0
-death_quote = Array[String](["\"How the %&#@ did this get here?\"", "\"Placeholder gameobject\"", "\"Placeholder data\"", "\"I drew everything in this game.\"", "\"Stop.\"", "\"NULL\""])
+death_quote = Array[String](["\"Where does one go when they die?\"", "\"What a beautiful life.\"", "\"What a beautiful death.\"", "\"I wish to die like that...\"", "\"Do not go into that endless night\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_12b71")

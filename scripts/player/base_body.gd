@@ -30,9 +30,11 @@ var is_falling : bool
 @export var despawn_time : float = 60.0
 @export var despawn_length : float = 9999.0
 
-var despawn_tick
+var despawn_tick : float
+var time_to_die : float
 
 func _ready() -> void:
+	time_to_die = 2.0
 	inertia = Vector2(0, 0)
 	is_dead = false
 	despawn_tick = despawn_time
@@ -137,6 +139,11 @@ func _check_i_frame(source : String) -> bool:
 	return true
 
 func _process(delta: float) -> void:
+	
+	if is_dead:
+		time_to_die -= delta
+		if time_to_die <= 0:
+			self._cleanup()
 	
 	#i frame logic
 	

@@ -38,6 +38,7 @@ func _set_data(chara : CharacterData) -> void:
 	weapon_handler._setup()
 
 func _ready() -> void:
+	time_to_die = 9999
 	if Manager.world:
 		global_position = Manager._get_world().entries[Manager.spawn_loc]
 	Manager.Player = self
@@ -63,6 +64,7 @@ var dead_cooldown : float
 func _cleanup() -> void:
 	dead_cooldown = 1.0
 	is_dead = true
+	time_to_die = 9999
 	img.visible = false
 	Manager._open_menu(true)
 	Manager.coins = 0

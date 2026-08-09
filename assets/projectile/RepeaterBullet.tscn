@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bicbou76wtb5n"]
+
+[ext_resource type="Script" uid="uid://besgvkp5ltxy6" path="res://scripts/weapons/repeating_projectile.gd" id="1_ubg34"]
+[ext_resource type="AudioStream" uid="uid://dfb57wtsr6hy1" path="res://audio/noise/weapon/gun_sin_med.ogg" id="2_qjlu0"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_sgg15"]
+[ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="4_ubg34"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_ubg34")
+repeats = 3
+interval = 0.12
+is_player = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1000.0
+radius = 16.0
+rot_spd = 12.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 3.0
+tracer_width = 5.0
+tracer_time = 0.06
+shot_sound = ExtResource("2_qjlu0")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"How the %&#@ did this get here?\"", "\"Placeholder gameobject\"", "\"Placeholder data\"", "\"I drew everything in this game.\"", "\"Stop.\"", "\"NULL\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_sgg15")
+texture = ExtResource("4_ubg34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

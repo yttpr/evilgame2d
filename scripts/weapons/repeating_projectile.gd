@@ -1,0 +1,26 @@
+class_name RepeatingProjectile
+
+extends MovingProjectile
+
+@export var repeats : int
+@export var interval : float
+@export var is_player : bool
+
+func _shoot(direction : Vector2, origin : Vector2) -> void:
+	super._shoot(direction, origin)
+	await get_tree().create_timer(interval).timeout
+	repeats -= 1
+	if repeats <= 0:
+		return
+	var copy : RepeatingProjectile = self.duplicate()
+	self.get_parent().add_child(copy)
+	copy.repeats = repeats
+	if is_player:
+		var mouse = to_global(get_local_mouse_position())
+		var dir = Manager.Player.weapon_handler.pointer.global_position.direction_to(mouse)
+		var loc = Manager.Player.weapon_handler.pointer.global_position
+		if Manager._check_in_wall(loc - Manager.Player.weapon_handler._get_offset_vector()):
+			loc = Manager.Player.weapon_handler.weapon.global_position
+		copy._shoot(dir, loc)
+	else:
+		copy._shoot(direction, origin)

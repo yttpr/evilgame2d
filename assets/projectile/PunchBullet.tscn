@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://br1iomb4fr8h"]
+
+[ext_resource type="Script" uid="uid://bowc26pxa260k" path="res://scripts/weapons/pointed_projectile.gd" id="1_pg6p4"]
+[ext_resource type="AudioStream" uid="uid://bgoeu5nvfvt5" path="res://audio/noise/weapon/sin_launch.wav" id="2_pg6p4"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_1l3fe"]
+[ext_resource type="Texture2D" uid="uid://de66c6uthocw7" path="res://sprites/weapons/projectiles/thepunch_bullet.png" id="4_pg6p4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_pg6p4")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 800.0
+radius = 24.0
+make_backup_colliders = true
+distance = 1000.0
+by_lifetime = true
+lifetime = 5.0
+shot_sound = ExtResource("2_pg6p4")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"POW!\"", "\"WHAM!\"", "\"FHGDKSDL??\"", "\"PUNCH!\"", "\"SCORE!\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_1l3fe")
+texture = ExtResource("4_pg6p4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

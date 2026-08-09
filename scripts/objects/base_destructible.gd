@@ -26,6 +26,8 @@ func _process(delta: float) -> void:
 
 var inertia : Vector2
 func _get_hit(amt : int, type : String, source : String, mov : Vector2, extra : bool = false) -> bool:
+		if source.contains("Power"):
+			amt *= 10
 		if !_check_i_frame(source):
 			return false
 		Manager._make_damage_popup(amt, self.global_position, type == "Sin")

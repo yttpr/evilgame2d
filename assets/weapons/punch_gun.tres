@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dihxajuyq0e3p"]
+
+[ext_resource type="PackedScene" uid="uid://br1iomb4fr8h" path="res://assets/projectile/PunchBullet.tscn" id="1_unhro"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_jscu6"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_vunu4"]
+[ext_resource type="Texture2D" uid="uid://cre0g8rmkaqv7" path="res://sprites/weapons/punching_weapon.png" id="4_jscu6"]
+
+[resource]
+script = ExtResource("3_vunu4")
+id = "PunchGun"
+weapon_img = ExtResource("4_jscu6")
+bullet = ExtResource("1_unhro")
+bullet_type = "Power"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 10000.0
+clip_size = 4
+shot_delay = 0.8
+reload_time = 4.5
+ready_audio = ExtResource("2_jscu6")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

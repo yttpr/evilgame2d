@@ -13,6 +13,10 @@ func _ready() -> void:
 	skip_base_lock_on = special
 
 func _process(delta: float) -> void:
+	if Movable.is_dead:
+		Weapon.is_agro = false
+		Movable.velocity = Vector2.ZERO
+		return
 	
 	if !special:
 		super._process(delta)

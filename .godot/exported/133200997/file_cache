@@ -10,7 +10,7 @@ res://assets/enemies/gibs/test_enemy_gibs.tres::09a551115c86cf068ab2d13306cc5d23
 res://assets/enemies/gibs/touch_gibs.tres::854211787df1382da27463c099798cb1::1785912826::res://.godot/exported/133200997/export-e75aa98d9fd6863e7e9911e26db6b5f9-touch_gibs.res
 res://assets/enemies/spawns/spawn_dungeon.tres::f3e23e2b0094e990d84e32692b6aa698::1785683537::res://.godot/exported/133200997/export-0c30e6036e43df25747a18f7b8e62257-spawn_dungeon.res
 res://assets/enemies/enigma.tscn::decf18bc83bfdb0ec65549beccecdc61::1786088772::res://.godot/exported/133200997/export-d434df252ff8cababfc1cf8b91045ee3-enigma.scn
-res://assets/enemies/freud.tscn::9741743f2d1bb06b3fb29160fc698b05::1786068989::res://.godot/exported/133200997/export-9487993c9c688840c3642605f09f43ce-freud.scn
+res://assets/enemies/freud.tscn::9741743f2d1bb06b3fb29160fc698b05::1786306824::res://.godot/exported/133200997/export-9487993c9c688840c3642605f09f43ce-freud.scn
 res://assets/enemies/machine.tscn::e3a9f10001205dfd140f7291817038c6::1786068997::res://.godot/exported/133200997/export-2fed013dd35d2dff52b91bab316dfe74-machine.scn
 res://assets/enemies/pawn.tscn::4ea8e67c530bc32c5bb39351b649b5c5::1786246686::res://.godot/exported/133200997/export-7e5957f16025f01749a8309b49aa3017-pawn.scn
 res://assets/enemies/pixel.tscn::c0a270757ca88ffd6aa1a6f8644a4704::1786069003::res://.godot/exported/133200997/export-1f957215cf683072a9b70132cde1e498-pixel.scn
@@ -26,7 +26,7 @@ res://assets/projectile/BiteBullet.tscn::70bdfe4932411ada73ffe6130e67d8e3::17859
 res://assets/projectile/BulletGib.tscn::45a649cd02df02c474a86ecff017dde0::1785635729::res://.godot/exported/133200997/export-a47f4634dd0d034cea6964bfce6bc089-BulletGib.scn
 res://assets/projectile/HitscanBullet.tscn::0938e73ef85f0bceed72bf93d4f69230::1785823052::res://.godot/exported/133200997/export-56b06c1b387889fcde4bb7bacae729c0-HitscanBullet.scn
 res://assets/projectile/HomingBullet.tscn::22aaaf620855384c7f8dff350cc0b284::1785985325::res://.godot/exported/133200997/export-68129b8a25c3db5b4e8ef9b73220db5a-HomingBullet.scn
-res://assets/projectile/KnifeBullet.tscn::1c715160dd00d8d4ecb7d217a32b7611::1785985294::res://.godot/exported/133200997/export-75c94b674dd9debefa4df5e0e1f27461-KnifeBullet.scn
+res://assets/projectile/KnifeBullet.tscn::1c715160dd00d8d4ecb7d217a32b7611::1786309955::res://.godot/exported/133200997/export-75c94b674dd9debefa4df5e0e1f27461-KnifeBullet.scn
 res://assets/projectile/MultiHitscanBullet.tscn::c15c2007fa2a55c5e0acf71df2dcb6f7::1785823175::res://.godot/exported/133200997/export-1ba1fe1533d6f260982cd0e259c86af7-MultiHitscanBullet.scn
 res://assets/projectile/ProjectileBullet.tscn::3cf6ac56cdfc910839e98ac1510287fb::1786083896::res://.godot/exported/133200997/export-9a78f05878b2db48024b918a5c452361-ProjectileBullet.scn
 res://assets/projectile/FasterProjectile.tscn::13e67a0dad12a7a854e7bd180ad908e2::1785985454::res://.godot/exported/133200997/export-81720c97ed4782e07e92822bd28bca4e-FasterProjectile.scn
@@ -39,11 +39,11 @@ res://assets/ui/damage_icon.tscn::f40b7516f482cce973a6af1fd5f42e22::1785554624::
 res://assets/ui/weak_icon.tscn::fc267ec2e562d3e9c022016c7a8676f6::1785684020::res://.godot/exported/133200997/export-f47263d54a789e79537387bbc86d6d0b-weak_icon.scn
 res://assets/weapons/placeholder.tres::f1f54519d83c6914c439280064a77cab::1786071826::res://.godot/exported/133200997/export-aec8e3d396b4657eac65ac8584d0913e-placeholder.res
 res://assets/weapons/radioscope.tres::5345450cc1be7fc55f4f8dc17a5aa65a::1786042162::res://.godot/exported/133200997/export-90dd54410c77c9db08cf5022aed329bf-radioscope.res
-res://assets/weapons/shotgun.tres::a6bb1d8a2df4b1f44b49359cf1e9427a::1786042332::res://.godot/exported/133200997/export-820035ab8dd240a1773e75858f229341-shotgun.res
+res://assets/weapons/shotgun.tres::b8a167a80cb144758dff2aa5a3bb213b::1786308910::res://.godot/exported/133200997/export-820035ab8dd240a1773e75858f229341-shotgun.res
 res://sprites/map/tileset_wall_normalize.tres::126ede9aa29f1cb2b94fa030f3b9cd0d::1785968014::res://.godot/exported/133200997/export-16f0c8e54119da67a5308f2b25bcb929-tileset_wall_normalize.res
 res://sprites/objects/shader/unshaded_material.tres::301d67c72598b840044d4c4fd7b11af2::1785358458::res://.godot/exported/133200997/export-afdd8a7503b010cb404c2c63ff651c39-unshaded_material.res
 res://assets/map/test_walls_tileset_1.tres::fe2899809eb44b2f518e1ecd58e7fbe0::1785713581::res://.godot/exported/133200997/export-77f563f84c38ad356bd57057d85c4720-test_walls_tileset_1.res
-res://assets/ui/menu.tscn::bd7481d0df05346bc491c9da34ad952e::1786305974::res://.godot/exported/133200997/export-9ec7d2dc2dcc181573d1e5528634bfed-menu.scn
+res://assets/ui/menu.tscn::bd7481d0df05346bc491c9da34ad952e::1786307085::res://.godot/exported/133200997/export-9ec7d2dc2dcc181573d1e5528634bfed-menu.scn
 res://assets/ui/load_in.tscn::82cfb28bd72e46b73bc24fd220e1b4de::1785803144::res://.godot/exported/133200997/export-4b5e7ad5e9f059f182fff51f271b3aaa-load_in.scn
 res://assets/ui/ammo_display.tscn::1963aaa3711195ded17f02ec7511797c::1785815724::res://.godot/exported/133200997/export-e5624db843d22c2bd3a743e945735de6-ammo_display.scn
 res://assets/ui/health_display.tscn::0341f8812faadcc451c876e962ec2c7d::1785815694::res://.godot/exported/133200997/export-ea1b5bcd0f7335dc5ad1ec789ad844d8-health_display.scn
@@ -57,7 +57,7 @@ res://assets/characters/saturn_character.tres::8ace262a13288f17efee8c94fbe130d5:
 res://assets/projectile/FastLineBullet.tscn::36218c56664baec0e5cabc96254484bd::1786074460::res://.godot/exported/133200997/export-00201c901dfe761893060d0c11a742b8-FastLineBullet.scn
 res://assets/weapons/revolver_sin.tres::f9246b6d5dc103fffb6ab6fb244518bd::1786074291::res://.godot/exported/133200997/export-62717d7c73e926a46cb1c4896178b107-revolver_sin.res
 res://assets/characters/clerk_character.tres::134ac7ca54a58567c074ecfc972f7dcc::1786080358::res://.godot/exported/133200997/export-628604140befc1210f0e96d59fea9e2a-clerk_character.res
-res://assets/levels/spawn.tscn::9d6a4bd3e6cf03fe34d3cd7dcc5f0c6c::1786301195::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
+res://assets/levels/spawn.tscn::fe2a31ce12629a9501d17861c02dfa08::1786312966::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
 res://assets/objects/character_change.tscn::2d82424704343cf049e2a8fafc373081::1786022451::res://.godot/exported/133200997/export-c6a08ccaeed69fc6c8fa7e10814ca853-character_change.scn
 res://assets/objects/door.tscn::5d6b51f9eb506b9e3ba1e7e627d274f4::1786023885::res://.godot/exported/133200997/export-4e9c35fcf9558d38379e4f64042309e4-door.scn
 res://assets/objects/explosive_sin.tscn::4c50d70f87a7c879478f15dee104e2f6::1786019694::res://.godot/exported/133200997/export-ff9c2a0f1f934df52dd4368fbc664728-explosive_sin.scn
@@ -91,7 +91,7 @@ res://assets/levels/level1/level2/corridor.tscn::a87189fb385c83ac2000b45f29b1bbd
 res://assets/levels/level1/level2/swapshop.tscn::a8dd0f5078678e32aa111a6263f5c406::1786052025::res://.godot/exported/133200997/export-b3ac91262e4e300762210adbe5af8a6e-swapshop.scn
 res://assets/levels/level1/untitled/iloveyou/iloveyou_room.tscn::a1f34093360daaac1405c3fab686c04c::1786245398::res://.godot/exported/133200997/export-85f18d786a68611bc2c651e33c6c2326-iloveyou_room.scn
 res://assets/levels/level1/untitled/untitled_hallway.tscn::69cf92c64d7e36272fa3b71d0a99b626::1786091140::res://.godot/exported/133200997/export-b7a229f092cb2e139547b643b087c295-untitled_hallway.scn
-res://assets/levels/level1/playtest_scene.tscn::c9c378ed9aea7f180e39494758863fcb::1786305490::res://.godot/exported/133200997/export-36a8ba09efda5e930d72cc3abdad72f1-playtest_scene.scn
+res://assets/levels/level1/playtest_scene.tscn::9a8b6def341e49763f7a7ba9b12a2964::1786309878::res://.godot/exported/133200997/export-36a8ba09efda5e930d72cc3abdad72f1-playtest_scene.scn
 res://assets/map/iloveyou_tileset.tres::b6ac279de7eaa7dfe51e9c4fa65e24f8::1786230130::res://.godot/exported/133200997/export-93dacf22adf3379cf69c08ca938104f2-iloveyou_tileset.res
 res://assets/objects/shops/cursed_shop.tscn::394cff667e7728152e8be3473ac3f14e::1786023712::res://.godot/exported/133200997/export-d6386e24dcab522d8885b287a2271ce7-cursed_shop.scn
 res://assets/objects/shops/swap_shop.tscn::630f31d0617a8c935e55e625d2d7b125::1786048139::res://.godot/exported/133200997/export-8d8e6c03180960c551ee974f4af110e6-swap_shop.scn
@@ -110,7 +110,7 @@ res://assets/projectile/FishBullet.tscn::77424aa064b2e84fadf16ce161fedd9b::17860
 res://assets/projectile/MagicLineBullet.tscn::466bfaa3b5b15cdcc306184e7b8c430d::1786040854::res://.godot/exported/133200997/export-5a94be5034ba49a5241a6053f5fbdd20-MagicLineBullet.scn
 res://assets/projectile/NailBullet.tscn::94af57952e8f6bf4251f01423ac08e06::1786054585::res://.godot/exported/133200997/export-a53edcc0372ba8a00bf6cd2861ec26bd-NailBullet.scn
 res://assets/projectile/RotwillisBullet.tscn::83f649eb11156a89645e8011f0075e63::1786057827::res://.godot/exported/133200997/export-cd0d0b730cc76c4d4fa152fedcaf3f2a-RotwillisBullet.scn
-res://assets/weapons/pools/curse_pool.tres::001c1ce1081c6d726ed3b1825b26948f::1786087678::res://.godot/exported/133200997/export-899e24327b6430c90f847f1f9bd5f102-curse_pool.res
+res://assets/weapons/pools/curse_pool.tres::76531ea41816d85a2854b220b8c5049d::1786311539::res://.godot/exported/133200997/export-899e24327b6430c90f847f1f9bd5f102-curse_pool.res
 res://assets/weapons/antigun.tres::e767ad333c6b62382d5a4489837b5abb::1786071845::res://.godot/exported/133200997/export-2c2bbfdc451535594fea3b875f483f9d-antigun.res
 res://assets/weapons/drowninghigh.tres::66323913b97cddc548c2807684f22059::1786071897::res://.godot/exported/133200997/export-ff3177bb8463c9dd3b715fd2da81fa58-drowninghigh.res
 res://assets/weapons/rotwillis.tres::3334e473ae9832af2c15d43a3fe43b89::1786071833::res://.godot/exported/133200997/export-431b6c74a4a231dfaeeff08b2bef48b3-rotwillis.res
@@ -125,9 +125,9 @@ res://assets/enemies/gibs/lullaby_gibs.tres::1f7a5aace3614e07d6670a2ddc5bc351::1
 res://assets/enemies/gibs/reaper_gibs.tres::ac4c84f13f89d92646626d6cabccba16::1786105636::res://.godot/exported/133200997/export-689805de3d487e8aba6d251b98f65d86-reaper_gibs.res
 res://assets/enemies/gibs/sign_gibs.tres::d29a671b00616837003728ed414d6875::1786232265::res://.godot/exported/133200997/export-55e5bfe3d9005b86d7a876eb704a0c02-sign_gibs.res
 res://assets/enemies/spawns/spawns_scary.tres::6e8c01804b21e907674a7cb2035b8d16::1786245237::res://.godot/exported/133200997/export-8676c989b43f9b73336d1f4d49b7a592-spawns_scary.res
-res://assets/enemies/delusion.tscn::f9d6bab7eee49c16f68632971bce54fa::1786227714::res://.godot/exported/133200997/export-4733a4cbae8c92384ed386deea43571f-delusion.scn
+res://assets/enemies/delusion.tscn::e68cd6eb4e94a5b396e27bb10d95c679::1786312869::res://.godot/exported/133200997/export-4733a4cbae8c92384ed386deea43571f-delusion.scn
 res://assets/enemies/reaper.tscn::d48339589d2119f0fd36b8a241bd2fb0::1786244932::res://.godot/exported/133200997/export-1810d47f37d0b3ec5a7fed27eb1c1a31-reaper.scn
-res://assets/enemies/sign.tscn::a092dfbdc7a6540ee72008c262854132::1786237511::res://.godot/exported/133200997/export-200aff305c8957db9c4c32726ca05daf-sign.scn
+res://assets/enemies/sign.tscn::cfa979c88c4c3ec9d41a9261a3882e8a::1786309934::res://.godot/exported/133200997/export-200aff305c8957db9c4c32726ca05daf-sign.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_base.tscn::0b0f75454e4012cbdc98729020d043bb::1786234801::res://.godot/exported/133200997/export-246fde9b1c598c53a271a0d3a336dc64-hallway_base.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks.tscn::90fe2d573644fc4982e9978fa1008920::1786234892::res://.godot/exported/133200997/export-393908e9f6973adfa32bb4e5e52853f4-hallway_blocks.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_chaser.tscn::1bd780486aedaf5be71655f9c98baa92::1786234906::res://.godot/exported/133200997/export-cf8957ced9bb78b31338c4e636cda524-hallway_chaser.scn
@@ -149,9 +149,9 @@ res://assets/enemies/spawns/all_delusion.tres::edd7c9dfa788c212215b166b7d93130b:
 res://assets/enemies/spawns/spawns_sewer.tres::db92eb4b637d6af0f7743eecb16a2d69::1786253594::res://.godot/exported/133200997/export-bd0fb95208e193c8560d149943da8a89-spawns_sewer.res
 res://assets/enemies/cns.tscn::3f4f9bbdc0eccc271c2a564741f02d4c::1786305553::res://.godot/exported/133200997/export-050a991739f38be7bd0f06f913026b31-cns.scn
 res://assets/enemies/ode.tscn::cd15c87ec098cc7c3494d9a723138a1b::1786244375::res://.godot/exported/133200997/export-22f496c3bdbb7561bfac53ecb402279e-ode.scn
-res://assets/enemies/ufo.tscn::b2710973105d253120ab6e85d5ae524d::1786305542::res://.godot/exported/133200997/export-7449e78caf2c2c71c1da6255e3a6d317-ufo.scn
-res://assets/levels/level1/level2/level3/sewer/passages/passages_1.tscn::cc4f746c61a6e54d40fdc5724a86975b::1786301299::res://.godot/exported/133200997/export-59e501d238a89dbbf3368b0397b8c7b7-passages_1.scn
-res://assets/levels/level1/level2/level3/sewer/transition.tscn::ea76c15f4d1f91dfd551289f34d29277::1786297915::res://.godot/exported/133200997/export-dcd537b649571b81244ad0f099beb499-transition.scn
+res://assets/enemies/ufo.tscn::003f59d85a7e28e70b033b29d02cd0e8::1786309843::res://.godot/exported/133200997/export-7449e78caf2c2c71c1da6255e3a6d317-ufo.scn
+res://assets/levels/level1/level2/level3/sewer/passages/passages_1.tscn::cc4f746c61a6e54d40fdc5724a86975b::1786312628::res://.godot/exported/133200997/export-59e501d238a89dbbf3368b0397b8c7b7-passages_1.scn
+res://assets/levels/level1/level2/level3/sewer/transition.tscn::ea76c15f4d1f91dfd551289f34d29277::1786312564::res://.godot/exported/133200997/export-dcd537b649571b81244ad0f099beb499-transition.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_barrel.tscn::c9bb930fd0325e1796f6bea63c0a644a::1786234823::res://.godot/exported/133200997/export-92af28ffe3614ba530e965d11553fc91-hallway_barrel.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_black.tscn::e5599f624a32e5b8f961ef916aaeca0f::1786234832::res://.godot/exported/133200997/export-fee84cc9182bd644bafa74b7934479a0-hallway_black.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_forward.tscn::9d2b46ea1886dc185cf6ce5fc54f8cec::1786234935::res://.godot/exported/133200997/export-28953ee4dbbcb78c0564a1be1ab7262a-hallway_forward.scn
@@ -173,3 +173,9 @@ res://assets/projectile/FloatBullet.tscn::e2e15bdc77ce50bac512b716809ad02a::1786
 res://assets/ui/water_splash.tscn::0560f266f2ae2a772c6b500aa551845f::1786221317::res://.godot/exported/133200997/export-b708938a5a37b1d9056001666940be89-water_splash.scn
 res://sprites/map/tileset_sewer_normalize.tres::8a7485bd59e68890dc8d2dfd95b44c37::1786219592::res://.godot/exported/133200997/export-20fc8d9e18881f04a2d83456ce19949a-tileset_sewer_normalize.res
 res://assets/ui/global_noise.tscn::7189f7ee8caccd4633fc17cce545658d::1786302871::res://.godot/exported/133200997/export-45642a87906c550be1c15bc2986426af-global_noise.scn
+res://assets/projectile/ButterflyProjectile.tscn::b72864737dd7c9ed752144fb3956c887::1786311772::res://.godot/exported/133200997/export-e4cdebb913d7c50451bcbaaaa79f947c-ButterflyProjectile.scn
+res://assets/projectile/PunchBullet.tscn::ef23e3b93e3d195d016e2a0560c5cdd3::1786310750::res://.godot/exported/133200997/export-3f5bb3579c63dc585ac5033abfe7a4bb-PunchBullet.scn
+res://assets/weapons/punch_gun.tres::48d2c6c5c37feb3eb99e77a3e73875d1::1786311494::res://.godot/exported/133200997/export-433e67c43173c4ad8f2c29c9f44d57f2-punch_gun.res
+res://assets/weapons/swarm.tres::847c947b70751d01ef28d75a741b678c::1786308590::res://.godot/exported/133200997/export-f27749e4175e38537d238cc2cb3caffa-swarm.res
+res://assets/projectile/RepeaterBullet.tscn::a8ad04406d1e3f052a5ef50819fbab9d::1786313270::res://.godot/exported/133200997/export-22b5bf2de3fbd8bb5e087a883a51f16f-RepeaterBullet.scn
+res://assets/weapons/clockwork.tres::5795f5cbf93bca8025448ba9aa5f9557::1786312954::res://.godot/exported/133200997/export-76e44d792bc7c695df5de83a59bd88ac-clockwork.res

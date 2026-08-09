@@ -5,6 +5,11 @@ extends HomingPathfinding
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Movable.is_dead:
+		Weapon.is_agro = false
+		Movable.velocity = Vector2.ZERO
+		return
+	
 	#wander
 	if _at_target():
 		wander_tick += delta

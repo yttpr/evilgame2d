@@ -104,6 +104,8 @@ func _at_target() -> bool:
 	return nav_agent.is_navigation_finished()
 
 func _physics_process(delta: float) -> void:
+	if !Follow_Target:
+		return
 	if !can_move:
 		return
 	

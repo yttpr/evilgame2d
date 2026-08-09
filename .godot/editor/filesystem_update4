@@ -37,3 +37,16 @@ res://scripts/weapons/ProjectilePathfinding.gd
 res://scripts/weapons/projectile_movable_catcher.gd
 res://assets/weapons/swarm.tres
 res://assets/weapons/shotgun.tres
+res://scripts/enemy/wander_pathfinding.gd
+res://assets/enemies/sign.tscn
+res://assets/projectile/KnifeBullet.tscn
+res://assets/projectile/PunchBullet.tscn
+res://assets/weapons/punch_gun.tres
+res://scripts/objects/base_destructible.gd
+res://assets/weapons/pools/curse_pool.tres
+res://scripts/player/base_body.gd
+res://scripts/player/player_body.gd
+res://scripts/weapons/repeating_projectile.gd
+res://assets/projectile/RepeaterBullet.tscn
+res://assets/weapons/clockwork.tres
+res://assets/enemies/delusion.tscn
