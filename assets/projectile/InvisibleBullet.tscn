@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bktkxv8qjuldt"]
+
+[ext_resource type="Script" uid="uid://besgvkp5ltxy6" path="res://scripts/weapons/repeating_projectile.gd" id="1_acctt"]
+[ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="2_acctt"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_gk7pu"]
+[ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="4_ts477"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_acctt")
+repeats = 3
+interval = 0.15
+is_player = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 3500.0
+radius = 16.0
+rot_spd = 12.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 3.0
+shot_sound = ExtResource("2_acctt")
+audio_mod = 6.0
+make_gibs = true
+death_quote = Array[String](["\"If its invincible... then why can't I see it?\"", "\"It's not there...\"", "\"A gun that only idiots can't see.\"", "\"Pranked.\"", "\"Over there!\"", "\"Is it a bird? Is it a plane?\"", "\"Caution: wet floor ahead\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+visible = false
+material = ExtResource("3_gk7pu")
+texture = ExtResource("4_ts477")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

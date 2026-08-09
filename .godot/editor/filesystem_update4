@@ -50,3 +50,5 @@ res://scripts/weapons/repeating_projectile.gd
 res://assets/projectile/RepeaterBullet.tscn
 res://assets/weapons/clockwork.tres
 res://assets/enemies/delusion.tscn
+res://assets/projectile/InvisibleBullet.tscn
+res://assets/weapons/invisiblegun.tres

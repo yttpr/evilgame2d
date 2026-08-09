@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://njexk3d72xp5" path="res://assets/objects/health_station.tscn" id="18_nf8dc"]
 [ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="19_kyxgp"]
 [ext_resource type="Resource" uid="uid://cjytt7fin2c6p" path="res://assets/weapons/clockwork.tres" id="20_acd7y"]
+[ext_resource type="Resource" uid="uid://ct8huiy14lmpd" path="res://assets/weapons/invisiblegun.tres" id="21_7vgxb"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -114,6 +115,10 @@ weapon = ExtResource("19_kyxgp")
 [node name="PlaytestWeapon8" parent="." unique_id=535528928 instance=ExtResource("12_fnjer")]
 position = Vector2(960, 544)
 weapon = ExtResource("20_acd7y")
+
+[node name="PlaytestWeapon9" parent="." unique_id=1334582325 instance=ExtResource("12_fnjer")]
+position = Vector2(448, 416)
+weapon = ExtResource("21_7vgxb")
 
 [node name="HealthInteractible" parent="." unique_id=2134730539 instance=ExtResource("18_nf8dc")]
 position = Vector2(352, 96)

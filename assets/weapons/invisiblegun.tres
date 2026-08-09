@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ct8huiy14lmpd"]
+
+[ext_resource type="PackedScene" uid="uid://bktkxv8qjuldt" path="res://assets/projectile/InvisibleBullet.tscn" id="1_05s72"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_17dvw"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_j8230"]
+[ext_resource type="Texture2D" uid="uid://cwa8ve7uk6xm6" path="res://sprites/weapons/invisible_gun.png" id="4_05s72"]
+
+[resource]
+script = ExtResource("3_j8230")
+id = "InvisibleGun"
+weapon_img = ExtResource("4_05s72")
+bullet = ExtResource("1_05s72")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 600.0
+full_auto = true
+clip_size = 3
+shot_delay = 0.65
+reload_time = 4.0
+aim_length = 125.0
+ready_audio = ExtResource("2_17dvw")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

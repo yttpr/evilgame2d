@@ -9,8 +9,10 @@
 [ext_resource type="Resource" uid="uid://dihxajuyq0e3p" path="res://assets/weapons/punch_gun.tres" id="7_v5xo6"]
 [ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="7_x6d74"]
 [ext_resource type="Resource" uid="uid://bvt3ui5lie6ak" path="res://assets/weapons/swarm.tres" id="8_4uboy"]
+[ext_resource type="Resource" uid="uid://cjytt7fin2c6p" path="res://assets/weapons/clockwork.tres" id="9_4uboy"]
+[ext_resource type="Resource" uid="uid://ct8huiy14lmpd" path="res://assets/weapons/invisiblegun.tres" id="10_tfivx"]
 
 [resource]
 script = ExtResource("2_tnldn")
-base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("2_5dysp"), ExtResource("3_2hqdi"), ExtResource("4_luth6"), ExtResource("5_2hqdi"), ExtResource("7_x6d74"), ExtResource("7_v5xo6"), ExtResource("8_4uboy")])
+base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("2_5dysp"), ExtResource("3_2hqdi"), ExtResource("4_luth6"), ExtResource("5_2hqdi"), ExtResource("7_x6d74"), ExtResource("7_v5xo6"), ExtResource("8_4uboy"), ExtResource("9_4uboy"), ExtResource("10_tfivx")])
 metadata/_custom_type_script = "uid://1r25lpvdp18l"
