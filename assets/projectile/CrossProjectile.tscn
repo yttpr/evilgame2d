@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b2f500cvduhto"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_b2xck"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_4laoj"]
+[ext_resource type="AudioStream" uid="uid://dntlxer44dm7q" path="res://audio/noise/weapon/magic_pop.wav" id="2_txx64"]
+[ext_resource type="Texture2D" uid="uid://c4xo4q888mpp1" path="res://sprites/weapons/projectiles/sparkle_bullet.png" id="3_b2xck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_b2xck")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 90.0
+radius = 8.0
+rot_spd = 8.0
+by_lifetime = true
+lifetime = 5.0
+shot_sound = ExtResource("2_txx64")
+pitch_mod = 0.8
+make_gibs = true
+death_quote = Array[String](["\"Don't touch me.\"", "\"Don't touch me!\"", "\"Let me in!\"", "\"Yeowch!\"", "\"Seeing stars\"", "\"Falling, falling, falling...\"", "\"The fruit of pain.\"", "\"Dying, dying, dying...\"", "\"You... you HIT me!\"", "\"Pin-drop torture\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("2_4laoj")
+texture = ExtResource("3_b2xck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

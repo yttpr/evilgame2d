@@ -179,6 +179,8 @@ func _fall() -> void:
 	down.tween_callback(self._pit_finish)
 
 func _pit_finish() -> void:
+	if self.global_position.distance_to(Manager.Player.global_position) > 1300:
+		return
 	Manager._add_points(points)
 	if gibs:
 		Manager.coins += gibs.coins

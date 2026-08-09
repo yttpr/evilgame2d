@@ -82,6 +82,15 @@ data = ExtResource("12_l6dpd")
 spawn_time = 45.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 
+[node name="EnemySpawner4" type="Node2D" parent="." unique_id=367306662]
+position = Vector2(-64, -64)
+script = ExtResource("11_y62k5")
+range_from_player = 1200.0
+spawn_cap = 5
+data = ExtResource("12_l6dpd")
+spawn_time = 45.0
+metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
+
 [node name="EnemySpawner2" type="Node2D" parent="." unique_id=1937791010]
 position = Vector2(3680, 1056)
 script = ExtResource("11_y62k5")

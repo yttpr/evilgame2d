@@ -30,6 +30,7 @@ healthtype = "Sin"
 points = 2
 gibs = ExtResource("2_k8610")
 hit_sound = ExtResource("3_k8610")
+hit_mod = 5.0
 marker = NodePath("marker_holder/marker")
 mov_spd = 400
 

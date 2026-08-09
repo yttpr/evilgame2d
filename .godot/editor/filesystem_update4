@@ -137,3 +137,16 @@ res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_screwdriv
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_maze.tscn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_safe_maze.tscn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lights.tscn
+res://assets/projectile/FloatBullet.tscn
+res://assets/enemies/ode.tscn
+res://assets/enemies/gibs/ode_gibs.tres
+res://assets/projectile/EnemyFloorFire.tscn
+res://scripts/weapons/area_projectile.gd
+res://assets/projectile/Fireball.tscn
+res://assets/enemies/ufo.tscn
+res://assets/enemies/gibs/ufo_gibs.tres
+res://assets/enemies/gibs/cns_gibs.tres
+res://scripts/enemy/auto_enemy_weapon.gd
+res://assets/enemies/cns.tscn
+res://assets/projectile/CrossProjectile.tscn
+res://assets/enemies/spawns/spawns_sewer.tres

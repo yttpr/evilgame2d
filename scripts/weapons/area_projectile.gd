@@ -15,6 +15,8 @@ var a_tick : float
 @export var extra_mod : float
 @export var extra_audio : BasicAudio
 
+@export var player_only : bool
+
 func _ready() -> void:
 	tick = 0
 	a_tick = anim_spd
@@ -51,7 +53,10 @@ func _make_collider() -> DamageCollider:
 	collider._set_pierce(-1)
 	collider._set_circle(radius)
 	collider._set_duration(true, lasts)
-	collider._set_collision(Manager.collision_all)
+	if !player_only:
+		collider._set_collision(Manager.collision_all)
+	else:
+		collider._set_collision(Manager.collision_forEnemy)
 	collider.frame_buffer = 5
 	collider.death_quote = death_quote
 	return collider

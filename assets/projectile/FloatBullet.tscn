@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://vigjt3fipcc2"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_jax38"]
+[ext_resource type="AudioStream" uid="uid://dyrrpejx5xgwo" path="res://audio/noise/weapon/magic_heavy.wav" id="2_jax38"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_njdad"]
+[ext_resource type="Texture2D" uid="uid://06ci32encp4s" path="res://sprites/weapons/projectiles/big_eye_bullet.png" id="4_jax38"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_jax38")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 125.0
+radius = 32.0
+rot_spd = 32.0
+bounces = true
+by_lifetime = true
+lifetime = 15.0
+shot_sound = ExtResource("2_jax38")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"In the forest... there's nothing in the forest...\"", "\"Hidden amongst the trees...\"", "\"Pareidolia\"", "\"If you can't see it, it can't see you\"", "\"Don't go into the woods at dark...\"", "\"Ignore screams in the woods, no matter how human they sound.\"", "\"Is it quiet? I don't want to hear that thing...\"", "\"Why does it look like that!?\"", "\"It... it kind of looks like me...\"", "\"That's not me! I'm not like that!\"", "\"There's something out there in the forest...\"", "\"I can feel eyes all over me when I'm out there...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_njdad")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_jax38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

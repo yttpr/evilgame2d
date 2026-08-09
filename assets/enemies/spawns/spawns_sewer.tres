@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemySpawnList" format=3 uid="uid://7ddelyp7f8uo"]
+
+[ext_resource type="PackedScene" uid="uid://bji8eqd5jxx6q" path="res://assets/enemies/ufo.tscn" id="1_euwpc"]
+[ext_resource type="PackedScene" uid="uid://d35vl5itpal1t" path="res://assets/enemies/skeleton_shooter.tscn" id="1_q1uyt"]
+[ext_resource type="PackedScene" uid="uid://ct1ooywh5c6dt" path="res://assets/enemies/enigma.tscn" id="2_euwpc"]
+[ext_resource type="PackedScene" uid="uid://bvn37ufvx8gip" path="res://assets/enemies/cns.tscn" id="2_u1xyh"]
+[ext_resource type="PackedScene" uid="uid://bwj4mmaoldh6o" path="res://assets/enemies/ode.tscn" id="3_qisxc"]
+[ext_resource type="PackedScene" uid="uid://du5bvf4dm5t2l" path="res://assets/enemies/freud.tscn" id="3_u1xyh"]
+[ext_resource type="PackedScene" uid="uid://c2c883yx03p43" path="res://assets/enemies/machine.tscn" id="6_1knp6"]
+[ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="8_vp1b5"]
+
+[resource]
+script = ExtResource("8_vp1b5")
+Enemies = Array[PackedScene]([ExtResource("1_euwpc"), ExtResource("2_u1xyh"), ExtResource("3_qisxc"), ExtResource("1_q1uyt"), ExtResource("2_euwpc"), ExtResource("3_u1xyh"), ExtResource("6_1knp6")])
+Weights = Array[int]([2, 3, 1, 4, 2, 1, 0])
+metadata/_custom_type_script = "uid://b1js8q00adevy"
