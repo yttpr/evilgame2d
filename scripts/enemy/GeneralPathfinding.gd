@@ -108,6 +108,11 @@ func _at_target() -> bool:
 	return nav_agent.is_navigation_finished()
 
 func _physics_process(delta: float) -> void:
+	if Movable.is_dead:
+		Weapon.is_agro = false
+		Movable.velocity = Vector2.ZERO
+		return
+	
 	if !can_move:
 		Movable.velocity = Vector2.ZERO
 		return

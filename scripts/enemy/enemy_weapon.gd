@@ -16,6 +16,7 @@ extends Node2D
 
 @export var shot_variance : float
 
+@export var random_charge_time : bool
 @export var charge_time : float
 @export var max_clip : int
 @export var shot_delay : float
@@ -60,6 +61,8 @@ func _ready() -> void:
 func _set_agro(unit : Node2D) -> void:
 	is_agro = true
 	aiming_tick = charge_time
+	if random_charge_time:
+		aiming_tick = randf_range(0, charge_time)
 	_set_reload(false)
 	target = unit
 	_set_aim_dir()
@@ -123,6 +126,8 @@ func _set_reload(reloading : bool) -> void:
 			is_agro = false
 		_set_aim_dir()
 		aiming_tick = charge_time
+		if random_charge_time:
+			aiming_tick = randf_range(0, charge_time)
 	if move_during_reload and brain:
 		brain._set_moving(reloading)
 func _update_color() -> void:

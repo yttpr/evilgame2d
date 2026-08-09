@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://dwjngtsl6b5x5"]
+
+[ext_resource type="Texture2D" uid="uid://dgr8l5udb22i2" path="res://sprites/map/sewer_walls.png" id="1_njk04"]
+[ext_resource type="Texture2D" uid="uid://ci7fo4jl351w6" path="res://sprites/map/walls_normals.png" id="2_d5y81"]
+
+[resource]
+diffuse_texture = ExtResource("1_njk04")
+normal_texture = ExtResource("2_d5y81")

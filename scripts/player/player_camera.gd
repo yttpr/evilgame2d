@@ -64,7 +64,7 @@ func _process(delta : float) -> void:
 		shake() # Shake the camera
 	
 	#print(RenderingServer.global_shader_parameter_get("PlayerLoc"))
-	#RenderingServer.global_shader_parameter_set("PlayerLoc", Vector2(575, 275) + self.position * -1)
+	RenderingServer.global_shader_parameter_set("PlayerLoc", Vector2(575, 275) + self.position * -1)
 
 ## The function to use for adding trauma (screen shake)
 func add_trauma(amount : float) -> void:

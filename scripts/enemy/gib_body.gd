@@ -53,14 +53,14 @@ func _prep(inertia : Vector2, vertical : bool = false) -> void:
 	img.position = Vector2(0.0, i)
 	var up = get_tree().create_tween()
 	up.set_ease(Tween.EASE_OUT)
-	up.set_trans(Tween.TRANS_QUAD)
+	up.set_trans(Tween.TRANS_SINE)
 	up.tween_property(img, "position", Vector2(0.0, randf_range(0, height) + i), time / 1.8)
 	up.tween_callback(_down)
 
 func _down() -> void:
 	var down = get_tree().create_tween()
 	down.set_ease(Tween.EASE_IN)
-	down.set_trans(Tween.TRANS_QUAD)
+	down.set_trans(Tween.TRANS_SINE)
 	down.tween_property(img, "position", Vector2.ZERO, time / 1.8)
 	if fall_in_pit:
 		down.tween_callback(_check_pit)
@@ -84,6 +84,13 @@ func _check_pit() -> void:
 		_fall()
 
 func _fall() -> void:
+	if Manager._get_world().water_pits:
+		self.z_index = -3
+		var splash = Manager.water_splash.instantiate()
+		Manager._get_world().add_child(splash)
+		splash.scale = Vector2.ONE * 0.3
+		splash.global_position = self.global_position
+		Manager._play_oneshot(self.global_position, Manager.splash_noise, 10)
 	var down = get_tree().create_tween()
 	down.tween_property(img, "scale", Vector2.ZERO, 1.0)
 	if Manager._check_in_pit_top(self):

@@ -11,15 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://cyt7ns085e1uw" path="res://assets/objects/crate.tscn" id="10_7smnk"]
 [ext_resource type="Resource" uid="uid://dhtems1p748mo" path="res://assets/enemies/spawns/spawns_dungen_hard.tres" id="12_6i7y8"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="13_ega80"]
-[ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="14_pncvy"]
 [ext_resource type="PackedScene" uid="uid://df2wlh6wycupb" path="res://assets/objects/single_use_door.tscn" id="15_v03r6"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_j20dl")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(-64, -49), Vector2(896, -49)])
+entries = Array[Vector2]([Vector2(-64, -49), Vector2(896, -49), Vector2(576, 1039)])
 songs = Array[AudioStream]([ExtResource("2_gss4d")])
+volumes = Array[float]([0.0])
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
 z_index = -5
@@ -123,10 +123,11 @@ data = ExtResource("9_6sga2")
 spawn_time = 30.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 
-[node name="WIP2" parent="." unique_id=1832692567 instance=ExtResource("14_pncvy")]
-position = Vector2(544, 1056)
-
 [node name="Door2" parent="." unique_id=591089715 instance=ExtResource("15_v03r6")]
 position = Vector2(896, -64)
 key = "DungeonCoraShop"
 room = "res://assets/levels/level1/level2/level3/level4/shop1.tscn"
+
+[node name="Door3" parent="." unique_id=979105454 instance=ExtResource("6_5l0kt")]
+position = Vector2(576, 1024)
+room = "res://assets/levels/level1/level2/level3/sewer/transition.tscn"

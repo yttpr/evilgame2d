@@ -13,11 +13,16 @@ var orig_color : Color
 
 @export var Enemies : Array[BaseBody] = []
 
+@export var water_pits : bool
+
 var ticks : int
 var time : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Manager.wip_coins and Manager.wip_coins > 0:
+		Manager.coins += Manager.wip_coins
+		Manager.wip_coins = 0
 	orig_color = Color(canvasmodulate.color)
 	Manager.world = self
 	if !Enemies:
@@ -50,11 +55,11 @@ func _calc_color(delta : float) -> void:
 	
 	for enemy in Enemies:
 		if enemy.cause_darkening:
-			accel += max(0, 1 - (Manager.Player.global_position.distance_to(enemy.global_position) / 400))
+			accel += max(0, 1 - (Manager.Player.global_position.distance_to(enemy.global_position) / enemy.darkening_range))
 	
 	var num = canvasmodulate.color.r
-	if accel > 0.0:
-		num -= accel * delta * 0.5
+	if accel > 10:
+		num -= accel * delta
 	else:
 		num += delta * 0.5
 	

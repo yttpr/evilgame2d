@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemySpawnList" format=3 uid="uid://b1u68wr652r7x"]
+
+[ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="1_00od6"]
+[ext_resource type="PackedScene" uid="uid://dek3js2yfm3yy" path="res://assets/enemies/delusion.tscn" id="1_i4p2b"]
+
+[resource]
+script = ExtResource("1_00od6")
+Enemies = Array[PackedScene]([ExtResource("1_i4p2b")])
+Weights = Array[int]([1])
+metadata/_custom_type_script = "uid://b1js8q00adevy"

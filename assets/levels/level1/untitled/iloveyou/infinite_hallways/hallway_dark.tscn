@@ -57,9 +57,9 @@ spawn_pos = 1
 
 [node name="Door2" parent="." unique_id=15817301 instance=ExtResource("9_rmh1g")]
 position = Vector2(0, -2432)
-paths = Array[String](["res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_base.tscn"])
-exits = Array[int]([0])
-weights = Array[int]([9])
+paths = Array[String](["res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_base.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks2.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_bridge.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_chaser.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dark.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_null.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lightless.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_sign.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_black.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_morechasers.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_barrel.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_forward.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_screwdriver.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_safe_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lights.tscn"])
+exits = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+weights = Array[int]([0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
 [node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("10_jw4ix")]
 position = Vector2(-96, 64)

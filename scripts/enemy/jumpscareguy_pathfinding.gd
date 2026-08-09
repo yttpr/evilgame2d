@@ -61,6 +61,7 @@ func _process(delta : float) -> void:
 @export var teleport_length : float
 
 func _teleport() -> void:
+	Manager._play_oneshot(Movable.global_position, Movable.hit_sound, Movable.hit_mod, 1.5)
 	var locs = []
 	for loc in Manager._get_world().entries:
 		if loc.distance_to(Manager.Player.global_position) > teleport_length:

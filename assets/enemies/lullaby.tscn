@@ -19,7 +19,7 @@
 radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
-size = Vector2(61, 70.5)
+size = Vector2(61, 106.5)
 
 [node name="Lullaby" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
 collision_layer = 544
@@ -64,7 +64,7 @@ hitbox_type = "Single"
 sources = Array[String](["Hitscan"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=72484899]
-position = Vector2(-1, 4.25)
+position = Vector2(-1, -13.75)
 shape = SubResource("RectangleShape2D_nubg3")
 
 [node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]

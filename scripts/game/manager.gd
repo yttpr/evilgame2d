@@ -18,6 +18,7 @@ var Player : PlayerBody
 var Camera : PlayerCamera
 
 var coins : int
+var wip_coins : int
 
 ##deprecated
 var noise_vol : float = 1.0
@@ -107,6 +108,7 @@ var in_menu : bool
 
 var bright_mat : Material
 var coin_sprite : PackedScene
+var coin_noise : AudioStream
 
 var door_noise : AudioStream
 var door_shake : AudioStream
@@ -162,6 +164,9 @@ func _input(event):
 
 var ui_fail : AudioStream
 
+var water_splash : PackedScene
+var splash_noise : AudioStream
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	run_bools = {}
@@ -193,6 +198,7 @@ func _ready() -> void:
 	bright_mat = ResourceLoader.load("res://sprites/objects/shader/unshaded_material.tres")
 	
 	coin_sprite = preload("res://assets/ui/coin_gib.tscn")
+	coin_noise = ResourceLoader.load("res://audio/noise/ui/coin.wav")
 	
 	Music._set_ambience(true)
 	
@@ -200,6 +206,10 @@ func _ready() -> void:
 	door_shake = ResourceLoader.load("res://audio/noise/ui/door_shake.ogg")
 	
 	ui_fail = ResourceLoader.load("res://audio/noise/ui/ui_fail.ogg")
+	
+	water_splash = ResourceLoader.load("res://assets/ui/water_splash.tscn")
+	splash_noise = ResourceLoader.load("res://audio/noise/ui/water_splash.ogg")
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

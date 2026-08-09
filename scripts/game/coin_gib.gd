@@ -7,6 +7,7 @@ extends GibBody
 @export var noise : AudioStream
 
 func _ready() -> void:
+	Manager.wip_coins += 1
 	self.material = Manager.bright_mat
 
 var main_tween : Tween
@@ -40,11 +41,12 @@ func _done() -> void:
 		self.queue_free()
 		return
 	Manager.coins += 1
+	Manager.wip_coins -= 1
 	var gib = Manager._make_bullet_gib(self.global_position, Vector2.ZERO, self.modulate)
 	gib.get_parent().remove_child(gib)
 	self.get_parent().add_child(gib)
 	gib.position = self.position
 	gib.z_index += 1
 	gib.scale = self.scale
-	Manager._play_oneshot(self.global_position, noise, 8)
+	Manager._play_oneshot(Manager.Player.global_position, noise, 3)
 	self.queue_free()

@@ -42,6 +42,16 @@ light_mode = 1
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 85.41
 
+[sub_resource type="Gradient" id="Gradient_gxmte"]
+offsets = PackedFloat32Array(0, 0.8918269, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6q24c"]
+gradient = SubResource("Gradient_gxmte")
+fill = 1
+fill_from = Vector2(0.5086806, 0.5190972)
+fill_to = Vector2(0.8350694, 0.8315972)
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("img", "Hitbox", "camera", "ui", "weapon_handler", "sprites")]
 collision_layer = 1030
 collision_mask = 4232
@@ -236,6 +246,16 @@ texture = ExtResource("11_tc657")
 
 [node name="cam_follow_node" type="Node2D" parent="." unique_id=1992406294]
 position = Vector2(0, -45)
+
+[node name="floor_light" type="PointLight2D" parent="." unique_id=1931839370]
+visible = false
+z_index = -1
+position = Vector2(0, -30)
+color = Color(0.84, 0.84, 0.18480001, 1)
+range_item_cull_mask = 16
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_6q24c")
+texture_scale = 4.5
 
 [connection signal="area_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]
 [connection signal="body_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]

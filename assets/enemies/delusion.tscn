@@ -13,12 +13,21 @@
 [ext_resource type="Script" uid="uid://cnvgetguyhbas" path="res://scripts/enemy/homing_pathfinding.gd" id="11_rpv5d"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_5cnke"]
 [ext_resource type="PackedScene" uid="uid://bxmu5tijdob0" path="res://assets/projectile/HollowBullet.tscn" id="13_5tttm"]
+[ext_resource type="Shader" uid="uid://bgg6sm3pvrnaf" path="res://sprites/objects/shader/shadow.gdshader" id="14_48tcn"]
+[ext_resource type="Texture2D" uid="uid://cebiwfqnu1rex" path="res://sprites/objects/shader/allshadow.png" id="14_g2in3"]
+[ext_resource type="Script" uid="uid://d2ni2jiq1r080" path="res://scripts/enemy/darkness_holder.gd" id="15_48tcn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
 size = Vector2(61, 101)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnv3s"]
+shader = ExtResource("14_48tcn")
+shader_parameter/on_light_color = Color(0, 0, 0, 1)
+shader_parameter/max_dist = 55.0
+shader_parameter/num = 0.0
 
 [node name="Delusion" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
 collision_layer = 544
@@ -31,7 +40,7 @@ gibs = ExtResource("2_5tttm")
 hit_sound = ExtResource("3_5tttm")
 marker = NodePath("marker_holder/marker")
 mov_spd = 90
-cause_darkening = true
+darkening_range = 650.0
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
 light_mask = 8
@@ -117,5 +126,14 @@ metadata/_custom_type_script = "uid://dap3uvgj16hat"
 
 [node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
 position = Vector2(0, -64)
+
+[node name="DarknessHolder" type="Sprite2D" parent="." unique_id=1393680597 node_paths=PackedStringArray("movable")]
+material = SubResource("ShaderMaterial_hnv3s")
+scale = Vector2(50, 50)
+texture = ExtResource("14_g2in3")
+script = ExtResource("15_48tcn")
+range = 1000.0
+movable = NodePath("..")
+metadata/_custom_type_script = "uid://d2ni2jiq1r080"
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

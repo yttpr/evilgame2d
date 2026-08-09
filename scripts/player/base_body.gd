@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	
 	_make_movement(delta)
 	
-	if !flies:
+	if !flies and inertia.length() <= 0:
 		_check_pit()
 	
 	if despawn_length < 0 or despawn_time < 0:
@@ -164,13 +164,26 @@ func _check_pit() -> void:
 		_fall()
 
 func _fall() -> void:
+	if Manager._get_world().water_pits:
+		self.z_index = -3
+		var splash = Manager.water_splash.instantiate()
+		Manager._get_world().add_child(splash)
+		splash.global_position = self.global_position
+		Manager._play_oneshot(self.global_position, Manager.splash_noise, 20)
 	is_falling = true
 	is_dead = true
 	var down = get_tree().create_tween()
 	down.tween_property(sprites, "scale", Vector2.ZERO, 1.0)
 	if Manager._check_in_pit_top(self):
 		down.parallel().tween_property(sprites, "position", sprites.position + Vector2(0, 32), 1.0)
-	down.tween_callback(self._cleanup)
+	down.tween_callback(self._pit_finish)
 
+func _pit_finish() -> void:
+	Manager._add_points(points)
+	if gibs:
+		Manager.coins += gibs.coins
+		Manager._play_oneshot(Manager.Player.global_position, Manager.coin_noise, 3)
+	self._cleanup()
 
 @export var cause_darkening : bool
+@export var darkening_range : float = 400

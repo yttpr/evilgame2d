@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5mfm7ek5rkvc"
-path="res://.godot/imported/circle.png-44ecb791f609b24379ea441e6c4bc62e.ctex"
+uid="uid://cf2dbn4bml4rh"
+path="res://.godot/imported/splashwip.png-ec94a1f080eab7a3aa21482670945dd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/objects/shader/circle.png"
-dest_files=["res://.godot/imported/circle.png-44ecb791f609b24379ea441e6c4bc62e.ctex"]
+source_file="res://sprites/ui/splashwip.png"
+dest_files=["res://.godot/imported/splashwip.png-ec94a1f080eab7a3aa21482670945dd5.ctex"]
 
 [params]
 
