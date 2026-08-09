@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://njexk3d72xp5"]
+
+[ext_resource type="Script" uid="uid://d1htkwex8rk0i" path="res://scripts/objects/base_destructible.gd" id="1_qdmxl"]
+[ext_resource type="Resource" uid="uid://bqv2aw2xge0mj" path="res://assets/objects/health_gibs.tres" id="2_qdmxl"]
+[ext_resource type="AudioStream" uid="uid://bv1ekjpflhmpp" path="res://audio/noise/ui/ui_heal.mp3" id="2_wgcvq"]
+[ext_resource type="Texture2D" uid="uid://bj2eu2uxag26d" path="res://sprites/objects/healthdispenser.png" id="3_qdmxl"]
+[ext_resource type="Script" uid="uid://d2l51ws3oab8m" path="res://scripts/objects/health_interactible.gd" id="4_v5072"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="5_0uywm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(64, 64)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
+
+[sub_resource type="Gradient" id="Gradient_gxmte"]
+offsets = PackedFloat32Array(0, 0.8918269, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wgcvq"]
+gradient = SubResource("Gradient_gxmte")
+fill = 1
+fill_from = Vector2(0.5086806, 0.5190972)
+fill_to = Vector2(0.8350694, 0.8315972)
+
+[node name="HealthInteractible" type="CharacterBody2D" unique_id=2134730539 node_paths=PackedStringArray("body", "label")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("4_v5072")
+body = NodePath("Healing")
+sound = ExtResource("2_wgcvq")
+audio_mod = 10.0
+coin_cost = 15
+label = NodePath("Label")
+label_off_time = 0.5
+marker_offset = Vector2(0, -16)
+despawn_time = -1.0
+despawn_length = -1.0
+metadata/_custom_type_script = "uid://d2l51ws3oab8m"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1291595702]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="Label" type="Label" parent="." unique_id=1877723173]
+z_index = 7
+material = ExtResource("5_0uywm")
+offset_left = -420.00003
+offset_top = -74.0
+offset_right = 140.66666
+offset_bottom = -37.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.44313726)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "15 coins"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Healing" type="StaticBody2D" parent="." unique_id=653630647 node_paths=PackedStringArray("image")]
+collision_layer = 44
+collision_mask = 0
+script = ExtResource("1_qdmxl")
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_qdmxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Healing" unique_id=1562283018]
+light_mask = 2
+texture = ExtResource("3_qdmxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Healing" unique_id=1337640463]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Healing" unique_id=1958771761]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 4
+
+[node name="floor_light" type="PointLight2D" parent="." unique_id=1192179798]
+z_index = -1
+energy = 0.6
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_wgcvq")
+texture_scale = 2.0
+
+[node name="wall_light" type="PointLight2D" parent="." unique_id=1481821566]
+z_index = -1
+energy = 0.6
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_wgcvq")
+texture_scale = 2.0
+
+[node name="chara_light" type="PointLight2D" parent="." unique_id=830232934]
+z_index = -1
+energy = 0.6
+range_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_wgcvq")
+texture_scale = 2.0
+
+[node name="light_light" type="PointLight2D" parent="." unique_id=373738976]
+z_index = -1
+position = Vector2(0, -77)
+range_item_cull_mask = 2
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_wgcvq")

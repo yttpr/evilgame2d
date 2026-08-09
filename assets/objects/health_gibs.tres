@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://bqv2aw2xge0mj"]
+
+[ext_resource type="Texture2D" uid="uid://bwi4wxbnwwej" path="res://sprites/objects/gibs/wood_gib_1.png" id="1_pry0k"]
+[ext_resource type="Texture2D" uid="uid://b4umhmtjsu4lq" path="res://sprites/objects/gibs/wood_gib_2.png" id="2_yucy7"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="3_ksb28"]
+[ext_resource type="Texture2D" uid="uid://bi1h28qacx4rb" path="res://sprites/objects/gibs/metal_shard.png" id="3_yucy7"]
+
+[resource]
+script = ExtResource("3_ksb28")
+coins = 10
+blood_amt = 3
+blood_color_1 = Color(1, 1, 1, 1)
+blood_color_2 = Color(1, 1, 1, 0.49411765)
+floor_blood_amt = 2
+images = Array[Texture2D]([ExtResource("1_pry0k"), ExtResource("2_yucy7"), ExtResource("3_yucy7")])
+img_amts = Array[int]([4, 8, 15])
+weights = Array[float]([0.2, 0.2, 0.1])
+does_rotate = Array[bool]([true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

@@ -1,3 +1,5 @@
+BaseDestructible
+HealthInteractible
 DarknessHolder
 Sprite2D
 Node2D
@@ -11,5 +13,3 @@ AudioStreamPlayer2D
 InteractionZone
 MusicAudio
 DashHandler
-Polygon2D
-FPS_Counter

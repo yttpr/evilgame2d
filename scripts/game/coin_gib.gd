@@ -48,5 +48,5 @@ func _done() -> void:
 	gib.position = self.position
 	gib.z_index += 1
 	gib.scale = self.scale
-	Manager._play_oneshot(Manager.Player.global_position, noise, 3)
+	Manager._play_oneshot(Manager.Player.global_position, noise, -2)
 	self.queue_free()

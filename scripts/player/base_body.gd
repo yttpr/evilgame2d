@@ -184,7 +184,7 @@ func _pit_finish() -> void:
 	Manager._add_points(points)
 	if gibs:
 		Manager.coins += gibs.coins
-		Manager._play_oneshot(Manager.Player.global_position, Manager.coin_noise, 3)
+		Manager._play_oneshot(Manager.Player.global_position, Manager.coin_noise, 0)
 	self._cleanup()
 
 @export var cause_darkening : bool

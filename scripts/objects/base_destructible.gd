@@ -70,9 +70,10 @@ func _destroy() -> void:
 	tween.tween_property(image, "scale", Vector2.ONE * 1.01, 0.05)
 	tween.tween_callback(_clean)
 
+var skip_gibs : bool
 func _clean() -> void:
 	image.visible = false
-	if gibs:
+	if gibs and !skip_gibs:
 		Manager._make_gibs(self.global_position, inertia / 10, gibs)
 
 func enable_collision(enable : bool):

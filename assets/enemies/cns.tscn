@@ -27,7 +27,7 @@ collision_mask = 8
 script = ExtResource("1_fai2h")
 brain = NodePath("brain")
 sprites = NodePath("image")
-HP = 18
+HP = 15
 healthtype = "Sin"
 gibs = ExtResource("2_fai2h")
 hit_sound = ExtResource("3_lqwd1")
@@ -89,7 +89,7 @@ Weapon = NodePath("../EnemyWeapon")
 nav_agent = NodePath("NavigationAgent2D")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
-navigation_layers = 4
+navigation_layers = 2
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 16.0

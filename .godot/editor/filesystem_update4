@@ -150,3 +150,9 @@ res://scripts/enemy/auto_enemy_weapon.gd
 res://assets/enemies/cns.tscn
 res://assets/projectile/CrossProjectile.tscn
 res://assets/enemies/spawns/spawns_sewer.tres
+res://assets/levels/level1/level2/level3/sewer/passages/passages_1.tscn
+res://scripts/objects/health_interactible.gd
+res://assets/objects/health_station.tscn
+res://assets/objects/health_gibs.tres
+res://assets/enemies/gibs/shooter_gibs.tres
+res://assets/enemies/gibs/enigma_gibs.tres
