@@ -57,7 +57,7 @@ res://assets/characters/saturn_character.tres::8ace262a13288f17efee8c94fbe130d5:
 res://assets/projectile/FastLineBullet.tscn::36218c56664baec0e5cabc96254484bd::1786074460::res://.godot/exported/133200997/export-00201c901dfe761893060d0c11a742b8-FastLineBullet.scn
 res://assets/weapons/revolver_sin.tres::f9246b6d5dc103fffb6ab6fb244518bd::1786074291::res://.godot/exported/133200997/export-62717d7c73e926a46cb1c4896178b107-revolver_sin.res
 res://assets/characters/clerk_character.tres::134ac7ca54a58567c074ecfc972f7dcc::1786080358::res://.godot/exported/133200997/export-628604140befc1210f0e96d59fea9e2a-clerk_character.res
-res://assets/levels/spawn.tscn::fe2a31ce12629a9501d17861c02dfa08::1786312966::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
+res://assets/levels/spawn.tscn::6428ee53ea27a50395fbd0084bd37902::1786314255::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
 res://assets/objects/character_change.tscn::2d82424704343cf049e2a8fafc373081::1786022451::res://.godot/exported/133200997/export-c6a08ccaeed69fc6c8fa7e10814ca853-character_change.scn
 res://assets/objects/door.tscn::5d6b51f9eb506b9e3ba1e7e627d274f4::1786023885::res://.godot/exported/133200997/export-4e9c35fcf9558d38379e4f64042309e4-door.scn
 res://assets/objects/explosive_sin.tscn::4c50d70f87a7c879478f15dee104e2f6::1786019694::res://.godot/exported/133200997/export-ff9c2a0f1f934df52dd4368fbc664728-explosive_sin.scn
@@ -110,7 +110,7 @@ res://assets/projectile/FishBullet.tscn::77424aa064b2e84fadf16ce161fedd9b::17860
 res://assets/projectile/MagicLineBullet.tscn::466bfaa3b5b15cdcc306184e7b8c430d::1786040854::res://.godot/exported/133200997/export-5a94be5034ba49a5241a6053f5fbdd20-MagicLineBullet.scn
 res://assets/projectile/NailBullet.tscn::94af57952e8f6bf4251f01423ac08e06::1786054585::res://.godot/exported/133200997/export-a53edcc0372ba8a00bf6cd2861ec26bd-NailBullet.scn
 res://assets/projectile/RotwillisBullet.tscn::83f649eb11156a89645e8011f0075e63::1786057827::res://.godot/exported/133200997/export-cd0d0b730cc76c4d4fa152fedcaf3f2a-RotwillisBullet.scn
-res://assets/weapons/pools/curse_pool.tres::76531ea41816d85a2854b220b8c5049d::1786311539::res://.godot/exported/133200997/export-899e24327b6430c90f847f1f9bd5f102-curse_pool.res
+res://assets/weapons/pools/curse_pool.tres::8f3229393c65fd4227b82458e6019ec2::1786314255::res://.godot/exported/133200997/export-899e24327b6430c90f847f1f9bd5f102-curse_pool.res
 res://assets/weapons/antigun.tres::e767ad333c6b62382d5a4489837b5abb::1786071845::res://.godot/exported/133200997/export-2c2bbfdc451535594fea3b875f483f9d-antigun.res
 res://assets/weapons/drowninghigh.tres::66323913b97cddc548c2807684f22059::1786071897::res://.godot/exported/133200997/export-ff3177bb8463c9dd3b715fd2da81fa58-drowninghigh.res
 res://assets/weapons/rotwillis.tres::3334e473ae9832af2c15d43a3fe43b89::1786071833::res://.godot/exported/133200997/export-431b6c74a4a231dfaeeff08b2bef48b3-rotwillis.res
@@ -177,5 +177,7 @@ res://assets/projectile/ButterflyProjectile.tscn::b72864737dd7c9ed752144fb3956c8
 res://assets/projectile/PunchBullet.tscn::ef23e3b93e3d195d016e2a0560c5cdd3::1786310750::res://.godot/exported/133200997/export-3f5bb3579c63dc585ac5033abfe7a4bb-PunchBullet.scn
 res://assets/weapons/punch_gun.tres::48d2c6c5c37feb3eb99e77a3e73875d1::1786311494::res://.godot/exported/133200997/export-433e67c43173c4ad8f2c29c9f44d57f2-punch_gun.res
 res://assets/weapons/swarm.tres::847c947b70751d01ef28d75a741b678c::1786308590::res://.godot/exported/133200997/export-f27749e4175e38537d238cc2cb3caffa-swarm.res
-res://assets/projectile/RepeaterBullet.tscn::a8ad04406d1e3f052a5ef50819fbab9d::1786313270::res://.godot/exported/133200997/export-22b5bf2de3fbd8bb5e087a883a51f16f-RepeaterBullet.scn
-res://assets/weapons/clockwork.tres::5795f5cbf93bca8025448ba9aa5f9557::1786312954::res://.godot/exported/133200997/export-76e44d792bc7c695df5de83a59bd88ac-clockwork.res
+res://assets/projectile/RepeaterBullet.tscn::e7465aba8bdcf8a58d5ac7b9159821c2::1786314146::res://.godot/exported/133200997/export-22b5bf2de3fbd8bb5e087a883a51f16f-RepeaterBullet.scn
+res://assets/weapons/clockwork.tres::d15339399c173b491d0c4da3790afb7d::1786314370::res://.godot/exported/133200997/export-76e44d792bc7c695df5de83a59bd88ac-clockwork.res
+res://assets/projectile/InvisibleBullet.tscn::364164c3d4aee3d27ab8f7b6c87b77c6::1786314370::res://.godot/exported/133200997/export-35f17d0e5c3f4711e3be56beb3745243-InvisibleBullet.scn
+res://assets/weapons/invisiblegun.tres::0af9c5656490f6ba73e19476d7943d04::1786314366::res://.godot/exported/133200997/export-4abe6ad96cf88eb7313ea803eee3ed83-invisiblegun.res
