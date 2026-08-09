@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bvt3ui5lie6ak"]
+
+[ext_resource type="PackedScene" uid="uid://c5q5jr2qolmo6" path="res://assets/projectile/ButterflyProjectile.tscn" id="1_vqi0g"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_qtdfc"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_mfjpm"]
+[ext_resource type="Texture2D" uid="uid://0wknckqgp7g6" path="res://sprites/weapons/swarmgun_evilgame2d.png" id="4_vqi0g"]
+
+[resource]
+script = ExtResource("3_mfjpm")
+id = "Swarm"
+weapon_img = ExtResource("4_vqi0g")
+bullet = ExtResource("1_vqi0g")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 400.0
+clip_size = 7
+shot_delay = 0.2
+reload_time = 4.0
+ready_audio = ExtResource("2_qtdfc")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

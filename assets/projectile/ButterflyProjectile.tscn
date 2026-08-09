@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c5q5jr2qolmo6"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_qtblt"]
+[ext_resource type="AudioStream" uid="uid://cwdstm2vy6127" path="res://audio/noise/weapon/gun_sin_norm.ogg" id="2_4y7nh"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_12b71"]
+[ext_resource type="Texture2D" uid="uid://dbr50ro4o3d6u" path="res://sprites/weapons/projectiles/butterfly_bullet.png" id="4_12b71"]
+[ext_resource type="Script" uid="uid://b3fbim5q5oloh" path="res://scripts/weapons/ProjectilePathfinding.gd" id="5_4y7nh"]
+[ext_resource type="Script" uid="uid://cscwpx4mrfmpq" path="res://scripts/weapons/projectile_movable_catcher.gd" id="6_12b71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4y7nh"]
+radius = 650.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_qtblt")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 500.0
+radius = 16.0
+by_lifetime = true
+lifetime = 20.0
+shot_sound = ExtResource("2_4y7nh")
+audio_mod = 10.0
+death_quote = Array[String](["\"How the %&#@ did this get here?\"", "\"Placeholder gameobject\"", "\"Placeholder data\"", "\"I drew everything in this game.\"", "\"Stop.\"", "\"NULL\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_12b71")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_12b71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="ProjectilePathfinding" type="Node2D" parent="." unique_id=1770796472 node_paths=PackedStringArray("Movable", "nav_agent")]
+script = ExtResource("5_4y7nh")
+Movable = NodePath("..")
+speed = 500.0
+nav_agent = NodePath("NavigationAgent2D")
+process_tick = 5
+metadata/_custom_type_script = "uid://b3fbim5q5oloh"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="ProjectilePathfinding" unique_id=1189708997]
+navigation_layers = 2
+path_postprocessing = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1737268058 node_paths=PackedStringArray("pathfinder")]
+collision_layer = 0
+collision_mask = 512
+script = ExtResource("6_12b71")
+pathfinder = NodePath("../ProjectilePathfinding")
+process_tick = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=934512806]
+shape = SubResource("CircleShape2D_4y7nh")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

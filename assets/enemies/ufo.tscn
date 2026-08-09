@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://g4l4258oojx4" path="res://audio/noise/enemies/plastic_hit.wav" id="3_o850h"]
 [ext_resource type="Texture2D" uid="uid://tt5crwrgp2an" path="res://sprites/enemies/EvilGame2D_toyufo_WIP.png" id="4_o850h"]
 [ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="5_4ykwd"]
-[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="6_xoguh"]
 [ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="7_5ykex"]
 [ext_resource type="Script" uid="uid://uvpai4td262g" path="res://scripts/player/character_hitbox.gd" id="8_krbld"]
 [ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="9_a8le5"]
@@ -44,7 +43,6 @@ hframes = 6
 script = ExtResource("5_4ykwd")
 body = NodePath("..")
 hitbox = NodePath("../hitbox")
-footstep = ExtResource("6_xoguh")
 audio = NodePath("AudioStreamPlayer2D")
 step_change = 1.2
 
@@ -84,6 +82,8 @@ script = ExtResource("12_v3gqn")
 vision_range = 375.0
 max_range = 425.0
 can_target_delay = 1.0
+bored_time = 3.0
+wander_chance = 0.6
 Movable = NodePath("..")
 Weapon = NodePath("../EnemyWeapon")
 nav_agent = NodePath("NavigationAgent2D")

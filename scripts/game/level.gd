@@ -39,11 +39,6 @@ func _process(delta: float) -> void:
 	if time <= 0:
 		time = 60
 		ticks += 1
-	
-	color_tick -= delta
-	if color_tick <= 0:
-		_calc_color(delta)
-		color_tick = 0.5
 
 var color_tick : float
 

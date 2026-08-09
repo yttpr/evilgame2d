@@ -162,4 +162,6 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 func _wander() -> void:
 	if Weapon:
 		Weapon.is_agro = false
+	Follow_Target = null
+	#print("should wander..")
 	_set_target(NavigationServer2D.map_get_random_point(get_world_2d().get_navigation_map(), nav_agent.navigation_layers, true))

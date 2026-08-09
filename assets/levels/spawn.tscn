@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://dvi2h04chhf8d" path="res://assets/weapons/the_nail.tres" id="13_lxhbm"]
 [ext_resource type="Resource" uid="uid://5a45guwc0uy0" path="res://assets/weapons/antigun.tres" id="14_yiqvs"]
 [ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="15_nf8dc"]
-[ext_resource type="Resource" uid="uid://bl02jt1aujxh" path="res://assets/weapons/sord.tres" id="16_yq6k7"]
+[ext_resource type="Resource" uid="uid://bvt3ui5lie6ak" path="res://assets/weapons/swarm.tres" id="16_nf8dc"]
 [ext_resource type="PackedScene" uid="uid://njexk3d72xp5" path="res://assets/objects/health_station.tscn" id="18_nf8dc"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
@@ -94,7 +94,7 @@ weapon = ExtResource("15_nf8dc")
 
 [node name="PlaytestWeapon4" parent="." unique_id=2052392941 instance=ExtResource("12_fnjer")]
 position = Vector2(704, 480)
-weapon = ExtResource("16_yq6k7")
+weapon = ExtResource("16_nf8dc")
 
 [node name="PlaytestWeapon5" parent="." unique_id=1299257703 instance=ExtResource("12_fnjer")]
 position = Vector2(768, 544)

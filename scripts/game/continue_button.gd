@@ -2,6 +2,8 @@ class_name ContinueButton
 
 extends TextureButton
 
+@export var audio : AudioStream
+
 func _botton_pressed() -> void:
 	if Manager.in_menu:
 		if Manager.Player.is_dead:
@@ -19,3 +21,7 @@ func _botton_pressed() -> void:
 				Manager.current_gun_index = 0
 		else:
 			Manager._toggle_pause()
+		GlobalNoise._play_sound(audio, 0, 0.7)
+func _play_sound() -> void:
+	GlobalNoise._play_sound(audio, 0)
+	#p.ignore_pause = true

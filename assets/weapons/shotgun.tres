@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://yn0d6ywnkyfh" path="res://assets/projectile/MultiHitscanBullet.tscn" id="1_5dbhs"]
 [ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="2_0so2b"]
 [ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_1ayb6"]
-[ext_resource type="Texture2D" uid="uid://pkw34oukcabh" path="res://sprites/weapons/placeholder_weapon.png" id="3_1ayb6"]
+[ext_resource type="Texture2D" uid="uid://c731l33drp7v7" path="res://sprites/weapons/shotgun_weapon.png" id="4_0so2b"]
 
 [resource]
 script = ExtResource("2_0so2b")
 id = "Shotgun"
-weapon_img = ExtResource("3_1ayb6")
+weapon_img = ExtResource("4_0so2b")
 bullet = ExtResource("1_5dbhs")
 bullet_type = "Hitscan_0"
 weapon_type = "Bullet"

@@ -169,6 +169,8 @@ var splash_noise : AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioServer.set_bus_layout(ResourceLoader.load("res://audio/control/noise_bus.tres"))
+	
 	run_bools = {}
 	
 	points = 0
@@ -214,9 +216,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Player and Player.is_dead:
-		AudioServer.set_bus_volume_db(1, AudioServer.get_bus_volume_db(1) - delta * 2)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Dying"), AudioServer.get_bus_volume_db(1) - delta * 2)
 	else:
-		AudioServer.set_bus_volume_db(1, 1)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Dying"), 1)
 
 func _notification(what):
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
@@ -253,15 +255,18 @@ func _create_weak(loc : Vector2, is_sin : bool) -> void:
 	icon._animate()
 
 
-func _play_oneshot(loc : Vector2, audio : AudioStream, mod : float = 0.0, pitch : float= 1.0) -> void:
+func _play_oneshot(loc : Vector2, audio : AudioStream, mod : float = 0.0, pitch : float= 1.0, ignorepause : bool = false) -> BasicAudio:
 	if !audio or !world:
-		return
+		return null
 	
 	var player = BasicAudio.new()
+	player.ignore_pause = ignorepause
 	_get_world().add_child(player)
 	player.global_position = loc
 	player._play_sound(audio, mod, pitch)
 	player._set_oneshot(true)
+	
+	return player
 
 func _make_gibs(loc : Vector2, inertia : Vector2, data : GibData) -> void:
 	gibs._make_gibs(loc, inertia, data)

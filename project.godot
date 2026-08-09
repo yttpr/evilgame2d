@@ -23,10 +23,11 @@ buses/default_bus_layout="uid://ca6x631q27ur5"
 
 Manager="*uid://dbtq00rebddwx"
 Music="*uid://dyojaegkmo33x"
+GlobalNoise="*uid://crxycbcbj8po6"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [input]

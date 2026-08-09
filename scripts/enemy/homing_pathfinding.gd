@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 		if wander_tick >= wander_time:
 			if randf_range(0.0, 1.0) < wander_chance:
 				did_see = false
+				_set_moving(true)
 				_wander()
 			else:
 				wander_tick = 0
@@ -45,15 +46,18 @@ func _process(delta: float) -> void:
 	else:
 		bored_tick += delta
 		if bored_tick >= bored_time:
+			#print("bored time, ", Movable.name)
 			if randf_range(0.0, 1.0) < bored_chance:
+				#print("win")
 				Follow_Target = null
 				did_see = false
+				_set_moving(true)
 				_wander()
 			bored_tick = 0
 	
-	
-	super._process(delta)
-	if !Follow_Target and !skip_base_lock_on:
+	if Follow_Target:
+		super._process(delta)
+	if !Follow_Target and !skip_base_lock_on and (_can_see(Manager.Player) or always):
 		_set_follow(Manager.Player, !always)
 	
 	if !Follow_Target:

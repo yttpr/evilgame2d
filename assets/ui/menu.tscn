@@ -6,13 +6,40 @@
 [ext_resource type="Texture2D" uid="uid://bwuxang0bwb56" path="res://sprites/ui/respawn_pressed.png" id="3_l0v7b"]
 [ext_resource type="Script" uid="uid://dh2fbtagsrtgt" path="res://scripts/game/continue_button.gd" id="4_0i6ep"]
 [ext_resource type="Texture2D" uid="uid://c3sn8ugg1nfss" path="res://sprites/ui/exit_unpressed.png" id="5_xpjlo"]
+[ext_resource type="AudioStream" uid="uid://wgxrj6aj03mt" path="res://audio/noise/ui/ui_press.wav" id="6_fmpc2"]
 [ext_resource type="Texture2D" uid="uid://plykaoulggvb" path="res://sprites/ui/exit_pressed.png" id="6_kfuqq"]
 [ext_resource type="Script" uid="uid://dikl55ykqd6am" path="res://scripts/game/exit_button.gd" id="7_ugq0a"]
 [ext_resource type="Texture2D" uid="uid://b5ovy3llkrq0h" path="res://sprites/ui/blobby.png" id="8_kfuqq"]
+[ext_resource type="Texture2D" uid="uid://seuh8dweiuyk" path="res://sprites/ui/settings_unpressed.png" id="9_2cwxh"]
 [ext_resource type="Script" uid="uid://cok3ntukgso4r" path="res://scripts/game/death_handler.gd" id="10_2qw5y"]
+[ext_resource type="Texture2D" uid="uid://b2b0rm661yb2w" path="res://sprites/ui/settings_pressed.png" id="10_byd2q"]
 [ext_resource type="Script" uid="uid://b8p32uhnx1syq" path="res://scripts/game/vibrate_label.gd" id="11_lf07f"]
+[ext_resource type="Script" uid="uid://2dv81obfxyfs" path="res://scripts/game/audio_slider.gd" id="14_byd2q"]
+[ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="15_635q3"]
+[ext_resource type="Texture2D" uid="uid://cu68a1iu5ayl3" path="res://sprites/weapons/projectiles/skull_bullet.png" id="15_yofms"]
+[ext_resource type="Texture2D" uid="uid://d3nnlvfraf6fy" path="res://sprites/weapons/projectiles/marker_bullet.png" id="16_t0nt5"]
+[ext_resource type="Texture2D" uid="uid://cmus8eiud5cec" path="res://sprites/weapons/projectiles/star_bullet.png" id="18_4epor"]
+[ext_resource type="Texture2D" uid="uid://bg8oj8jvbe8d3" path="res://sprites/ui/noise_name.png" id="20_08n47"]
+[ext_resource type="Texture2D" uid="uid://cu2mb0231nynj" path="res://sprites/ui/music_name.png" id="21_s5pc3"]
 
-[node name="Menu" type="Control" unique_id=1451568578 node_paths=PackedStringArray("border", "buttons", "death_handler")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yofms"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+anti_aliasing_size = 3.0
+
+[node name="Menu" type="Control" unique_id=1451568578 node_paths=PackedStringArray("border", "buttons", "audiosliders", "death_handler")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,13 +51,15 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_ugq0a")
 border = NodePath("TextureRect")
-buttons = [NodePath("TextureButton"), NodePath("ExitButton")]
+buttons = [NodePath("TextureButton"), NodePath("ExitButton"), NodePath("SettingsButton")]
+audiosliders = [NodePath("Noise"), NodePath("SettingsButton"), NodePath("Music"), NodePath("image_holder_audio")]
 death_handler = NodePath("text_holder")
 in_time = 1.0
 anim_spd = 2.0
 in_size = Vector2(1.5, 1.5)
 out_size = Vector2(2.2, 2.2)
 leave_size = Vector2(4.5, 4.5)
+ui_audio = ExtResource("6_fmpc2")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1555963291]
 z_index = 25
@@ -50,6 +79,7 @@ grow_vertical = 2
 texture_normal = ExtResource("2_0i6ep")
 texture_hover = ExtResource("3_l0v7b")
 script = ExtResource("4_0i6ep")
+audio = ExtResource("6_fmpc2")
 
 [node name="ExitButton" type="TextureButton" parent="." unique_id=1376340284]
 z_index = 25
@@ -69,6 +99,18 @@ texture_normal = ExtResource("5_xpjlo")
 texture_hover = ExtResource("6_kfuqq")
 script = ExtResource("7_ugq0a")
 metadata/_custom_type_script = "uid://dikl55ykqd6am"
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=327758651]
+z_index = 25
+material = ExtResource("1_eroip")
+layout_mode = 0
+offset_left = 143.00003
+offset_top = 47.0
+offset_right = 655.0
+offset_bottom = 303.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("9_2cwxh")
+texture_hover = ExtResource("10_byd2q")
 
 [node name="TextureRect" type="Sprite2D" parent="." unique_id=571275672]
 z_index = 8
@@ -1043,5 +1085,61 @@ text = "\"I see no gods above me. \""
 horizontal_alignment = 1
 script = ExtResource("11_lf07f")
 
+[node name="Noise" type="VSlider" parent="." unique_id=1592111343]
+z_index = 26
+material = ExtResource("1_eroip")
+layout_mode = 0
+offset_left = 144.0
+offset_top = -303.99997
+offset_right = 176.0
+offset_bottom = -3.9999695
+scale = Vector2(2, 2)
+theme_override_icons/grabber = ExtResource("15_635q3")
+theme_override_icons/grabber_highlight = ExtResource("16_t0nt5")
+theme_override_styles/slider = SubResource("StyleBoxFlat_yofms")
+max_value = 2.0
+step = 0.001
+script = ExtResource("14_byd2q")
+bus_name = "Noise"
+
+[node name="Music" type="VSlider" parent="." unique_id=1404273559]
+z_index = 26
+material = ExtResource("1_eroip")
+layout_mode = 0
+offset_left = -105.0
+offset_top = -304.0
+offset_right = -73.0
+offset_bottom = -4.0
+scale = Vector2(2, 2)
+theme_override_icons/grabber = ExtResource("18_4epor")
+theme_override_icons/grabber_highlight = ExtResource("15_yofms")
+theme_override_styles/slider = SubResource("StyleBoxFlat_yofms")
+max_value = 2.0
+step = 0.001
+script = ExtResource("14_byd2q")
+bus_name = "Music"
+
+[node name="image_holder_audio" type="Control" parent="." unique_id=923440686]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="noiselabel" type="Sprite2D" parent="image_holder_audio" unique_id=323805060]
+z_index = 25
+material = ExtResource("1_eroip")
+position = Vector2(93, 0)
+rotation = -1.5707964
+texture = ExtResource("20_08n47")
+
+[node name="musiclabel" type="Sprite2D" parent="image_holder_audio" unique_id=36385014]
+z_index = 25
+material = ExtResource("1_eroip")
+position = Vector2(-164, 0)
+rotation = -1.5707964
+texture = ExtResource("21_s5pc3")
+
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_botton_pressed"]
 [connection signal="pressed" from="ExitButton" to="ExitButton" method="_botton_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_toggle_audio"]
+[connection signal="value_changed" from="Noise" to="Noise" method="_on_value_changed"]
+[connection signal="value_changed" from="Music" to="Music" method="_on_value_changed"]

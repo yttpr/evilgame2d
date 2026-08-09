@@ -19,6 +19,7 @@ var current_position : Vector2
 var tick_wait = 0
 
 func _ready() -> void:
+	get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
 	tick_wait = 10
 	Manager.Camera = self
 	if Manager.current_zoom < 0:
@@ -58,13 +59,22 @@ func _process(delta : float) -> void:
 		global_position = current_position
 		
 	else:
-		global_position = Vector2(500, 300)
+		global_position = Vector2(500, 275)
 	if trauma: # If the camera is currently shaking
 		trauma = max(trauma - decay * pow(1 / decay_time_mod, 0.35) * delta, 0) # Decay the shake strength
 		shake() # Shake the camera
 	
+	var screen_pos = Vector2(575, 275)
+	screen_pos = Manager.Player.get_global_transform_with_canvas().get_origin()
+	#screen_pos = screen_pos
+	screen_pos += Vector2(0, -50)
+	#var thex = get_tree().root.content_scale_size.x / 1152
+	#var they = get_tree().root.content_scale_size.y / 648
+	#screen_pos.x *= thex
+	#screen_pos.y *= they
+	#screen_pos = Vector2(get_tree().root.content_scale_size.x / 2, get_tree().root.content_scale_size.y / 2)
 	#print(RenderingServer.global_shader_parameter_get("PlayerLoc"))
-	RenderingServer.global_shader_parameter_set("PlayerLoc", Vector2(575, 275) + self.position * -1)
+	RenderingServer.global_shader_parameter_set("PlayerLoc", screen_pos)
 
 ## The function to use for adding trauma (screen shake)
 func add_trauma(amount : float) -> void:

@@ -15,13 +15,14 @@ Weapons = NodePath("WeaponDisplay")
 Coins = NodePath("CoinDisplay")
 
 [node name="HealthDisplay" parent="." unique_id=687447478 instance=ExtResource("2_5x73h")]
+position = Vector2(26, 24)
 
 [node name="WeaponDisplay" parent="." unique_id=1940058706 instance=ExtResource("3_34bbm")]
-position = Vector2(31, 65)
+position = Vector2(57, 89)
 
 [node name="AmmoDisplay" parent="." unique_id=1890308213 instance=ExtResource("4_jpny2")]
-position = Vector2(2, 133)
+position = Vector2(28, 157)
 
 [node name="CoinDisplay" parent="." unique_id=2051199142 instance=ExtResource("5_6bn6x")]
-position = Vector2(1001, 593)
+position = Vector2(1029, 615)
 scale = Vector2(2, 2)

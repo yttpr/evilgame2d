@@ -35,6 +35,15 @@ func _process(delta: float) -> void:
 		_set_moving(true)
 	
 	super._process(delta)
+	
+	if on_screen:
+		if !Follow_Target or (!_can_target(Follow_Target) and (!did_see or _at_target())):
+			_set_moving(false)
+		else:
+			_set_moving(true)
+	else:
+		_set_moving(true)
+	
 	if !Follow_Target:
 		Weapon.is_agro = false
 

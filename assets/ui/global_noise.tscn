@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://crxycbcbj8po6"]
+
+[ext_resource type="Script" uid="uid://cjlog455us72x" path="res://scripts/game/global_audio.gd" id="1_buaq3"]
+
+[node name="GlobalNoise" type="AudioStreamPlayer" unique_id=1888792278]
+script = ExtResource("1_buaq3")
+metadata/_custom_type_script = "uid://cjlog455us72x"

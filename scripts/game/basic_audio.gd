@@ -2,6 +2,8 @@ class_name BasicAudio
 
 extends AudioStreamPlayer2D
 
+@export var ignore_pause : bool
+
 var oneshot : bool
 
 func _play_sound(sound : AudioStream, mod : float = 0.0, pitch : float = 1.0) -> void:
