@@ -175,6 +175,7 @@ position = Vector2(-1000, -27)
 
 [node name="HealthInteractible" parent="." unique_id=2134730539 instance=ExtResource("11_88ju8")]
 position = Vector2(-1440, -352)
+killed_id = "Healing_Smile_Field"
 
 [node name="HangingLight19" parent="." unique_id=1817478169 instance=ExtResource("15_4geja")]
 position = Vector2(-1092, -374)

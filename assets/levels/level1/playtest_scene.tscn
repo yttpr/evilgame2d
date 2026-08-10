@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="15_fiy3i"]
 [ext_resource type="PackedScene" uid="uid://df2wlh6wycupb" path="res://assets/objects/single_use_door.tscn" id="15_nhmve"]
 [ext_resource type="PackedScene" uid="uid://bj4q7m6aham57" path="res://assets/objects/shadow_crate.tscn" id="16_nhmve"]
-[ext_resource type="PackedScene" uid="uid://b53ugaoxogsrt" path="res://assets/enemies/something.tscn" id="17_3xvpc"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -342,7 +341,3 @@ position = Vector2(-1599, 991)
 position = Vector2(-1533, 957)
 key = "ILOVEYOUsecretpathDoor"
 room = "res://assets/levels/level1/untitled/untitled_hallway.tscn"
-
-[node name="Something" parent="." unique_id=1393237285 instance=ExtResource("17_3xvpc")]
-position = Vector2(192, 416)
-hit_mod = 10.0

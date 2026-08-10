@@ -86,3 +86,10 @@ res://assets/projectile/XBullet.tscn
 res://assets/enemies/something.tscn
 res://assets/enemies/gibs/something_gibs.tres
 res://assets/levels/level1/untitled/iloveyou/smileworld/smileworld2/smileworld3/bigroom/smile_field/smile_field.tscn
+res://assets/enemies/spawns/spawns_sewer_easy.tres
+res://assets/projectile/PumpkinBullet.tscn
+res://assets/enemies/pumpkin.tscn
+res://assets/projectile/PumpkinSubBullet.tscn
+res://assets/enemies/gibs/pumpkin_gibs.tres
+res://assets/levels/level1/level2/level3/sewer/passages/shiproom/boatroom.tscn
+res://assets/enemies/spawns/spawns_sewer_hard.tres

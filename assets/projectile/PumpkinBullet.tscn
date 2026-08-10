@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cqsqrr8n7flqb"]
+
+[ext_resource type="Script" uid="uid://71j5awutvofc" path="res://scripts/weapons/exploding_projectile.gd" id="1_nfbrf"]
+[ext_resource type="PackedScene" uid="uid://dyfi7xhmy4nfh" path="res://assets/projectile/PumpkinSubBullet.tscn" id="2_nfbrf"]
+[ext_resource type="AudioStream" uid="uid://dyrrpejx5xgwo" path="res://audio/noise/weapon/magic_heavy.wav" id="3_nfbrf"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_5wlr7"]
+[ext_resource type="Texture2D" uid="uid://beg5ggq6ssggq" path="res://sprites/weapons/projectiles/pumpkin_bullet.png" id="5_nfbrf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_nfbrf")
+bullet = ExtResource("2_nfbrf")
+source_name = "Enemy_Projectile_0"
+shoot_from = NodePath("Sprite2D")
+amount = 12
+collision_only_player = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 285.0
+radius = 16.0
+rot_spd = 14.0
+gravity = -356.0
+grav_accel = 600.0
+by_lifetime = true
+lifetime = 15.0
+shot_sound = ExtResource("3_nfbrf")
+audio_mod = 8.0
+death_quote = Array[String](["\"HAHAHAHAHAHA!!!\"", "\"Happy Halloween!!!!\"", "\"The devil waits for an opening.\"", "\"The devil smiles at me.\"", "\"I'm so powerful.\"", "\"I am beyond mortal comprehension.\"", "\"I OVERWHELM YOU!\"", "\"I alone remain undefeated.\"", "\"The pits of hell await you.\"", "\"Don't keep the devil waiting, my friend.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("4_5wlr7")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_nfbrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

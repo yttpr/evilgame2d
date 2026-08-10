@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemySpawnList" format=3 uid="uid://ds5h7xqwsivm4"]
+
+[ext_resource type="PackedScene" uid="uid://bji8eqd5jxx6q" path="res://assets/enemies/ufo.tscn" id="1_s5mg2"]
+[ext_resource type="PackedScene" uid="uid://bvn37ufvx8gip" path="res://assets/enemies/cns.tscn" id="2_1ju51"]
+[ext_resource type="PackedScene" uid="uid://d35vl5itpal1t" path="res://assets/enemies/skeleton_shooter.tscn" id="4_tp1i2"]
+[ext_resource type="PackedScene" uid="uid://ct1ooywh5c6dt" path="res://assets/enemies/enigma.tscn" id="5_r0agl"]
+[ext_resource type="PackedScene" uid="uid://du5bvf4dm5t2l" path="res://assets/enemies/freud.tscn" id="6_vlrn0"]
+[ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="8_1ynvw"]
+
+[resource]
+script = ExtResource("8_1ynvw")
+Enemies = Array[PackedScene]([ExtResource("1_s5mg2"), ExtResource("2_1ju51"), ExtResource("4_tp1i2"), ExtResource("5_r0agl"), ExtResource("6_vlrn0")])
+Weights = Array[int]([1, 1, 6, 3, 1])
+metadata/_custom_type_script = "uid://b1js8q00adevy"

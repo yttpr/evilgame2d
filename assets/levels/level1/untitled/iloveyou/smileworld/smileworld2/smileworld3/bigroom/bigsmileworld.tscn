@@ -22,7 +22,7 @@ script = ExtResource("1_gkc18")
 canvasmodulate = NodePath("CanvasModulate")
 entries = Array[Vector2]([Vector2(0, 49), Vector2(2240, -3441)])
 songs = Array[AudioStream]([ExtResource("2_2xfu2"), ExtResource("3_l5642"), ExtResource("4_av6s4")])
-volumes = Array[float]([-8.0, -12.0, 3.0])
+volumes = Array[float]([-8.0, -11.0, 3.0])
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
 z_index = -5
@@ -197,6 +197,7 @@ position = Vector2(1440, 288)
 
 [node name="HealthInteractible" parent="." unique_id=2134730539 instance=ExtResource("11_1ws60")]
 position = Vector2(1120, 352)
+killed_id = "Healing_Labs_Rooms"
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1784796470]
 position = Vector2(3781.13, -2879.6353)

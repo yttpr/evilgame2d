@@ -124,3 +124,4 @@ max_hotbar_size = 0
 
 [node name="HealthInteractible" parent="." unique_id=2134730539 instance=ExtResource("18_yslsk")]
 position = Vector2(-288, -736)
+killed_id = "Healing_Cora_Shop_1"

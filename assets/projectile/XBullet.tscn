@@ -22,7 +22,7 @@ lifetime = 3.0
 shot_sound = ExtResource("2_2b4xk")
 audio_mod = 15.0
 make_gibs = true
-death_quote = Array[String](["\"Emptiness, emptiness, emptiness...\"", "\"It's not real, it's not real, it's not real...\"", "\"It can't hurt, it can't hurt, it can't hurt...\"", "\"In my head, in my head, in my head...\"", "\"Get out, get out, get out!\"", "\"Go away, go away, go away!\"", "\"Visions of visions of visions...\"", "\"Darkness, darkness, darkness.\"", "\"Nothing, nothing, nothing.\"", "\"Nihilism, nihilism, nihilism.\"", "\"It's okay, it's okay, it's okay.\""])
+death_quote = Array[String](["\"I am nothing.\"", "\"I am everything.\"", "\"I am anything.\"", "\"I am something.\"", "\"I am many things.\"", "\"I am not anything.\"", "\"I exist.\"", "\"I do not deserve to exist.\"", "\"I do not live.\"", "\"I do not die.\"", "\"I do not deserve to live.\"", "\"I deserve limbo.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_jayok")

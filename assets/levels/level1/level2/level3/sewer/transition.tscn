@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="7_ecomc"]
 [ext_resource type="PackedScene" uid="uid://cyt7ns085e1uw" path="res://assets/objects/crate.tscn" id="8_t5gqa"]
 [ext_resource type="Script" uid="uid://c4l3txmv6gpvl" path="res://scripts/enemy/enemy_spawner.gd" id="9_3evt2"]
-[ext_resource type="Resource" uid="uid://b1u68wr652r7x" path="res://assets/enemies/spawns/all_delusion.tres" id="9_wqy2s"]
+[ext_resource type="Resource" uid="uid://ds5h7xqwsivm4" path="res://assets/enemies/spawns/spawns_sewer_easy.tres" id="11_kk6x7"]
 [ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="12_xgu1n"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
@@ -122,7 +122,7 @@ position = Vector2(-384, 1056)
 position = Vector2(128, 1504)
 script = ExtResource("9_3evt2")
 spawn_cap = 4
-data = ExtResource("9_wqy2s")
+data = ExtResource("11_kk6x7")
 spawn_time = 10.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 
@@ -130,7 +130,7 @@ metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 position = Vector2(416, -96)
 script = ExtResource("9_3evt2")
 spawn_cap = 2
-data = ExtResource("9_wqy2s")
+data = ExtResource("11_kk6x7")
 spawn_time = 30.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 
