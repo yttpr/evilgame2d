@@ -18,7 +18,6 @@
 [ext_resource type="Resource" uid="uid://dihxajuyq0e3p" path="res://assets/weapons/punch_gun.tres" id="15_nf8dc"]
 [ext_resource type="Resource" uid="uid://bvt3ui5lie6ak" path="res://assets/weapons/swarm.tres" id="16_nf8dc"]
 [ext_resource type="Resource" uid="uid://bl02jt1aujxh" path="res://assets/weapons/sord.tres" id="16_yq6k7"]
-[ext_resource type="PackedScene" uid="uid://njexk3d72xp5" path="res://assets/objects/health_station.tscn" id="18_nf8dc"]
 [ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="19_kyxgp"]
 [ext_resource type="Resource" uid="uid://cjytt7fin2c6p" path="res://assets/weapons/clockwork.tres" id="20_acd7y"]
 [ext_resource type="Resource" uid="uid://ct8huiy14lmpd" path="res://assets/weapons/invisiblegun.tres" id="21_7vgxb"]
@@ -119,7 +118,3 @@ weapon = ExtResource("20_acd7y")
 [node name="PlaytestWeapon9" parent="." unique_id=1334582325 instance=ExtResource("12_fnjer")]
 position = Vector2(448, 416)
 weapon = ExtResource("21_7vgxb")
-
-[node name="HealthInteractible" parent="." unique_id=2134730539 instance=ExtResource("18_nf8dc")]
-position = Vector2(352, 96)
-killed_id = "Healing_Spawn"

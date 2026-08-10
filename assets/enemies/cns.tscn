@@ -42,6 +42,7 @@ hframes = 6
 script = ExtResource("5_kql6j")
 body = NodePath("..")
 hitbox = NodePath("../hitbox")
+audio_mod = 0.0
 audio = NodePath("AudioStreamPlayer2D")
 step_change = 1.2
 

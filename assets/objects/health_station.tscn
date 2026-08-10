@@ -25,7 +25,7 @@ fill = 1
 fill_from = Vector2(0.5086806, 0.5190972)
 fill_to = Vector2(0.8350694, 0.8315972)
 
-[node name="HealthInteractible" type="CharacterBody2D" unique_id=2134730539 node_paths=PackedStringArray("body", "label")]
+[node name="HealthInteractible" type="CharacterBody2D" unique_id=2134730539 node_paths=PackedStringArray("body", "label", "talker")]
 collision_layer = 2048
 collision_mask = 0
 script = ExtResource("4_v5072")
@@ -35,6 +35,8 @@ audio_mod = 10.0
 coin_cost = 15
 label = NodePath("Label")
 label_off_time = 0.5
+talker = NodePath("dialogue")
+talk_time = 3.0
 marker_offset = Vector2(0, -16)
 despawn_time = -1.0
 despawn_length = -1.0
@@ -105,3 +107,18 @@ position = Vector2(0, -77)
 range_item_cull_mask = 2
 shadow_item_cull_mask = 4
 texture = SubResource("GradientTexture2D_wgcvq")
+
+[node name="dialogue" type="Label" parent="." unique_id=263501362]
+z_index = 6
+material = ExtResource("5_0uywm")
+offset_left = -423.0
+offset_top = -142.0
+offset_right = 137.66669
+offset_bottom = -119.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.44313726)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "Already at full health!"
+horizontal_alignment = 1
+vertical_alignment = 1

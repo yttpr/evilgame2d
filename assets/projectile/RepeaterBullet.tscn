@@ -28,7 +28,7 @@ tracer_time = 0.06
 shot_sound = ExtResource("2_qjlu0")
 audio_mod = 10.0
 make_gibs = true
-death_quote = Array[String](["\"Like clockwork.\"", "\"Another day, another dime.\"", "\"Time's up.\"", "\"It's about time.\"", "\"Let's take it slow.\"", "\"I don't have all day now.\""])
+death_quote = Array[String](["\"Like clockwork.\"", "\"Another day, another dime.\"", "\"Time's up.\"", "\"It's about time.\"", "\"Let's take it slow.\"", "\"I don't have all day now.\"", "\"Rule of 3's.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_sgg15")

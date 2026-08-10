@@ -18,7 +18,7 @@
 y_sort_enabled = true
 script = ExtResource("1_vu21a")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(0, 0), Vector2(-3671, -1771), Vector2(3809, -611), Vector2(546, 1693)])
+entries = Array[Vector2]([Vector2(0, 0), Vector2(-3671, -1771), Vector2(3809, -611), Vector2(546, 1693), Vector2(-3712, -1841)])
 songs = Array[AudioStream]([ExtResource("2_jna28"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710"), ExtResource("3_p6710")])
 volumes = Array[float]([0.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -4.0, -2.0, -2.0, -2.0, -2.0, -2.0, -4.0, -2.0, -2.0, -2.0, -2.0, -2.0])
 
@@ -60,9 +60,6 @@ position = Vector2(-45, -73)
 
 [node name="Lullaby" parent="." unique_id=2045354792 instance=ExtResource("10_tq1cr")]
 position = Vector2(-800, 736)
-
-[node name="WIP2" parent="." unique_id=68694751 instance=ExtResource("6_ov6os")]
-position = Vector2(-3671, -1835)
 
 [node name="WIP4" parent="." unique_id=1409831432 instance=ExtResource("6_ov6os")]
 position = Vector2(546, 1821)
@@ -112,3 +109,7 @@ metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 [node name="Door" parent="." unique_id=846407333 instance=ExtResource("7_jsm1b")]
 position = Vector2(3808, -704)
 room = "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_base.tscn"
+
+[node name="Door2" parent="." unique_id=192423772 instance=ExtResource("7_jsm1b")]
+position = Vector2(-3712, -1856)
+room = "res://assets/levels/level1/untitled/iloveyou/smileworld/smileworld_1.tscn"

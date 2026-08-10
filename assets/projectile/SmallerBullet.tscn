@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bx2o8g4eso2bc"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_16yle"]
+[ext_resource type="AudioStream" uid="uid://bdo0dafa7gdaj" path="res://audio/noise/weapon/magic_verysmall.wav" id="2_16yle"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_6ix3c"]
+[ext_resource type="Texture2D" uid="uid://cwd62ljt2gtwa" path="res://sprites/weapons/projectiles/empty_bullet.png" id="4_frq4c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_16yle")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 10.0
+rot_spd = 30.0
+by_lifetime = true
+lifetime = 2.0
+tracer_width = 12.0
+shot_sound = ExtResource("2_16yle")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"Better to be somebody than nobody.\"", "\"Anybody will do.\"", "\"Anyone can do it.\"", "\"It's your job to follow orders.\"", "\"A cog in the machine.\"", "\"Who you are doesn't matter.\"", "\"Someone's got to do it.\"", "\"Everyone does it at some point.\"", "\"No one stops.\"", "\"Nobody hears you scream.\"", "\"Everybody breaks.\"", "\"Who doesn't?\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_6ix3c")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_frq4c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

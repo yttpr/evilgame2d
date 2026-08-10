@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://e8matdgr1ail"]
+
+[ext_resource type="Script" uid="uid://71j5awutvofc" path="res://scripts/weapons/exploding_projectile.gd" id="1_0ljc5"]
+[ext_resource type="PackedScene" uid="uid://l218www5i84g" path="res://assets/projectile/BirdBall.tscn" id="2_ept4s"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_sm6ny"]
+[ext_resource type="Texture2D" uid="uid://crhlgvoajx823" path="res://sprites/weapons/projectiles/block_bullet.png" id="5_qy6tg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_0ljc5")
+bullet = ExtResource("2_ept4s")
+source_name = "Enemy_Projectile_0"
+shoot_from = NodePath("Sprite2D")
+amount = 10
+collision_only_player = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 15.0
+radius = 16.0
+rot_spd = 14.0
+by_lifetime = true
+lifetime = 0.1
+audio_mod = 10.0
+death_quote = Array[String](["\"Oh, to be a child...\"", "\"I want to be a bird!\"", "\"The little crow wished for it's deepest darkest desire...\"", "\"Innocent youth...\"", "\"To be young again...\"", "\"I don't want to grow up!\"", "\"I don't want to be an adult!\"", "\"If only I could fly away...\"", "\"To be free... like a bird...\"", "\"What the birds know... that I don't?\"", "\"The birds know me...\"", "\"I know the birds...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("4_sm6ny")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_qy6tg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

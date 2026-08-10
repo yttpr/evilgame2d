@@ -96,6 +96,7 @@ func _on_die() -> void:
 	if gibs:
 		Manager._make_gibs(self.global_position, inertia, gibs)
 
+var universal_i_frames : float
 func _get_hit(amt : int, type : String, source : String, mov : Vector2, extra : bool = false) -> bool:
 	if !_check_i_frame(source):
 		return false
@@ -126,6 +127,8 @@ func _modify_hit(amt : int, type : String, source : String) -> int:
 
 
 func _check_i_frame(source : String) -> bool:
+	if universal_i_frames > 0:
+		return false
 	if source.contains("0"):
 		return true
 	if !i_frames:
@@ -139,6 +142,8 @@ func _check_i_frame(source : String) -> bool:
 	return true
 
 func _process(delta: float) -> void:
+	if universal_i_frames > 0:
+		universal_i_frames -= delta
 	
 	if is_dead:
 		time_to_die -= delta

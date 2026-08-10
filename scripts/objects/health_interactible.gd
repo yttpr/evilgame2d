@@ -11,6 +11,7 @@ extends BaseInteractible
 @export var label : Label
 
 func _ready() -> void:
+	_hide_dialogue()
 	label.visible = false
 	super._ready()
 	if Manager._check_run_bool(killed_id):
@@ -20,8 +21,15 @@ func _ready() -> void:
 func _run() -> void:
 	if body.destroyed:
 		return
-	if Manager.coins < coin_cost or Manager.current_hp >= Manager.current_chara.HP:
+	if Manager.current_hp >= Manager.current_chara.HP:
 		Manager._play_oneshot(self.global_position, Manager.ui_fail, 20)
+		dialogue = "Already at full health!"
+		_show_dialogue()
+		return
+	if Manager.coins < coin_cost:
+		Manager._play_oneshot(self.global_position, Manager.ui_fail, 20)
+		dialogue = "Not enough coins!"
+		_show_dialogue()
 		return
 	if coin_cost > 0:
 		Manager.coins -= coin_cost
@@ -68,3 +76,25 @@ func _process(delta : float) -> void:
 		Manager._get_world().add_child(body)
 		body.global_position = self.global_position
 		self.queue_free()
+
+
+
+@export var talker : Label
+var dialogue : String
+@export var talk_time : float
+
+func _hide_dialogue() -> void:
+	talker.visible = false
+
+var talk_tween : Tween
+func _show_dialogue() -> void:
+	if talk_tween:
+		talk_tween.kill()
+	talker.visible = true
+	talker.modulate = Color.WHITE
+	talker.text = dialogue
+	talk_tween = get_tree().create_tween()
+	talk_tween.set_ease(Tween.EASE_IN)
+	talk_tween.set_trans(Tween.TRANS_SINE)
+	talk_tween.tween_property(talker, "modulate", Color(1, 1, 1, 0), talk_time)
+	talk_tween.tween_callback(_hide_dialogue)

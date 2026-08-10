@@ -35,6 +35,7 @@ func _set_follow(field : Node2D, need_see := false) -> void:
 	if Follow_Target != old:
 		_set_target(Vector2(Follow_Target.global_position))
 
+@export var is_summon : bool
 func _ready() -> void:
 	speed = Movable.mov_spd * randf_range(0.85, 1.15)
 	can_move = true
@@ -42,7 +43,8 @@ func _ready() -> void:
 	await get_tree().physics_frame
 	if !Manager.world:
 		await get_tree().process_frame
-	Manager._get_world().Enemies.append(Movable)
+	if !is_summon:
+		Manager._get_world().Enemies.append(Movable)
 
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0

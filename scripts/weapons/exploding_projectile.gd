@@ -15,11 +15,15 @@ func _explode() -> void:
 	for i in amount:
 		_shoot_buddy(Vector2.from_angle(((2*PI) / amount) * i))
 
+@export var collision_only_player : bool
 func _shoot_buddy(dir : Vector2) -> void:
 	var proj : BasicProjectile = bullet.instantiate()
 	Manager._get_world().add_child(proj)
 	proj.visible = true
 	proj._set_basic_data(dmg, type, knockback_mod)
-	proj._set_collision(source_name, Manager.collision_walls, Manager.collision_all)
+	if collision_only_player:
+		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_forEnemy)
+	else:
+		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_all)
 	proj.y_change = shoot_from.position.y
 	proj._shoot(dir, shoot_from.global_position)

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemySpawnList" format=3 uid="uid://lcxgk6ww10vu"]
+
+[ext_resource type="PackedScene" uid="uid://kq26i0fvk7xw" path="res://assets/enemies/crowchild.tscn" id="2_d1hxa"]
+[ext_resource type="PackedScene" uid="uid://bvn37ufvx8gip" path="res://assets/enemies/cns.tscn" id="3_8jiyo"]
+[ext_resource type="PackedScene" uid="uid://bfdhp1m27uv7k" path="res://assets/enemies/sign.tscn" id="4_hx0og"]
+[ext_resource type="PackedScene" uid="uid://bwj4mmaoldh6o" path="res://assets/enemies/ode.tscn" id="6_8n4xu"]
+[ext_resource type="PackedScene" uid="uid://b53ugaoxogsrt" path="res://assets/enemies/something.tscn" id="6_8y70f"]
+[ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="7_yjoym"]
+[ext_resource type="PackedScene" uid="uid://cv1pu16s718nx" path="res://assets/enemies/evildog.tscn" id="8_hx0og"]
+
+[resource]
+script = ExtResource("7_yjoym")
+Enemies = Array[PackedScene]([ExtResource("2_d1hxa"), ExtResource("3_8jiyo"), ExtResource("4_hx0og"), ExtResource("6_8n4xu"), ExtResource("8_hx0og"), ExtResource("6_8y70f")])
+Weights = Array[int]([4, 3, 2, 2, 3, 3])
+metadata/_custom_type_script = "uid://b1js8q00adevy"

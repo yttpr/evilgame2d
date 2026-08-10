@@ -128,6 +128,7 @@ metadata/_custom_type_script = "uid://dap3uvgj16hat"
 position = Vector2(0, -64)
 
 [node name="DarknessHolder" type="Sprite2D" parent="." unique_id=1393680597 node_paths=PackedStringArray("movable")]
+z_index = 5
 material = SubResource("ShaderMaterial_hnv3s")
 scale = Vector2(50, 50)
 texture = ExtResource("14_g2in3")

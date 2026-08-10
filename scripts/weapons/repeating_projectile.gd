@@ -12,9 +12,10 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 	if !original:
 		super._shoot(direction, origin)
 		return
-	
+	self.visible = false
 	for i in repeats:
 		var copy : RepeatingProjectile = self.duplicate()
+		copy.visible = true
 		copy.original = false
 		self.get_parent().add_child(copy)
 		if is_player:
