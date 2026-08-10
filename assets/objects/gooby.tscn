@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cn7gsdq6rjid0"]
+
+[ext_resource type="Script" uid="uid://glbbhxhn76jk" path="res://scripts/enemy/gooby_destructible.gd" id="1_e51au"]
+[ext_resource type="Resource" uid="uid://x0brs1pvn8t" path="res://assets/objects/gooby_gibs.tres" id="2_e51au"]
+[ext_resource type="Texture2D" uid="uid://mqnou51s88b5" path="res://sprites/objects/GoobySpritesheet.png" id="3_e51au"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(64, 64)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
+
+[node name="Gooby" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("gooby", "water", "image")]
+collision_layer = 36
+collision_mask = 0
+script = ExtResource("1_e51au")
+gooby = NodePath("Sprite2D")
+water = NodePath("water")
+HP = 3
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_e51au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337640463]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562283018]
+position = Vector2(0, -64)
+texture = ExtResource("3_e51au")
+hframes = 3
+
+[node name="water" type="Sprite2D" parent="." unique_id=2032816623]
+visible = false
+position = Vector2(0, -64)
+texture = ExtResource("3_e51au")
+hframes = 3
+frame = 2
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 0

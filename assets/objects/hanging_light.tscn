@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cnfhgvboy6531"]
 
 [ext_resource type="Texture2D" uid="uid://30sirfsfw232" path="res://sprites/objects/hanging_light.png" id="1_6d00x"]
+[ext_resource type="Script" uid="uid://1cayia4by8hq" path="res://scripts/objects/flicker_light.gd" id="1_of05o"]
 
 [sub_resource type="Gradient" id="Gradient_gxmte"]
 offsets = PackedFloat32Array(0, 0.8918269, 1)
@@ -12,7 +13,9 @@ fill = 1
 fill_from = Vector2(0.5086806, 0.5190972)
 fill_to = Vector2(0.8350694, 0.8315972)
 
-[node name="HangingLight" type="Node2D" unique_id=1485522281]
+[node name="HangingLight" type="Node2D" unique_id=1485522281 node_paths=PackedStringArray("lights")]
+script = ExtResource("1_of05o")
+lights = [NodePath("floor_light"), NodePath("wall_light"), NodePath("light_light"), NodePath("chara_light")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140620617]
 light_mask = 2

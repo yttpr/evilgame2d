@@ -12,7 +12,6 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 	if !original:
 		super._shoot(direction, origin)
 		return
-	self.pierce_amt = -1
 	#self.collider.collider.disabled = true
 	self.visible = false
 	for i in repeats:

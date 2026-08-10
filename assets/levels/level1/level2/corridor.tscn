@@ -13,14 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://6j1ubrcvxxax" path="res://assets/objects/barrel.tscn" id="11_deo1j"]
 [ext_resource type="PackedScene" uid="uid://ct1ooywh5c6dt" path="res://assets/enemies/enigma.tscn" id="12_deo1j"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="13_pug3j"]
-[ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="14_oa6bj"]
 [ext_resource type="PackedScene" uid="uid://njexk3d72xp5" path="res://assets/objects/health_station.tscn" id="15_y8fbb"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_y12xw")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(-128, -177), Vector2(-1376, -1649)])
+entries = Array[Vector2]([Vector2(-128, -177), Vector2(-1376, -1649), Vector2(2816, -753)])
 songs = Array[AudioStream]([ExtResource("2_m7m31")])
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
@@ -209,9 +208,10 @@ position = Vector2(-416, -1376)
 position = Vector2(-1376, -1664)
 room = "res://assets/levels/level1/level2/level3/duel.tscn"
 
-[node name="WIP" parent="." unique_id=1974218944 instance=ExtResource("14_oa6bj")]
-position = Vector2(2848, -736)
-
 [node name="HealthInteractible" parent="." unique_id=2134730539 instance=ExtResource("15_y8fbb")]
 position = Vector2(96, -160)
 killed_id = "Healing_Dungeon_Corridor"
+
+[node name="Door2" parent="." unique_id=640764611 instance=ExtResource("6_s5hba")]
+position = Vector2(2816, -768)
+room = "res://assets/levels/level1/level2/sigmaaaa_awesome/tunnels.tscn"

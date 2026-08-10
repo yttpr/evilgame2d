@@ -21,7 +21,7 @@
 y_sort_enabled = true
 script = ExtResource("1_0vxid")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(0, 113), Vector2(3008, -1777)])
+entries = Array[Vector2]([Vector2(0, 113), Vector2(3008, -1777), Vector2(2624, -2289)])
 songs = Array[AudioStream]([ExtResource("2_rp4w1"), ExtResource("3_twqpo"), ExtResource("4_1sjno")])
 volumes = Array[float]([-7.0, 0.0, -10.0, 0.0])
 water_pits = true
@@ -77,9 +77,6 @@ color = Color(0.2784314, 0.2784314, 0.2784314, 1)
 position = Vector2(0, 128)
 room = "res://assets/levels/level1/level2/level3/sewer/transition.tscn"
 spawn_pos = 1
-
-[node name="WIP2" parent="." unique_id=551783135 instance=ExtResource("12_l1bue")]
-position = Vector2(2624, -2272)
 
 [node name="WIP3" parent="." unique_id=709329975 instance=ExtResource("12_l1bue")]
 position = Vector2(-960, -1248)
@@ -351,3 +348,7 @@ killed_id = "Healing_Sewers_Passages"
 [node name="Door2" parent="." unique_id=1512435297 instance=ExtResource("13_h411r")]
 position = Vector2(3008, -1792)
 room = "res://assets/levels/level1/level2/level3/sewer/passages/shiproom/boatroom.tscn"
+
+[node name="Door3" parent="." unique_id=1566325120 instance=ExtResource("13_h411r")]
+position = Vector2(2624, -2304)
+room = "res://assets/levels/level1/level2/level3/sewer/passages/bucketroom/bucket_room.tscn"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://c1wp2boh4fw7"]
+
+[ext_resource type="Texture2D" uid="uid://dddms26b48y4m" path="res://sprites/objects/gibs/cone_gib.png" id="1_vvlqd"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="3_mvedm"]
+
+[resource]
+script = ExtResource("3_mvedm")
+images = Array[Texture2D]([ExtResource("1_vvlqd")])
+img_amts = Array[int]([1])
+weights = Array[float]([0.35])
+does_rotate = Array[bool]([true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

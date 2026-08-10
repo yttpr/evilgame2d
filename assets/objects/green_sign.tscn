@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b6tjge1l46w25"]
+
+[ext_resource type="Script" uid="uid://d1htkwex8rk0i" path="res://scripts/objects/base_destructible.gd" id="1_jk48y"]
+[ext_resource type="Resource" uid="uid://1qnnsf147g2g" path="res://assets/objects/green_gibs.tres" id="2_jk48y"]
+[ext_resource type="Texture2D" uid="uid://bmiy0srb336u7" path="res://sprites/objects/green_sign.png" id="3_g8jbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(64, 64)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
+
+[sub_resource type="Gradient" id="Gradient_gxmte"]
+offsets = PackedFloat32Array(0, 0.8918269, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1cm6p"]
+gradient = SubResource("Gradient_gxmte")
+fill = 1
+fill_from = Vector2(0.5086806, 0.5190972)
+fill_to = Vector2(0.8350694, 0.8315972)
+
+[node name="Sign" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("image")]
+collision_layer = 44
+collision_mask = 0
+script = ExtResource("1_jk48y")
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_jk48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337640463]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562283018]
+light_mask = 2
+texture = ExtResource("3_g8jbb")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 4
+
+[node name="light_holder" type="Node2D" parent="." unique_id=939164862]
+
+[node name="floor_light" type="PointLight2D" parent="light_holder" unique_id=178317267]
+z_index = -1
+color = Color(0.69803923, 1, 0.69411767, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 2.5
+
+[node name="wall_light" type="PointLight2D" parent="light_holder" unique_id=772052014]
+z_index = -1
+color = Color(0.69803923, 1, 0.69411767, 1)
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 2.5
+
+[node name="chara_light" type="PointLight2D" parent="light_holder" unique_id=649078975]
+z_index = -1
+color = Color(0.69803923, 1, 0.69411767, 1)
+range_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 2.5
+
+[node name="light_light" type="PointLight2D" parent="light_holder" unique_id=924867163]
+z_index = -1
+position = Vector2(0, -53)
+color = Color(0.8392157, 0.8392157, 0.8392157, 1)
+range_item_cull_mask = 2
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 2.5

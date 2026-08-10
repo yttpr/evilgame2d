@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://c4l3txmv6gpvl" path="res://scripts/enemy/enemy_spawner.gd" id="11_f7k04"]
 [ext_resource type="PackedScene" uid="uid://crlyfpxeb4map" path="res://assets/enemies/pumpkin.tscn" id="11_tno3c"]
 [ext_resource type="Resource" uid="uid://bcgus70652x60" path="res://assets/enemies/spawns/spawns_sewer_hard.tres" id="13_u1vrd"]
+[ext_resource type="PackedScene" uid="uid://b1or3c8djgnuk" path="res://assets/objects/metal_tower.tscn" id="15_devdu"]
+[ext_resource type="PackedScene" uid="uid://cn7gsdq6rjid0" path="res://assets/objects/gooby.tscn" id="16_xter1"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -242,3 +244,314 @@ position = Vector2(2640, -1100)
 
 [node name="HangingLight27" parent="." unique_id=1533951344 instance=ExtResource("10_0xljt")]
 position = Vector2(-62, -47)
+
+[node name="Metal" parent="." unique_id=379472456 instance=ExtResource("15_devdu")]
+position = Vector2(2805, 652)
+
+[node name="Metal2" parent="." unique_id=1059498147 instance=ExtResource("15_devdu")]
+position = Vector2(2848, 729)
+frame_id = 2
+
+[node name="Metal3" parent="." unique_id=726979531 instance=ExtResource("15_devdu")]
+position = Vector2(2811, 704)
+frame_id = 1
+
+[node name="Metal4" parent="." unique_id=691062032 instance=ExtResource("15_devdu")]
+position = Vector2(2811, 865)
+
+[node name="Metal5" parent="." unique_id=1352208032 instance=ExtResource("15_devdu")]
+position = Vector2(2941, 815)
+frame_id = 1
+
+[node name="Metal6" parent="." unique_id=687771654 instance=ExtResource("15_devdu")]
+position = Vector2(2899, 552)
+frame_id = 2
+
+[node name="Metal7" parent="." unique_id=411260026 instance=ExtResource("15_devdu")]
+position = Vector2(2838, 509)
+
+[node name="Metal8" parent="." unique_id=636241346 instance=ExtResource("15_devdu")]
+position = Vector2(2915, 461)
+frame_id = 2
+
+[node name="Metal9" parent="." unique_id=191410826 instance=ExtResource("15_devdu")]
+position = Vector2(2846, 960)
+frame_id = 1
+
+[node name="Gooby" parent="." unique_id=955548273 instance=ExtResource("16_xter1")]
+position = Vector2(385, -98)
+inwater = true
+
+[node name="Gooby2" parent="." unique_id=174910433 instance=ExtResource("16_xter1")]
+position = Vector2(449, -56)
+inwater = true
+
+[node name="Gooby3" parent="." unique_id=2126024379 instance=ExtResource("16_xter1")]
+position = Vector2(363, 6)
+inwater = true
+
+[node name="Gooby4" parent="." unique_id=1659904599 instance=ExtResource("16_xter1")]
+position = Vector2(408, 66)
+inwater = true
+
+[node name="Gooby5" parent="." unique_id=1735446564 instance=ExtResource("16_xter1")]
+position = Vector2(393, 158)
+inwater = true
+
+[node name="Gooby6" parent="." unique_id=1114062693 instance=ExtResource("16_xter1")]
+position = Vector2(475, 227)
+inwater = true
+
+[node name="Gooby7" parent="." unique_id=2027169662 instance=ExtResource("16_xter1")]
+position = Vector2(523, -102)
+inwater = true
+
+[node name="Gooby8" parent="." unique_id=1363428319 instance=ExtResource("16_xter1")]
+position = Vector2(527, 100)
+inwater = true
+
+[node name="Gooby9" parent="." unique_id=1311396116 instance=ExtResource("16_xter1")]
+position = Vector2(468, 42)
+inwater = true
+
+[node name="Gooby10" parent="." unique_id=1293590862 instance=ExtResource("16_xter1")]
+position = Vector2(402, 281)
+inwater = true
+
+[node name="Gooby11" parent="." unique_id=1180190952 instance=ExtResource("16_xter1")]
+position = Vector2(555, 19)
+inwater = true
+
+[node name="Gooby12" parent="." unique_id=2106168689 instance=ExtResource("16_xter1")]
+position = Vector2(459, 149)
+inwater = true
+
+[node name="Metal10" parent="." unique_id=174176475 instance=ExtResource("15_devdu")]
+position = Vector2(814, -764)
+
+[node name="Metal11" parent="." unique_id=151858427 instance=ExtResource("15_devdu")]
+position = Vector2(860, -788)
+frame_id = 1
+
+[node name="Metal12" parent="." unique_id=886330366 instance=ExtResource("15_devdu")]
+position = Vector2(894, -743)
+frame_id = 2
+
+[node name="Metal13" parent="." unique_id=1530525688 instance=ExtResource("15_devdu")]
+position = Vector2(988, -832)
+
+[node name="Metal14" parent="." unique_id=1130425883 instance=ExtResource("15_devdu")]
+position = Vector2(2048, 742)
+frame_id = 1
+
+[node name="Metal15" parent="." unique_id=667865412 instance=ExtResource("15_devdu")]
+position = Vector2(2105, 706)
+frame_id = 2
+
+[node name="Metal16" parent="." unique_id=1241227743 instance=ExtResource("15_devdu")]
+position = Vector2(2249, 695)
+frame_id = 2
+
+[node name="Metal17" parent="." unique_id=1376607680 instance=ExtResource("15_devdu")]
+position = Vector2(2220, 742)
+frame_id = 1
+
+[node name="Metal18" parent="." unique_id=1959835138 instance=ExtResource("15_devdu")]
+position = Vector2(2395, 721)
+
+[node name="Metal19" parent="." unique_id=1685526793 instance=ExtResource("15_devdu")]
+position = Vector2(1446, -829)
+
+[node name="Metal20" parent="." unique_id=404967458 instance=ExtResource("15_devdu")]
+position = Vector2(776, -832)
+frame_id = 1
+
+[node name="Metal21" parent="." unique_id=249023630 instance=ExtResource("15_devdu")]
+position = Vector2(636, -783)
+
+[node name="Metal22" parent="." unique_id=1121183502 instance=ExtResource("15_devdu")]
+position = Vector2(718, -902)
+frame_id = 2
+
+[node name="Metal23" parent="." unique_id=1639731297 instance=ExtResource("15_devdu")]
+position = Vector2(876, -873)
+frame_id = 1
+
+[node name="Gooby13" parent="." unique_id=177363346 instance=ExtResource("16_xter1")]
+position = Vector2(725, -98)
+inwater = true
+
+[node name="Gooby14" parent="." unique_id=408470427 instance=ExtResource("16_xter1")]
+position = Vector2(703, -11)
+inwater = true
+
+[node name="Gooby15" parent="." unique_id=1101841401 instance=ExtResource("16_xter1")]
+position = Vector2(790, 44)
+inwater = true
+
+[node name="Gooby16" parent="." unique_id=562572440 instance=ExtResource("16_xter1")]
+position = Vector2(732, 107)
+inwater = true
+
+[node name="Gooby17" parent="." unique_id=558526601 instance=ExtResource("16_xter1")]
+position = Vector2(890, -68)
+inwater = true
+
+[node name="Gooby18" parent="." unique_id=900517313 instance=ExtResource("16_xter1")]
+position = Vector2(914, 37)
+inwater = true
+
+[node name="Gooby19" parent="." unique_id=200543068 instance=ExtResource("16_xter1")]
+position = Vector2(916, 158)
+inwater = true
+
+[node name="Gooby20" parent="." unique_id=25789547 instance=ExtResource("16_xter1")]
+position = Vector2(975, 105)
+inwater = true
+
+[node name="Gooby21" parent="." unique_id=485554461 instance=ExtResource("16_xter1")]
+position = Vector2(1081, -26)
+inwater = true
+
+[node name="Gooby22" parent="." unique_id=1195963223 instance=ExtResource("16_xter1")]
+position = Vector2(1000, -139)
+inwater = true
+
+[node name="Gooby23" parent="." unique_id=944577086 instance=ExtResource("16_xter1")]
+position = Vector2(1153, 168)
+inwater = true
+
+[node name="Gooby24" parent="." unique_id=525749191 instance=ExtResource("16_xter1")]
+position = Vector2(1024, 198)
+inwater = true
+
+[node name="Metal24" parent="." unique_id=1087600852 instance=ExtResource("15_devdu")]
+position = Vector2(2548, 673)
+
+[node name="Metal25" parent="." unique_id=254726932 instance=ExtResource("15_devdu")]
+position = Vector2(2495, 571)
+frame_id = 1
+
+[node name="Metal26" parent="." unique_id=111969777 instance=ExtResource("15_devdu")]
+position = Vector2(2510, 406)
+frame_id = 2
+
+[node name="Metal27" parent="." unique_id=63436334 instance=ExtResource("15_devdu")]
+position = Vector2(2473, 493)
+
+[node name="Metal28" parent="." unique_id=2001318585 instance=ExtResource("15_devdu")]
+position = Vector2(2293, 611)
+frame_id = 1
+
+[node name="Metal29" parent="." unique_id=963431716 instance=ExtResource("15_devdu")]
+position = Vector2(2208, 543)
+
+[node name="Metal30" parent="." unique_id=1726265071 instance=ExtResource("15_devdu")]
+position = Vector2(2254, 350)
+frame_id = 1
+
+[node name="Metal31" parent="." unique_id=1941303251 instance=ExtResource("15_devdu")]
+position = Vector2(2388, 251)
+frame_id = 2
+
+[node name="Metal32" parent="." unique_id=513164578 instance=ExtResource("15_devdu")]
+position = Vector2(2336, 832)
+
+[node name="Metal33" parent="." unique_id=1582717071 instance=ExtResource("15_devdu")]
+position = Vector2(2288, 859)
+frame_id = 1
+
+[node name="Metal34" parent="." unique_id=1857030891 instance=ExtResource("15_devdu")]
+position = Vector2(2547, -672)
+frame_id = 1
+
+[node name="Gooby25" parent="." unique_id=679716670 instance=ExtResource("16_xter1")]
+position = Vector2(1046, 464)
+inwater = true
+
+[node name="Gooby26" parent="." unique_id=707929072 instance=ExtResource("16_xter1")]
+position = Vector2(961, 466)
+inwater = true
+
+[node name="Gooby27" parent="." unique_id=906849077 instance=ExtResource("16_xter1")]
+position = Vector2(1008, 563)
+inwater = true
+
+[node name="Gooby28" parent="." unique_id=1477953208 instance=ExtResource("16_xter1")]
+position = Vector2(924, 538)
+inwater = true
+
+[node name="Gooby29" parent="." unique_id=639056127 instance=ExtResource("16_xter1")]
+position = Vector2(1102, 558)
+inwater = true
+
+[node name="Gooby30" parent="." unique_id=1420034749 instance=ExtResource("16_xter1")]
+position = Vector2(929, 653)
+inwater = true
+
+[node name="Gooby31" parent="." unique_id=1524043599 instance=ExtResource("16_xter1")]
+position = Vector2(1046, 652)
+inwater = true
+
+[node name="Gooby32" parent="." unique_id=201805368 instance=ExtResource("16_xter1")]
+position = Vector2(1165, 646)
+inwater = true
+
+[node name="Gooby33" parent="." unique_id=1563677655 instance=ExtResource("16_xter1")]
+position = Vector2(1209, 536)
+inwater = true
+
+[node name="Gooby34" parent="." unique_id=1461288872 instance=ExtResource("16_xter1")]
+position = Vector2(1112, 751)
+inwater = true
+
+[node name="Gooby35" parent="." unique_id=1820811061 instance=ExtResource("16_xter1")]
+position = Vector2(1027, 792)
+inwater = true
+
+[node name="Gooby36" parent="." unique_id=176330257 instance=ExtResource("16_xter1")]
+position = Vector2(1171, 814)
+inwater = true
+
+[node name="Gooby37" parent="." unique_id=696856536 instance=ExtResource("16_xter1")]
+position = Vector2(1094, 853)
+inwater = true
+
+[node name="Gooby38" parent="." unique_id=458139837 instance=ExtResource("16_xter1")]
+position = Vector2(1189, 922)
+inwater = true
+
+[node name="Gooby39" parent="." unique_id=1578009478 instance=ExtResource("16_xter1")]
+position = Vector2(1259, 737)
+inwater = true
+
+[node name="Gooby40" parent="." unique_id=201563529 instance=ExtResource("16_xter1")]
+position = Vector2(904, 853)
+inwater = true
+
+[node name="Gooby41" parent="." unique_id=386151040 instance=ExtResource("16_xter1")]
+position = Vector2(734, 1048)
+inwater = true
+
+[node name="Gooby42" parent="." unique_id=959793024 instance=ExtResource("16_xter1")]
+position = Vector2(657, 1098)
+inwater = true
+
+[node name="Gooby43" parent="." unique_id=1603908101 instance=ExtResource("16_xter1")]
+position = Vector2(768, 1199)
+inwater = true
+
+[node name="Gooby44" parent="." unique_id=1204319824 instance=ExtResource("16_xter1")]
+position = Vector2(515, 884)
+inwater = true
+
+[node name="Gooby45" parent="." unique_id=1591364699 instance=ExtResource("16_xter1")]
+position = Vector2(544, 754)
+inwater = true
+
+[node name="Metal35" parent="." unique_id=2016652824 instance=ExtResource("15_devdu")]
+position = Vector2(1286, 1211)
+frame_id = 1
+
+[node name="Metal36" parent="." unique_id=1564890329 instance=ExtResource("15_devdu")]
+position = Vector2(1208, 1164)

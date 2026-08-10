@@ -15,6 +15,7 @@ weapon_type = "Bullet"
 damage_amt = 1
 damage_type = "Sin"
 knockback = 600.0
+pierce_amt = 1
 full_auto = true
 clip_size = 3
 shot_delay = 0.65
