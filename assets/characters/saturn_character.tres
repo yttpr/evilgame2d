@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="2_hqakt"]
 [ext_resource type="Resource" uid="uid://cmjw3ypxm44ph" path="res://assets/weapons/shotgun.tres" id="3_xtfo6"]
 [ext_resource type="Resource" uid="uid://2ybi2egd60da" path="res://assets/characters/gibs/saturn_gibs.tres" id="4_kstea"]
+[ext_resource type="Resource" uid="uid://ct8huiy14lmpd" path="res://assets/weapons/invisiblegun.tres" id="4_qhdoq"]
+[ext_resource type="Resource" uid="uid://cjytt7fin2c6p" path="res://assets/weapons/clockwork.tres" id="5_n8bfg"]
 
 [resource]
 script = ExtResource("2_hqakt")
@@ -14,6 +16,6 @@ character = "Saturn"
 image = ExtResource("2_egiet")
 HP = 10
 healthtype = "Cos"
-base_weapons = Array[ExtResource("1_lbiv5")]([ExtResource("2_a0i0f"), ExtResource("3_xtfo6")])
+base_weapons = Array[ExtResource("1_lbiv5")]([ExtResource("2_a0i0f"), ExtResource("3_xtfo6"), ExtResource("4_qhdoq"), ExtResource("5_n8bfg")])
 gibs = ExtResource("4_kstea")
 metadata/_custom_type_script = "uid://csfhp445ba2j"

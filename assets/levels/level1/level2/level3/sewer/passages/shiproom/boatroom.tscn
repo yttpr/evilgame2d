@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://do3ontetdl2fy" path="res://assets/characters/player_character.tscn" id="7_1ogg7"]
 [ext_resource type="Texture2D" uid="uid://5ktpti7cirip" path="res://sprites/objects/bigboat.png" id="8_io56l"]
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="8_vkvv5"]
+[ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="9_5qwnr"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="10_0xljt"]
 [ext_resource type="Script" uid="uid://c4l3txmv6gpvl" path="res://scripts/enemy/enemy_spawner.gd" id="11_f7k04"]
 [ext_resource type="PackedScene" uid="uid://crlyfpxeb4map" path="res://assets/enemies/pumpkin.tscn" id="11_tno3c"]
@@ -232,3 +233,12 @@ spawn_cap = 11
 data = ExtResource("13_u1vrd")
 spawn_time = 25.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
+
+[node name="WIP" parent="." unique_id=653630647 instance=ExtResource("9_5qwnr")]
+position = Vector2(2688, -1120)
+
+[node name="HangingLight26" parent="." unique_id=1858829282 instance=ExtResource("10_0xljt")]
+position = Vector2(2640, -1100)
+
+[node name="HangingLight27" parent="." unique_id=1533951344 instance=ExtResource("10_0xljt")]
+position = Vector2(-62, -47)

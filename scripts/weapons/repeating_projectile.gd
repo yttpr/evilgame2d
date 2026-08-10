@@ -12,6 +12,8 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 	if !original:
 		super._shoot(direction, origin)
 		return
+	self.pierce_amt = -1
+	#self.collider.collider.disabled = true
 	self.visible = false
 	for i in repeats:
 		var copy : RepeatingProjectile = self.duplicate()
@@ -30,3 +32,9 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 		
 		await get_tree().create_timer(interval).timeout
 	self.queue_free()
+
+
+func _process(delta: float) -> void:
+	if original:
+		return
+	super._process(delta)
