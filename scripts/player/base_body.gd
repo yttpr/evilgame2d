@@ -80,6 +80,7 @@ func _make_movement(delta : float = 0.0) -> void:
 	if inertia.length() < 0.5:
 		inertia = Vector2.ZERO
 	move_and_slide()
+	_update_ambience()
 
 func _die() -> void:
 	if is_dead:
@@ -90,6 +91,8 @@ func _die() -> void:
 func _cleanup() -> void:
 	is_dead = true
 	Manager._get_world().Enemies.erase(self)
+	if constant_noise_maker:
+		constant_noise_maker.stop()
 	self.queue_free()
 
 func _on_die() -> void:
@@ -210,3 +213,14 @@ func _pit_finish() -> void:
 
 func _listen_alert(alert_name : String, sender : Node2D, args : Variant) -> void:
 	pass
+
+func _update_ambience() -> void:
+	if is_dead or Manager.is_paused:
+		return
+	if constant_noise_maker and !constant_noise_maker.playing:
+		constant_noise_maker._play_sound(constant_ambience, ambience_volume, ambience_pitch)
+
+@export var constant_noise_maker : BasicAudio
+@export var constant_ambience : AudioStream
+@export var ambience_volume : float
+@export var ambience_pitch : float = 1.0

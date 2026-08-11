@@ -54,7 +54,7 @@ fill_to = Vector2(0.8350694, 0.8315972)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("img", "Hitbox", "camera", "ui", "weapon_handler", "sprites")]
 collision_layer = 1030
-collision_mask = 4232
+collision_mask = 12424
 script = ExtResource("1_kdlwy")
 data = ExtResource("2_lcnx2")
 character = "Saturn"

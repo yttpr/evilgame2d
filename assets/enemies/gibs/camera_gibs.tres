@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://cj1kq5araiy2f"]
+
+[ext_resource type="Texture2D" uid="uid://c402sdeegs6vv" path="res://sprites/ui/reload.png" id="1_26tcb"]
+[ext_resource type="Texture2D" uid="uid://dxqyr8jb14f5t" path="res://sprites/enemies/gibs/rotor_blade.png" id="2_uk38k"]
+[ext_resource type="Texture2D" uid="uid://bi1h28qacx4rb" path="res://sprites/objects/gibs/metal_shard.png" id="3_88kyr"]
+[ext_resource type="Texture2D" uid="uid://b3sq8opvxn086" path="res://sprites/enemies/gibs/brain_matter_small.png" id="4_jjtr3"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="4_syx6m"]
+[ext_resource type="Texture2D" uid="uid://cd4tbjv1vhswh" path="res://sprites/enemies/gibs/lens.png" id="5_4ingy"]
+[ext_resource type="Texture2D" uid="uid://drvegc3xhc6jv" path="res://sprites/enemies/gibs/computerchip.png" id="6_2vcae"]
+[ext_resource type="Texture2D" uid="uid://psunyvywxmxb" path="res://sprites/enemies/gibs/small_gear.png" id="7_has03"]
+
+[resource]
+script = ExtResource("4_syx6m")
+coins = 2
+blood_amt = 3
+blood_color_1 = Color(1, 0, 0, 1)
+blood_color_2 = Color(0.5686275, 0, 0.3529412, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_26tcb"), ExtResource("2_uk38k"), ExtResource("3_88kyr"), ExtResource("4_jjtr3"), ExtResource("5_4ingy"), ExtResource("6_2vcae"), ExtResource("7_has03")])
+img_amts = Array[int]([1, 4, 6, 2, 1, 2, 1])
+weights = Array[float]([1.5, 1.0, 0.8, 1.0, 1.0, 1.0, 1.3])
+does_rotate = Array[bool]([true, true, true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

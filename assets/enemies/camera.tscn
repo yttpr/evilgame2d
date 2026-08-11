@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://b7a6medvh0rfo"]
+
+[ext_resource type="Script" uid="uid://ucu0m0epy6am" path="res://scripts/enemy/shoot_alert_body.gd" id="1_0dihm"]
+[ext_resource type="Resource" uid="uid://cj1kq5araiy2f" path="res://assets/enemies/gibs/camera_gibs.tres" id="2_0dihm"]
+[ext_resource type="AudioStream" uid="uid://btqw8qhlkvxiu" path="res://audio/noise/enemies/camera_hit.ogg" id="3_0dihm"]
+[ext_resource type="Texture2D" uid="uid://ciq4q6wytnij0" path="res://sprites/enemies/EvilGame2D_camera_WIP.png" id="4_0dihm"]
+[ext_resource type="AudioStream" uid="uid://dopcuvbldhrpr" path="res://audio/noise/enemies/helicopter_ambience.wav" id="4_txnhw"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="5_c8dgi"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="7_nxxmh"]
+[ext_resource type="Script" uid="uid://uvpai4td262g" path="res://scripts/player/character_hitbox.gd" id="8_krtjk"]
+[ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="9_q2wjt"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="10_v8owu"]
+[ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="11_2ikwt"]
+[ext_resource type="Script" uid="uid://bhe2bl13upn6p" path="res://scripts/enemy/shoot_alert_enemy.gd" id="12_txnhw"]
+[ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="13_uxhql"]
+[ext_resource type="PackedScene" uid="uid://edlunnjskk4" path="res://assets/projectile/ShotgunProjectileBullet.tscn" id="14_txnhw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
+size = Vector2(61, 101)
+
+[node name="Camera" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("brain", "sprites", "marker", "constant_noise_maker")]
+collision_layer = 544
+collision_mask = 8
+script = ExtResource("1_0dihm")
+brain = NodePath("brain")
+sprites = NodePath("image")
+HP = 18
+healthtype = "Sin"
+points = 3
+gibs = ExtResource("2_0dihm")
+hit_sound = ExtResource("3_0dihm")
+hit_mod = 3.0
+marker = NodePath("marker_holder/marker")
+mov_spd = 325
+flies = true
+constant_noise_maker = NodePath("BasicAudio")
+constant_ambience = ExtResource("4_txnhw")
+ambience_volume = 20.0
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
+light_mask = 8
+texture = ExtResource("4_0dihm")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("5_c8dgi")
+body = NodePath("..")
+hitbox = NodePath("../hitbox")
+walk_time = 0.03
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("7_nxxmh")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="BasicAudio" type="AudioStreamPlayer2D" parent="." unique_id=1261677257]
+script = ExtResource("7_nxxmh")
+metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[node name="hitbox" type="Area2D" parent="." unique_id=340127500 node_paths=PackedStringArray("body")]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("8_krtjk")
+body = NodePath("..")
+hitbox_type = "Single"
+sources = Array[String](["Hitscan"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=72484899]
+position = Vector2(-1, -11)
+shape = SubResource("RectangleShape2D_nubg3")
+
+[node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]
+position = Vector2(0, -133)
+script = ExtResource("9_q2wjt")
+marker = NodePath("marker")
+max = 6.0
+time = 4.0
+
+[node name="marker" type="Sprite2D" parent="marker_holder" unique_id=1398509414]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 5
+material = ExtResource("10_v8owu")
+texture = ExtResource("11_2ikwt")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
+script = ExtResource("12_txnhw")
+vision_range = 600.0
+limit_range = 50.0
+max_range = 350.0
+wander_speed = 250.0
+Movable = NodePath("..")
+Weapon = NodePath("../EnemyWeapon")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+navigation_layers = 2
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="EnemyWeapon" type="Node2D" parent="." unique_id=1496392314 node_paths=PackedStringArray("weapon", "brain")]
+script = ExtResource("13_uxhql")
+weapon = NodePath("pointer")
+bullet = ExtResource("14_txnhw")
+source_name = "Enemy_Projectile"
+knockback = 350.0
+damage_type = "Sin"
+dmg_amt = 1
+charge_time = 0.8
+max_clip = 3
+shot_delay = 0.4
+reload_time = 4.0
+brain = NodePath("../brain")
+break_aim_if_lost = true
+stop_looking_after_charge = true
+max_aim_width = 1.0
+metadata/_custom_type_script = "uid://dap3uvgj16hat"
+
+[node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
+position = Vector2(0, -51)
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

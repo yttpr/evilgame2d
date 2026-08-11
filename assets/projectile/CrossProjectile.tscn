@@ -22,7 +22,7 @@ lifetime = 5.0
 shot_sound = ExtResource("2_txx64")
 pitch_mod = 0.8
 make_gibs = true
-death_quote = Array[String](["\"Don't touch me.\"", "\"Don't touch me!\"", "\"Let me in!\"", "\"Yeowch!\"", "\"Seeing stars\"", "\"Falling, falling, falling...\"", "\"The fruit of pain.\"", "\"Dying, dying, dying...\"", "\"You... you HIT me!\"", "\"Pin-drop torture\""])
+death_quote = Array[String](["\"Ah, ah, ah,\"", "\"My god, why have you abandoned me?\"", "\"Left to rot away in this form...\"", "\"Help me! Someone! Anyone! Please!\"", "\"No, no, I don't want to go...\"", "\"Just let me die...\"", "\"Please don't hurt me...\"", "\"I don't want to feel pain.\"", "\"I want to go out peacefully.\"", "\"Not like this.\"", "\"Please, please, please...\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("2_4laoj")

@@ -1,4 +1,6 @@
+BasicAudio
 CollisionShape2D
+StaticBody2D
 Area2D
 NavigationAgent2D
 ProjectilePathfinding
@@ -11,5 +13,3 @@ TextureButton
 BaseDestructible
 HealthInteractible
 DarknessHolder
-Node2D
-ColorRect
