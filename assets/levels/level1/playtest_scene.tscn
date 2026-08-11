@@ -19,9 +19,12 @@
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_f557m")
-canvasmodulate = NodePath("CanvasModulate")
+is_spawn = null
 entries = Array[Vector2]([Vector2(608, 241), Vector2(3648, 2063), Vector2(5440, 399)])
 songs = Array[AudioStream]([ExtResource("2_nhmve")])
+volumes = null
+water_pits = null
+canvasmodulate = NodePath("CanvasModulate")
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
 z_index = -5

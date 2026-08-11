@@ -118,6 +118,7 @@ source_name = "Enemy_Projectile"
 knockback = 300.0
 damage_type = "Sin"
 dmg_amt = 1
+shot_variance = 0.08
 max_clip = 16
 reload_time = 2.0
 move_during_reload = true

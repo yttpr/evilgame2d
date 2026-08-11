@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://basq6f33pvr1w"]
+
+[ext_resource type="Texture2D" uid="uid://dd82qn86omqo2" path="res://sprites/enemies/gibs/toy_ball.png" id="1_xpuxt"]
+[ext_resource type="Texture2D" uid="uid://cbvibt75ote1t" path="res://sprites/enemies/gibs/toy_block.png" id="2_qtgsp"]
+[ext_resource type="Texture2D" uid="uid://vhkkboaejpd5" path="res://sprites/enemies/gibs/toy_cross.png" id="3_11a5s"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="5_mfrne"]
+
+[resource]
+script = ExtResource("5_mfrne")
+coins = 1
+blood_amt = 2
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_xpuxt"), ExtResource("2_qtgsp"), ExtResource("3_11a5s")])
+img_amts = Array[int]([3, 4, 3])
+weights = Array[float]([1.0, 1.0, 1.0])
+does_rotate = Array[bool]([true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

@@ -38,6 +38,7 @@ func _set_data(chara : CharacterData) -> void:
 	weapon_handler._setup()
 
 func _ready() -> void:
+	is_player = true
 	time_to_die = 9999
 	if Manager.world:
 		global_position = Manager._get_world().entries[Manager.spawn_loc]

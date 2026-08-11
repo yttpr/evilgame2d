@@ -188,6 +188,8 @@ func _shoot() -> void:
 	delay_tick += shot_delay
 	if current_clip <= 0:
 		_set_reload(true)
+	
+	Manager._get_world()._post_alert("PlayerShoot", self, damage_type)
 
 
 func _get_offset() -> float:

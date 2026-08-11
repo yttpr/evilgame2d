@@ -94,7 +94,7 @@ func _process(delta: float) -> void:
 			_set_aim_dir()
 	
 	#shoot
-	if aiming_tick <= 0 and delay_tick <= 0 and !is_reloading:
+	if aiming_tick <= 0 and delay_tick <= 0 and !is_reloading and current_clip > 0:
 		_shoot(aim_direction)
 	
 	if aiming_tick > 0:

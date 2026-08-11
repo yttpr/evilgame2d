@@ -6,11 +6,18 @@ extends EnemyWeapon
 var tick : float
 var toggle : bool
 
+@export var only_front : bool = false
+@export var movable : BaseBody
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	tick -= delta
 	if tick <= 0:
 		tick = timer
+		if only_front and movable and !movable.is_dead:
+			_shoot(movable.velocity)
+			return
+		
 		if toggle:
 			_shoot(Vector2.DOWN)
 			_shoot(Vector2.LEFT)

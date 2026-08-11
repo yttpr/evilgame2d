@@ -64,3 +64,9 @@ func _calc_color(delta : float) -> void:
 		num = orig_color.r
 	
 	canvasmodulate.color = Color(num, num, num, 1)
+
+
+
+func _post_alert(alert_name : String, sender : Node2D, args : Variant) -> void:
+	for enemy in Enemies:
+		enemy._listen_alert(alert_name, sender, args)

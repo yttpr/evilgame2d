@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvn37ufvx8gip"]
 
-[ext_resource type="Script" uid="uid://dhl3rtumo3oo0" path="res://scripts/enemy/grouping_body.gd" id="1_fai2h"]
+[ext_resource type="Script" uid="uid://r4tnof8jady5" path="res://scripts/player/base_body.gd" id="1_86idn"]
 [ext_resource type="Resource" uid="uid://b8aa6y4xmsjfs" path="res://assets/enemies/gibs/cns_gibs.tres" id="2_fai2h"]
 [ext_resource type="AudioStream" uid="uid://bl5wadafgktyg" path="res://audio/noise/enemies/cns_hit.ogg" id="3_lqwd1"]
 [ext_resource type="Texture2D" uid="uid://d0wy0vfovynt3" path="res://sprites/enemies/EvilGame2D_CNS_WIP.png" id="4_fai2h"]
@@ -20,11 +20,10 @@ radius = 24.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
 size = Vector2(61, 101)
 
-[node name="CNS" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("brain", "sprites", "marker")]
+[node name="CNS" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
 collision_layer = 544
 collision_mask = 8
-script = ExtResource("1_fai2h")
-brain = NodePath("brain")
+script = ExtResource("1_86idn")
 sprites = NodePath("image")
 HP = 15
 healthtype = "Sin"
@@ -105,7 +104,6 @@ source_name = "Enemy_Projectile"
 knockback = 350.0
 damage_type = "Sin"
 dmg_amt = 1
-shot_variance = 0.15
 charge_time = 1.2
 max_clip = 6
 shot_delay = 0.08

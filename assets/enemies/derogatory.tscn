@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvf5rkalimfoe"]
 
-[ext_resource type="Script" uid="uid://dhl3rtumo3oo0" path="res://scripts/enemy/grouping_body.gd" id="1_s6jse"]
+[ext_resource type="Script" uid="uid://r4tnof8jady5" path="res://scripts/player/base_body.gd" id="1_8a433"]
 [ext_resource type="Resource" uid="uid://ddhaiwwm7bxw7" path="res://assets/enemies/gibs/derogatory_gibs.tres" id="2_8a433"]
 [ext_resource type="AudioStream" uid="uid://c6akp14tl4t7m" path="res://audio/noise/enemies/derogatory_hit.ogg" id="3_8a433"]
 [ext_resource type="Texture2D" uid="uid://b54pdy6k00rqw" path="res://sprites/enemies/EvilGame2D_derogatory_WIP.png" id="4_s6jse"]
@@ -20,11 +20,10 @@ radius = 24.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
 size = Vector2(61, 73.5)
 
-[node name="Derogatory" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("brain", "sprites", "marker")]
+[node name="Derogatory" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
 collision_layer = 544
 collision_mask = 8
-script = ExtResource("1_s6jse")
-brain = NodePath("brain")
+script = ExtResource("1_8a433")
 sprites = NodePath("image")
 healthtype = "Cos"
 gibs = ExtResource("2_8a433")

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://chatld4rr0tn"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_i6782"]
+[ext_resource type="AudioStream" uid="uid://dambopc515umc" path="res://audio/noise/weapon/gun_sin_small.wav" id="2_i6782"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_pf5tl"]
+[ext_resource type="Texture2D" uid="uid://iapc0doxv4vv" path="res://sprites/weapons/projectiles/triangle_bullet.png" id="4_rl40j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_i6782")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 185.0
+radius = 16.0
+rot_spd = 16.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("2_i6782")
+audio_mod = 8.0
+make_gibs = true
+death_quote = Array[String](["\"One by one\"", "\"Two by two\"", "\"The ants go marching\"", "\"Single file.\"", "\"Back and forth...\"", "\"Repitition, repitition.\"", "\"Together, we are stronger.\"", "\"Tied together\"", "\"The great wall.\"", "\"Sat on a wall...\"", "\"Had a big fall...\"", "\"Couldn't put them together again...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_pf5tl")
+texture = ExtResource("4_rl40j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

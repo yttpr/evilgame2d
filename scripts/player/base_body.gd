@@ -33,6 +33,8 @@ var is_falling : bool
 var despawn_tick : float
 var time_to_die : float
 
+var is_player : bool
+
 func _ready() -> void:
 	time_to_die = 2.0
 	inertia = Vector2(0, 0)
@@ -109,6 +111,8 @@ func _get_hit(amt : int, type : String, source : String, mov : Vector2, extra : 
 	if hit_sound:
 		_hit_sound(amt)
 	_on_hit(amt, type, source)
+	if !is_player:
+		Manager._get_world()._post_alert("EnemyHit", self, amt)
 	if HP <= 0:
 		_die()
 	return true
@@ -201,3 +205,8 @@ func _pit_finish() -> void:
 
 @export var cause_darkening : bool
 @export var darkening_range : float = 400
+
+
+
+func _listen_alert(alert_name : String, sender : Node2D, args : Variant) -> void:
+	pass

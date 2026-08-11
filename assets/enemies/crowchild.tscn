@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kq26i0fvk7xw"]
 
-[ext_resource type="Script" uid="uid://dhl3rtumo3oo0" path="res://scripts/enemy/grouping_body.gd" id="1_y0dwa"]
+[ext_resource type="Script" uid="uid://r4tnof8jady5" path="res://scripts/player/base_body.gd" id="1_y0dwa"]
 [ext_resource type="Resource" uid="uid://dffg2kajy3oy5" path="res://assets/enemies/gibs/crowchild_gibs.tres" id="2_y0dwa"]
 [ext_resource type="AudioStream" uid="uid://dghbktt0jtrfu" path="res://audio/noise/enemies/bird_hit.ogg" id="3_y0dwa"]
 [ext_resource type="Texture2D" uid="uid://cui3y8a8c2tnk" path="res://sprites/enemies/EvilGame2D_child_WIP.png" id="4_y0dwa"]
@@ -21,11 +21,10 @@ radius = 24.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
 size = Vector2(61, 101)
 
-[node name="CrowChild" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("brain", "sprites", "marker")]
+[node name="CrowChild" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
 collision_layer = 544
 collision_mask = 8
 script = ExtResource("1_y0dwa")
-brain = NodePath("brain")
 sprites = NodePath("image")
 HP = 7
 healthtype = "Sin"
@@ -109,7 +108,6 @@ source_name = "Enemy_Projectile"
 knockback = 500.0
 damage_type = "Sin"
 dmg_amt = 1
-shot_variance = 0.15
 max_clip = 1
 reload_time = 5.0
 move_during_reload = true

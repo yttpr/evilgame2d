@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://qim5qoyr1ux6"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_n8ba2"]
+[ext_resource type="AudioStream" uid="uid://dambopc515umc" path="res://audio/noise/weapon/gun_sin_small.wav" id="2_a4j5i"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_h5nfv"]
+[ext_resource type="Texture2D" uid="uid://b0mvxykenllj6" path="res://sprites/weapons/projectiles/square_projectile.png" id="4_n8ba2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_n8ba2")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 350.0
+radius = 16.0
+rot_spd = 10.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("2_a4j5i")
+audio_mod = 8.0
+make_gibs = true
+death_quote = Array[String](["\"Eats paper.\"", "\"Eats.\"", "\"A thousand papercuts.\"", "\"A thousand needles.\"", "\"A thousand cranes.\"", "\"My origami blade.\"", "\"Book eater.\"", "\"Book burner.\"", "\"Consumption.\"", "\"The end of language...\"", "\"Packet devourer.\"", "\"The post office\"", "\"Going postal.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_h5nfv")
+texture = ExtResource("4_n8ba2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
