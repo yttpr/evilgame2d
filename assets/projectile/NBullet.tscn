@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ddllc3wdc2isn"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_120ep"]
+[ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="2_120ep"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_263hc"]
+[ext_resource type="Texture2D" uid="uid://d3k4x6046a8xe" path="res://sprites/weapons/projectiles/n_bullet.png" id="4_120ep"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_120ep")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 3000.0
+radius = 16.0
+rot_spd = 28.0
+bounces = true
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 10.0
+tracer_width = 5.0
+tracer_time = 0.06
+shot_sound = ExtResource("2_120ep")
+audio_mod = 6.0
+make_gibs = true
+death_quote = Array[String](["\"N.\"", "\"Nn.\"", "\"You caused this.\"", "\"You broke the rules.\"", "\"Punishment.\"", "\"Justice.\"", "\"Name.\"", "\"Identification.\"", "\"Number.\"", "\"Your fault.\"", "\"Actions have consequences.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_263hc")
+texture = ExtResource("4_120ep")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

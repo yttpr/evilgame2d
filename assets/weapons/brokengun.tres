@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dfmq7eqxp1ufj"]
+
+[ext_resource type="AudioStream" uid="uid://dpik2nf4yv4h7" path="res://audio/noise/weapon/screwdriver_clink.ogg" id="2_r3su1"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_ep8ue"]
+[ext_resource type="Texture2D" uid="uid://ci28uccuypboq" path="res://sprites/weapons/brokengun.png" id="3_rvbbq"]
+
+[resource]
+script = ExtResource("3_ep8ue")
+id = "Broken"
+weapon_img = ExtResource("3_rvbbq")
+bullet_type = "None"
+weapon_type = "Bullet"
+damage_type = "NULL"
+pierce_amt = -1
+ready_audio = ExtResource("2_r3su1")
+audio_mod = -4.0
+inert = true
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

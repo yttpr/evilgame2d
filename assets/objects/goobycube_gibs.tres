@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://d38ap4wtl3585"]
+
+[ext_resource type="Texture2D" uid="uid://nrrucdpupkvg" path="res://sprites/enemies/gibs/brain_matter_med.png" id="1_om4cm"]
+[ext_resource type="Texture2D" uid="uid://b3sq8opvxn086" path="res://sprites/enemies/gibs/brain_matter_small.png" id="2_rm8hm"]
+[ext_resource type="Texture2D" uid="uid://cs54vsp37amlj" path="res://sprites/enemies/gibs/spine_bone.png" id="3_w8rnl"]
+[ext_resource type="Texture2D" uid="uid://2ykl16y4fnal" path="res://sprites/enemies/gibs/spine_bit.png" id="4_enoxy"]
+[ext_resource type="Texture2D" uid="uid://df8yeoluf502o" path="res://sprites/enemies/gibs/bone.png" id="5_u7gd3"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="6_v1ueu"]
+
+[resource]
+script = ExtResource("6_v1ueu")
+blood_amt = 4
+blood_color_1 = Color(0.8509804, 0, 0, 1)
+blood_color_2 = Color(0.34117648, 0, 0.08627451, 1)
+floor_blood_amt = 2
+images = Array[Texture2D]([ExtResource("1_om4cm"), ExtResource("2_rm8hm"), ExtResource("3_w8rnl"), ExtResource("4_enoxy"), ExtResource("5_u7gd3")])
+img_amts = Array[int]([2, 3, 5, 3, 2])
+weights = Array[float]([0.2, 0.12, 0.2, 0.12, 0.2])
+does_rotate = Array[bool]([true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

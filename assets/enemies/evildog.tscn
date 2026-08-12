@@ -113,6 +113,7 @@ source_name = "Enemy_Projectile"
 knockback = 500.0
 damage_type = "Cos"
 dmg_amt = 2
+max_clip = 1
 reload_time = 0.8
 move_during_reload = true
 brain = NodePath("../brain")

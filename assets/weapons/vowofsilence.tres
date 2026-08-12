@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cmkmyswk17cnr"]
+
+[ext_resource type="PackedScene" uid="uid://uefrjjtguffp" path="res://assets/projectile/BouncelessHitscan.tscn" id="1_hqlu8"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_f6wvd"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_tmhjh"]
+[ext_resource type="Texture2D" uid="uid://c5xar3koki3jx" path="res://sprites/weapons/vowofsilence.png" id="4_hqlu8"]
+
+[resource]
+script = ExtResource("3_tmhjh")
+id = "VowOfSilence"
+weapon_img = ExtResource("4_hqlu8")
+bullet = ExtResource("1_hqlu8")
+bullet_type = "Hitscan_0"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 800.0
+clip_size = 6
+reload_time = 4.0
+ready_audio = ExtResource("2_f6wvd")
+melee = true
+melee_range = 32.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bj0t3b52uptfy"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_71bsr"]
+[ext_resource type="AudioStream" uid="uid://cwdstm2vy6127" path="res://audio/noise/weapon/gun_sin_norm.ogg" id="2_r4j4i"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_vg6d8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 40
+script = ExtResource("1_71bsr")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 10000.0
+radius = 12.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 3.0
+tracer_width = 2.0
+tracer_time = 0.13
+shot_sound = ExtResource("2_r4j4i")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"Keep your peace.\"", "\"A promise.\"", "\"Vow of silence.\"", "\"Trust me.\"", "\"Next time, do better.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_vg6d8")
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

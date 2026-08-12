@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://c2noafr7q7su5" path="res://assets/objects/the_moon.tscn" id="9_fivbj"]
 [ext_resource type="Resource" uid="uid://ovvwjf416qns" path="res://assets/characters/clerk_character.tres" id="9_tk2qu"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="11_57oe7"]
+[ext_resource type="PackedScene" uid="uid://cqb5h3id802a0" path="res://assets/objects/gun_pickup.tscn" id="12_fnjer"]
+[ext_resource type="Resource" uid="uid://c2rftd3rm6p5p" path="res://assets/weapons/sparkles.tres" id="13_fnjer"]
+[ext_resource type="Resource" uid="uid://dfmq7eqxp1ufj" path="res://assets/weapons/brokengun.tres" id="14_lxhbm"]
+[ext_resource type="Resource" uid="uid://cmkmyswk17cnr" path="res://assets/weapons/vowofsilence.tres" id="15_ugcpy"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -19,8 +23,6 @@ is_spawn = true
 canvasmodulate = NodePath("CanvasModulate")
 entries = Array[Vector2]([Vector2(465, 230), Vector2(768, 881)])
 songs = Array[AudioStream]([ExtResource("2_57oe7")])
-volumes = null
-water_pits = null
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
 z_index = -5
@@ -74,3 +76,15 @@ dist = 24.0
 
 [node name="HangingLight2" parent="." unique_id=34139319 instance=ExtResource("11_57oe7")]
 position = Vector2(800, 928)
+
+[node name="Gun" parent="." unique_id=980551479 instance=ExtResource("12_fnjer")]
+position = Vector2(864, 480)
+weapon = ExtResource("13_fnjer")
+
+[node name="Gun2" parent="." unique_id=34592009 instance=ExtResource("12_fnjer")]
+position = Vector2(800, 416)
+weapon = ExtResource("14_lxhbm")
+
+[node name="Gun3" parent="." unique_id=669840851 instance=ExtResource("12_fnjer")]
+position = Vector2(736, 544)
+weapon = ExtResource("15_ugcpy")

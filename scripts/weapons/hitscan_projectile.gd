@@ -7,12 +7,15 @@ extends BasicProjectile
 @export var bounces : bool
 @export var length : float
 
+@export var stop_enemies : bool
 
 func _shoot(direction : Vector2, origin : Vector2) -> void:
 	super._shoot(direction, origin)
 	_next_line(length, origin - _offset(), origin - _offset() + direction * length, [])
 
 func _get_bouncer_collision_mask() -> int:
+	if stop_enemies:
+		return Manager.collision_pierceless.collision_mask
 	return bouncer.collision_mask
 
 func _next_line(length : float, origin: Vector2, target_point : Vector2, exclude : Array[RID]) -> Vector2:

@@ -1,3 +1,5 @@
+Sprite2D
+ColorRandomizeSprite
 BasicAudio
 CollisionShape2D
 StaticBody2D
@@ -5,11 +7,8 @@ Area2D
 NavigationAgent2D
 ProjectilePathfinding
 Control
-Sprite2D
 TextureRect
 GlobalAudio
 VSlider
 TextureButton
 BaseDestructible
-HealthInteractible
-DarknessHolder

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c2rftd3rm6p5p"]
+
+[ext_resource type="PackedScene" uid="uid://diufrysotncin" path="res://assets/projectile/SparkBullet.tscn" id="1_3j0pa"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_sv8bt"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_44y6i"]
+[ext_resource type="Texture2D" uid="uid://dv4mrkcd72xdn" path="res://sprites/weapons/sparkles_wand.png" id="4_3j0pa"]
+
+[resource]
+script = ExtResource("3_44y6i")
+id = "Sparkles"
+weapon_img = ExtResource("4_3j0pa")
+bullet = ExtResource("1_3j0pa")
+bullet_type = "Projectile_0"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 200.0
+full_auto = true
+clip_size = 30
+shot_delay = 0.08
+reload_time = 5.0
+ready_audio = ExtResource("2_sv8bt")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

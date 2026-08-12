@@ -12,6 +12,7 @@ var orig_color : Color
 @export var volumes : Array[float]
 
 @export var Enemies : Array[BaseBody] = []
+@export var EnemySpawnLocs : Array[EnemySpawner] = []
 
 @export var water_pits : bool
 

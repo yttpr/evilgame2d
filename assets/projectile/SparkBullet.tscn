@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://diufrysotncin"]
+
+[ext_resource type="Script" uid="uid://c4dw0mj8aygnj" path="res://scripts/weapons/random_variation_projectile.gd" id="1_1pvpm"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_cem63"]
+[ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="2_eip47"]
+[ext_resource type="Texture2D" uid="uid://cmus8eiud5cec" path="res://sprites/weapons/projectiles/star_bullet.png" id="3_eip47"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_1pvpm")
+variation = 0.35
+spd_mod = 0.35
+deceleration_rate = 0.97
+die_if_stop = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 8.0
+rot_spd = 16.0
+by_lifetime = true
+lifetime = 8.0
+tracer_width = 12.0
+shot_sound = ExtResource("2_eip47")
+audio_mod = 4.0
+pitch_mod = 1.3
+make_gibs = true
+death_quote = Array[String](["\"MAGIC!\"", "\"Buy my potion.\"", "\"Do you believe in magic?\"", "\"Behold! My sorcery!\"", "\"I am a master of many spells.\"", "\"My grimoire...\"", "\"My evil spells.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("2_cem63")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_eip47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

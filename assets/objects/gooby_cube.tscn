@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://drbprcve27ox3"]
+
+[ext_resource type="Script" uid="uid://d1htkwex8rk0i" path="res://scripts/objects/base_destructible.gd" id="1_gsbjf"]
+[ext_resource type="Resource" uid="uid://d38ap4wtl3585" path="res://assets/objects/goobycube_gibs.tres" id="2_gsbjf"]
+[ext_resource type="Texture2D" uid="uid://lrpl8oua6lh8" path="res://sprites/objects/white_square.png" id="3_1abs3"]
+[ext_resource type="Script" uid="uid://c77bltrjrfmer" path="res://scripts/objects/color_randomize_sprite.gd" id="4_eaoi2"]
+[ext_resource type="Texture2D" uid="uid://ceg1y7idbrx4t" path="res://sprites/objects/goobycube_outline.png" id="5_xyi5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(64, 64)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
+
+[node name="Crate" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("image")]
+collision_layer = 44
+collision_mask = 0
+script = ExtResource("1_gsbjf")
+HP = 5
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_gsbjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337640463]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562283018]
+texture = ExtResource("5_xyi5k")
+
+[node name="ColorRandomizeSprite2" type="Sprite2D" parent="Sprite2D" unique_id=2139425723]
+show_behind_parent = true
+texture = ExtResource("3_1abs3")
+offset = Vector2(0, -64)
+script = ExtResource("4_eaoi2")
+metadata/_custom_type_script = "uid://c77bltrjrfmer"
+
+[node name="ColorRandomizeSprite" type="Sprite2D" parent="Sprite2D" unique_id=1512823734]
+show_behind_parent = true
+texture = ExtResource("3_1abs3")
+script = ExtResource("4_eaoi2")
+metadata/_custom_type_script = "uid://c77bltrjrfmer"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=346681509]
+modulate = Color(0, 0, 0, 0.36078432)
+texture = ExtResource("3_1abs3")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 4
