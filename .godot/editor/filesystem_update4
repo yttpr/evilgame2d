@@ -72,3 +72,11 @@ res://assets/projectile/FastLineBullet.tscn
 res://assets/projectile/FasterLineBullet.tscn
 res://assets/projectile/BouncelessHitscan.tscn
 res://scripts/weapons/hitscan_projectile.gd
+res://assets/projectile/PunchBullet.tscn
+res://assets/projectile/NailBullet.tscn
+res://assets/projectile/HarpoonBullet.tscn
+res://assets/weapons/thepuller.tres
+res://assets/weapons/mechanicalsmg.tres
+res://assets/enemies/skeleton_shooter.tscn
+res://assets/projectile/SmgWeakBullet.tscn
+res://assets/weapons/crossbow.tres

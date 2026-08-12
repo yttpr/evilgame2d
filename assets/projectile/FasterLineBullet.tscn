@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bj0t3b52uptfy"]
 
 [ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_71bsr"]
-[ext_resource type="AudioStream" uid="uid://cwdstm2vy6127" path="res://audio/noise/weapon/gun_sin_norm.ogg" id="2_r4j4i"]
+[ext_resource type="AudioStream" uid="uid://dl28u8q1f3jw5" path="res://audio/noise/weapon/gun_sin_weak.wav" id="2_71bsr"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_vg6d8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
@@ -18,10 +18,10 @@ radius = 12.0
 make_backup_colliders = true
 by_lifetime = true
 lifetime = 3.0
-tracer_width = 2.0
-tracer_time = 0.13
-shot_sound = ExtResource("2_r4j4i")
-audio_mod = 10.0
+tracer_width = 10.0
+tracer_time = 0.06
+shot_sound = ExtResource("2_71bsr")
+audio_mod = 8.0
 make_gibs = true
 death_quote = Array[String](["\"Keep your peace.\"", "\"A promise.\"", "\"Vow of silence.\"", "\"Trust me.\"", "\"Next time, do better.\""])
 

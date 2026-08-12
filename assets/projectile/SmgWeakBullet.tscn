@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://balo25ctlc1nm"]
+
+[ext_resource type="Script" uid="uid://c4dw0mj8aygnj" path="res://scripts/weapons/random_variation_projectile.gd" id="1_e6bnv"]
+[ext_resource type="AudioStream" uid="uid://dambopc515umc" path="res://audio/noise/weapon/gun_sin_small.wav" id="2_co4us"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_gqjj6"]
+[ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="4_cuej0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_e6bnv")
+variation = 0.4
+spd_mod = 0.1
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 750.0
+radius = 12.0
+rot_spd = 20.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 2.0
+shot_sound = ExtResource("2_co4us")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"It's not me, it's the gun!\"", "\"Look out, bullets!\"", "\"People don't kill people, guns kill people!\"", "\"Everywhere but the target.\"", "\"Police brutality!\"", "\"1 shot, 1 miss.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_gqjj6")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_cuej0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

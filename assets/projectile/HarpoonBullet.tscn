@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://se36ftjjmjbl"]
+
+[ext_resource type="Script" uid="uid://c1wwu5xtxvr2k" path="res://scripts/weapons/accelerating_projectile.gd" id="1_l1ewk"]
+[ext_resource type="AudioStream" uid="uid://dambopc515umc" path="res://audio/noise/weapon/gun_sin_small.wav" id="2_l1ewk"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_mvme1"]
+[ext_resource type="Texture2D" uid="uid://b6bpcqxmwgp40" path="res://sprites/weapons/projectiles/harpoon_bullet.png" id="4_l1ewk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_l1ewk")
+point = true
+accelration_rate = 0.0
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1000.0
+radius = 16.0
+make_backup_colliders = true
+distance = 1000.0
+by_lifetime = true
+lifetime = 2.0
+shot_sound = ExtResource("2_l1ewk")
+audio_mod = 6.0
+make_gibs = true
+death_quote = Array[String](["\"The curse...\"", "\"I hate you.\"", "\"I hate you so much.\"", "\"I hope you suffer.\"", "\"Agony.\"", "\"Pain... Pain!!!\"", "\"Hurts you.\"", "\"Hurt people...\"", "\"Hurt people.\"", "\"Torturepedia\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_mvme1")
+texture = ExtResource("4_l1ewk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

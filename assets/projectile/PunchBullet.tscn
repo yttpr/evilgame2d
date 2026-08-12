@@ -23,7 +23,7 @@ lifetime = 5.0
 shot_sound = ExtResource("2_pg6p4")
 audio_mod = 10.0
 make_gibs = true
-death_quote = Array[String](["\"POW!\"", "\"WHAM!\"", "\"FHGDKSDL??\"", "\"PUNCH!\"", "\"SCORE!\""])
+death_quote = Array[String](["\"POW!\"", "\"WHAM!\"", "\"FHGDKSDL??\"", "\"PUNCH!\"", "\"SCORE!\"", "\"Left hook!\"", "\"Right jab!\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_1l3fe")

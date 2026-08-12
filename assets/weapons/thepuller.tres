@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://y50e4qf0lqkb"]
+
+[ext_resource type="PackedScene" uid="uid://se36ftjjmjbl" path="res://assets/projectile/HarpoonBullet.tscn" id="1_y3kgr"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_y3kgr"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_g57j3"]
+[ext_resource type="Texture2D" uid="uid://dd16sgw7j6rmt" path="res://sprites/weapons/thepuller.png" id="4_y3kgr"]
+
+[resource]
+script = ExtResource("3_g57j3")
+id = "ThePuller"
+weapon_img = ExtResource("4_y3kgr")
+bullet = ExtResource("1_y3kgr")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+knockback = -2000.0
+full_auto = true
+clip_size = 10
+shot_delay = 0.15
+reload_time = 5.5
+ready_audio = ExtResource("2_y3kgr")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

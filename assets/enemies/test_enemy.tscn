@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="11_ca04t"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_35451"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="12_r1xk6"]
-[ext_resource type="PackedScene" uid="uid://balo25ctlc1nm" path="res://assets/projectile/WeakBullet.tscn" id="13_xlf1e"]
+[ext_resource type="PackedScene" uid="uid://balo25ctlc1nm" path="res://assets/projectile/SmgWeakBullet.tscn" id="13_xlf1e"]
 [ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="13_xukat"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
