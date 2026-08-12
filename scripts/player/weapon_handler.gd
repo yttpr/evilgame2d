@@ -275,6 +275,8 @@ func _update_color() -> void:
 		aim_color = Manager.sin_color
 	elif damage_type == "Cos":
 		aim_color = Manager.cos_color
+	else:
+		aim_color = Color.YELLOW
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

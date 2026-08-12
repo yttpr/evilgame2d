@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://d20l4xmjr36xp"]
+
+[ext_resource type="PackedScene" uid="uid://bq62rhwaabn3j" path="res://assets/projectile/FirelineBullet.tscn" id="1_5anvh"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_2juu8"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_8ovs7"]
+[ext_resource type="Texture2D" uid="uid://cx74kba08jtcc" path="res://sprites/weapons/fireline.png" id="4_5anvh"]
+
+[resource]
+script = ExtResource("3_8ovs7")
+id = "Fireline"
+weapon_img = ExtResource("4_5anvh")
+bullet = ExtResource("1_5anvh")
+bullet_type = "Projectile"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 50.0
+clip_size = 1
+reload_time = 6.5
+ready_audio = ExtResource("2_2juu8")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

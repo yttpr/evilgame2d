@@ -23,7 +23,7 @@ tracer_time = 0.06
 shot_sound = ExtResource("2_71bsr")
 audio_mod = 8.0
 make_gibs = true
-death_quote = Array[String](["\"Keep your peace.\"", "\"A promise.\"", "\"Vow of silence.\"", "\"Trust me.\"", "\"Next time, do better.\""])
+death_quote = Array[String](["\"Old fashioned.\"", "\"Modern in history.\"", "\"If it ain't broke, don't fix it.\"", "\"Pull the trigger.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_vg6d8")

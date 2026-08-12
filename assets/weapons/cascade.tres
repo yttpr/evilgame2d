@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://0apo3ny7w7rh"]
+
+[ext_resource type="PackedScene" uid="uid://bd68gai16ckpc" path="res://assets/projectile/CascadeBullet.tscn" id="1_fpjyv"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_g66ul"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_hxohx"]
+[ext_resource type="Texture2D" uid="uid://s8gssxx7u8t8" path="res://sprites/weapons/cascade_wand.png" id="4_fpjyv"]
+
+[resource]
+script = ExtResource("3_hxohx")
+id = "Cascade"
+weapon_img = ExtResource("4_fpjyv")
+bullet = ExtResource("1_fpjyv")
+bullet_type = "Projectile"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 500.0
+clip_size = 1
+reload_time = 5.0
+ready_audio = ExtResource("2_g66ul")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

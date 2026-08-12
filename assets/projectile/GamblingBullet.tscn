@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://crkuu0nl4k8da"]
+
+[ext_resource type="Script" uid="uid://cuel3w0vb455b" path="res://scripts/weapons/randomization_projectile.gd" id="1_jsfp3"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="2_r28fe"]
+[ext_resource type="Resource" uid="uid://bvt3ui5lie6ak" path="res://assets/weapons/swarm.tres" id="3_io4vy"]
+[ext_resource type="Resource" uid="uid://nxm37u7fyw6g" path="res://assets/weapons/bubblewand.tres" id="4_hp4sw"]
+[ext_resource type="Resource" uid="uid://drm67rm73bpch" path="res://assets/weapons/huntsman.tres" id="5_s0wfe"]
+[ext_resource type="Resource" uid="uid://dihxajuyq0e3p" path="res://assets/weapons/punch_gun.tres" id="6_i32b1"]
+[ext_resource type="Resource" uid="uid://cof8aewqlh05i" path="res://assets/weapons/revolver_sin.tres" id="7_bfqx1"]
+[ext_resource type="Resource" uid="uid://dvi2h04chhf8d" path="res://assets/weapons/the_nail.tres" id="8_fik1g"]
+[ext_resource type="Resource" uid="uid://5a45guwc0uy0" path="res://assets/weapons/antigun.tres" id="9_sdar7"]
+[ext_resource type="Resource" uid="uid://kdr7gvrk2hd" path="res://assets/weapons/toygun_cos.tres" id="10_ngr4h"]
+[ext_resource type="Resource" uid="uid://dy70aqo0jgpqw" path="res://assets/weapons/newtoy.tres" id="11_ho7ib"]
+[ext_resource type="Resource" uid="uid://d1q5shcqr6qa7" path="res://assets/weapons/mechanicalsmg.tres" id="12_73j5l"]
+[ext_resource type="Resource" uid="uid://ct8huiy14lmpd" path="res://assets/weapons/invisiblegun.tres" id="13_26y78"]
+[ext_resource type="Resource" uid="uid://5v41agjoyo5q" path="res://assets/weapons/flamethrower.tres" id="14_j65ja"]
+[ext_resource type="Resource" uid="uid://dcbtfqlnh03y4" path="res://assets/weapons/rocket_launcher.tres" id="15_qa8tq"]
+[ext_resource type="Resource" uid="uid://e3c04oph7jau" path="res://assets/weapons/radioscope.tres" id="16_4jthx"]
+[ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="17_xdw0m"]
+[ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="18_o1mmw"]
+[ext_resource type="Resource" uid="uid://0apo3ny7w7rh" path="res://assets/weapons/cascade.tres" id="19_myd0j"]
+[ext_resource type="Resource" uid="uid://byxc2s807s351" path="res://assets/weapons/crossbow.tres" id="20_nre32"]
+[ext_resource type="Resource" uid="uid://cjytt7fin2c6p" path="res://assets/weapons/clockwork.tres" id="21_hsqgo"]
+[ext_resource type="Resource" uid="uid://y50e4qf0lqkb" path="res://assets/weapons/thepuller.tres" id="22_io4vy"]
+[ext_resource type="Resource" uid="uid://cmni55jnxc7ma" path="res://assets/weapons/placeholder.tres" id="23_hp4sw"]
+
+[node name="HitscanBullet" type="Node2D" unique_id=13675771]
+script = ExtResource("1_jsfp3")
+sources = Array[ExtResource("2_r28fe")]([ExtResource("3_io4vy"), ExtResource("4_hp4sw"), ExtResource("5_s0wfe"), ExtResource("6_i32b1"), ExtResource("7_bfqx1"), ExtResource("8_fik1g"), ExtResource("9_sdar7"), ExtResource("10_ngr4h"), ExtResource("11_ho7ib"), ExtResource("12_73j5l"), ExtResource("13_26y78"), ExtResource("14_j65ja"), ExtResource("15_qa8tq"), ExtResource("16_4jthx"), ExtResource("17_xdw0m"), ExtResource("18_o1mmw"), ExtResource("19_myd0j"), ExtResource("20_nre32"), ExtResource("21_hsqgo"), ExtResource("22_io4vy"), ExtResource("23_hp4sw")])
+death_quote = Array[String](["\"There are none.\"", "\"Who am I?\"", "\"I am not.\"", "\"Gamble responsibly.\"", "\"What are the odds?\"", "\"Luck of the roll.\"", "\"Flavor of the day.\"", "\"You asked for it.\"", "\"Bad RNG.\"", "\"Try again!\"", "\"Lucked out.\"", "No refunds.\"", "\"Rope? Bombs? Lamp oil?\"", "\"Who needs a medical license when you got style?\"", "\"Hope you've had your shots!\"", "\"Be careful with that!\"", "\"Try not to die!\"", "\"99% of gamblers quit before they win big.\"", "\"Thanks for the scrap!\"", "\"Don't have too much fun!\""])

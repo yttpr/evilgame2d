@@ -15,8 +15,12 @@
 [ext_resource type="Resource" uid="uid://cmkmyswk17cnr" path="res://assets/weapons/vowofsilence.tres" id="12_lbqd3"]
 [ext_resource type="Resource" uid="uid://y50e4qf0lqkb" path="res://assets/weapons/thepuller.tres" id="13_i7uva"]
 [ext_resource type="Resource" uid="uid://d1q5shcqr6qa7" path="res://assets/weapons/mechanicalsmg.tres" id="14_kh2pp"]
+[ext_resource type="Resource" uid="uid://byxc2s807s351" path="res://assets/weapons/crossbow.tres" id="15_2qtt3"]
+[ext_resource type="Resource" uid="uid://0apo3ny7w7rh" path="res://assets/weapons/cascade.tres" id="16_jum2a"]
+[ext_resource type="Resource" uid="uid://d20l4xmjr36xp" path="res://assets/weapons/fireline.tres" id="17_bmnly"]
+[ext_resource type="Resource" uid="uid://dpn74dvyq0jit" path="res://assets/weapons/roulettes.tres" id="18_gxv3y"]
 
 [resource]
 script = ExtResource("2_tnldn")
-base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("2_5dysp"), ExtResource("3_2hqdi"), ExtResource("4_luth6"), ExtResource("5_2hqdi"), ExtResource("7_x6d74"), ExtResource("7_v5xo6"), ExtResource("8_4uboy"), ExtResource("9_4uboy"), ExtResource("10_tfivx"), ExtResource("11_8cnpj"), ExtResource("12_lbqd3"), ExtResource("13_i7uva"), ExtResource("14_kh2pp")])
+base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("2_5dysp"), ExtResource("3_2hqdi"), ExtResource("4_luth6"), ExtResource("5_2hqdi"), ExtResource("7_x6d74"), ExtResource("7_v5xo6"), ExtResource("8_4uboy"), ExtResource("9_4uboy"), ExtResource("10_tfivx"), ExtResource("11_8cnpj"), ExtResource("12_lbqd3"), ExtResource("13_i7uva"), ExtResource("14_kh2pp"), ExtResource("15_2qtt3"), ExtResource("16_jum2a"), ExtResource("17_bmnly"), ExtResource("18_gxv3y")])
 metadata/_custom_type_script = "uid://1r25lpvdp18l"

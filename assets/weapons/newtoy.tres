@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dy70aqo0jgpqw"]
+
+[ext_resource type="PackedScene" uid="uid://qr4r6h1xcc6c" path="res://assets/projectile/CardBullet.tscn" id="1_aqk30"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_kooj5"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_lwrjq"]
+[ext_resource type="Texture2D" uid="uid://dn64n56d8ut8p" path="res://sprites/weapons/newtoy_weapon.png" id="4_kooj5"]
+
+[resource]
+script = ExtResource("3_lwrjq")
+id = "NewToy"
+weapon_img = ExtResource("4_kooj5")
+bullet = ExtResource("1_aqk30")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 2
+damage_type = "NULL"
+knockback = 400.0
+clip_size = 3
+shot_delay = 0.4
+reload_time = 5.0
+aim_length = 65.0
+ready_audio = ExtResource("2_kooj5")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

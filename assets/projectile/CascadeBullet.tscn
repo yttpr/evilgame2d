@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bd68gai16ckpc"]
+
+[ext_resource type="Script" uid="uid://4e4dsv25y62o" path="res://scripts/weapons/cascade_projectile.gd" id="1_d4048"]
+[ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="2_aml8k"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_d8cnq"]
+[ext_resource type="Texture2D" uid="uid://cmus8eiud5cec" path="res://sprites/weapons/projectiles/star_bullet.png" id="3_aml8k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_d4048")
+cascade_amount = 5
+cascade_mod = 0.8
+cascade_time = 0.4
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 150.0
+radius = 8.0
+rot_spd = 16.0
+bounces = true
+by_lifetime = true
+lifetime = 8.0
+shot_sound = ExtResource("2_aml8k")
+audio_mod = 2.0
+pitch_mod = 1.3
+make_gibs = true
+death_quote = Array[String](["\"More than every grain of sand...\"", "\"Stars of the sky\"", "\"Infinite galaxies...\"", "\"All constellations\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("2_d8cnq")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_aml8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

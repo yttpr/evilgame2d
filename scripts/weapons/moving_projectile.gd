@@ -26,15 +26,19 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 	
 	img.modulate = tracer_color
 	
+	_make_the_collider()
+
+func _make_the_collider() -> void:
 	collider = Manager._create_dmg_collider(dmg, type, source, body.velocity.normalized() * knockback_mod)
+	collider.name = "Collider"
 	collider._set_parent(self)
 	collider._set_pierce(-1)
+	collider._make_collider()
 	collider._set_circle(radius)
 	collider._set_duration(false, 0)
 	collider._set_collision(damager)
 	collider.death_quote = death_quote
 	collider.projectile = self
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

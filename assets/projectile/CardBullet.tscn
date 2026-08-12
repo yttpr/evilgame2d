@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://qr4r6h1xcc6c"]
+
+[ext_resource type="Script" uid="uid://choatjytti8nn" path="res://scripts/weapons/doubletypes_projectile.gd" id="1_ninj8"]
+[ext_resource type="AudioStream" uid="uid://cwdstm2vy6127" path="res://audio/noise/weapon/gun_sin_norm.ogg" id="2_ninj8"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_ap0k4"]
+[ext_resource type="Texture2D" uid="uid://x7ha64ty2x4f" path="res://sprites/weapons/projectiles/halfcard_bullet.png" id="4_ninj8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_ninj8")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1000.0
+radius = 16.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 5.0
+tracer_width = 8.0
+tracer_time = 0.1
+shot_sound = ExtResource("2_ninj8")
+audio_mod = 7.0
+death_quote = Array[String](["\"How the %&#@ did this get here?\"", "\"Placeholder gameobject\"", "\"Placeholder data\"", "\"I drew everything in this game.\"", "\"Stop.\"", "\"NULL\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_ap0k4")
+texture = ExtResource("4_ninj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

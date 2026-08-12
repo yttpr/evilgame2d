@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dpn74dvyq0jit"]
+
+[ext_resource type="PackedScene" uid="uid://crkuu0nl4k8da" path="res://assets/projectile/GamblingBullet.tscn" id="1_uqy88"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_xbqkl"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_8elqt"]
+[ext_resource type="Texture2D" uid="uid://fvwingmufsci" path="res://sprites/weapons/roulettes.png" id="4_nw57q"]
+
+[resource]
+script = ExtResource("3_8elqt")
+id = "Roulettes"
+weapon_img = ExtResource("4_nw57q")
+bullet = ExtResource("1_uqy88")
+bullet_type = "???"
+weapon_type = "Bullet"
+damage_type = "NULL"
+clip_size = 17
+shot_delay = 0.15
+reload_time = 7.77
+aim_length = 75.0
+ready_audio = ExtResource("2_xbqkl")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

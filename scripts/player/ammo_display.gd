@@ -54,6 +54,8 @@ func _set_damage_type(type : String) -> void:
 		self.modulate = Manager.sin_color
 	elif type == "Cos":
 		self.modulate = Manager.cos_color
+	else:
+		self.modulate = Color.WHITE
 	damage_type = type
 func _set_weapon_type(type : String) -> void:
 	if type == weapon_type:

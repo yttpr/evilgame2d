@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bq62rhwaabn3j"]
+
+[ext_resource type="Script" uid="uid://cd60klxke2lyy" path="res://scripts/weapons/FirelineProjectile.gd" id="1_kfxpr"]
+[ext_resource type="PackedScene" uid="uid://ck250nxws30pt" path="res://assets/projectile/AnotherFloorFire.tscn" id="2_kfxpr"]
+[ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="3_gnlnr"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_qitjv"]
+[ext_resource type="Texture2D" uid="uid://bn0s126pygna3" path="res://sprites/weapons/projectiles/fireball_bullet.png" id="5_xet0o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_kfxpr")
+spawns = 20
+dif_mod = -32.0
+bullet = ExtResource("2_kfxpr")
+source_name = "Player_AOE_0"
+shoot_from = NodePath("Sprite2D")
+amount = 1
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 16.0
+rot_spd = 60.0
+grav_accel = 600.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("3_gnlnr")
+make_gibs = true
+death_quote = Array[String](["\"The fireline.\"", "\"Bring me my hatchet.\"", "\"We got an emergency here...\"", "\"Get to the fire escape!\"", "\"Don't take the elevator!\"", "\"Our last line of defense.\"", "\"A fire extinguisher is not gonna save you from that...\"", "\"You burned my house to the ground!\"", "\"Torched.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("4_qitjv")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_xet0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
