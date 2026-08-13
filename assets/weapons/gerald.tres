@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dx7kg1pmnmpuy"]
+
+[ext_resource type="PackedScene" uid="uid://caxuoaref500k" path="res://assets/projectile/BubbleShotgunProjectile.tscn" id="1_64dmt"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_lgqh1"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_qk8lq"]
+[ext_resource type="Texture2D" uid="uid://klk173ynl45x" path="res://sprites/weapons/garald_weapon.png" id="4_64dmt"]
+
+[resource]
+script = ExtResource("3_qk8lq")
+id = "Gerald"
+weapon_img = ExtResource("4_64dmt")
+bullet = ExtResource("1_64dmt")
+bullet_type = "Projectile_0"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 200.0
+full_auto = true
+clip_size = 6
+shot_delay = 0.15
+reload_time = 7.0
+ready_audio = ExtResource("2_lgqh1")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

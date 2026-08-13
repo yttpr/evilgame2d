@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cyt7ns085e1uw" path="res://assets/objects/crate.tscn" id="10_7smnk"]
 [ext_resource type="Resource" uid="uid://dhtems1p748mo" path="res://assets/enemies/spawns/spawns_dungen_hard.tres" id="12_6i7y8"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="13_ega80"]
-[ext_resource type="PackedScene" uid="uid://df2wlh6wycupb" path="res://assets/objects/single_use_door.tscn" id="15_v03r6"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -123,9 +122,8 @@ data = ExtResource("9_6sga2")
 spawn_time = 30.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 
-[node name="Door2" parent="." unique_id=591089715 instance=ExtResource("15_v03r6")]
+[node name="Door4" parent="." unique_id=1654568462 instance=ExtResource("6_5l0kt")]
 position = Vector2(896, -64)
-key = "DungeonCoraShop"
 room = "res://assets/levels/level1/level2/level3/level4/shop1.tscn"
 
 [node name="Door3" parent="." unique_id=979105454 instance=ExtResource("6_5l0kt")]

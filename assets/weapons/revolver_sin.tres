@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("3_f4jfr")
-id = "RevolverSin"
+id = "Revolver_Sin"
 weapon_img = ExtResource("4_q8mfu")
 bullet = ExtResource("1_d2r4l")
 bullet_type = "Projectile"

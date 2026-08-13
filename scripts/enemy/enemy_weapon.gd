@@ -34,13 +34,18 @@ var is_reloading : bool
 var reload_tick : float
 var aiming_tick : float
 
+@export var walls_only : bool
+
 func _shoot(direction : Vector2) -> void:
 	# shoot
 	var dir = direction.angle() + randf_range(shot_variance * -1, shot_variance)
 	var proj : BasicProjectile = bullet.instantiate()
 	Manager._get_world().add_child(proj)
 	proj._set_basic_data(dmg_amt, damage_type, knockback)
-	proj._set_collision(source_name, Manager.collision_walls, Manager.collision_forEnemy)
+	if !walls_only:
+		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_forEnemy)
+	else:
+		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_walls)
 	proj.pierce_amt = pierce_amt
 	proj.y_change = _get_offset()
 	proj._shoot(Vector2.from_angle(dir), self.global_position + _get_offset_vector())

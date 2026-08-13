@@ -35,6 +35,13 @@ func _on_text_submitted(command : String) -> void:
 			print("invalid enemy")
 			return
 		current_enemy = enemy
+	if args[0] == "money":
+		Manager.coins += int(args[1])
+	if args[0] == "heal":
+		Manager.current_hp = 10
+		Manager.Player.HP = 10
+		Manager.Player.ui.Health._set_current_health(Manager.current_hp)
+
 
 func _in_focus() -> void:
 	self.visible = true

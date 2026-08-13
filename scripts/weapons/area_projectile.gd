@@ -45,7 +45,7 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 	super._shoot(direction, origin)
 	extra_audio._play_sound(extra_sound, extra_mod)
 	self.global_position = origin - _offset() + Vector2.from_angle(randf_range(0, 2*PI)) * randf_range(0, 10)
-	if Manager._check_in_pit(img):
+	if !Manager._get_world().water_pits and Manager._check_in_pit(img):
 		_cleanup()
 	img.modulate = tracer_color
 

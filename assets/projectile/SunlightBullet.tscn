@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_508kq"]
 [ext_resource type="AudioStream" uid="uid://bc7un0a3hbqx7" path="res://audio/noise/weapon/magic_low.ogg" id="2_1vu50"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_1lb0l"]
-[ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_m36g0"]
+[ext_resource type="Texture2D" uid="uid://cqji3yd78w06p" path="res://sprites/weapons/projectiles/sun_bullet.png" id="4_1vu50"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -27,7 +27,7 @@ death_quote = Array[String](["\"Sun comes...\"", "\"The artificial sun.\"", "\"T
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_1lb0l")
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_m36g0")
+texture = ExtResource("4_1vu50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

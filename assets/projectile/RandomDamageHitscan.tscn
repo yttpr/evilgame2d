@@ -5,7 +5,7 @@
 
 [node name="HitscanBullet" type="Node2D" unique_id=13675771]
 script = ExtResource("1_qko8i")
-max_damage = 20
+max_damage = 10
 collider_duration = 0.05
 length = 2500.0
 stop_enemies = true

@@ -111,6 +111,7 @@ max_clip = 1
 reload_time = 3.5
 move_during_reload = true
 brain = NodePath("../brain")
+walls_only = true
 visible_aim = true
 stop_looking_while_aiming = true
 max_aim_width = 3.0

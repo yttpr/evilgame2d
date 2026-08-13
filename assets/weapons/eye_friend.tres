@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("3_1b5i2")
-id = "EyeFriend"
+id = "Eye_Friend"
 weapon_img = ExtResource("4_n14rt")
 bullet = ExtResource("1_n14rt")
 bullet_type = "Hitscan"

@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("3_13uq0")
-id = "TheNail"
+id = "The_Nail"
 weapon_img = ExtResource("4_c0g8f")
 bullet = ExtResource("1_uvsxi")
 bullet_type = "Projectile"

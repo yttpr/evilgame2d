@@ -237,7 +237,7 @@ func _create_dmg_collider(amt : int, type : String, source : String, inertia : V
 	return collider
 
 func _make_damage_popup(amt : int, loc : Vector2, is_sin : bool) -> void:
-	_play_oneshot(loc, base_hit_sound, 25.0 + amt * 2, 1.5 - (amt / 10.0))
+	_play_oneshot(loc, base_hit_sound, min(25.0 + amt * 2, 35), max(1.5 - (amt / 10.0), -2))
 	
 	for i in amt:
 		_create_damage(loc, is_sin)

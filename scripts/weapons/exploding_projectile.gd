@@ -19,6 +19,7 @@ func _explode() -> void:
 
 @export var collision_only_player : bool
 @export var collision_only_enemy : bool
+@export var collision_only_walls : bool
 func _shoot_buddy(dir : Vector2) -> void:
 	var proj : BasicProjectile = bullet.instantiate()
 	Manager._get_world().add_child(proj)
@@ -31,6 +32,8 @@ func _shoot_buddy(dir : Vector2) -> void:
 		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_forEnemy)
 	elif collision_only_enemy:
 		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_onlyEnemies)
+	elif collision_only_walls:
+		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_walls)
 	else:
 		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_all)
 	proj.y_change = shoot_from.position.y

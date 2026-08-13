@@ -160,12 +160,21 @@ func _input(event: InputEvent) -> void:
 			mouse_down = event.pressed
 		
 		#shooting
-		if is_reloading or delay_tick > 0:
+		if delay_tick > 0:
 			return
 		if event.button_index != 1 or !event.pressed:
 			return
 		if weapons[gun_index].inert:
 			return
+		if is_reloading:
+			if current_clip > 0:
+				is_reloading = false
+				reload_icon.visible = false
+				reload_tick = 0
+				audio_player.stop()
+				Player.ui.Weapons._set_reloading(false)
+			else:
+				return
 		if !Manager.world:
 			return
 		_shoot()

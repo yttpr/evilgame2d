@@ -101,8 +101,8 @@ func _process(delta: float) -> void:
 	
 	lastPos = self.global_position
 
-func _hit_made() -> void:
-	pass
+func _hit_made() -> bool:
+	return false
 
 
 func _make_gibs() -> void:

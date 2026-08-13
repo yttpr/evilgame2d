@@ -74,10 +74,13 @@ func _process(delta: float) -> void:
 	
 	super._process(delta)
 
-func _hit_made() -> void:
+func _hit_made() -> bool:
 	if pierce_amt == 0:
+		collider.collider.disabled = true
 		self._cleanup()
+		return true
 	pierce_amt -= 1
+	return false
 
 
 func _make_backup_line(orig : Vector2, target : Vector2) -> DamageCollider:
@@ -85,8 +88,8 @@ func _make_backup_line(orig : Vector2, target : Vector2) -> DamageCollider:
 	col._set_to_world()
 	col.pierce = pierce_amt
 	col._set_line(orig, target)
-	col.frame_buffer = 5
-	col._set_duration(true, 0.05)
+	col.frame_buffer = 2
+	col._set_duration(true, 0.03)
 	col._set_collision(damager)
 	col.death_quote = death_quote
 	col.projectile = self

@@ -11,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c2noafr7q7su5" path="res://assets/objects/the_moon.tscn" id="9_fivbj"]
 [ext_resource type="Resource" uid="uid://ovvwjf416qns" path="res://assets/characters/clerk_character.tres" id="9_tk2qu"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="11_57oe7"]
-[ext_resource type="PackedScene" uid="uid://cqb5h3id802a0" path="res://assets/objects/gun_pickup.tscn" id="12_fnjer"]
-[ext_resource type="Resource" uid="uid://dtjsxardpuhvt" path="res://assets/weapons/loophell.tres" id="13_fnjer"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -74,7 +72,3 @@ dist = 24.0
 
 [node name="HangingLight2" parent="." unique_id=34139319 instance=ExtResource("11_57oe7")]
 position = Vector2(800, 928)
-
-[node name="Gun" parent="." unique_id=980551479 instance=ExtResource("12_fnjer")]
-position = Vector2(864, 480)
-weapon = ExtResource("13_fnjer")

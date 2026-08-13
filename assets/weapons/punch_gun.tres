@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("3_vunu4")
-id = "PunchGun"
+id = "Punch_Gun"
 weapon_img = ExtResource("4_jscu6")
 bullet = ExtResource("1_unhro")
 bullet_type = "Power"

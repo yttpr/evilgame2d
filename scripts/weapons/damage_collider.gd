@@ -83,8 +83,10 @@ func _on_body_entered(body) -> void:
 				k = Vector2.from_angle(randf_range(0.0, 2*PI)) * inertia.length()
 		if body._get_hit(damage_amt, damage_type, damage_source, k):
 			if projectile:
-				projectile._hit_made()
+				if projectile._hit_made():
+					collider.disabled = true
 			if pierce == 0:
+				collider.disabled = true
 				self.queue_free()
 			pierce -= 1
 

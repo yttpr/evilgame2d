@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://caxuoaref500k"]
+
+[ext_resource type="Script" uid="uid://dwpss3xx8v0wv" path="res://scripts/enemy/ShotgunProjectile.gd" id="1_0yitt"]
+[ext_resource type="AudioStream" uid="uid://2q05lsevsve0" path="res://audio/noise/weapon/magic_slow.ogg" id="2_0yitt"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_8il8w"]
+[ext_resource type="Texture2D" uid="uid://cwd62ljt2gtwa" path="res://sprites/weapons/projectiles/empty_bullet.png" id="4_0yitt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_0yitt")
+shoot_range = 35.0
+amount = 8
+spd_range = 0.15
+deceleration_rate = 0.9
+deceleration_range = 0.028
+die_if_stop = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1000.0
+radius = 10.0
+rot_spd = 50.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 10.0
+tracer_width = 8.0
+shot_sound = ExtResource("2_0yitt")
+make_gibs = true
+death_quote = Array[String](["\"Bubbles!!!\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_8il8w")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_0yitt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

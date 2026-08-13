@@ -27,6 +27,7 @@ death_quote = Array[String](["\"How the %&#@ did this get here?\"", "\"Placehold
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_ap0k4")
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_ninj8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]

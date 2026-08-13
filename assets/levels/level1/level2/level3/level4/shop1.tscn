@@ -106,11 +106,13 @@ position = Vector2(96, -800)
 
 [node name="Gun2" parent="." unique_id=1053653709 instance=ExtResource("13_qpwts")]
 position = Vector2(-160, -704)
+objectname = "CoraShopDungeon1"
 pool = ExtResource("14_vhlio")
 health_cost = 5
 
 [node name="Gun3" parent="." unique_id=226190807 instance=ExtResource("13_qpwts")]
 position = Vector2(-32, -704)
+objectname = "CoraDungeonShop2"
 pool = ExtResource("14_vhlio")
 health_cost = 5
 
