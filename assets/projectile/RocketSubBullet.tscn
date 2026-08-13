@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dawfia5p5hplf" path="res://audio/noise/weapon/explosion_light.ogg" id="2_mrmxo"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_rt7x2"]
 [ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_c8gb7"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_y1sfr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -29,6 +30,12 @@ death_quote = Array[String](["\"You blew it...\"", "\"Collateral!\"", "\"Take co
 material = ExtResource("3_rt7x2")
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_c8gb7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=824344362]
+z_index = 2
+material = ExtResource("3_rt7x2")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_y1sfr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

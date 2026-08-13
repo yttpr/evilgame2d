@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c0qlsdru3h3w1"]
+
+[ext_resource type="PackedScene" uid="uid://b745knfnd21h2" path="res://assets/projectile/BulbBomb.tscn" id="1_7pqp4"]
+[ext_resource type="AudioStream" uid="uid://b386uaj2ymxb5" path="res://audio/noise/weapon/static_ready.ogg" id="2_v130r"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_dnsp6"]
+[ext_resource type="Texture2D" uid="uid://da0mpsbodxj8h" path="res://sprites/weapons/bulb_weapon.png" id="4_7pqp4"]
+
+[resource]
+script = ExtResource("3_dnsp6")
+id = "Bulb"
+weapon_img = ExtResource("4_7pqp4")
+bullet = ExtResource("1_7pqp4")
+bullet_type = "Projectile_0"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 300.0
+pierce_amt = -1
+full_auto = true
+clip_size = 6
+shot_delay = 0.12
+reload_time = 5.2
+ready_audio = ExtResource("2_v130r")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

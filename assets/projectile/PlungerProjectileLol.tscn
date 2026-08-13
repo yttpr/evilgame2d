@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://56nb32qn4kat"]
+
+[ext_resource type="Script" uid="uid://dwpss3xx8v0wv" path="res://scripts/enemy/ShotgunProjectile.gd" id="1_itn2m"]
+[ext_resource type="AudioStream" uid="uid://dambopc515umc" path="res://audio/noise/weapon/gun_sin_small.wav" id="2_tcco4"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_u6jnl"]
+[ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="4_xmujq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_itn2m")
+shoot_range = 20.0
+amount = 3
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1000.0
+radius = 16.0
+rot_spd = 20.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 3.0
+tracer_width = 8.0
+tracer_time = 0.03
+shot_sound = ExtResource("2_tcco4")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"Boingy boingy.\"", "\"Letsa go!\"", "\"Itsa me!\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_u6jnl")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_xmujq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

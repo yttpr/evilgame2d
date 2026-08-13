@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cuas681yu3a2o" path="res://audio/noise/weapon/magic_shoot.ogg" id="2_r3klc"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_57yf4"]
 [ext_resource type="Texture2D" uid="uid://iapc0doxv4vv" path="res://sprites/weapons/projectiles/triangle_bullet.png" id="4_5e5ja"]
+[ext_resource type="Texture2D" uid="uid://6tkgghqpjhhd" path="res://sprites/weapons/projectiles/outlines/triangle_bullet_outline.png" id="5_86mxy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -26,6 +27,11 @@ death_quote = Array[String](["\"The perfect shape.\"", "\"Perfect geometry.\"", 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_57yf4")
 texture = ExtResource("4_5e5ja")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1593225637]
+z_index = 2
+material = ExtResource("3_57yf4")
+texture = ExtResource("5_86mxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

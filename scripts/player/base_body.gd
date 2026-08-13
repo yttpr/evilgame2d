@@ -15,7 +15,7 @@ var audio : BasicAudio
 
 @export var marker : Sprite2D
 
-@export var i_frame_time : float = 0.15
+@export var i_frame_time : float = 0.05
 var i_frames : Dictionary
 
 @export var mov_spd : int = 250

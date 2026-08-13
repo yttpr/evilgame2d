@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://oc46cmw3myhk" path="res://assets/ui/weapon_display.tscn" id="3_34bbm"]
 [ext_resource type="PackedScene" uid="uid://vr3jpgvci4g5" path="res://assets/ui/ammo_display.tscn" id="4_jpny2"]
 [ext_resource type="PackedScene" uid="uid://bwxexvw4cc7vo" path="res://assets/ui/coin_display.tscn" id="5_6bn6x"]
+[ext_resource type="PackedScene" uid="uid://dybvlgu6ut326" path="res://assets/ui/consolecommands.tscn" id="6_ghacf"]
 
 [node name="PlayerUi" type="Node2D" unique_id=433024491 node_paths=PackedStringArray("Health", "Ammo", "Weapons", "Coins")]
 z_index = 8
@@ -26,3 +27,9 @@ position = Vector2(28, 157)
 [node name="CoinDisplay" parent="." unique_id=2051199142 instance=ExtResource("5_6bn6x")]
 position = Vector2(1029, 615)
 scale = Vector2(2, 2)
+
+[node name="consolecommands" parent="." unique_id=2135377785 instance=ExtResource("6_ghacf")]
+offset_left = 14.0
+offset_top = 187.0
+offset_right = 108.0
+offset_bottom = 218.0

@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://gl8ar22cfu3f" path="res://audio/noise/weapon/bite.wav" id="2_am8mo"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_6f4ek"]
 [ext_resource type="Texture2D" uid="uid://bn8svlyggbywy" path="res://sprites/weapons/projectiles/bite_bullet.png" id="4_am8mo"]
+[ext_resource type="Texture2D" uid="uid://dd4ilvil5wg83" path="res://sprites/weapons/projectiles/outlines/bite_bullet_outline.png" id="5_3b60b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -28,6 +29,11 @@ death_quote = Array[String](["\"So HUNGRY!!!!\"", "\"Nom nom nom.\"", "\"Feed me
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_6f4ek")
 texture = ExtResource("4_am8mo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1147040050]
+z_index = 2
+material = ExtResource("3_6f4ek")
+texture = ExtResource("5_3b60b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

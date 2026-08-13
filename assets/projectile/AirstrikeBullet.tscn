@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://d3nnlvfraf6fy" path="res://sprites/weapons/projectiles/marker_bullet.png" id="3_ys23j"]
 [ext_resource type="Texture2D" uid="uid://c3mxekjx5h163" path="res://sprites/weapons/projectiles/bomb_bullet.png" id="4_53yqo"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_htccx"]
+[ext_resource type="Texture2D" uid="uid://c1igq5tjaeavb" path="res://sprites/weapons/projectiles/outlines/marker_bullet_outline.png" id="7_166jj"]
+[ext_resource type="Texture2D" uid="uid://evj6403u5u5h" path="res://sprites/weapons/projectiles/outlines/bomb_bullet_outline.png" id="8_vwhmi"]
 
 [node name="AirstrikeBullet" type="Node2D" unique_id=13675771 node_paths=PackedStringArray("marker", "falling")]
 script = ExtResource("1_p5flc")
@@ -33,6 +35,16 @@ material = ExtResource("4_htccx")
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_ys23j")
 
+[node name="marker2" type="Sprite2D" parent="marker" unique_id=1739395791]
+z_index = 3
+material = ExtResource("4_htccx")
+texture = ExtResource("7_166jj")
+
 [node name="bomb" type="Sprite2D" parent="." unique_id=1375373157]
 material = ExtResource("4_htccx")
 texture = ExtResource("4_53yqo")
+
+[node name="bomb2" type="Sprite2D" parent="bomb" unique_id=1766047854]
+z_index = 2
+material = ExtResource("4_htccx")
+texture = ExtResource("8_vwhmi")

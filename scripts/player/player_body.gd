@@ -73,7 +73,7 @@ func _cleanup() -> void:
 	Manager.current_weapons.assign(data.base_weapons)
 # movement
 func get_input() -> void:
-	if is_dead:
+	if is_dead or Manager.is_paused or Manager.lock_input:
 		velocity = Vector2.ZERO
 		return
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

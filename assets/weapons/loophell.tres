@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dtjsxardpuhvt"]
+
+[ext_resource type="PackedScene" uid="uid://80576u4cbcce" path="res://assets/projectile/TripleBullet.tscn" id="1_hyyjh"]
+[ext_resource type="AudioStream" uid="uid://b386uaj2ymxb5" path="res://audio/noise/weapon/static_ready.ogg" id="2_hyyjh"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_djmpi"]
+[ext_resource type="Texture2D" uid="uid://yv12njc5cub6" path="res://sprites/weapons/statictowre.png" id="4_hyyjh"]
+
+[resource]
+script = ExtResource("3_djmpi")
+id = "LoopHell"
+weapon_img = ExtResource("4_hyyjh")
+bullet = ExtResource("1_hyyjh")
+bullet_type = "Projectile_0"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 800.0
+full_auto = true
+clip_size = 6
+shot_delay = 0.12
+reload_time = 3.6
+aim_length = 225.0
+ready_audio = ExtResource("2_hyyjh")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

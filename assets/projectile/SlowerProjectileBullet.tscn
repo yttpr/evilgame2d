@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dfb57wtsr6hy1" path="res://audio/noise/weapon/gun_sin_med.ogg" id="2_w1dgw"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_6h2xu"]
 [ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_uwb06"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_w1dgw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -28,6 +29,12 @@ death_quote = Array[String](["\"Get off my screen!!!\"", "\"Every photon has a p
 material = ExtResource("3_6h2xu")
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_uwb06")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1690220446]
+z_index = 2
+material = ExtResource("3_6h2xu")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_w1dgw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

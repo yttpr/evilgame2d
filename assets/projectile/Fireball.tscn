@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="3_sbd42"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_ywi84"]
 [ext_resource type="Texture2D" uid="uid://bn0s126pygna3" path="res://sprites/weapons/projectiles/fireball_bullet.png" id="5_788q1"]
+[ext_resource type="Texture2D" uid="uid://d0en64vf1s0lk" path="res://sprites/weapons/projectiles/outlines/fireball_bullet_outline.png" id="6_3p3gg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -34,6 +35,11 @@ death_quote = Array[String](["\"Let's play!\"", "\"I just want to be let out...\
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("4_ywi84")
 texture = ExtResource("5_788q1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1688769742]
+z_index = 2
+material = ExtResource("4_ywi84")
+texture = ExtResource("6_3p3gg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

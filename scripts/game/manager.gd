@@ -1,5 +1,7 @@
 extends Node
 
+var lock_input : bool
+
 var run_bools : Dictionary = {}
 var save_bools : Dictionary = {}
 
@@ -127,7 +129,7 @@ func _toggle_pause() -> void:
 		_pause()
 
 func _pause() -> void:
-	if Player.is_dead:
+	if Player and Player.is_dead:
 		return
 	is_paused = true
 	Engine.time_scale = 0
@@ -156,6 +158,8 @@ func _open_menu(value : bool) -> void:
 				menu._exit()
 
 func _input(event):
+	if lock_input:
+		return
 	
 	if event is InputEventKey and event.pressed:
 		#zoom in
@@ -327,6 +331,7 @@ func _add_points(amt : int) -> void:
 
 func _reset_run_data() -> void:
 	run_bools = {}
+	run_data = {}
 func _set_run_bool(arg : String, value : bool) -> void:
 	run_bools[arg] = value
 func _check_run_bool(arg : String) -> bool:
@@ -348,6 +353,15 @@ func _check_save_bool(arg : String) -> bool:
 		return save_bools[arg]
 	return false
 
+var run_data : Dictionary = {}
+func _set_run_arg(arg : String, value : Variant) -> void:
+	run_data[arg] = value
+func _get_run_arg(arg : String) -> Variant:
+	if !run_data:
+		return null
+	if run_data.has(arg):
+		return run_data[arg]
+	return null
 
 func _make_afterimage(img : Sprite2D, lifetime : float = 0.8) -> void:
 	var a : AfterImage = AfterImage.new()

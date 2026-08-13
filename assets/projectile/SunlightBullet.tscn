@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dbu3y0ovum12d"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_508kq"]
+[ext_resource type="AudioStream" uid="uid://bc7un0a3hbqx7" path="res://audio/noise/weapon/magic_low.ogg" id="2_1vu50"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_1lb0l"]
+[ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_m36g0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_508kq")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 24.0
+rot_spd = 25.0
+pierce_amt = -1
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("2_1vu50")
+make_gibs = true
+death_quote = Array[String](["\"Sun comes...\"", "\"The artificial sun.\"", "\"The artificial world.\"", "\"Plastic beauty...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_1lb0l")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_m36g0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

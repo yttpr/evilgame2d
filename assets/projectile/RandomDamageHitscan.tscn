@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dkrxv3grru7rf"]
+
+[ext_resource type="Script" uid="uid://b25ehod8wfoti" path="res://scripts/weapons/randomdamagehitscan.gd" id="1_qko8i"]
+[ext_resource type="AudioStream" uid="uid://bdnuuvpugkoul" path="res://audio/noise/weapon/magic_light.wav" id="2_qko8i"]
+
+[node name="HitscanBullet" type="Node2D" unique_id=13675771]
+script = ExtResource("1_qko8i")
+max_damage = 20
+collider_duration = 0.05
+length = 2500.0
+stop_enemies = true
+type = "Cos"
+dmg = 5
+knockback_mod = 3000.0
+by_lifetime = true
+lifetime = 0.15
+tracer_width = 5.0
+tracer_color = Color(1, 0, 0, 1)
+tracer_time = 0.15
+shot_sound = ExtResource("2_qko8i")
+audio_mod = 6.0
+death_quote = Array[String](["\"Don't pick up.\"", "\"You make a good listener.\"", "\"Don't speak.\"", "\"Just listen.\"", "\"Don't interrupt.\"", "\"Thank you... for listening.\""])

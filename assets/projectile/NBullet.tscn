@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="2_120ep"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_263hc"]
 [ext_resource type="Texture2D" uid="uid://d3k4x6046a8xe" path="res://sprites/weapons/projectiles/n_bullet.png" id="4_120ep"]
+[ext_resource type="Texture2D" uid="uid://dthvsqkbecacp" path="res://sprites/weapons/projectiles/outlines/n_bullet_outline.png" id="5_8djfd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -31,6 +32,11 @@ death_quote = Array[String](["\"N.\"", "\"Nn.\"", "\"You caused this.\"", "\"You
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_263hc")
 texture = ExtResource("4_120ep")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1973279774]
+z_index = 2
+material = ExtResource("3_263hc")
+texture = ExtResource("5_8djfd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

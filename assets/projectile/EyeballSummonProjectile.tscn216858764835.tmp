@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://behqsaxkhaeju"]
+
+[ext_resource type="Script" uid="uid://cgrn5tmob1ihe" path="res://scripts/weapons/summon_projectile.gd" id="1_anmt1"]
+[ext_resource type="AudioStream" uid="uid://cuas681yu3a2o" path="res://audio/noise/weapon/magic_shoot.ogg" id="2_anmt1"]
+[ext_resource type="PackedScene" uid="uid://ba2nv6b0hdpia" path="res://assets/projectile/AAAnotherBouncelessHitscan.tscn" id="2_ixn6c"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_t5vki"]
+[ext_resource type="Texture2D" uid="uid://bwvecayy8io22" path="res://sprites/weapons/projectiles/eye_spawn_bullet.png" id="4_ixn6c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4y7nh"]
+radius = 650.0
+
+[node name="ProjectileBullet" type="Node2D" unique_id=1660456756 node_paths=PackedStringArray("img", "shoot_from")]
+script = ExtResource("1_anmt1")
+bullet = ExtResource("2_ixn6c")
+img = NodePath("Sprite2D")
+shoot_from = NodePath("Sprite2D")
+interval = 1.0
+by_lifetime = true
+lifetime = 180.0
+shot_sound = ExtResource("2_anmt1")
+audio_mod = 6.0
+death_quote = Array[String](["\"My little buddy.\"", "\"We will watch you.\"", "\"Eyes, eyes, eyes!\"", "\"Yum.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_t5vki")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_ixn6c")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1737268058]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=934512806]
+shape = SubResource("CircleShape2D_4y7nh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

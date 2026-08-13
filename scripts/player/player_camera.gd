@@ -35,7 +35,7 @@ func _ready() -> void:
 	current_position = global_position
 
 func _input(event):
-	if Manager.is_paused:
+	if Manager.is_paused or Manager.lock_input:
 		return
 	if Manager.Player and Manager.Player.is_dead:
 		return

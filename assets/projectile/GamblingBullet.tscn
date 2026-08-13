@@ -18,13 +18,21 @@
 [ext_resource type="Resource" uid="uid://e3c04oph7jau" path="res://assets/weapons/radioscope.tres" id="16_4jthx"]
 [ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="17_xdw0m"]
 [ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="18_o1mmw"]
-[ext_resource type="Resource" uid="uid://0apo3ny7w7rh" path="res://assets/weapons/cascade.tres" id="19_myd0j"]
 [ext_resource type="Resource" uid="uid://byxc2s807s351" path="res://assets/weapons/crossbow.tres" id="20_nre32"]
 [ext_resource type="Resource" uid="uid://cjytt7fin2c6p" path="res://assets/weapons/clockwork.tres" id="21_hsqgo"]
 [ext_resource type="Resource" uid="uid://y50e4qf0lqkb" path="res://assets/weapons/thepuller.tres" id="22_io4vy"]
 [ext_resource type="Resource" uid="uid://cmni55jnxc7ma" path="res://assets/weapons/placeholder.tres" id="23_hp4sw"]
+[ext_resource type="Resource" uid="uid://dtjsxardpuhvt" path="res://assets/weapons/loophell.tres" id="23_i32b1"]
+[ext_resource type="Resource" uid="uid://ckr6kdjhpjdqo" path="res://assets/weapons/nailgun.tres" id="24_bfqx1"]
+[ext_resource type="Resource" uid="uid://ta65dp5xl4f" path="res://assets/weapons/plunger.tres" id="25_fik1g"]
+[ext_resource type="Resource" uid="uid://spuldg71opsa" path="res://assets/weapons/horn.tres" id="26_bfqx1"]
+[ext_resource type="Resource" uid="uid://5uymiii7ai7w" path="res://assets/weapons/listener.tres" id="27_fik1g"]
+[ext_resource type="Resource" uid="uid://c0qlsdru3h3w1" path="res://assets/weapons/bulb.tres" id="28_73j5l"]
+[ext_resource type="Resource" uid="uid://bfaey6lhdydcd" path="res://assets/weapons/eye_friend.tres" id="29_26y78"]
+[ext_resource type="Resource" uid="uid://dmnd4hu1muhna" path="res://assets/weapons/raygun.tres" id="30_j65ja"]
+[ext_resource type="Resource" uid="uid://bytkg60cc2wau" path="res://assets/weapons/harmony.tres" id="31_qa8tq"]
 
 [node name="HitscanBullet" type="Node2D" unique_id=13675771]
 script = ExtResource("1_jsfp3")
-sources = Array[ExtResource("2_r28fe")]([ExtResource("3_io4vy"), ExtResource("4_hp4sw"), ExtResource("5_s0wfe"), ExtResource("6_i32b1"), ExtResource("7_bfqx1"), ExtResource("8_fik1g"), ExtResource("9_sdar7"), ExtResource("10_ngr4h"), ExtResource("11_ho7ib"), ExtResource("12_73j5l"), ExtResource("13_26y78"), ExtResource("14_j65ja"), ExtResource("15_qa8tq"), ExtResource("16_4jthx"), ExtResource("17_xdw0m"), ExtResource("18_o1mmw"), ExtResource("19_myd0j"), ExtResource("20_nre32"), ExtResource("21_hsqgo"), ExtResource("22_io4vy"), ExtResource("23_hp4sw")])
+sources = Array[ExtResource("2_r28fe")]([ExtResource("3_io4vy"), ExtResource("4_hp4sw"), ExtResource("5_s0wfe"), ExtResource("6_i32b1"), ExtResource("7_bfqx1"), ExtResource("8_fik1g"), ExtResource("9_sdar7"), ExtResource("10_ngr4h"), ExtResource("11_ho7ib"), ExtResource("12_73j5l"), ExtResource("13_26y78"), ExtResource("14_j65ja"), ExtResource("15_qa8tq"), ExtResource("16_4jthx"), ExtResource("17_xdw0m"), ExtResource("18_o1mmw"), ExtResource("20_nre32"), ExtResource("21_hsqgo"), ExtResource("22_io4vy"), ExtResource("23_hp4sw"), ExtResource("23_i32b1"), ExtResource("24_bfqx1"), ExtResource("25_fik1g"), ExtResource("26_bfqx1"), ExtResource("27_fik1g"), ExtResource("28_73j5l"), ExtResource("29_26y78"), ExtResource("30_j65ja"), ExtResource("31_qa8tq")])
 death_quote = Array[String](["\"There are none.\"", "\"Who am I?\"", "\"I am not.\"", "\"Gamble responsibly.\"", "\"What are the odds?\"", "\"Luck of the roll.\"", "\"Flavor of the day.\"", "\"You asked for it.\"", "\"Bad RNG.\"", "\"Try again!\"", "\"Lucked out.\"", "No refunds.\"", "\"Rope? Bombs? Lamp oil?\"", "\"Who needs a medical license when you got style?\"", "\"Hope you've had your shots!\"", "\"Be careful with that!\"", "\"Try not to die!\"", "\"99% of gamblers quit before they win big.\"", "\"Thanks for the scrap!\"", "\"Don't have too much fun!\""])

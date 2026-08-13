@@ -42,7 +42,7 @@ func _get_hit(amt : int, type : String, source : String, mov : Vector2, extra : 
 		_destroy()
 		return true
 
-@export var i_frame_time : float = 0.15
+@export var i_frame_time : float = 0.05
 var i_frames : Dictionary
 func _check_i_frame(source : String) -> bool:
 	if source.contains("0"):

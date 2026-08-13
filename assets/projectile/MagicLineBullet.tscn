@@ -24,7 +24,7 @@ tracer_time = 0.13
 shot_sound = ExtResource("2_evp58")
 audio_mod = 10.0
 make_gibs = true
-death_quote = Array[String](["\"Send em to god.\"", "\"The best gun ever made.\"", "\"Six shots, seven kills.\"", "\"Light em up, partner.\"", "\"Justice, so to speak.\"", "\"Vigilante hero\"", "\"Vigilante villain\"", "\"Life for a daredevil\"", "\"Trust me, it's a good gun.\""])
+death_quote = Array[String](["\"A toy!\"", "\"Barely works.\"", "\"Will this really do any damage?\"", "\"Does this even do anything?\"", "\"Boing!\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_f2wtx")

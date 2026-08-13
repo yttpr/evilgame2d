@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dambopc515umc" path="res://audio/noise/weapon/gun_sin_small.wav" id="2_660m3"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_dpsmo"]
 [ext_resource type="Texture2D" uid="uid://djmilcxjho3vf" path="res://sprites/weapons/projectiles/aim_bullet.png" id="4_waxp1"]
+[ext_resource type="Texture2D" uid="uid://kx7xgj8d1s7g" path="res://sprites/weapons/projectiles/outlines/aim_bullet_outline.png" id="5_phnsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -25,12 +26,17 @@ tracer_width = 12.0
 shot_sound = ExtResource("2_660m3")
 audio_mod = 10.0
 make_gibs = true
-death_quote = Array[String](["\"Me when I get drafted to the skeleton war\"", "\"No bones about it!\"", "\"Headless hunter\"", "\"Gotcha.\"", "\"Nothing to report.\"", "\"Nothing of interest.\"", "\"Have some backbone.\"", "\"Everything you stand for will fall.\"", "\"Is this really all we amount to?\"", "\"Me and my groupies gonna get you!\"", "\"Why did we deserve to die?\"", "\"Is it me or you?\"", "\"Who killed you this time?\"", "\"Only following orders.\""])
+death_quote = Array[String](["\"ALWAYS WATCHING U\"", "\"I'M WATCHING U\"", "\"LOOKIN AT U\"", "\"WATCHIN U\"", "\"Big brother is watching.\"", "\"Who controls the past controls the future.\"", "\"Who controls the present controls the past.\"", "\"Mass media conglomerate\"", "\"Are you entertained?\"", "\"Appease the algorithm.\"", "\"I, for one, welcome our new AI overlords.\"", "\"The party told you to reject the evidence of your eyes and ears.\"", "\"It was their final, most essential command.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_dpsmo")
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_waxp1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1418155957]
+z_index = 2
+material = ExtResource("3_dpsmo")
+texture = ExtResource("5_phnsb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

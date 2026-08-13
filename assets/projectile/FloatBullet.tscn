@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dyrrpejx5xgwo" path="res://audio/noise/weapon/magic_heavy.wav" id="2_jax38"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_njdad"]
 [ext_resource type="Texture2D" uid="uid://06ci32encp4s" path="res://sprites/weapons/projectiles/big_eye_bullet.png" id="4_jax38"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_i6axn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -29,6 +30,11 @@ death_quote = Array[String](["\"In the forest... there's nothing in the forest..
 material = ExtResource("3_njdad")
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_jax38")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=554825881]
+z_index = 2
+material = ExtResource("3_njdad")
+texture = ExtResource("5_i6axn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

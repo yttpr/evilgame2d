@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dyhjfvj3ir3ij"]
+
+[ext_resource type="Script" uid="uid://71j5awutvofc" path="res://scripts/weapons/exploding_projectile.gd" id="1_cuh86"]
+[ext_resource type="PackedScene" uid="uid://crb1trsf5weo0" path="res://assets/projectile/HarmonySubBullet.tscn" id="2_cuh86"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_n526v"]
+[ext_resource type="Texture2D" uid="uid://06ci32encp4s" path="res://sprites/weapons/projectiles/big_eye_bullet.png" id="5_cuh86"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_cuh86")
+bullet = ExtResource("2_cuh86")
+source_name = "Player_Projectile_0"
+shoot_from = NodePath("Sprite2D")
+amount = 24
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 3000.0
+radius = 16.0
+rot_spd = 25.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 10.0
+tracer_width = 8.0
+tracer_time = 0.1
+audio_mod = 10.0
+death_quote = Array[String](["\"The sound... of flesh.\"", "\"Dissonant cacophony.\"", "\"I can't stand it...\"", "\"Listen to my song.\"", "\"But nothing could compare...\"", "\"This noise, this noise!\"", "\"Hahaha... I have to turn it back on...\"", "\"Noise noise noise noise noise!!!\"", "\"It's music, can't you hear?\"", "\"All things are subjective.\"", "\"Oh how I wish it would just turn on and I would throw myself in...\"", "\"Turn yourself into music.\"", "\"From break and ruin...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("4_n526v")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_cuh86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

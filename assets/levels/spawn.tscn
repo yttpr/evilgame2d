@@ -12,16 +12,7 @@
 [ext_resource type="Resource" uid="uid://ovvwjf416qns" path="res://assets/characters/clerk_character.tres" id="9_tk2qu"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="11_57oe7"]
 [ext_resource type="PackedScene" uid="uid://cqb5h3id802a0" path="res://assets/objects/gun_pickup.tscn" id="12_fnjer"]
-[ext_resource type="Resource" uid="uid://c2rftd3rm6p5p" path="res://assets/weapons/sparkles.tres" id="13_fnjer"]
-[ext_resource type="Resource" uid="uid://dfmq7eqxp1ufj" path="res://assets/weapons/brokengun.tres" id="14_lxhbm"]
-[ext_resource type="Resource" uid="uid://cmkmyswk17cnr" path="res://assets/weapons/vowofsilence.tres" id="15_ugcpy"]
-[ext_resource type="Resource" uid="uid://y50e4qf0lqkb" path="res://assets/weapons/thepuller.tres" id="16_plllv"]
-[ext_resource type="Resource" uid="uid://d1q5shcqr6qa7" path="res://assets/weapons/mechanicalsmg.tres" id="17_yiqvs"]
-[ext_resource type="Resource" uid="uid://byxc2s807s351" path="res://assets/weapons/crossbow.tres" id="18_nf8dc"]
-[ext_resource type="Resource" uid="uid://dy70aqo0jgpqw" path="res://assets/weapons/newtoy.tres" id="19_yq6k7"]
-[ext_resource type="Resource" uid="uid://0apo3ny7w7rh" path="res://assets/weapons/cascade.tres" id="20_kyxgp"]
-[ext_resource type="Resource" uid="uid://d20l4xmjr36xp" path="res://assets/weapons/fireline.tres" id="21_acd7y"]
-[ext_resource type="Resource" uid="uid://dpn74dvyq0jit" path="res://assets/weapons/roulettes.tres" id="22_7vgxb"]
+[ext_resource type="Resource" uid="uid://dtjsxardpuhvt" path="res://assets/weapons/loophell.tres" id="13_fnjer"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -87,39 +78,3 @@ position = Vector2(800, 928)
 [node name="Gun" parent="." unique_id=980551479 instance=ExtResource("12_fnjer")]
 position = Vector2(864, 480)
 weapon = ExtResource("13_fnjer")
-
-[node name="Gun2" parent="." unique_id=34592009 instance=ExtResource("12_fnjer")]
-position = Vector2(800, 416)
-weapon = ExtResource("14_lxhbm")
-
-[node name="Gun3" parent="." unique_id=669840851 instance=ExtResource("12_fnjer")]
-position = Vector2(736, 544)
-weapon = ExtResource("15_ugcpy")
-
-[node name="Gun4" parent="." unique_id=1948365451 instance=ExtResource("12_fnjer")]
-position = Vector2(672, 480)
-weapon = ExtResource("16_plllv")
-
-[node name="Gun5" parent="." unique_id=1448628263 instance=ExtResource("12_fnjer")]
-position = Vector2(608, 416)
-weapon = ExtResource("17_yiqvs")
-
-[node name="Gun6" parent="." unique_id=1994405290 instance=ExtResource("12_fnjer")]
-position = Vector2(544, 544)
-weapon = ExtResource("18_nf8dc")
-
-[node name="Gun7" parent="." unique_id=2096456232 instance=ExtResource("12_fnjer")]
-position = Vector2(480, 480)
-weapon = ExtResource("19_yq6k7")
-
-[node name="Gun8" parent="." unique_id=573480871 instance=ExtResource("12_fnjer")]
-position = Vector2(416, 416)
-weapon = ExtResource("20_kyxgp")
-
-[node name="Gun9" parent="." unique_id=1978312949 instance=ExtResource("12_fnjer")]
-position = Vector2(352, 544)
-weapon = ExtResource("21_acd7y")
-
-[node name="Gun10" parent="." unique_id=1499890822 instance=ExtResource("12_fnjer")]
-position = Vector2(288, 480)
-weapon = ExtResource("22_7vgxb")

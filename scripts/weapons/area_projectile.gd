@@ -2,6 +2,7 @@ class_name AreaProjectile
 
 extends BasicProjectile
 @export var img : Sprite2D
+@export var outline : Sprite2D
 
 @export var radius : float
 @export var lasts : float
@@ -37,6 +38,8 @@ func _process(delta: float) -> void:
 				img.frame = 0
 			else:
 				img.frame += 1
+			if outline:
+				outline.frame = img.frame
 
 func _shoot(direction : Vector2, origin : Vector2) -> void:
 	super._shoot(direction, origin)

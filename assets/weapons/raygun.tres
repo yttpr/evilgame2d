@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dmnd4hu1muhna"]
+
+[ext_resource type="PackedScene" uid="uid://d831ffbgagqa" path="res://assets/projectile/AAnotherBouncelessHitscan.tscn" id="1_g07l0"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_sr0yp"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_4njxq"]
+[ext_resource type="Texture2D" uid="uid://cacd3d253wbdp" path="res://sprites/weapons/raygun_weapon.png" id="4_g07l0"]
+
+[resource]
+script = ExtResource("3_4njxq")
+id = "Raygun"
+weapon_img = ExtResource("4_g07l0")
+bullet = ExtResource("1_g07l0")
+bullet_type = "Hitscan"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 500.0
+full_auto = true
+clip_size = 10
+shot_delay = 0.12
+reload_time = 5.0
+ready_audio = ExtResource("2_sr0yp")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

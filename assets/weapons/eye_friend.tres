@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bfaey6lhdydcd"]
+
+[ext_resource type="PackedScene" uid="uid://behqsaxkhaeju" path="res://assets/projectile/EyeballSummonProjectile.tscn" id="1_n14rt"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_n14rt"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_1b5i2"]
+[ext_resource type="Texture2D" uid="uid://c27a2kjlqaql8" path="res://sprites/weapons/eyefriend_weapon.png" id="4_n14rt"]
+
+[resource]
+script = ExtResource("3_1b5i2")
+id = "EyeFriend"
+weapon_img = ExtResource("4_n14rt")
+bullet = ExtResource("1_n14rt")
+bullet_type = "Hitscan"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 500.0
+clip_size = 3
+shot_delay = 0.2
+reload_time = 8.0
+ready_audio = ExtResource("2_n14rt")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

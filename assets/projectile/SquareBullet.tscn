@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dambopc515umc" path="res://audio/noise/weapon/gun_sin_small.wav" id="2_a4j5i"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_h5nfv"]
 [ext_resource type="Texture2D" uid="uid://b0mvxykenllj6" path="res://sprites/weapons/projectiles/square_projectile.png" id="4_n8ba2"]
+[ext_resource type="Texture2D" uid="uid://dxjxvluaxfpt" path="res://sprites/weapons/projectiles/outlines/square_projectile_outline.png" id="5_a4j5i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -27,6 +28,11 @@ death_quote = Array[String](["\"Eats paper.\"", "\"Eats.\"", "\"A thousand paper
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_h5nfv")
 texture = ExtResource("4_n8ba2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=2118733378]
+z_index = 2
+material = ExtResource("3_h5nfv")
+texture = ExtResource("5_a4j5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

@@ -1,3 +1,6 @@
+Node2D
+LineEdit
+Control
 Sprite2D
 ColorRandomizeSprite
 BasicAudio
@@ -6,9 +9,6 @@ StaticBody2D
 Area2D
 NavigationAgent2D
 ProjectilePathfinding
-Control
 TextureRect
 GlobalAudio
 VSlider
-TextureButton
-BaseDestructible

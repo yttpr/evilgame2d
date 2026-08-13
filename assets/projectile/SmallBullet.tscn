@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_ki3ex"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_idxxb"]
 [ext_resource type="Texture2D" uid="uid://cmus8eiud5cec" path="res://sprites/weapons/projectiles/star_bullet.png" id="4_ki3ex"]
+[ext_resource type="Texture2D" uid="uid://b6lsrccgvi3tw" path="res://sprites/weapons/projectiles/outlines/star_bullet_outline.png" id="4_rvfxv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -29,5 +30,12 @@ material = ExtResource("3_idxxb")
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_ki3ex")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1863554642]
+z_index = 2
+material = ExtResource("3_idxxb")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_rvfxv")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+z_index = 2
 shape = SubResource("CircleShape2D_hv2lo")

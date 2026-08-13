@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dntlxer44dm7q" path="res://audio/noise/weapon/magic_pop.wav" id="2_wid3n"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_yheol"]
 [ext_resource type="Texture2D" uid="uid://cwd62ljt2gtwa" path="res://sprites/weapons/projectiles/empty_bullet.png" id="4_hybgd"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_mq0dm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -29,6 +30,11 @@ death_quote = Array[String](["\"Oh, to be a child...\"", "\"I want to be a bird!
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_yheol")
 texture = ExtResource("4_hybgd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1117997308]
+z_index = 2
+material = ExtResource("3_yheol")
+texture = ExtResource("5_mq0dm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

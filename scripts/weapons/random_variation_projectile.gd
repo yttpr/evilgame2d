@@ -10,6 +10,7 @@ extends MovingProjectile
 @export var die_if_stop : bool
 
 func _shoot(direction : Vector2, origin : Vector2) -> void:
+	img.rotation = direction.angle()
 	spd *= (1.0 + randf_range(spd_mod * -1, spd_mod))
 	var mod = randf_range(variation * -1, variation)
 	super._shoot(Vector2.from_angle(direction.angle() + mod), origin)

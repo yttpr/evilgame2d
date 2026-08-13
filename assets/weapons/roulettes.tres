@@ -13,6 +13,7 @@ bullet = ExtResource("1_uqy88")
 bullet_type = "???"
 weapon_type = "Bullet"
 damage_type = "NULL"
+full_auto = true
 clip_size = 17
 shot_delay = 0.15
 reload_time = 7.77

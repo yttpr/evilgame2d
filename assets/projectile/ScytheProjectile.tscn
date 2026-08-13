@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://by0jeqlyb1dw5" path="res://audio/noise/weapon/magic_med.wav" id="2_vrl35"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_6xiuu"]
 [ext_resource type="Texture2D" uid="uid://yd5oq53su7q" path="res://sprites/weapons/projectiles/scythe_bullet.png" id="4_epvaf"]
+[ext_resource type="Texture2D" uid="uid://pbjnfj1hy4w4" path="res://sprites/weapons/projectiles/outlines/scythe_bullet_outline.png" id="5_vrl35"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -30,6 +31,12 @@ death_quote = Array[String](["\"Die.\"", "\"I'll kill you forever.\"", "\"This i
 material = ExtResource("3_6xiuu")
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("4_epvaf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=193201936]
+z_index = 2
+material = ExtResource("3_6xiuu")
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("5_vrl35")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

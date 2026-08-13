@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://b1b0x1fhrxaw5" path="res://audio/noise/weapon/sword.ogg" id="2_i4f8f"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_ky6c4"]
 [ext_resource type="Texture2D" uid="uid://dcaw4ea30l6fk" path="res://sprites/weapons/projectiles/knife_bullet.png" id="4_ke1qn"]
+[ext_resource type="Texture2D" uid="uid://bja16bjwbbirr" path="res://sprites/weapons/projectiles/outlines/knife_bullet_bullet.png" id="5_ke1qn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -28,6 +29,11 @@ death_quote = Array[String](["\"Betrayal\"", "\"Backstabbed\"", "\"Be faster.\""
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_ky6c4")
 texture = ExtResource("4_ke1qn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=892340662]
+z_index = 2
+material = ExtResource("3_ky6c4")
+texture = ExtResource("5_ke1qn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

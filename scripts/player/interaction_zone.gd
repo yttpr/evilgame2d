@@ -12,7 +12,7 @@ func _ready() -> void:
 	in_range = []
 
 func _input(event: InputEvent) -> void:
-	if Manager.is_paused:
+	if Manager.is_paused or Manager.lock_input:
 		return
 	if Manager.Player.is_dead:
 		return

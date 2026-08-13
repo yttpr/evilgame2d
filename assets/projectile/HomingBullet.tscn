@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cnqcj6kfy74ie" path="res://audio/noise/weapon/magic_long.ogg" id="2_ymyeb"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_pg3pa"]
 [ext_resource type="Texture2D" uid="uid://bclh5cud4adjn" path="res://sprites/weapons/projectiles/arrow_bullet.png" id="4_ymyeb"]
+[ext_resource type="Texture2D" uid="uid://bi8e5l1l82juu" path="res://sprites/weapons/projectiles/outlines/arrow_bullet_outline.png" id="5_uok7x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -32,6 +33,11 @@ death_quote = Array[String](["\"What a beautiful projection.\"", "\"How beautifu
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_pg3pa")
 texture = ExtResource("4_ymyeb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=304392958]
+z_index = 2
+material = ExtResource("3_pg3pa")
+texture = ExtResource("5_uok7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b34qly0dt404l"]
+
+[ext_resource type="Script" uid="uid://evne26vmx7d5" path="res://scripts/weapons/falling_projectile.gd" id="1_6qm0j"]
+[ext_resource type="AudioStream" uid="uid://dawfia5p5hplf" path="res://audio/noise/weapon/explosion_light.ogg" id="2_6qm0j"]
+[ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="3_6qm0j"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_m512a"]
+[ext_resource type="Texture2D" uid="uid://d3nnlvfraf6fy" path="res://sprites/weapons/projectiles/marker_bullet.png" id="5_jb4v4"]
+[ext_resource type="Texture2D" uid="uid://chp658xtg60nt" path="res://sprites/weapons/projectiles/bow_bullet.png" id="6_6qm0j"]
+
+[node name="AirstrikeBullet" type="Node2D" unique_id=13675771 node_paths=PackedStringArray("marker", "falling")]
+script = ExtResource("1_6qm0j")
+marker = NodePath("marker")
+falling = NodePath("bomb")
+delay = 0.7
+height = -1024.0
+radius = 16.0
+hit_time = 0.15
+bomb_sound = ExtResource("2_6qm0j")
+bomb_mod = 20.0
+type = "Cos"
+dmg = 5
+knockback_mod = 2500.0
+tracer_color = Color(1, 0, 0, 1)
+shot_sound = ExtResource("3_6qm0j")
+make_gibs = true
+death_quote = Array[String](["\"Rain down, rain down...\"", "\"Rain falls...\"", "\"Maybe another rainy day...\""])
+
+[node name="marker" type="Sprite2D" parent="." unique_id=1976052016]
+z_index = -1
+material = ExtResource("4_m512a")
+texture = ExtResource("5_jb4v4")
+
+[node name="bomb" type="Sprite2D" parent="." unique_id=1375373157]
+material = ExtResource("4_m512a")
+texture = ExtResource("6_6qm0j")

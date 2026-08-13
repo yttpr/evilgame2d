@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d831ffbgagqa"]
+
+[ext_resource type="Script" uid="uid://c76pjlipw2flx" path="res://scripts/weapons/hitscan_projectile.gd" id="1_2ms66"]
+[ext_resource type="AudioStream" uid="uid://gr74c3fvdwmh" path="res://audio/noise/weapon/gun_cos_med.wav" id="2_2ms66"]
+
+[node name="HitscanBullet" type="Node2D" unique_id=13675771]
+script = ExtResource("1_2ms66")
+collider_duration = 0.05
+length = 1200.0
+stop_enemies = true
+type = "Cos"
+dmg = 1
+knockback_mod = 800.0
+by_lifetime = true
+lifetime = 0.15
+tracer_width = 3.0
+tracer_color = Color(1, 0, 0, 1)
+tracer_time = 0.1
+shot_sound = ExtResource("2_2ms66")
+audio_mod = 10.0
+pitch_mod = 6.0
+death_quote = Array[String](["\"Alien technology.\"", "\"The martians...\"", "\"The lizard people rule the world!\"", "\"Pew pew!\"", "\"Lasers... from space!\""])

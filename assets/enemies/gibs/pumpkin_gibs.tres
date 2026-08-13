@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("3_kr8c4")
-coins = 2
+coins = 3
 blood_amt = 3
 blood_color_1 = Color(0.8509804, 0, 0, 1)
 blood_color_2 = Color(0.34117648, 0, 0.08627451, 1)

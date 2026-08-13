@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bytkg60cc2wau"]
+
+[ext_resource type="PackedScene" uid="uid://dyhjfvj3ir3ij" path="res://assets/projectile/HarmonyBullet.tscn" id="1_omry0"]
+[ext_resource type="AudioStream" uid="uid://b386uaj2ymxb5" path="res://audio/noise/weapon/static_ready.ogg" id="2_omry0"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_yv8o6"]
+[ext_resource type="Texture2D" uid="uid://d1rqj3385pjn" path="res://sprites/weapons/harmony.png" id="4_omry0"]
+
+[resource]
+script = ExtResource("3_yv8o6")
+id = "Harmony"
+weapon_img = ExtResource("4_omry0")
+bullet = ExtResource("1_omry0")
+bullet_type = "Projectile"
+weapon_type = "Magic"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 1885.0
+clip_size = 1
+reload_time = 5.0
+ready_audio = ExtResource("2_omry0")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

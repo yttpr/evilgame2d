@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dq4qm00kllc3x"]
+
+[ext_resource type="PackedScene" uid="uid://b34qly0dt404l" path="res://assets/projectile/RainArrowBullet.tscn" id="1_n1dic"]
+[ext_resource type="AudioStream" uid="uid://bnvvpkgt0debo" path="res://audio/noise/weapon/magic_ready_1.wav" id="2_n1dic"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_qxmdg"]
+[ext_resource type="Texture2D" uid="uid://1pho3h5mfv2v" path="res://sprites/weapons/raindowner_weapon.png" id="4_n1dic"]
+
+[resource]
+script = ExtResource("3_qxmdg")
+id = "Raindowner"
+weapon_img = ExtResource("4_n1dic")
+bullet = ExtResource("1_n1dic")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+full_auto = true
+clip_size = 16
+shot_delay = 0.08
+reload_time = 6.0
+ready_audio = ExtResource("2_n1dic")
+audio_mod = -6.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

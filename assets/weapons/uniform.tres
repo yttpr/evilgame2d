@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dyti3lkaiq5cg"]
+
+[ext_resource type="PackedScene" uid="uid://dduepxcr3a333" path="res://assets/projectile/AnotherBouncelessHitscan.tscn" id="1_2sr11"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_4ibd7"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_3rqf4"]
+[ext_resource type="Texture2D" uid="uid://ctjqcngk8qcwd" path="res://sprites/weapons/uniform_weapon.png" id="4_2sr11"]
+
+[resource]
+script = ExtResource("3_3rqf4")
+id = "Uniform"
+weapon_img = ExtResource("4_2sr11")
+bullet = ExtResource("1_2sr11")
+bullet_type = "Hitscan"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 500.0
+full_auto = true
+clip_size = 10
+shot_delay = 0.12
+reload_time = 5.0
+ready_audio = ExtResource("2_4ibd7")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

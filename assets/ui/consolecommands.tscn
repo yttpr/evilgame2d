@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dybvlgu6ut326"]
+
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="1_abuga"]
+[ext_resource type="Script" uid="uid://clgjx4q8uibum" path="res://scripts/game/consolecommands.gd" id="1_onpgc"]
+
+[node name="consolecommands" type="LineEdit" unique_id=2135377785]
+z_index = 30
+material = ExtResource("1_abuga")
+mouse_filter = 2
+placeholder_text = "command?"
+expand_to_text_length = true
+select_all_on_focus = true
+script = ExtResource("1_onpgc")
+
+[connection signal="focus_entered" from="." to="." method="_in_focus"]
+[connection signal="focus_exited" from="." to="." method="_not_focus"]

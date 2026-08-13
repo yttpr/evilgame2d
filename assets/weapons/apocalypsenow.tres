@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dcsnqxceajnje"]
+
+[ext_resource type="PackedScene" uid="uid://cl2e11w6qqb37" path="res://assets/projectile/ApocalypseBullet.tscn" id="1_lya1w"]
+[ext_resource type="AudioStream" uid="uid://b386uaj2ymxb5" path="res://audio/noise/weapon/static_ready.ogg" id="2_lya1w"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_ryjqq"]
+[ext_resource type="Texture2D" uid="uid://dec8hbi8p3ett" path="res://sprites/weapons/apocalypse_weapon.png" id="4_r3pyv"]
+
+[resource]
+script = ExtResource("3_ryjqq")
+id = "ApocalypseNow"
+weapon_img = ExtResource("4_r3pyv")
+bullet = ExtResource("1_lya1w")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 12
+damage_type = "Sin"
+knockback = 2500.0
+clip_size = 1
+reload_time = 6.0
+ready_audio = ExtResource("2_lya1w")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

@@ -104,7 +104,8 @@ var run_full_auto : bool
 var mouse_down : bool
 
 func _input(event: InputEvent) -> void:
-	if Manager.is_paused:
+	if Manager.is_paused or Manager.lock_input:
+		mouse_down = false
 		return
 	if Player.is_dead:
 		return

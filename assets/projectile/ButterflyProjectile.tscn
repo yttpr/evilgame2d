@@ -21,6 +21,7 @@ img = NodePath("Sprite2D")
 body = NodePath(".")
 spd = 500.0
 radius = 16.0
+make_backup_colliders = true
 by_lifetime = true
 lifetime = 20.0
 shot_sound = ExtResource("2_4y7nh")

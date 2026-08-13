@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dawfia5p5hplf" path="res://audio/noise/weapon/explosion_light.ogg" id="2_hs1et"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_47lpr"]
 [ext_resource type="Texture2D" uid="uid://cwd62ljt2gtwa" path="res://sprites/weapons/projectiles/empty_bullet.png" id="4_lwt4g"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_hs1et"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -28,6 +29,12 @@ death_quote = Array[String](["\"Manufactured life hazard\"", "\"No smoking.\"", 
 material = ExtResource("3_47lpr")
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_lwt4g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=799479913]
+z_index = 2
+material = ExtResource("3_47lpr")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_hs1et")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

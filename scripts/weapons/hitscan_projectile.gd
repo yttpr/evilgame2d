@@ -60,7 +60,7 @@ func _make_collider(orig : Vector2, target : Vector2) -> DamageCollider:
 	var col = Manager._create_dmg_collider(dmg, type, source, (orig.direction_to(target)) * knockback_mod)
 	col._set_to_world()
 	col.pierce = pierce_amt
-	col._set_line(orig, target)
+	col._set_line(orig, target + orig.direction_to(target) * 32)
 	col.frame_buffer = 5
 	col._set_duration(true, collider_duration)
 	col._set_collision(damager)

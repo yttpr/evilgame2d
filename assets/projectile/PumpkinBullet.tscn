@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dyrrpejx5xgwo" path="res://audio/noise/weapon/magic_heavy.wav" id="3_nfbrf"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_5wlr7"]
 [ext_resource type="Texture2D" uid="uid://beg5ggq6ssggq" path="res://sprites/weapons/projectiles/pumpkin_bullet.png" id="5_nfbrf"]
+[ext_resource type="Texture2D" uid="uid://b5q2vhy8vcbxb" path="res://sprites/weapons/projectiles/outlines/pumpkin_bullet_outline.png" id="6_4gs7i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -35,6 +36,12 @@ death_quote = Array[String](["\"HAHAHAHAHAHA!!!\"", "\"Happy Halloween!!!!\"", "
 material = ExtResource("4_5wlr7")
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_nfbrf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=923620100]
+z_index = 2
+material = ExtResource("4_5wlr7")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_4gs7i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

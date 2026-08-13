@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://80576u4cbcce"]
+
+[ext_resource type="Script" uid="uid://b8e1aeag4fd7j" path="res://scripts/weapons/triplebullet.gd" id="1_th8yi"]
+[ext_resource type="AudioStream" uid="uid://gr74c3fvdwmh" path="res://audio/noise/weapon/gun_cos_med.wav" id="2_vr1ku"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_p67av"]
+[ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_7021l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_th8yi")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 1000.0
+radius = 24.0
+rot_spd = 10.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 3.0
+shot_sound = ExtResource("2_vr1ku")
+audio_mod = 10.0
+death_quote = Array[String](["\"Loop hell.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_p67av")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_7021l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

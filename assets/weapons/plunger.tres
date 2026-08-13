@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ta65dp5xl4f"]
+
+[ext_resource type="PackedScene" uid="uid://56nb32qn4kat" path="res://assets/projectile/PlungerProjectileLol.tscn" id="1_tkbko"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_ke5ex"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_kotcq"]
+[ext_resource type="Texture2D" uid="uid://d16etltknna3c" path="res://sprites/weapons/theplunger.png" id="4_tkbko"]
+
+[resource]
+script = ExtResource("3_kotcq")
+id = "Plunger"
+weapon_img = ExtResource("4_tkbko")
+bullet = ExtResource("1_tkbko")
+bullet_type = "Projectile_0"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 650.0
+clip_size = 6
+shot_delay = 0.25
+reload_time = 3.5
+ready_audio = ExtResource("2_ke5ex")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"
