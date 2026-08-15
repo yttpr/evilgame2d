@@ -143,6 +143,8 @@ func _check_i_frame(source : String) -> bool:
 	
 	if !i_frames.has(source):
 		i_frames.set(source, i_frame_time)
+		if source.contains("9"):
+			i_frames.set(source, i_frame_time * 5)
 	elif i_frames[source] > 0:
 		return false
 	

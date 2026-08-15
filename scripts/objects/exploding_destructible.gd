@@ -13,7 +13,12 @@ func _clean() -> void:
 @export var damage_type : String
 @export var knockback : float
 
+@export var explosion_sound : AudioStream
+@export var volume_mod : float
+
 func _explode() -> void:
+	if explosion_sound:
+		Manager._play_oneshot(self.global_position, explosion_sound, volume_mod)
 	for i in amount:
 		_shoot(Vector2.from_angle(((2*PI) / amount) * i))
 

@@ -7,8 +7,6 @@
 [ext_resource type="Resource" uid="uid://bo4j8dct6yic8" path="res://assets/weapons/rotwillis.tres" id="4_luth6"]
 [ext_resource type="Resource" uid="uid://bl02jt1aujxh" path="res://assets/weapons/sord.tres" id="5_2hqdi"]
 [ext_resource type="Resource" uid="uid://dihxajuyq0e3p" path="res://assets/weapons/punch_gun.tres" id="7_v5xo6"]
-[ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="7_x6d74"]
-[ext_resource type="Resource" uid="uid://bvt3ui5lie6ak" path="res://assets/weapons/swarm.tres" id="8_4uboy"]
 [ext_resource type="Resource" uid="uid://cjytt7fin2c6p" path="res://assets/weapons/clockwork.tres" id="9_4uboy"]
 [ext_resource type="Resource" uid="uid://ct8huiy14lmpd" path="res://assets/weapons/invisiblegun.tres" id="10_tfivx"]
 [ext_resource type="Resource" uid="uid://c2rftd3rm6p5p" path="res://assets/weapons/sparkles.tres" id="11_8cnpj"]
@@ -16,12 +14,10 @@
 [ext_resource type="Resource" uid="uid://y50e4qf0lqkb" path="res://assets/weapons/thepuller.tres" id="13_i7uva"]
 [ext_resource type="Resource" uid="uid://d1q5shcqr6qa7" path="res://assets/weapons/mechanicalsmg.tres" id="14_kh2pp"]
 [ext_resource type="Resource" uid="uid://byxc2s807s351" path="res://assets/weapons/crossbow.tres" id="15_2qtt3"]
-[ext_resource type="Resource" uid="uid://0apo3ny7w7rh" path="res://assets/weapons/cascade.tres" id="16_jum2a"]
 [ext_resource type="Resource" uid="uid://dy70aqo0jgpqw" path="res://assets/weapons/newtoy.tres" id="17_4jcdd"]
 [ext_resource type="Resource" uid="uid://d20l4xmjr36xp" path="res://assets/weapons/fireline.tres" id="17_bmnly"]
 [ext_resource type="Resource" uid="uid://dpn74dvyq0jit" path="res://assets/weapons/roulettes.tres" id="18_gxv3y"]
 [ext_resource type="Resource" uid="uid://cmni55jnxc7ma" path="res://assets/weapons/placeholder.tres" id="19_gxv3y"]
-[ext_resource type="Resource" uid="uid://dtjsxardpuhvt" path="res://assets/weapons/loophell.tres" id="20_7absc"]
 [ext_resource type="Resource" uid="uid://ckr6kdjhpjdqo" path="res://assets/weapons/nailgun.tres" id="21_oyy8j"]
 [ext_resource type="Resource" uid="uid://ta65dp5xl4f" path="res://assets/weapons/plunger.tres" id="22_vgffk"]
 [ext_resource type="Resource" uid="uid://dcsnqxceajnje" path="res://assets/weapons/apocalypsenow.tres" id="23_oyy8j"]
@@ -30,12 +26,11 @@
 [ext_resource type="Resource" uid="uid://5uymiii7ai7w" path="res://assets/weapons/listener.tres" id="27_ayt2s"]
 [ext_resource type="Resource" uid="uid://dyti3lkaiq5cg" path="res://assets/weapons/uniform.tres" id="28_ebyef"]
 [ext_resource type="Resource" uid="uid://bytkg60cc2wau" path="res://assets/weapons/harmony.tres" id="29_0xgjf"]
-[ext_resource type="Resource" uid="uid://bfaey6lhdydcd" path="res://assets/weapons/eye_friend.tres" id="30_e3m0b"]
 [ext_resource type="Resource" uid="uid://dmnd4hu1muhna" path="res://assets/weapons/raygun.tres" id="31_jns40"]
 [ext_resource type="Resource" uid="uid://c0qlsdru3h3w1" path="res://assets/weapons/bulb.tres" id="32_s485h"]
 
 [resource]
 script = ExtResource("2_tnldn")
-base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("3_2hqdi"), ExtResource("23_oyy8j"), ExtResource("16_jum2a"), ExtResource("9_4uboy"), ExtResource("15_2qtt3"), ExtResource("7_x6d74"), ExtResource("17_bmnly"), ExtResource("10_tfivx"), ExtResource("20_7absc"), ExtResource("14_kh2pp"), ExtResource("21_oyy8j"), ExtResource("17_4jcdd"), ExtResource("19_gxv3y"), ExtResource("22_vgffk"), ExtResource("7_v5xo6"), ExtResource("4_luth6"), ExtResource("18_gxv3y"), ExtResource("5_2hqdi"), ExtResource("11_8cnpj"), ExtResource("8_4uboy"), ExtResource("13_i7uva"), ExtResource("2_5dysp"), ExtResource("12_lbqd3"), ExtResource("25_oataj"), ExtResource("26_u0uno"), ExtResource("27_ayt2s"), ExtResource("28_ebyef"), ExtResource("29_0xgjf"), ExtResource("30_e3m0b"), ExtResource("31_jns40"), ExtResource("32_s485h")])
+base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("3_2hqdi"), ExtResource("23_oyy8j"), ExtResource("9_4uboy"), ExtResource("15_2qtt3"), ExtResource("17_bmnly"), ExtResource("10_tfivx"), ExtResource("14_kh2pp"), ExtResource("21_oyy8j"), ExtResource("17_4jcdd"), ExtResource("19_gxv3y"), ExtResource("22_vgffk"), ExtResource("7_v5xo6"), ExtResource("4_luth6"), ExtResource("18_gxv3y"), ExtResource("5_2hqdi"), ExtResource("11_8cnpj"), ExtResource("13_i7uva"), ExtResource("2_5dysp"), ExtResource("12_lbqd3"), ExtResource("25_oataj"), ExtResource("26_u0uno"), ExtResource("27_ayt2s"), ExtResource("28_ebyef"), ExtResource("29_0xgjf"), ExtResource("31_jns40"), ExtResource("32_s485h")])
 unlocks = Array[ExtResource("1_mg8pj")]([ExtResource("23_oyy8j")])
 metadata/_custom_type_script = "uid://1r25lpvdp18l"

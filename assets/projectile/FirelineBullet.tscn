@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cd60klxke2lyy" path="res://scripts/weapons/FirelineProjectile.gd" id="1_kfxpr"]
 [ext_resource type="PackedScene" uid="uid://ck250nxws30pt" path="res://assets/projectile/AnotherFloorFire.tscn" id="2_kfxpr"]
+[ext_resource type="AudioStream" uid="uid://bc7un0a3hbqx7" path="res://audio/noise/weapon/magic_low.ogg" id="3_b2wlb"]
 [ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="3_gnlnr"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_qitjv"]
 [ext_resource type="Texture2D" uid="uid://bn0s126pygna3" path="res://sprites/weapons/projectiles/fireball_bullet.png" id="5_xet0o"]
@@ -19,6 +20,8 @@ bullet = ExtResource("2_kfxpr")
 source_name = "Player_AOE_0"
 shoot_from = NodePath("Sprite2D")
 amount = 1
+explosion_sound = ExtResource("3_b2wlb")
+volume_mod = 10.0
 img = NodePath("Sprite2D")
 body = NodePath(".")
 spd = 300.0
@@ -28,6 +31,7 @@ grav_accel = 600.0
 by_lifetime = true
 lifetime = 10.0
 shot_sound = ExtResource("3_gnlnr")
+audio_mod = -4.0
 make_gibs = true
 death_quote = Array[String](["\"The fireline.\"", "\"Bring me my hatchet.\"", "\"We got an emergency here...\"", "\"Get to the fire escape!\"", "\"Don't take the elevator!\"", "\"Our last line of defense.\"", "\"A fire extinguisher is not gonna save you from that...\"", "\"You burned my house to the ground!\"", "\"Torched.\""])
 

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://j1spldbytug7"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_piyud"]
+[ext_resource type="Resource" uid="uid://bvt3ui5lie6ak" path="res://assets/weapons/swarm.tres" id="2_piyud"]
+[ext_resource type="Resource" uid="uid://bfaey6lhdydcd" path="res://assets/weapons/eye_friend.tres" id="3_iu4mv"]
+[ext_resource type="Resource" uid="uid://d2fpdqeil8h3x" path="res://assets/characters/gibs/snail_gibs.tres" id="4_piyud"]
+[ext_resource type="Texture2D" uid="uid://bb8d5o5k6blbh" path="res://sprites/characters/EvilGame2D_snail_Wip.png" id="5_ybw7b"]
+[ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="6_nxaho"]
+
+[resource]
+script = ExtResource("6_nxaho")
+id = "Snail"
+character = "Snail"
+image = ExtResource("5_ybw7b")
+HP = 10
+healthtype = "Cos"
+base_weapons = Array[ExtResource("1_piyud")]([ExtResource("2_piyud"), ExtResource("3_iu4mv")])
+gibs = ExtResource("4_piyud")
+metadata/_custom_type_script = "uid://csfhp445ba2j"

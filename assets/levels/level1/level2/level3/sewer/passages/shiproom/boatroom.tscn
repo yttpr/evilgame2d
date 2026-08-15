@@ -328,14 +328,17 @@ inwater = true
 
 [node name="Metal10" parent="." unique_id=174176475 instance=ExtResource("15_devdu")]
 position = Vector2(814, -764)
+flip = true
 
 [node name="Metal11" parent="." unique_id=151858427 instance=ExtResource("15_devdu")]
 position = Vector2(860, -788)
 frame_id = 1
+flip = true
 
 [node name="Metal12" parent="." unique_id=886330366 instance=ExtResource("15_devdu")]
 position = Vector2(894, -743)
 frame_id = 2
+flip = true
 
 [node name="Metal13" parent="." unique_id=1530525688 instance=ExtResource("15_devdu")]
 position = Vector2(988, -832)
@@ -351,16 +354,20 @@ frame_id = 2
 [node name="Metal16" parent="." unique_id=1241227743 instance=ExtResource("15_devdu")]
 position = Vector2(2249, 695)
 frame_id = 2
+flip = true
 
 [node name="Metal17" parent="." unique_id=1376607680 instance=ExtResource("15_devdu")]
 position = Vector2(2220, 742)
 frame_id = 1
+flip = true
 
 [node name="Metal18" parent="." unique_id=1959835138 instance=ExtResource("15_devdu")]
 position = Vector2(2395, 721)
+flip = true
 
 [node name="Metal19" parent="." unique_id=1685526793 instance=ExtResource("15_devdu")]
 position = Vector2(1446, -829)
+flip = true
 
 [node name="Metal20" parent="." unique_id=404967458 instance=ExtResource("15_devdu")]
 position = Vector2(776, -832)
@@ -438,21 +445,26 @@ frame_id = 2
 
 [node name="Metal27" parent="." unique_id=63436334 instance=ExtResource("15_devdu")]
 position = Vector2(2473, 493)
+flip = true
 
 [node name="Metal28" parent="." unique_id=2001318585 instance=ExtResource("15_devdu")]
 position = Vector2(2293, 611)
 frame_id = 1
+flip = true
 
 [node name="Metal29" parent="." unique_id=963431716 instance=ExtResource("15_devdu")]
 position = Vector2(2208, 543)
+flip = true
 
 [node name="Metal30" parent="." unique_id=1726265071 instance=ExtResource("15_devdu")]
 position = Vector2(2254, 350)
 frame_id = 1
+flip = true
 
 [node name="Metal31" parent="." unique_id=1941303251 instance=ExtResource("15_devdu")]
 position = Vector2(2388, 251)
 frame_id = 2
+flip = true
 
 [node name="Metal32" parent="." unique_id=513164578 instance=ExtResource("15_devdu")]
 position = Vector2(2336, 832)

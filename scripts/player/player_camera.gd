@@ -23,9 +23,9 @@ func _ready() -> void:
 	tick_wait = 10
 	Manager.Camera = self
 	if Manager.current_zoom < 0:
-		zoom.x = 1.1
-		zoom.y = 1.1
-		Manager.current_zoom = 1.1
+		zoom.x = 0.9
+		zoom.y = 0.9
+		Manager.current_zoom = 0.9
 	else:
 		zoom.x = Manager.current_zoom
 		zoom.y = Manager.current_zoom

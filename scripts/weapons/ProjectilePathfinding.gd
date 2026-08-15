@@ -44,7 +44,7 @@ func _ready() -> void:
 	nav_agent.target_desired_distance = 4.0
 	nav_agent.max_speed = speed
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if !Follow_Target:
 		return

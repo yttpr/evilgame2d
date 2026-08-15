@@ -13,12 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://b6tjge1l46w25" path="res://assets/objects/green_sign.tscn" id="12_qf8tx"]
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="13_3cvrv"]
 [ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="14_5gohp"]
+[ext_resource type="PackedScene" uid="uid://dqocqu0dre5x7" path="res://assets/objects/stone_tower.tscn" id="14_l77gu"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_xhnlw")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(288, 15)])
+entries = Array[Vector2]([Vector2(288, 15), Vector2(3040, -2737)])
 songs = Array[AudioStream]([ExtResource("2_yk1le")])
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
@@ -178,7 +179,7 @@ position = Vector2(1184, 1760)
 position = Vector2(544, 1696)
 
 [node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("6_d5jl0")]
-position = Vector2(288, 96)
+position = Vector2(313, 10)
 flicker = true
 only_near = true
 
@@ -383,12 +384,12 @@ flicker = true
 only_near = true
 
 [node name="HangingLight52" parent="." unique_id=1336858009 instance=ExtResource("6_d5jl0")]
-position = Vector2(216, 172)
+position = Vector2(163, 110)
 flicker = true
 only_near = true
 
 [node name="HangingLight53" parent="." unique_id=668819557 instance=ExtResource("6_d5jl0")]
-position = Vector2(339, 236)
+position = Vector2(292, 237)
 flicker = true
 only_near = true
 
@@ -733,7 +734,7 @@ flicker = true
 only_near = true
 
 [node name="HangingLight112" parent="." unique_id=675908749 instance=ExtResource("6_d5jl0")]
-position = Vector2(3035, -2761)
+position = Vector2(2848, -2720)
 flicker = true
 only_near = true
 
@@ -787,6 +788,16 @@ position = Vector2(3432, 666)
 flicker = true
 only_near = true
 
+[node name="HangingLight148" parent="." unique_id=1624930316 instance=ExtResource("6_d5jl0")]
+position = Vector2(3169, 614)
+flicker = true
+only_near = true
+
+[node name="HangingLight149" parent="." unique_id=2002895028 instance=ExtResource("6_d5jl0")]
+position = Vector2(3360, 405)
+flicker = true
+only_near = true
+
 [node name="HangingLight123" parent="." unique_id=1830148245 instance=ExtResource("6_d5jl0")]
 position = Vector2(3230, 1984)
 flicker = true
@@ -812,8 +823,28 @@ position = Vector2(3533, -1194)
 flicker = true
 only_near = true
 
+[node name="HangingLight137" parent="." unique_id=2048008526 instance=ExtResource("6_d5jl0")]
+position = Vector2(3442, -1544)
+flicker = true
+only_near = true
+
+[node name="HangingLight138" parent="." unique_id=1897195192 instance=ExtResource("6_d5jl0")]
+position = Vector2(3099, -2008)
+flicker = true
+only_near = true
+
+[node name="HangingLight139" parent="." unique_id=1055622747 instance=ExtResource("6_d5jl0")]
+position = Vector2(2986, -1765)
+flicker = true
+only_near = true
+
+[node name="HangingLight140" parent="." unique_id=1136752081 instance=ExtResource("6_d5jl0")]
+position = Vector2(3129, -1624)
+flicker = true
+only_near = true
+
 [node name="HangingLight128" parent="." unique_id=1037143584 instance=ExtResource("6_d5jl0")]
-position = Vector2(3800, -2650)
+position = Vector2(3551, -1919)
 flicker = true
 only_near = true
 
@@ -822,5 +853,133 @@ position = Vector2(3452, -3163)
 flicker = true
 only_near = true
 
+[node name="HangingLight141" parent="." unique_id=314147137 instance=ExtResource("6_d5jl0")]
+position = Vector2(3005, -3024)
+flicker = true
+only_near = true
+
+[node name="HangingLight142" parent="." unique_id=495246843 instance=ExtResource("6_d5jl0")]
+position = Vector2(3198, -2963)
+flicker = true
+only_near = true
+
+[node name="HangingLight143" parent="." unique_id=416686525 instance=ExtResource("6_d5jl0")]
+position = Vector2(3439, -2702)
+flicker = true
+only_near = true
+
+[node name="HangingLight144" parent="." unique_id=163521872 instance=ExtResource("6_d5jl0")]
+position = Vector2(3282, -2441)
+flicker = true
+only_near = true
+
+[node name="HangingLight146" parent="." unique_id=920179429 instance=ExtResource("6_d5jl0")]
+position = Vector2(3038, -2316)
+flicker = true
+only_near = true
+
+[node name="HangingLight147" parent="." unique_id=877402567 instance=ExtResource("6_d5jl0")]
+position = Vector2(3226, -2180)
+flicker = true
+only_near = true
+
+[node name="HangingLight145" parent="." unique_id=2046988072 instance=ExtResource("6_d5jl0")]
+position = Vector2(3089, -2295)
+flicker = true
+only_near = true
+
+[node name="HangingLight130" parent="." unique_id=1352867404 instance=ExtResource("6_d5jl0")]
+position = Vector2(3379, -565)
+flicker = true
+only_near = true
+
+[node name="HangingLight131" parent="." unique_id=1005115090 instance=ExtResource("6_d5jl0")]
+position = Vector2(3411, -799)
+flicker = true
+only_near = true
+
+[node name="HangingLight132" parent="." unique_id=1963188640 instance=ExtResource("6_d5jl0")]
+position = Vector2(3277, -910)
+flicker = true
+only_near = true
+
+[node name="HangingLight133" parent="." unique_id=896488464 instance=ExtResource("6_d5jl0")]
+position = Vector2(3181, -484)
+flicker = true
+only_near = true
+
+[node name="HangingLight134" parent="." unique_id=1320312229 instance=ExtResource("6_d5jl0")]
+position = Vector2(3073, -717)
+flicker = true
+only_near = true
+
+[node name="HangingLight135" parent="." unique_id=49247969 instance=ExtResource("6_d5jl0")]
+position = Vector2(3499, -451)
+flicker = true
+only_near = true
+
+[node name="HangingLight136" parent="." unique_id=655136982 instance=ExtResource("6_d5jl0")]
+position = Vector2(2977, -1066)
+flicker = true
+only_near = true
+
 [node name="Sign20" parent="." unique_id=266656391 instance=ExtResource("12_qf8tx")]
 position = Vector2(352, 1504)
+
+[node name="Door2" parent="." unique_id=1595983815 instance=ExtResource("13_3cvrv")]
+position = Vector2(3040, -2752)
+room = "res://assets/levels/level1/dark_corridor/swapshop/dark_swap_shop.tscn"
+
+[node name="Tower" parent="." unique_id=361686363 instance=ExtResource("14_l77gu")]
+position = Vector2(3100, -863)
+
+[node name="Tower2" parent="." unique_id=388006486 instance=ExtResource("14_l77gu")]
+position = Vector2(3368, -816)
+frame_id = 1
+
+[node name="Tower3" parent="." unique_id=879357944 instance=ExtResource("14_l77gu")]
+position = Vector2(3175, -569)
+flip = true
+
+[node name="Tower4" parent="." unique_id=1117609370 instance=ExtResource("14_l77gu")]
+position = Vector2(3205, -113)
+frame_id = 1
+
+[node name="Tower5" parent="." unique_id=124093520 instance=ExtResource("14_l77gu")]
+position = Vector2(3377, -293)
+flip = true
+
+[node name="Tower6" parent="." unique_id=1768921155 instance=ExtResource("14_l77gu")]
+position = Vector2(3337, -1353)
+frame_id = 1
+
+[node name="Tower7" parent="." unique_id=465343481 instance=ExtResource("14_l77gu")]
+position = Vector2(3085, -1669)
+flip = true
+
+[node name="Tower8" parent="." unique_id=352440474 instance=ExtResource("14_l77gu")]
+position = Vector2(3079, -2348)
+frame_id = 1
+
+[node name="Tower9" parent="." unique_id=1721350184 instance=ExtResource("14_l77gu")]
+position = Vector2(3174, -2191)
+flip = true
+
+[node name="Tower10" parent="." unique_id=330603737 instance=ExtResource("14_l77gu")]
+position = Vector2(3331, -2677)
+
+[node name="Tower11" parent="." unique_id=2078411402 instance=ExtResource("14_l77gu")]
+position = Vector2(3092, -2911)
+frame_id = 1
+flip = true
+
+[node name="Tower12" parent="." unique_id=1006759595 instance=ExtResource("14_l77gu")]
+position = Vector2(3085, 1011)
+
+[node name="Tower13" parent="." unique_id=1794653980 instance=ExtResource("14_l77gu")]
+position = Vector2(3247, 604)
+frame_id = 1
+
+[node name="Tower14" parent="." unique_id=1952147998 instance=ExtResource("14_l77gu")]
+position = Vector2(3327, 2123)
+flip = true

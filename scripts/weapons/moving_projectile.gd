@@ -76,7 +76,7 @@ func _process(delta: float) -> void:
 
 func _hit_made() -> bool:
 	if pierce_amt == 0:
-		collider.collider.disabled = true
+		collider.collider.set_deferred("disabled", true)
 		self._cleanup()
 		return true
 	pierce_amt -= 1

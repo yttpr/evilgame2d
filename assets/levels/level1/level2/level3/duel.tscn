@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://c64kqu7g18tqi" path="res://assets/enemies/spawns/spawns_dungen_easy.tres" id="9_6sga2"]
 [ext_resource type="PackedScene" uid="uid://cyt7ns085e1uw" path="res://assets/objects/crate.tscn" id="10_7smnk"]
 [ext_resource type="Resource" uid="uid://dhtems1p748mo" path="res://assets/enemies/spawns/spawns_dungen_hard.tres" id="12_6i7y8"]
+[ext_resource type="PackedScene" uid="uid://dqocqu0dre5x7" path="res://assets/objects/stone_tower.tscn" id="12_7qpch"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="13_ega80"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
@@ -129,3 +130,24 @@ room = "res://assets/levels/level1/level2/level3/level4/shop1.tscn"
 [node name="Door3" parent="." unique_id=979105454 instance=ExtResource("6_5l0kt")]
 position = Vector2(576, 1024)
 room = "res://assets/levels/level1/level2/level3/sewer/transition.tscn"
+
+[node name="Tower2" parent="." unique_id=239917908 instance=ExtResource("12_7qpch")]
+position = Vector2(1524, 240)
+
+[node name="Tower3" parent="." unique_id=250599976 instance=ExtResource("12_7qpch")]
+position = Vector2(1609, 386)
+frame_id = 1
+flip = true
+
+[node name="Tower4" parent="." unique_id=344758193 instance=ExtResource("12_7qpch")]
+position = Vector2(1712, 250)
+flip = true
+
+[node name="HangingLight16" parent="." unique_id=76610735 instance=ExtResource("13_ega80")]
+position = Vector2(1265, 520)
+
+[node name="HangingLight17" parent="." unique_id=745455413 instance=ExtResource("13_ega80")]
+position = Vector2(-257, 1786)
+
+[node name="Tower5" parent="." unique_id=772005597 instance=ExtResource("12_7qpch")]
+position = Vector2(-760, 1684)

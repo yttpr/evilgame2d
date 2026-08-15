@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://crb1trsf5weo0"]
 
 [ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_isux5"]
-[ext_resource type="AudioStream" uid="uid://cuas681yu3a2o" path="res://audio/noise/weapon/magic_shoot.ogg" id="2_isux5"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_ipx0j"]
 [ext_resource type="Texture2D" uid="uid://dwjfcyoewby0m" path="res://sprites/weapons/projectiles/note_bullet.png" id="4_frf53"]
 [ext_resource type="Script" uid="uid://tb0vy8pwixm6" path="res://scripts/objects/sprite_randomizer.gd" id="5_ookqh"]
@@ -22,7 +21,6 @@ rot_spd = 0.5
 pierce_amt = -1
 by_lifetime = true
 lifetime = 1.0
-shot_sound = ExtResource("2_isux5")
 audio_mod = -6.0
 make_gibs = true
 death_quote = Array[String](["\"The sound... of flesh.\"", "\"Dissonant cacophony.\"", "\"I can't stand it...\"", "\"Listen to my song.\"", "\"But nothing could compare...\"", "\"This noise, this noise!\"", "\"Hahaha... I have to turn it back on...\"", "\"Noise noise noise noise noise!!!\"", "\"It's music, can't you hear?\"", "\"All things are subjective.\"", "\"Oh how I wish it would just turn on and I would throw myself in...\"", "\"Turn yourself into music.\"", "\"From break and ruin...\""])

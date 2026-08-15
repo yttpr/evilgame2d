@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://71j5awutvofc" path="res://scripts/weapons/exploding_projectile.gd" id="1_cuh86"]
 [ext_resource type="PackedScene" uid="uid://crb1trsf5weo0" path="res://assets/projectile/HarmonySubBullet.tscn" id="2_cuh86"]
+[ext_resource type="AudioStream" uid="uid://cuas681yu3a2o" path="res://audio/noise/weapon/magic_shoot.ogg" id="3_cuh86"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_n526v"]
 [ext_resource type="Texture2D" uid="uid://06ci32encp4s" path="res://sprites/weapons/projectiles/big_eye_bullet.png" id="5_cuh86"]
 
@@ -16,6 +17,8 @@ bullet = ExtResource("2_cuh86")
 source_name = "Player_Projectile_0"
 shoot_from = NodePath("Sprite2D")
 amount = 24
+explosion_sound = ExtResource("3_cuh86")
+volume_mod = 25.0
 img = NodePath("Sprite2D")
 body = NodePath(".")
 spd = 3000.0

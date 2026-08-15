@@ -5,6 +5,17 @@ extends WeaponInteractible
 @export var objectname : String
 @export var pool : ShopPoolData
 
+@export var options : Array[ShopPoolWeaponInteractible]
+func _close_options() -> void:
+	if options:
+		for option in options:
+			if option == self:
+				continue
+			Manager._set_run_bool(option.objectname, true)
+			for i in 3:
+				Manager._create_damage(option.global_position, false, true, true)
+			option.queue_free()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Manager._check_run_bool(objectname):
@@ -42,6 +53,7 @@ func _get_weapon() -> void:
 			if Manager._check_save_bool(item.id):
 				list.append(item)
 	weapon = list[randi_range(0, list.size() - 1)]
+	Manager._set_run_bool(weapon.id, true)
 
 
 func _load_weapon(id : String) -> WeaponData:
@@ -72,3 +84,5 @@ func _run() -> void:
 		Manager.Player.weapon_handler._add_weapon(weapon)
 		Manager._set_run_bool(self.objectname, true)
 		self.queue_free()
+	
+	_close_options()

@@ -65,8 +65,9 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	_make_collider()
-	self.body_entered.connect(_on_body_entered)
-	self.area_entered.connect(_on_body_entered)
+	if !body_entered.has_connections():
+		self.body_entered.connect(_on_body_entered)
+		self.area_entered.connect(_on_body_entered)
 func _on_body_entered(body) -> void:
 	if check_line_walls:
 		if !_can_target(body):
@@ -83,10 +84,9 @@ func _on_body_entered(body) -> void:
 				k = Vector2.from_angle(randf_range(0.0, 2*PI)) * inertia.length()
 		if body._get_hit(damage_amt, damage_type, damage_source, k):
 			if projectile:
-				if projectile._hit_made():
-					collider.disabled = true
+				projectile._hit_made()
 			if pierce == 0:
-				collider.disabled = true
+				#collider.disabled = true
 				self.queue_free()
 			pierce -= 1
 

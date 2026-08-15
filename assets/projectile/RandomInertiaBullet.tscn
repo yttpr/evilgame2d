@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bk0n3cvocdff2"]
 
 [ext_resource type="Script" uid="uid://cvcjrj2a7ao02" path="res://scripts/weapons/randominertiabullet.gd" id="1_ibv3l"]
+[ext_resource type="AudioStream" uid="uid://i0ly65k2mo8y" path="res://audio/noise/weapon/weird_sound.ogg" id="2_au3tl"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_x56p8"]
 [ext_resource type="Texture2D" uid="uid://dwjfcyoewby0m" path="res://sprites/weapons/projectiles/note_bullet.png" id="4_ibv3l"]
 [ext_resource type="Script" uid="uid://tb0vy8pwixm6" path="res://scripts/objects/sprite_randomizer.gd" id="5_au3tl"]
@@ -21,7 +22,8 @@ make_backup_colliders = true
 by_lifetime = true
 lifetime = 3.0
 tracer_time = 0.1
-audio_mod = 10.0
+shot_sound = ExtResource("2_au3tl")
+audio_mod = 15.0
 death_quote = Array[String](["\"The sound...\"", "\"...Of silence.\"", "\"It's unnerving.\"", "\"It's disorienting.\"", "\"Too... quiet.\"", "\"Quiet.\"", "\"Too quiet.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]

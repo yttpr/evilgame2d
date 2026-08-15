@@ -18,7 +18,7 @@
 y_sort_enabled = true
 script = ExtResource("1_qrubg")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(832, -433)])
+entries = Array[Vector2]([Vector2(832, -433), Vector2(-320, 975)])
 songs = Array[AudioStream]([ExtResource("2_l0jf0"), ExtResource("3_qpsba"), ExtResource("4_unit6"), ExtResource("4_unit6"), ExtResource("4_unit6"), ExtResource("4_unit6")])
 volumes = Array[float]([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 
@@ -182,3 +182,7 @@ position = Vector2(-1092, -374)
 
 [node name="HangingLight20" parent="." unique_id=1811697256 instance=ExtResource("15_4geja")]
 position = Vector2(688, 1155)
+
+[node name="Door2" parent="." unique_id=1941050059 instance=ExtResource("16_svgok")]
+position = Vector2(-320, 960)
+room = "res://assets/levels/level1/untitled/iloveyou/smileworld/smileworld2/smileworld3/bigroom/smile_field/swapshop/smileswapshop.tscn"

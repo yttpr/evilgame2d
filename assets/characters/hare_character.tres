@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://cc5hx4rhh8ujk"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_i4bjs"]
+[ext_resource type="Resource" uid="uid://dtjsxardpuhvt" path="res://assets/weapons/loophell.tres" id="2_i4bjs"]
+[ext_resource type="Resource" uid="uid://dx7kg1pmnmpuy" path="res://assets/weapons/gerald.tres" id="3_iit0e"]
+[ext_resource type="Resource" uid="uid://ccix700agr6w3" path="res://assets/characters/gibs/hare_gibs.tres" id="4_i4bjs"]
+[ext_resource type="Texture2D" uid="uid://d3xrimlbgkoh3" path="res://sprites/characters/EvilGame2D_Hare_Wip.png" id="5_i4bjs"]
+[ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="6_sjq1f"]
+
+[resource]
+script = ExtResource("6_sjq1f")
+id = "Hare"
+character = "Hare"
+image = ExtResource("5_i4bjs")
+HP = 10
+healthtype = "Sin"
+base_weapons = Array[ExtResource("1_i4bjs")]([ExtResource("2_i4bjs"), ExtResource("3_iit0e")])
+gibs = ExtResource("4_i4bjs")
+metadata/_custom_type_script = "uid://csfhp445ba2j"

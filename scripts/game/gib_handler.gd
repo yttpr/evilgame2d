@@ -41,7 +41,8 @@ func _make_gib(loc : Vector2, inertia : Vector2, img : Texture2D, weight = 1.0, 
 	var gib : GibBody = gib_base.instantiate()
 	gib.img.texture = img
 	gib.img.material = null
-	Manager._get_world().add_child(gib)
+	#Manager._get_world().add_child(gib)
+	Manager._get_world().call_deferred("add_child", gib)
 	gib.global_position = loc
 	gib.weight = weight
 	if do_rotate:
@@ -51,7 +52,7 @@ func _make_gib(loc : Vector2, inertia : Vector2, img : Texture2D, weight = 1.0, 
 	gib._set_fall_in_pit(true)
 func _make_coin(loc : Vector2, inertia : Vector2) -> void:
 	var gib : GibBody = Manager.coin_sprite.instantiate()
-	Manager._get_world().add_child(gib)
+	Manager._get_world().call_deferred("add_child", gib)
 	gib.global_position = loc
 	gib._random_rotate()
 	#gib._random_flip()
@@ -64,7 +65,7 @@ func _make_blood(loc : Vector2, inertia : Vector2, first : Color, second : Color
 	blood.img.texture = blood_img
 	blood.img.modulate = _get_random_color(first, second)
 	blood.img.z_index = -3
-	Manager._get_world().add_child(blood)
+	Manager._get_world().call_deferred("add_child", blood)
 	blood.global_position = loc
 	blood._random_rotate()
 	blood._random_flip()

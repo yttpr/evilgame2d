@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cocnyfkmtur73"]
+
+[ext_resource type="Texture2D" uid="uid://cwwsyj0rvivmo" path="res://sprites/objects/carpet.png" id="1_311w8"]
+
+[node name="Carpet" type="Sprite2D" unique_id=1655720364]
+z_index = -4
+scale = Vector2(2.2, 2)
+texture = ExtResource("1_311w8")

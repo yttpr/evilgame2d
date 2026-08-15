@@ -21,7 +21,7 @@ make_backup_colliders = true
 by_lifetime = true
 lifetime = 3.0
 shot_sound = ExtResource("2_vr1ku")
-audio_mod = 10.0
+audio_mod = 8.0
 death_quote = Array[String](["\"Loop hell.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]

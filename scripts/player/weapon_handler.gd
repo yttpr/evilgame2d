@@ -13,6 +13,7 @@ var gun_index = 0
 @export var weapons : Array[WeaponData]
 var remaining_clips : Array[int]
 var reload_lefts : Array[float]
+var delay_ticking : Array[float]
 
 @export var bullet : PackedScene
 @export var source_name : String
@@ -81,6 +82,7 @@ func _alt_weapon(current : int) -> int:
 func _change_weapon(amt : int) -> int:
 	remaining_clips[gun_index] = current_clip
 	reload_lefts[gun_index] = reload_tick
+	delay_ticking[gun_index] = delay_tick
 	gun_index = amt
 	if gun_index < 0:
 		gun_index = weapons.size() - 1
@@ -90,11 +92,9 @@ func _change_weapon(amt : int) -> int:
 	_set_data(weapons[gun_index])
 	reload_tick = reload_lefts[gun_index]
 	_set_reload(reload_lefts[gun_index] > 0, false)
-	if !is_reloading:
-		current_clip = remaining_clips[gun_index]
-		Player.ui.Ammo._set_loaded_amt(current_clip)
-	else:
-		Player.ui.Ammo._set_loaded_amt(0)
+	current_clip = remaining_clips[gun_index]
+	delay_tick = delay_ticking[gun_index]
+	Player.ui.Ammo._set_loaded_amt(current_clip)
 	Player.ui.Weapons._set_active_weapon(gun_index)
 	return gun_index
 func _reset_alt_clip() -> void:
@@ -231,9 +231,11 @@ func _setup() -> void:
 func _reset_arrays() -> void:
 	reload_lefts = []
 	remaining_clips = []
+	delay_ticking = []
 	for weapon in weapons:
 		reload_lefts.append(0)
 		remaining_clips.append(weapon.clip_size)
+		delay_ticking.append(0)
 
 func _add_weapon(data : WeaponData) -> void:
 	if weapons.size() >= 10:
@@ -242,6 +244,7 @@ func _add_weapon(data : WeaponData) -> void:
 	Player.ui.Weapons._set_weapons_data(weapons)
 	reload_lefts.append(0)
 	remaining_clips.append(data.clip_size)
+	delay_ticking.append(0)
 	Manager.current_weapons.assign(weapons)
 	_change_weapon(weapons.size() - 1)
 func _swap_weapon(data : WeaponData, id : int) -> void:
@@ -251,6 +254,7 @@ func _swap_weapon(data : WeaponData, id : int) -> void:
 	Player.ui.Weapons._set_weapons_data(weapons)
 	reload_lefts[id] = 0
 	remaining_clips[id] = data.clip_size
+	delay_ticking[id] = 0
 	reload_tick = 0
 	if id == gun_index:
 		_change_weapon(id)

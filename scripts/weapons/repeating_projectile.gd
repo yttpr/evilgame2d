@@ -7,6 +7,7 @@ extends MovingProjectile
 @export var is_player : bool
 
 @export var original = true
+@export var append_names : Array[String]
 
 func _shoot(direction : Vector2, origin : Vector2) -> void:
 	if !original:
@@ -18,6 +19,7 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 		var copy : RepeatingProjectile = self.duplicate()
 		copy.visible = true
 		copy.original = false
+		copy.source += append_names[i]
 		self.get_parent().add_child(copy)
 		if is_player:
 			var mouse = to_global(get_local_mouse_position())

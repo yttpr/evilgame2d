@@ -15,6 +15,7 @@ script = ExtResource("1_ubg34")
 repeats = 3
 interval = 0.12
 is_player = true
+append_names = Array[String](["_a", "_b", "_c"])
 img = NodePath("Sprite2D")
 body = NodePath(".")
 spd = 1000.0

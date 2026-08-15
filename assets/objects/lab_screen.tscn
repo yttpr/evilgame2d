@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dp0dm2a6cbi1e"]
+
+[ext_resource type="Script" uid="uid://jcw3xalnk47g" path="res://scripts/enemy/FrameSetDestructible.gd" id="1_ckb7j"]
+[ext_resource type="Texture2D" uid="uid://blchbmbcv76c0" path="res://sprites/objects/lab_eye_screen.png" id="2_ckb7j"]
+
+[sub_resource type="Gradient" id="Gradient_gxmte"]
+offsets = PackedFloat32Array(0, 0.8918269, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ckb7j"]
+gradient = SubResource("Gradient_gxmte")
+fill = 1
+fill_from = Vector2(0.5086806, 0.5190972)
+fill_to = Vector2(0.8350694, 0.8315972)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(128, 64)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
+
+[node name="Screen" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("image")]
+collision_layer = 44
+collision_mask = 0
+script = ExtResource("1_ckb7j")
+HP = 999
+image = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562283018]
+light_mask = 2
+position = Vector2(0, -224)
+texture = ExtResource("2_ckb7j")
+
+[node name="floor_light" type="PointLight2D" parent="Sprite2D" unique_id=915784825]
+z_index = -1
+position = Vector2(-4, 222)
+scale = Vector2(2, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ckb7j")
+texture_scale = 4.5
+
+[node name="wall_light" type="PointLight2D" parent="Sprite2D" unique_id=2008002193]
+z_index = -1
+position = Vector2(-4, 222)
+scale = Vector2(2, 1)
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_ckb7j")
+texture_scale = 4.5
+
+[node name="light_light" type="PointLight2D" parent="Sprite2D" unique_id=1263555659]
+z_index = -1
+position = Vector2(-1, 57)
+scale = Vector2(1, 0.5)
+range_item_cull_mask = 2
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_ckb7j")
+texture_scale = 4.5
+
+[node name="chara_light" type="PointLight2D" parent="Sprite2D" unique_id=309859793]
+z_index = -1
+position = Vector2(-4, 222)
+scale = Vector2(2, 1)
+range_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_ckb7j")
+texture_scale = 4.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337640463]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 4

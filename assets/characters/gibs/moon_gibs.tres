@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://bchoi5864fpsm"]
+
+[ext_resource type="Texture2D" uid="uid://bhefsb0tm1he4" path="res://sprites/characters/gibs/moon_hairclip.png" id="1_bloo3"]
+[ext_resource type="Texture2D" uid="uid://df8yeoluf502o" path="res://sprites/enemies/gibs/bone.png" id="2_5lwpl"]
+[ext_resource type="Texture2D" uid="uid://cs54vsp37amlj" path="res://sprites/enemies/gibs/spine_bone.png" id="3_rkano"]
+[ext_resource type="Texture2D" uid="uid://b41bypham81im" path="res://sprites/weapons/projectiles/moon_bullet.png" id="4_5lwpl"]
+[ext_resource type="Texture2D" uid="uid://bfkarbrpopw" path="res://sprites/characters/gibs/moon_smolders.png" id="5_rkano"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="10_4qtyo"]
+
+[resource]
+script = ExtResource("10_4qtyo")
+blood_amt = 3
+blood_color_1 = Color(0.89411765, 0, 0, 1)
+blood_color_2 = Color(0.40392157, 0, 0, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_bloo3"), ExtResource("2_5lwpl"), ExtResource("3_rkano"), ExtResource("4_5lwpl"), ExtResource("5_rkano")])
+img_amts = Array[int]([2, 4, 3, 1, 3])
+weights = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0])
+does_rotate = Array[bool]([true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

@@ -45,5 +45,5 @@ func _check_near() -> void:
 	if !only_near:
 		_set_lights(true)
 		return
-	is_on = self.global_position.distance_to(Manager.Player.global_position) < 850
+	is_on = self.global_position.distance_to(Manager.Player.global_position) < 1000
 	_set_lights(is_on)

@@ -23,6 +23,7 @@ despawn_length = -1.0
 shape = SubResource("RectangleShape2D_d258k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932073789]
+light_mask = 9
 position = Vector2(0, -48)
 texture = ExtResource("2_86nj7")
 

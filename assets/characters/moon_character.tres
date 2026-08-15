@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://58xp7jw0t636"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_byljr"]
+[ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="2_byljr"]
+[ext_resource type="Resource" uid="uid://0apo3ny7w7rh" path="res://assets/weapons/cascade.tres" id="3_4i7md"]
+[ext_resource type="Resource" uid="uid://bchoi5864fpsm" path="res://assets/characters/gibs/moon_gibs.tres" id="4_byljr"]
+[ext_resource type="Texture2D" uid="uid://bs5giwwp7eb42" path="res://sprites/characters/EvilGame2D_Moon_Wip.png" id="5_c01ca"]
+[ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="6_ksypt"]
+
+[resource]
+script = ExtResource("6_ksypt")
+id = "Moon"
+character = "Moon"
+image = ExtResource("5_c01ca")
+HP = 10
+healthtype = "Cos"
+base_weapons = Array[ExtResource("1_byljr")]([ExtResource("2_byljr"), ExtResource("3_4i7md")])
+gibs = ExtResource("4_byljr")
+metadata/_custom_type_script = "uid://csfhp445ba2j"

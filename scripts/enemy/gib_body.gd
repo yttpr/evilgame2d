@@ -14,12 +14,12 @@ var height : float = -35.0
 var weight : float = 1.0
 
 func _set_lifetime(delta : float) -> void:
-	var up = get_tree().create_tween()
+	var up = Manager._get_world().get_tree().create_tween()
 	up.set_ease(Tween.EASE_IN)
 	up.tween_property(img, "scale", Vector2.ZERO, delta)
 	up.tween_callback(self.queue_free)
 func _remove(delta : float) -> void:
-	var up = get_tree().create_tween()
+	var up = Manager._get_world().get_tree().create_tween()
 	up.set_ease(Tween.EASE_IN)
 	up.tween_property(img, "modulate", Color(1.0, 1.0, 1.0, 0.0), delta)
 	up.tween_callback(self.queue_free)
@@ -44,21 +44,21 @@ func _prep(inertia : Vector2, vertical : bool = false) -> void:
 	velocity = Vector2.from_angle(randf_range(0.0, 2 * PI)) * spd + (inertia)
 	velocity /= weight
 	time = randf_range(0.1, 0.5)
-	var moving = get_tree().create_tween()
+	var moving = Manager._get_world().get_tree().create_tween()
 	moving.tween_property(self, "velocity", Vector2(0, 0), time)
 	
 	if !vertical:
 		return
 	var i = start_height + randf_range(-8.0, 5.0)
 	img.position = Vector2(0.0, i)
-	var up = get_tree().create_tween()
+	var up = Manager._get_world().get_tree().create_tween()
 	up.set_ease(Tween.EASE_OUT)
 	up.set_trans(Tween.TRANS_SINE)
 	up.tween_property(img, "position", Vector2(0.0, randf_range(0, height) + i), time / 1.8)
 	up.tween_callback(_down)
 
 func _down() -> void:
-	var down = get_tree().create_tween()
+	var down = Manager._get_world().get_tree().create_tween()
 	down.set_ease(Tween.EASE_IN)
 	down.set_trans(Tween.TRANS_SINE)
 	down.tween_property(img, "position", Vector2.ZERO, time / 1.8)
@@ -91,7 +91,7 @@ func _fall() -> void:
 		splash.scale = Vector2.ONE * 0.3
 		splash.global_position = self.global_position
 		Manager._play_oneshot(self.global_position, Manager.splash_noise, 10)
-	var down = get_tree().create_tween()
+	var down = Manager._get_world().get_tree().create_tween()
 	down.tween_property(img, "scale", Vector2.ZERO, 1.0)
 	if Manager._check_in_pit_top(self):
 		down.parallel().tween_property(img, "position", img.position + Vector2(0, 32), 1.0)

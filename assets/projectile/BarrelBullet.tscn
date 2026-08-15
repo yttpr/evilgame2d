@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://35dqraie1pe8"]
 
 [ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_t0bhm"]
-[ext_resource type="AudioStream" uid="uid://dawfia5p5hplf" path="res://audio/noise/weapon/explosion_light.ogg" id="2_t0bhm"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_kyeyi"]
 [ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_ua3sd"]
 [ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_gcpuc"]
@@ -20,7 +19,6 @@ radius = 24.0
 rot_spd = 2.0
 by_lifetime = true
 lifetime = 0.3
-shot_sound = ExtResource("2_t0bhm")
 audio_mod = -3.0
 make_gibs = true
 death_quote = Array[String](["\"Manufactured life hazard\"", "\"No smoking.\"", "\"Is it safe to be standing next to these?\"", "\"You blew it...\"", "\"Planned obsolescence\"", "\"Microplastics for days!\"", "\"To the mines with you.\"", "\"Radioactive.\"", "\"Don't swim in that!\"", "\"Legally gray, but thats good enough.\""])

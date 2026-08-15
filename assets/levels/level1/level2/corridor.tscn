@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://6j1ubrcvxxax" path="res://assets/objects/barrel.tscn" id="11_deo1j"]
 [ext_resource type="PackedScene" uid="uid://ct1ooywh5c6dt" path="res://assets/enemies/enigma.tscn" id="12_deo1j"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="13_pug3j"]
+[ext_resource type="PackedScene" uid="uid://dqocqu0dre5x7" path="res://assets/objects/stone_tower.tscn" id="15_uvqdc"]
 [ext_resource type="PackedScene" uid="uid://njexk3d72xp5" path="res://assets/objects/health_station.tscn" id="15_y8fbb"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
@@ -215,3 +216,26 @@ killed_id = "Healing_Dungeon_Corridor"
 [node name="Door2" parent="." unique_id=640764611 instance=ExtResource("6_s5hba")]
 position = Vector2(2816, -768)
 room = "res://assets/levels/level1/level2/sigmaaaa_awesome/tunnels.tscn"
+
+[node name="Tower3" parent="." unique_id=648414838 instance=ExtResource("15_uvqdc")]
+position = Vector2(1649, 76)
+flip = true
+
+[node name="Tower5" parent="." unique_id=1518799779 instance=ExtResource("15_uvqdc")]
+position = Vector2(251, -1650)
+
+[node name="Tower6" parent="." unique_id=1080978151 instance=ExtResource("15_uvqdc")]
+position = Vector2(510, -1555)
+flip = true
+
+[node name="Tower7" parent="." unique_id=878851194 instance=ExtResource("15_uvqdc")]
+position = Vector2(427, -1772)
+frame_id = 1
+
+[node name="Tower8" parent="." unique_id=1892071778 instance=ExtResource("15_uvqdc")]
+position = Vector2(-1016, -1801)
+frame_id = 1
+
+[node name="Tower9" parent="." unique_id=1603031130 instance=ExtResource("15_uvqdc")]
+position = Vector2(-1395, -1800)
+flip = true

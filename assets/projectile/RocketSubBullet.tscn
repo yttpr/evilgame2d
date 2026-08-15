@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://iylywpqirrmv"]
 
 [ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_adrgt"]
-[ext_resource type="AudioStream" uid="uid://dawfia5p5hplf" path="res://audio/noise/weapon/explosion_light.ogg" id="2_mrmxo"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_rt7x2"]
 [ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_c8gb7"]
 [ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_y1sfr"]
@@ -21,7 +20,6 @@ rot_spd = 2.0
 pierce_amt = -1
 by_lifetime = true
 lifetime = 0.5
-shot_sound = ExtResource("2_mrmxo")
 audio_mod = -2.0
 make_gibs = true
 death_quote = Array[String](["\"You blew it...\"", "\"Collateral!\"", "\"Take cover!!\"", "\"Uh oh...\"", "\"Did I do that..?\"", "\"Legalize nuclear bombs.\"", "\"Spudow!\"", "\"Boom.\"", "\"Oops...\""])

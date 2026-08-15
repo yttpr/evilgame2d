@@ -12,13 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://cyt7ns085e1uw" path="res://assets/objects/crate.tscn" id="8_t5gqa"]
 [ext_resource type="Script" uid="uid://c4l3txmv6gpvl" path="res://scripts/enemy/enemy_spawner.gd" id="9_3evt2"]
 [ext_resource type="Resource" uid="uid://ds5h7xqwsivm4" path="res://assets/enemies/spawns/spawns_sewer_easy.tres" id="11_kk6x7"]
-[ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="12_xgu1n"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_y1of6")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(576, 1039), Vector2(896, -79)])
+entries = Array[Vector2]([Vector2(576, 1039), Vector2(896, -79), Vector2(-64, -49)])
 songs = Array[AudioStream]([ExtResource("2_gm0hm"), ExtResource("3_0vdiw"), ExtResource("4_4icy0")])
 volumes = Array[float]([-7.0, 0.0, -10.0, 0.0])
 water_pits = true
@@ -134,9 +133,6 @@ data = ExtResource("11_kk6x7")
 spawn_time = 30.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 
-[node name="WIP" parent="." unique_id=1376042927 instance=ExtResource("12_xgu1n")]
-position = Vector2(-64, -32)
-
 [node name="Door" parent="." unique_id=653760227 instance=ExtResource("6_kmpsr")]
 position = Vector2(576, 1024)
 room = "res://assets/levels/level1/level2/level3/duel.tscn"
@@ -145,3 +141,7 @@ spawn_pos = 2
 [node name="Door2" parent="." unique_id=1407217925 instance=ExtResource("6_kmpsr")]
 position = Vector2(896, -64)
 room = "res://assets/levels/level1/level2/level3/sewer/passages/passages_1.tscn"
+
+[node name="Door3" parent="." unique_id=1441453867 instance=ExtResource("6_kmpsr")]
+position = Vector2(-64, -64)
+room = "res://assets/levels/level1/level2/level3/sewer/swapshopsewer/sewerswapshop.tscn"

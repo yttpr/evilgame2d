@@ -13,7 +13,11 @@ func _cleanup() -> void:
 	_explode()
 	super._cleanup()
 
+@export var explosion_sound : AudioStream
+@export var volume_mod : float
 func _explode() -> void:
+	if explosion_sound:
+		Manager._play_oneshot(self.global_position, explosion_sound, volume_mod)
 	for i in amount:
 		_shoot_buddy(Vector2.from_angle(((2*PI) / amount) * i))
 
@@ -22,7 +26,7 @@ func _explode() -> void:
 @export var collision_only_walls : bool
 func _shoot_buddy(dir : Vector2) -> void:
 	var proj : BasicProjectile = bullet.instantiate()
-	Manager._get_world().add_child(proj)
+	Manager._get_world().call_deferred("add_child", proj)
 	proj.death_quote.assign(death_quote)
 	if randomize_pitch:
 		proj.pitch_mod = randf_range(-15, 5)

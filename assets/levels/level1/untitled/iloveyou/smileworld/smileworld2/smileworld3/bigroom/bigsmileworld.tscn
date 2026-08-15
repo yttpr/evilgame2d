@@ -15,14 +15,15 @@
 [ext_resource type="Resource" uid="uid://3mr3tgbvbuo" path="res://assets/enemies/spawns/spawns_lab_normal.tres" id="13_6w8wp"]
 [ext_resource type="Resource" uid="uid://d2nyguoqdbnjt" path="res://assets/enemies/spawns/spawns_lab_flying.tres" id="14_6w8wp"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="15_0ib75"]
+[ext_resource type="PackedScene" uid="uid://dp0dm2a6cbi1e" path="res://assets/objects/lab_screen.tscn" id="16_4eoxm"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_gkc18")
+canvasmodulate = NodePath("CanvasModulate")
 entries = Array[Vector2]([Vector2(0, 49), Vector2(2240, -3441)])
 songs = Array[AudioStream]([ExtResource("2_2xfu2"), ExtResource("3_l5642"), ExtResource("4_av6s4")])
-volumes = Array[float]([-8.0, -11.0, 3.0])
-canvasmodulate = NodePath("CanvasModulate")
+volumes = Array[float]([-8.0, -8.0, 1.5])
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
 z_index = -5
@@ -387,3 +388,14 @@ spawn_pos = 1
 [node name="Door2" parent="." unique_id=975896759 instance=ExtResource("8_bvmgp")]
 position = Vector2(2240, -3456)
 room = "res://assets/levels/level1/untitled/iloveyou/smileworld/smileworld2/smileworld3/bigroom/smile_field/smile_field.tscn"
+
+[node name="Screen" parent="." unique_id=653630647 instance=ExtResource("16_4eoxm")]
+position = Vector2(-1120, -2304)
+flip = true
+
+[node name="Screen2" parent="." unique_id=565572500 instance=ExtResource("16_4eoxm")]
+position = Vector2(2944, -2432)
+
+[node name="Screen3" parent="." unique_id=933472531 instance=ExtResource("16_4eoxm")]
+position = Vector2(480, 992)
+flip = true

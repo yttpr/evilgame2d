@@ -15,6 +15,6 @@ blood_color_2 = Color(0.40392157, 0, 0, 1)
 floor_blood_amt = 2
 images = Array[Texture2D]([ExtResource("1_st1vt"), ExtResource("2_a8xat"), ExtResource("3_0ddvc"), ExtResource("4_c3ni8"), ExtResource("5_o7ssq")])
 img_amts = Array[int]([1, 5, 3, 2, 1])
-weights = Array[float]([1.0, 0.6, 1.0, 1.0, 1.0])
+weights = Array[float]([1.5, 0.6, 1.0, 1.0, 1.0])
 does_rotate = Array[bool]([false, true, true, true, true])
 metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

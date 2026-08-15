@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://orj2rq0rm4l6" path="res://assets/objects/explosive_cos.tscn" id="12_82yph"]
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="15_fiy3i"]
 [ext_resource type="PackedScene" uid="uid://df2wlh6wycupb" path="res://assets/objects/single_use_door.tscn" id="15_nhmve"]
+[ext_resource type="PackedScene" uid="uid://dqocqu0dre5x7" path="res://assets/objects/stone_tower.tscn" id="16_3xvpc"]
 [ext_resource type="PackedScene" uid="uid://bj4q7m6aham57" path="res://assets/objects/shadow_crate.tscn" id="16_nhmve"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
@@ -341,3 +342,29 @@ room = "res://assets/levels/level1/untitled/untitled_hallway.tscn"
 [node name="Door2" parent="." unique_id=1313925110 instance=ExtResource("15_fiy3i")]
 position = Vector2(5440, 384)
 room = "res://assets/levels/level1/dark_corridor/dark_corridor.tscn"
+
+[node name="Tower" parent="." unique_id=478303026 instance=ExtResource("16_3xvpc")]
+position = Vector2(5297, -130)
+
+[node name="Tower2" parent="." unique_id=1734529597 instance=ExtResource("16_3xvpc")]
+position = Vector2(5496, -221)
+frame_id = 1
+
+[node name="Tower3" parent="." unique_id=1039719073 instance=ExtResource("16_3xvpc")]
+position = Vector2(5766, -318)
+flip = true
+
+[node name="Tower4" parent="." unique_id=280600149 instance=ExtResource("16_3xvpc")]
+position = Vector2(5956, -238)
+frame_id = 1
+
+[node name="Tower5" parent="." unique_id=1200980998 instance=ExtResource("16_3xvpc")]
+position = Vector2(6071, -183)
+frame_id = 1
+flip = true
+
+[node name="Tower6" parent="." unique_id=716397988 instance=ExtResource("16_3xvpc")]
+position = Vector2(6389, -282)
+
+[node name="Tower7" parent="." unique_id=200371061 instance=ExtResource("16_3xvpc")]
+position = Vector2(6503, -225)

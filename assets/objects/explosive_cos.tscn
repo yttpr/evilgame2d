@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b16s3m8lmynse" path="res://scripts/objects/exploding_destructible.gd" id="1_6x55e"]
 [ext_resource type="PackedScene" uid="uid://c37jk7nke2lj5" path="res://assets/projectile/CosBarrelBullet.tscn" id="2_6x55e"]
 [ext_resource type="Resource" uid="uid://bwp0mmuf1i7bq" path="res://assets/objects/metal_gibs.tres" id="3_6x55e"]
+[ext_resource type="AudioStream" uid="uid://dawfia5p5hplf" path="res://audio/noise/weapon/explosion_light.ogg" id="3_gjho7"]
 [ext_resource type="Texture2D" uid="uid://ds2hhx2iavdwe" path="res://sprites/objects/exploding_barrel.png" id="4_c4x4o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
@@ -24,6 +25,8 @@ amount = 32
 dmg_amt = 1
 damage_type = "Cos"
 knockback = 1000.0
+explosion_sound = ExtResource("3_gjho7")
+volume_mod = 20.0
 HP = 8
 image = NodePath("Sprite2D")
 gibs = ExtResource("3_6x55e")

@@ -242,12 +242,15 @@ func _make_damage_popup(amt : int, loc : Vector2, is_sin : bool) -> void:
 	for i in amt:
 		_create_damage(loc, is_sin)
 
-func _create_damage(loc : Vector2, is_sin : bool) -> void:
+func _create_damage(loc : Vector2, is_sin : bool, is_tan : bool = false, setzero : bool = false) -> void:
 	var icon : DamageIcon = base_damage_icon.instantiate()
+	if setzero:
+		icon.start_height = 15
 	_get_world().add_child(icon)
 	icon.global_position = loc
 	icon._begin()
-	icon._set_color(is_sin)
+	if !is_tan:
+		icon._set_color(is_sin)
 	icon._animate()
 
 func _create_weak(loc : Vector2, is_sin : bool) -> void:

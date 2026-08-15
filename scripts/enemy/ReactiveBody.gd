@@ -38,7 +38,7 @@ var cooldown_tick : float
 
 func _shoot(direction : Vector2) -> void:
 	var proj : BasicProjectile = bullet.instantiate()
-	Manager._get_world().add_child(proj)
+	Manager._get_world().call_deferred("add_child", proj)
 	proj._set_basic_data(dmg_amt, damage_type, knockback)
 	proj._set_collision(source_name, Manager.collision_walls, Manager.collision_forEnemy)
 	proj.pierce_amt = 0
