@@ -294,7 +294,7 @@ func _check_in_pit(targetNode : Node2D) -> bool:
 	query.collide_with_bodies = true
 	query.hit_from_inside = true
 	
-	var space_state = targetNode.get_world_2d().direct_space_state
+	var space_state = Manager._get_world().get_world_2d().direct_space_state
 	var result = space_state.intersect_ray(query);
 	
 	if result:

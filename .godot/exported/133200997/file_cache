@@ -56,7 +56,7 @@ res://assets/characters/saturn_character.tres::8ace262a13288f17efee8c94fbe130d5:
 res://assets/projectile/FastLineBullet.tscn::36218c56664baec0e5cabc96254484bd::1786507332::res://.godot/exported/133200997/export-00201c901dfe761893060d0c11a742b8-FastLineBullet.scn
 res://assets/weapons/revolver_sin.tres::a774ac9ee2554091c0a20c4539bc89e4::1786661973::res://.godot/exported/133200997/export-62717d7c73e926a46cb1c4896178b107-revolver_sin.res
 res://assets/characters/clerk_character.tres::134ac7ca54a58567c074ecfc972f7dcc::1786080358::res://.godot/exported/133200997/export-628604140befc1210f0e96d59fea9e2a-clerk_character.res
-res://assets/levels/spawn.tscn::82d65d18bd536f94eb8cce1f8437cb21::1786765543::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
+res://assets/levels/spawn.tscn::82d65d18bd536f94eb8cce1f8437cb21::1786816502::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
 res://assets/objects/character_change.tscn::2d82424704343cf049e2a8fafc373081::1786022451::res://.godot/exported/133200997/export-c6a08ccaeed69fc6c8fa7e10814ca853-character_change.scn
 res://assets/objects/door.tscn::b2ddcd5fb0004488e435fbfb70ff5fdb::1786670800::res://.godot/exported/133200997/export-4e9c35fcf9558d38379e4f64042309e4-door.scn
 res://assets/objects/explosive_sin.tscn::f0461701e9c46885d614401e3a627b58::1786769164::res://.godot/exported/133200997/export-ff9c2a0f1f934df52dd4368fbc664728-explosive_sin.scn
