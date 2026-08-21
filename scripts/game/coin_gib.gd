@@ -14,7 +14,9 @@ var main_tween : Tween
 
 func _process(delta : float) -> void:
 	super._process(delta)
-	if collect and Manager._get_world().ticks > collect_at:
+	if delta <= 0:
+		return
+	if collect and Manager._get_world().ticks > collect_at and !main_tween:
 		_check_pit()
 
 var collect : bool

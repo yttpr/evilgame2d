@@ -20,15 +20,28 @@
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="12_ayaf2"]
 [ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="12_hembm"]
 [ext_resource type="Resource" uid="uid://e3c04oph7jau" path="res://assets/weapons/radioscope.tres" id="12_xnclt"]
+[ext_resource type="Shader" uid="uid://cxy75qw336ti6" path="res://sprites/characters/shaders/walloutline.gdshader" id="14_dxrr8"]
+[ext_resource type="Script" uid="uid://basegtvj2kev" path="res://scripts/player/frame_copy.gd" id="14_ocs0c"]
 [ext_resource type="Resource" uid="uid://cmjw3ypxm44ph" path="res://assets/weapons/shotgun.tres" id="15_g7yvp"]
 [ext_resource type="Resource" uid="uid://cof8aewqlh05i" path="res://assets/weapons/revolver_sin.tres" id="18_gbbdu"]
 [ext_resource type="Script" uid="uid://wmeuqrwmgsqj" path="res://scripts/game/fps_counter.gd" id="20_tlwws"]
 [ext_resource type="PackedScene" uid="uid://y0vlg11e8aqo" path="res://assets/ui/load_in.tscn" id="21_qa25k"]
 [ext_resource type="PackedScene" uid="uid://dii3hjvpfspxj" path="res://assets/ui/player_ui.tscn" id="22_7vkm2"]
 [ext_resource type="Script" uid="uid://dfbo5cmcmn5ye" path="res://scripts/player/interaction_zone.gd" id="25_rcrbx"]
+[ext_resource type="Script" uid="uid://b4p350jv3c3hl" path="res://scripts/player/shift_shower.gd" id="29_sd4fq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hv2lo"]
 b = Vector2(100, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxrr8"]
+shader = ExtResource("14_dxrr8")
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/outline_mod = -1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sd4fq"]
+shader = ExtResource("14_dxrr8")
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/outline_mod = -1.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqpvn"]
 radius = 16.0
@@ -46,7 +59,7 @@ radius = 85.41
 offsets = PackedFloat32Array(0, 0.8918269, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6q24c"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1cm6p"]
 gradient = SubResource("Gradient_gxmte")
 fill = 1
 fill_from = Vector2(0.5086806, 0.5190972)
@@ -124,6 +137,13 @@ metadata/_custom_type_script = "uid://bhrha2whv1k5o"
 position = Vector2(59, 0)
 shape = SubResource("SegmentShape2D_hv2lo")
 
+[node name="FrameCopy" type="Sprite2D" parent="image/weapon" unique_id=160983737 node_paths=PackedStringArray("source")]
+z_index = 3
+material = SubResource("ShaderMaterial_dxrr8")
+script = ExtResource("14_ocs0c")
+source = NodePath("..")
+metadata/_custom_type_script = "uid://basegtvj2kev"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
 script = ExtResource("6_o4qoj")
 
@@ -136,6 +156,12 @@ position = Vector2(18, -57)
 rotation = 2.443461
 texture = ExtResource("10_g7yvp")
 hframes = 2
+
+[node name="outline" type="Sprite2D" parent="image" unique_id=1727083867 node_paths=PackedStringArray("source")]
+z_index = 2
+material = SubResource("ShaderMaterial_sd4fq")
+script = ExtResource("14_ocs0c")
+source = NodePath("..")
 
 [node name="camera" type="Camera2D" parent="." unique_id=1559194128 node_paths=PackedStringArray("follow_node", "ui")]
 script = ExtResource("5_5pd7k")
@@ -247,15 +273,38 @@ texture = ExtResource("11_tc657")
 [node name="cam_follow_node" type="Node2D" parent="." unique_id=1992406294]
 position = Vector2(0, -45)
 
-[node name="floor_light" type="PointLight2D" parent="." unique_id=1931839370]
+[node name="light_holder" type="Node2D" parent="." unique_id=939164862]
+visible = false
+script = ExtResource("29_sd4fq")
+
+[node name="floor_light" type="PointLight2D" parent="light_holder" unique_id=178317267]
+z_index = -1
+color = Color(0.84, 0.84, 0.18480001, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_1cm6p")
+offset = Vector2(0, -10)
+texture_scale = 2.0
+
+[node name="wall_light" type="PointLight2D" parent="light_holder" unique_id=772052014]
 visible = false
 z_index = -1
-position = Vector2(0, -30)
 color = Color(0.84, 0.84, 0.18480001, 1)
-range_item_cull_mask = 16
+energy = 0.5
+range_item_cull_mask = 4
 shadow_enabled = true
-texture = SubResource("GradientTexture2D_6q24c")
-texture_scale = 4.5
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_1cm6p")
+offset = Vector2(0, -5)
+texture_scale = 2.0
+
+[node name="chara_light" type="PointLight2D" parent="light_holder" unique_id=649078975]
+z_index = -1
+position = Vector2(0, -75)
+color = Color(0.84, 0.84, 0.18480001, 1)
+range_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 2.0
 
 [connection signal="area_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]
 [connection signal="body_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]

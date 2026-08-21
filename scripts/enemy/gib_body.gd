@@ -73,6 +73,7 @@ func _process(delta : float) -> void:
 		if self.global_position.distance_to(Manager.Player.global_position) < 1000:
 			tick_time += 3
 		else:
+			tick_time += 5
 			_remove(8)
 
 var fall_in_pit : bool

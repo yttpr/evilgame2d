@@ -1,7 +1,8 @@
+FrameCopy
+Sprite2D
 Node2D
 LineEdit
 Control
-Sprite2D
 ColorRandomizeSprite
 BasicAudio
 CollisionShape2D

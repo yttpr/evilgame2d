@@ -4,6 +4,8 @@ extends BaseBody
 
 @export var enemydata : PackedScene
 func _spawn() -> void:
+	if !enemydata:
+		return
 	var enemy : BaseBody = enemydata.instantiate()
 	Manager._get_world().add_child(enemy)
 	enemy.universal_i_frames = 0.15

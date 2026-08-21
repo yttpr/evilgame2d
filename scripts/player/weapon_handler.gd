@@ -112,7 +112,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_R and !is_reloading:
 			_set_reload(true)
-		if event.keycode == KEY_SHIFT:
+		if event.keycode == KEY_TAB:
 			_change_weapon(gun_index + 1)
 		#get numkeys
 		if event.keycode == KEY_1:

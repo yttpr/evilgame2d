@@ -3,6 +3,7 @@ render_mode unshaded;
 
 // The output color for the outline
 uniform vec4 outline_color : source_color;
+uniform float outline_mod;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 void fragment() {
@@ -29,7 +30,7 @@ void fragment() {
 		
 		// If the summed alpha is too high, it means we're over the original texture
 		// and we don't want to draw this pixel; it's not part of the outline.
-		if (alpha >= 9.0) {
+		if (alpha >= 9.0 + outline_mod) {
 			alpha = 0.0;
 		}
 		
