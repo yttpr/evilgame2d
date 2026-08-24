@@ -2,7 +2,7 @@ class_name EnemySpawner
 
 extends Node2D
 
-@export var range_from_player : float = 800
+@export var range_from_player : float = 1000
 @export var spawn_cap : int = 8
 
 @export var data : EnemySpawnList

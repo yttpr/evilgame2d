@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dv87xh7ssrow6"]
+
+[ext_resource type="Script" uid="uid://r4tnof8jady5" path="res://scripts/player/base_body.gd" id="1_t6pco"]
+[ext_resource type="Resource" uid="uid://bc7v7u81qf82i" path="res://assets/enemies/gibs/turret_gibs.tres" id="2_t6pco"]
+[ext_resource type="AudioStream" uid="uid://c5njev2e2b37t" path="res://audio/noise/enemies/sign_hit.wav" id="3_t6pco"]
+[ext_resource type="Texture2D" uid="uid://d10tvtsr4y54w" path="res://sprites/enemies/EvilGame2D_turret_WIP.png" id="4_t6pco"]
+[ext_resource type="Script" uid="uid://do3xix1tlgl73" path="res://scripts/enemy/lookonly_animator.gd" id="5_t6pco"]
+[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="6_sa0yg"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="7_3lpbd"]
+[ext_resource type="Script" uid="uid://uvpai4td262g" path="res://scripts/player/character_hitbox.gd" id="8_rry1o"]
+[ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="9_gyp7r"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="10_ph2uq"]
+[ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="11_l7dhh"]
+[ext_resource type="Script" uid="uid://cnvgetguyhbas" path="res://scripts/enemy/homing_pathfinding.gd" id="12_sx3x0"]
+[ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="13_stm7m"]
+[ext_resource type="PackedScene" uid="uid://cqdbiqn04yp3h" path="res://assets/projectile/TurretBullet.tscn" id="14_t6pco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
+size = Vector2(61, 101)
+
+[node name="Turret" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
+collision_layer = 544
+collision_mask = 8
+script = ExtResource("1_t6pco")
+sprites = NodePath("image")
+HP = 15
+healthtype = "Sin"
+gibs = ExtResource("2_t6pco")
+hit_sound = ExtResource("3_t6pco")
+hit_mod = 10.0
+marker = NodePath("marker_holder/marker")
+mov_spd = 0
+inertia_decay = 0.0
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("mind", "weapon", "body", "hitbox", "audio")]
+light_mask = 8
+texture = ExtResource("4_t6pco")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("5_t6pco")
+look_towards_player = true
+mind = NodePath("../brain")
+weapon = NodePath("../EnemyWeapon")
+body = NodePath("..")
+hitbox = NodePath("../hitbox")
+footstep = ExtResource("6_sa0yg")
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("7_3lpbd")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=340127500 node_paths=PackedStringArray("body")]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("8_rry1o")
+body = NodePath("..")
+hitbox_type = "Single"
+sources = Array[String](["Hitscan"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=72484899]
+position = Vector2(-1, -11)
+shape = SubResource("RectangleShape2D_nubg3")
+
+[node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]
+position = Vector2(0, -133)
+script = ExtResource("9_gyp7r")
+marker = NodePath("marker")
+max = 6.0
+time = 4.0
+
+[node name="marker" type="Sprite2D" parent="marker_holder" unique_id=1398509414]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 5
+material = ExtResource("10_ph2uq")
+texture = ExtResource("11_l7dhh")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
+script = ExtResource("12_sx3x0")
+max_range = 500.0
+wander_speed = 0.0
+Movable = NodePath("..")
+Weapon = NodePath("../EnemyWeapon")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+navigation_layers = 4
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="EnemyWeapon" type="Node2D" parent="." unique_id=1496392314 node_paths=PackedStringArray("weapon", "brain")]
+script = ExtResource("13_stm7m")
+weapon = NodePath("pointer")
+bullet = ExtResource("14_t6pco")
+source_name = "Enemy_Projectile"
+knockback = 500.0
+damage_type = "Sin"
+dmg_amt = 1
+shot_variance = 0.07
+charge_time = 3.0
+max_clip = 32
+shot_delay = 0.08
+reload_time = 2.0
+brain = NodePath("../brain")
+break_aim_if_lost = true
+visible_aim = true
+max_aim_width = 3.0
+line_length = 500.0
+metadata/_custom_type_script = "uid://dap3uvgj16hat"
+
+[node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
+position = Vector2(0, -64)
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]
