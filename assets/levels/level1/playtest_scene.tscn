@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://df2wlh6wycupb" path="res://assets/objects/single_use_door.tscn" id="15_nhmve"]
 [ext_resource type="PackedScene" uid="uid://dqocqu0dre5x7" path="res://assets/objects/stone_tower.tscn" id="16_3xvpc"]
 [ext_resource type="PackedScene" uid="uid://bj4q7m6aham57" path="res://assets/objects/shadow_crate.tscn" id="16_nhmve"]
-[ext_resource type="PackedScene" uid="uid://dv87xh7ssrow6" path="res://assets/enemies/turret.tscn" id="17_3xvpc"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -369,6 +368,3 @@ position = Vector2(6389, -282)
 
 [node name="Tower7" parent="." unique_id=200371061 instance=ExtResource("16_3xvpc")]
 position = Vector2(6503, -225)
-
-[node name="Turret" parent="." unique_id=624336840 instance=ExtResource("17_3xvpc")]
-position = Vector2(300, 436)
