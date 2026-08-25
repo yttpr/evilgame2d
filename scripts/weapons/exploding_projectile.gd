@@ -41,4 +41,4 @@ func _shoot_buddy(dir : Vector2) -> void:
 	else:
 		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_all)
 	proj.y_change = shoot_from.position.y
-	proj._shoot(dir, shoot_from.global_position)
+	proj.call_deferred("_shoot", dir, shoot_from.global_position)

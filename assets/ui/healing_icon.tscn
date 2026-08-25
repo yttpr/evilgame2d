@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://csb50gn00xi2i"]
+
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="1_mhh7a"]
+[ext_resource type="Texture2D" uid="uid://ckrme788cy7vt" path="res://sprites/ui/heart_icon.png" id="2_mhh7a"]
+[ext_resource type="Script" uid="uid://cq1brg3g4m7ni" path="res://scripts/game/damage_animator.gd" id="3_qqcdv"]
+
+[node name="HealIcon" type="Sprite2D" unique_id=1192352144]
+y_sort_enabled = true
+material = ExtResource("1_mhh7a")
+texture = ExtResource("2_mhh7a")
+offset = Vector2(0, -120)
+script = ExtResource("3_qqcdv")
+max_height = 50.0
+max_range = 50.0
+time = 1.3
+cos = Color(1, 0, 1, 1)
+sin = Color(1, 0, 0, 1)
+start_range = 5.0
+start_height = 100.0
+height_range = 20.0
+done_color = Color(1, 1, 1, 0)
+keep_color = true

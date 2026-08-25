@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c8db188qsgnxx"]
+
+[ext_resource type="Script" uid="uid://8jtmb1ah0wcv" path="res://scripts/weapons/random_accel_projectile.gd" id="1_ihhau"]
+[ext_resource type="AudioStream" uid="uid://dntlxer44dm7q" path="res://audio/noise/weapon/magic_pop.wav" id="2_ihhau"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_eqstw"]
+[ext_resource type="Texture2D" uid="uid://bq5ccou57bpas" path="res://sprites/weapons/projectiles/lollipop_bullet.png" id="4_ihhau"]
+[ext_resource type="Texture2D" uid="uid://cqdika07b3onm" path="res://sprites/weapons/projectiles/outlines/lollipop_bullet_outline.png" id="5_ftitf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_ihhau")
+max_accel = 350.0
+change_time = 0.15
+change_chance = 0.6
+slow_chance = 0.35
+life_chance = 0.5
+life_inc = 0.05
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 150.0
+radius = 10.0
+make_backup_colliders = true
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("2_ihhau")
+audio_mod = 10.0
+make_gibs = true
+death_quote = Array[String](["\"My mechanical friend.\"", "\"I want to meet you.\"", "\"Nice to meet you!\"", "\"Lets be friends!\"", "\"Let me follow you!\"", "\"Lets go together...\"", "\"Let me follow you... forever...\"", "\"I just want to be friends...\"", "\"Please don't hate me...\"", "\"I didn't mean it...\"", "\"I didn't mean to hurt you...\"", "\"I don't want to hurt you...\"", "\"I'm sorry... please don't hit me...\"", "\"Please don't abaondon me...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_eqstw")
+texture = ExtResource("4_ihhau")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1360880986]
+z_index = 2
+material = ExtResource("3_eqstw")
+texture = ExtResource("5_ftitf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

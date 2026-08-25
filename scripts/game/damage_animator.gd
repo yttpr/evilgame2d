@@ -14,6 +14,7 @@ extends Sprite2D
 @export var height_range : float
 
 @export var done_color : Color
+@export var keep_color : bool
 
 @export var dont_flip : bool
 
@@ -55,6 +56,8 @@ func _set_color(is_sin : bool) -> void:
 		self.self_modulate = sin
 	else:
 		self.self_modulate = cos
+	if keep_color:
+		self.done_color = Color(self.self_modulate.r, self.self_modulate.g, self.self_modulate.b, 0)
 
 func _is_done() -> void:
 	self.queue_free()

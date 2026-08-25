@@ -1,4 +1,4 @@
-res://assets/levels/level1/playtest_scene.tscn
+res://assets/ui/healing_icon.tscn
 res://sprites/characters/shaders/walloutline.gdshader
 res://assets/map/basic_ground_tileset.tres
 res://assets/map/basic_walls_tileset.tres
@@ -7,8 +7,12 @@ res://sprites/map/shader/wall_window.gdshader
 res://sprites/enemies/gibs/blood_floor_shader.gdshader
 res://sprites/objects/shader/shadow.gdshader
 res://sprites/characters/shaders/maskshader.gdshader
-res://scripts/enemy/lookonly_animator.gd
-res://assets/enemies/turret.tscn
-res://assets/projectile/FastLineBullet.tscn
-res://assets/projectile/TurretBullet.tscn
-res://assets/enemies/gibs/turret_gibs.tres
+res://scripts/game/manager.gd
+res://scripts/objects/health_interactible.gd
+res://assets/projectile/HarmonySubBullet.tscn
+res://scripts/game/damage_animator.gd
+res://assets/levels/level1/playtest_scene.tscn
+res://scripts/weapons/exploding_projectile.gd
+res://assets/enemies/windle.tscn
+res://assets/projectile/WindleBullet.tscn
+res://assets/enemies/gibs/windle_gibs.tres

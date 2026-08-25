@@ -32,6 +32,8 @@ var world : LevelManager
 var base_damage_icon : PackedScene
 var base_weak_icon : PackedScene
 
+var base_heal_icon : PackedScene
+
 var base_hit_sound : AudioStream
 var reload_loop : AudioStream
 
@@ -215,7 +217,8 @@ func _ready() -> void:
 	
 	water_splash = ResourceLoader.load("res://assets/ui/water_splash.tscn")
 	splash_noise = ResourceLoader.load("res://audio/noise/ui/water_splash.ogg")
-
+	
+	base_heal_icon = preload("res://assets/ui/healing_icon.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -259,6 +262,21 @@ func _create_weak(loc : Vector2, is_sin : bool) -> void:
 	icon.global_position = loc
 	icon._begin()
 	icon._set_color(is_sin)
+	icon._animate()
+
+func _make_heal_popup(amt : int, loc : Vector2, is_sin : bool) -> void:
+	for i in amt:
+		_create_heal(loc, is_sin)
+
+func _create_heal(loc : Vector2, is_sin : bool, is_tan : bool = false, setzero : bool = false) -> void:
+	var icon : DamageIcon = base_heal_icon.instantiate()
+	if setzero:
+		icon.start_height = 15
+	_get_world().add_child(icon)
+	icon.global_position = loc
+	icon._begin()
+	if !is_tan:
+		icon._set_color(is_sin)
 	icon._animate()
 
 

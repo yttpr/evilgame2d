@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://lrrw5kn3qm64"]
+
+[ext_resource type="Texture2D" uid="uid://dubufnt3pk1mu" path="res://sprites/enemies/gibs/bolt.png" id="2_2aogv"]
+[ext_resource type="Texture2D" uid="uid://b67pomg6lhj03" path="res://sprites/enemies/gibs/windle_key.png" id="2_864as"]
+[ext_resource type="Texture2D" uid="uid://bgi5ye3mkr3ls" path="res://sprites/enemies/gibs/screw.png" id="4_6hf8k"]
+[ext_resource type="Texture2D" uid="uid://psunyvywxmxb" path="res://sprites/enemies/gibs/small_gear.png" id="5_hxfaa"]
+[ext_resource type="Texture2D" uid="uid://bh3yja2iag6ab" path="res://sprites/enemies/gibs/spring.png" id="6_f2sjx"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="7_nqpps"]
+
+[resource]
+script = ExtResource("7_nqpps")
+coins = 1
+blood_amt = 1
+blood_color_1 = Color(0.8509804, 0.8509804, 0.8509804, 0.67058825)
+blood_color_2 = Color(0, 0, 0, 0.21960784)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("2_2aogv"), ExtResource("2_864as"), ExtResource("4_6hf8k"), ExtResource("5_hxfaa"), ExtResource("6_f2sjx")])
+img_amts = Array[int]([1, 1, 1, 2, 1])
+weights = Array[float]([0.8, 1.0, 0.8, 1.0, 1.0])
+does_rotate = Array[bool]([true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

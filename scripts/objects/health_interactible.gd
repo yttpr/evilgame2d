@@ -38,6 +38,7 @@ func _run() -> void:
 	Manager.Player.HP += 1
 	Manager.Player.ui.Health._set_current_health(Manager.current_hp)
 	Manager._play_oneshot(self.global_position, sound, audio_mod)
+	Manager._make_heal_popup(1, Manager.Player.global_position, Manager.Player.healthtype == "Sin")
 
 func _on_nearest() -> void:
 	if body.destroyed:
