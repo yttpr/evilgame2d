@@ -10,7 +10,7 @@ radius = 1.0
 
 [node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 40
 script = ExtResource("1_d4048")
 cascade_amount = 5
 cascade_mod = 0.8

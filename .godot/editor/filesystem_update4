@@ -38,3 +38,6 @@ res://assets/projectile/ToMouseFastLineBullet.tscn
 res://assets/weapons/wtmiyr.tres
 res://assets/weapons/ewlau.tres
 res://assets/projectile/TwoFastLineBullet.tscn
+res://assets/projectile/CascadeBullet.tscn
+res://assets/weapons/cascade.tres
+res://assets/weapons/toygun_cos.tres

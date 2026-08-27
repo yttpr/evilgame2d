@@ -5,7 +5,7 @@ res://assets/enemies/gibs/machine_gibs.tres::2ad2683054a14a6d6fe239b450b9ce79::1
 res://assets/enemies/gibs/pawn_gibs.tres::bb88dee018140ece9d59b568c149960c::1785912819::res://.godot/exported/133200997/export-3591cef94cf9d8ba6037d099b80b8e79-pawn_gibs.res
 res://assets/enemies/gibs/pixel_gibs.tres::9bd0aad2b963b7b60d1010aa2579f1a1::1785912821::res://.godot/exported/133200997/export-38ce5c555d326e0f2ebc542dab489254-pixel_gibs.res
 res://assets/enemies/gibs/dog_gibs.tres::cb7e3000b3b0b12b6cedfe8c8eaced5d::1786659016::res://.godot/exported/133200997/export-8a54d656f56f79b82e9881427fdf24dd-dog_gibs.res
-res://assets/enemies/gibs/shooter_gibs.tres::1f6a2887d8ef2229ca457beb71cf34d8::1786256351::res://.godot/exported/133200997/export-dc5a35d48d808dfd902dfdcc69f11e31-shooter_gibs.res
+res://assets/enemies/gibs/shooter_gibs.tres::03fefbdb09de632d2fa5dd3d37bd88b8::1787812649::res://.godot/exported/133200997/export-dc5a35d48d808dfd902dfdcc69f11e31-shooter_gibs.res
 res://assets/enemies/gibs/test_enemy_gibs.tres::09a551115c86cf068ab2d13306cc5d23::1785912824::res://.godot/exported/133200997/export-009442620d42d2bbb8e8010783ec0732-test_enemy_gibs.res
 res://assets/enemies/gibs/touch_gibs.tres::854211787df1382da27463c099798cb1::1785912826::res://.godot/exported/133200997/export-e75aa98d9fd6863e7e9911e26db6b5f9-touch_gibs.res
 res://assets/enemies/spawns/spawn_dungeon.tres::f3e23e2b0094e990d84e32692b6aa698::1785683537::res://.godot/exported/133200997/export-0c30e6036e43df25747a18f7b8e62257-spawn_dungeon.res
@@ -53,10 +53,10 @@ res://default_bus_layout.tres::0e14fbe42ab44d034bfd6fbac6a643e7::1786301115::res
 res://assets/objects/light_source.tscn::18e8742eed8e0b786b641745f1644d39::1785835355::res://.godot/exported/133200997/export-d755762073182c00101ee03bbb776632-light_source.scn
 res://assets/ui/music.tscn::c61a7e92732ff3a519a125e1600c423e::1785973710::res://.godot/exported/133200997/export-2a058cbf4f7aa7d98f9e0dd820199c95-music.scn
 res://assets/characters/saturn_character.tres::8ace262a13288f17efee8c94fbe130d5::1786351425::res://.godot/exported/133200997/export-7c5dd5632ee090f13cbe7d1d11027e64-saturn_character.res
-res://assets/projectile/FastLineBullet.tscn::36218c56664baec0e5cabc96254484bd::1787576798::res://.godot/exported/133200997/export-00201c901dfe761893060d0c11a742b8-FastLineBullet.scn
+res://assets/projectile/FastLineBullet.tscn::36218c56664baec0e5cabc96254484bd::1787812992::res://.godot/exported/133200997/export-00201c901dfe761893060d0c11a742b8-FastLineBullet.scn
 res://assets/weapons/revolver_sin.tres::a774ac9ee2554091c0a20c4539bc89e4::1786661973::res://.godot/exported/133200997/export-62717d7c73e926a46cb1c4896178b107-revolver_sin.res
 res://assets/characters/clerk_character.tres::134ac7ca54a58567c074ecfc972f7dcc::1786080358::res://.godot/exported/133200997/export-628604140befc1210f0e96d59fea9e2a-clerk_character.res
-res://assets/levels/spawn.tscn::82d65d18bd536f94eb8cce1f8437cb21::1787662008::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
+res://assets/levels/spawn.tscn::129704d211dab98df6621d70fe37a2d2::1787814897::res://.godot/exported/133200997/export-92b23c2e0e10c1f0081d2054a1972a13-spawn.scn
 res://assets/objects/character_change.tscn::2d82424704343cf049e2a8fafc373081::1786022451::res://.godot/exported/133200997/export-c6a08ccaeed69fc6c8fa7e10814ca853-character_change.scn
 res://assets/objects/door.tscn::b2ddcd5fb0004488e435fbfb70ff5fdb::1786670800::res://.godot/exported/133200997/export-4e9c35fcf9558d38379e4f64042309e4-door.scn
 res://assets/objects/explosive_sin.tscn::ef88fa54c20dd0d5a9437b77dcb3ac01::1787662177::res://.godot/exported/133200997/export-ff9c2a0f1f934df52dd4368fbc664728-explosive_sin.scn
@@ -90,7 +90,7 @@ res://assets/levels/level1/level2/corridor.tscn::d3089a7d2b30912d34e7b55a421d082
 res://assets/levels/level1/level2/swapshop.tscn::a8dd0f5078678e32aa111a6263f5c406::1786052025::res://.godot/exported/133200997/export-b3ac91262e4e300762210adbe5af8a6e-swapshop.scn
 res://assets/levels/level1/untitled/iloveyou/iloveyou_room.tscn::062d06e0d7ebc9646d6c778eecf4b043::1787665233::res://.godot/exported/133200997/export-85f18d786a68611bc2c651e33c6c2326-iloveyou_room.scn
 res://assets/levels/level1/untitled/untitled_hallway.tscn::69cf92c64d7e36272fa3b71d0a99b626::1786091140::res://.godot/exported/133200997/export-b7a229f092cb2e139547b643b087c295-untitled_hallway.scn
-res://assets/levels/level1/playtest_scene.tscn::89913260deab94f872378318323f1459::1787805585::res://.godot/exported/133200997/export-36a8ba09efda5e930d72cc3abdad72f1-playtest_scene.scn
+res://assets/levels/level1/playtest_scene.tscn::cc8c75cb937a73a86bd8a10848d76b2c::1787812519::res://.godot/exported/133200997/export-36a8ba09efda5e930d72cc3abdad72f1-playtest_scene.scn
 res://assets/map/iloveyou_tileset.tres::9c1a8ea1b47fe56fe00205031b851217::1787799392::res://.godot/exported/133200997/export-93dacf22adf3379cf69c08ca938104f2-iloveyou_tileset.res
 res://assets/objects/shops/cursed_shop.tscn::d43d51d230119c1e532fedd91ca1f0df::1787662116::res://.godot/exported/133200997/export-d6386e24dcab522d8885b287a2271ce7-cursed_shop.scn
 res://assets/objects/shops/swap_shop.tscn::9640ef9d82634baad0aee1cb2b4934f6::1787662125::res://.godot/exported/133200997/export-8d8e6c03180960c551ee974f4af110e6-swap_shop.scn
@@ -116,7 +116,7 @@ res://assets/weapons/rotwillis.tres::3334e473ae9832af2c15d43a3fe43b89::178607183
 res://assets/weapons/screwdriver.tres::4283f7bcd97f2a152ee5eb675fbb9f08::1786049083::res://.godot/exported/133200997/export-c7eea240385aae491043eb7ed4425706-screwdriver.res
 res://assets/weapons/sord.tres::2c45d95dde8c799b5be4682e941954e6::1786061678::res://.godot/exported/133200997/export-72ffa02405c43cf0719118ced10a3806-sord.res
 res://assets/weapons/the_nail.tres::08c945ce38fad592a14c89380f799279::1786661992::res://.godot/exported/133200997/export-afb7db3c5791e29f6158a5305ef971a7-the_nail.res
-res://assets/weapons/toygun_cos.tres::f192403c88b2e56d43d708a29f1500f8::1786661996::res://.godot/exported/133200997/export-fb640027842b066f4b4b9cb2ecb2c81a-toygun_cos.res
+res://assets/weapons/toygun_cos.tres::f192403c88b2e56d43d708a29f1500f8::1787815105::res://.godot/exported/133200997/export-fb640027842b066f4b4b9cb2ecb2c81a-toygun_cos.res
 res://assets/enemies/lullaby.tscn::5d8e4e0b28145332155830d8a7ba9d12::1786412659::res://.godot/exported/133200997/export-6900a946784dae6ea94a4643992f004b-lullaby.scn
 res://assets/projectile/EyeballBullet.tscn::505236f887d41f3df59c839a6f76d5e0::1786592205::res://.godot/exported/133200997/export-83b547948c144a1f6796b3a354463af5-EyeballBullet.scn
 res://assets/enemies/gibs/delusion_gibs.tres::2afd22cc2e2b990060324bb17c989cb3::1786232255::res://.godot/exported/133200997/export-07d40729c6434abdc3a150ef83df17f2-delusion_gibs.res
@@ -240,7 +240,7 @@ res://assets/objects/gooby_cube.tscn::1748c892b357311d16163bdb961a2369::17876621
 res://assets/projectile/AnotherFloorFire.tscn::e593199a4af3a721db5b2c766ae7b2f0::1786769574::res://.godot/exported/133200997/export-8e752dadd1a28c01c2516e4f8185909f-AnotherFloorFire.scn
 res://assets/projectile/BouncelessHitscan.tscn::dbd683a792357bcedf686e5db8a6c659::1786611623::res://.godot/exported/133200997/export-4926b12c25f65023f95508e734fe8f21-BouncelessHitscan.scn
 res://assets/projectile/CardBullet.tscn::b9300b3ab5e7551d58eae267ad8082fa::1786657256::res://.godot/exported/133200997/export-484c8d1e84df4f310ca698d28eb1d91c-CardBullet.scn
-res://assets/projectile/CascadeBullet.tscn::8b01ef5909ba5093557ed89f4fe600b4::1786515499::res://.godot/exported/133200997/export-5a900746363eb5bc52d149ff35e7add4-CascadeBullet.scn
+res://assets/projectile/CascadeBullet.tscn::f26c82c109a8e4fc25d1a9a8ed2fdd3c::1787815113::res://.godot/exported/133200997/export-5a900746363eb5bc52d149ff35e7add4-CascadeBullet.scn
 res://assets/projectile/FasterLineBullet.tscn::141883554e31e20cfe059df9b9eb1eb4::1786515549::res://.godot/exported/133200997/export-795c5f9613cfed41eb268681da57c906-FasterLineBullet.scn
 res://assets/projectile/FirelineBullet.tscn::2cbb06fff10e16715e4ef3a326a29f08::1786769579::res://.godot/exported/133200997/export-bd237ad0f6b1d7edb5051c20039d5d49-FirelineBullet.scn
 res://assets/projectile/GamblingBullet.tscn::39d56068ebaf091627b0e7c249049b03::1786690702::res://.godot/exported/133200997/export-94c457a13a25d6fdf50ee45f12101192-GamblingBullet.scn
@@ -254,7 +254,7 @@ res://assets/projectile/SquareBullet.tscn::08d357c01c19d013b28a812e2d0eaa5f::178
 res://assets/projectile/TriangleBullet.tscn::25d63f16367e21b108a754198a621981::1786591841::res://.godot/exported/133200997/export-186b40a30a02a3a1176e3b96fc107ff1-TriangleBullet.scn
 res://assets/projectile/VaryWeakBullet.tscn::d67c4ca1cb1a5f94412efde822f45438::1786586796::res://.godot/exported/133200997/export-3090a967a2cd7d693b4e5ab33937e1ce-VaryWeakBullet.scn
 res://assets/weapons/brokengun.tres::b6f7ca59a3239cd6388b15d48fc1fe4e::1786661916::res://.godot/exported/133200997/export-02b48928631fcf258224cf755f78e1f6-brokengun.res
-res://assets/weapons/cascade.tres::73e9f56c537f1a781868ae25e01cb4af::1786514675::res://.godot/exported/133200997/export-cc6e022506e717a1287f25fa4c9cd5b5-cascade.res
+res://assets/weapons/cascade.tres::a2cd88b76f16e41b317c6c64cfe19a11::1787815113::res://.godot/exported/133200997/export-cc6e022506e717a1287f25fa4c9cd5b5-cascade.res
 res://assets/weapons/crossbow.tres::f8d7d904e26e0eef7f536a799a87717e::1786515526::res://.godot/exported/133200997/export-c71f04c76147c78c8598fef20fb02638-crossbow.res
 res://assets/weapons/fireline.tres::47e3ea66e2f3615d4651f9d198f17e9c::1786596214::res://.godot/exported/133200997/export-f64553b2bb8480e7ae929ae04b0a42cc-fireline.res
 res://assets/weapons/mechanicalsmg.tres::623fb416ca3161bfda5680f2b4231a59::1786510681::res://.godot/exported/133200997/export-49a076663ae26aaada760b63e171d356-mechanicalsmg.res
@@ -338,3 +338,9 @@ res://assets/enemies/gibs/lightbulbkin_gibs.tres::d50bca951b2fd76dea205d6d0b42a4
 res://assets/enemies/lightbulbkin.tscn::8b405a4626bb00df2d4b28f0b89b6ba0::1787790476::res://.godot/exported/133200997/export-cab984047b2071d54230b22a0631afcc-lightbulbkin.scn
 res://assets/projectile/SunBullet.tscn::6f09e40de730a1425dc1f400cf2bc9b4::1787788501::res://.godot/exported/133200997/export-86e27de323a862e35fafc02469a8e3d6-SunBullet.scn
 res://assets/projectile/SunSubBullet.tscn::aa5ec52ebb75c36be96c105424142c8c::1787788428::res://.godot/exported/133200997/export-e6e05d57083f7844c360921eed953c53-SunSubBullet.scn
+res://assets/characters/gibs/wtmiyr_gibs.tres::83a940e381e48fcc6eec22774f330c54::1787812674::res://.godot/exported/133200997/export-fce0c61e5c28e60d0ed84d124ceb6ebd-wtmiyr_gibs.res
+res://assets/characters/wtmiyr_character.tres::c59a1fd45e985b041144c920769c438f::1787814093::res://.godot/exported/133200997/export-f8513ce78f434d7931ccfea383adcc88-wtmiyr_character.res
+res://assets/projectile/InverseFastLineBullet.tscn::662c3002b486c07f25a28279897ceb97::1787814779::res://.godot/exported/133200997/export-7697e5e3d8eccca977248578dfbeeecd-InverseFastLineBullet.scn
+res://assets/projectile/TwoFastLineBullet.tscn::32e2dc560809fabca76f4ec3c74f3cb3::1787814811::res://.godot/exported/133200997/export-9efeb67d0742d369f360a691bd51d4d8-TwoFastLineBullet.scn
+res://assets/weapons/ewlau.tres::bdfdff10b192ef9278ad8c24b02ae008::1787814402::res://.godot/exported/133200997/export-bc3c8da5f779bc66a9772b861039ff3b-ewlau.res
+res://assets/weapons/wtmiyr.tres::66ea8026514f9cb07408dc4101092cc3::1787814642::res://.godot/exported/133200997/export-8db60384a7c70bfde671c77ca348350b-wtmiyr.res

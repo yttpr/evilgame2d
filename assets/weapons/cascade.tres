@@ -15,6 +15,7 @@ weapon_type = "Magic"
 damage_amt = 1
 damage_type = "Cos"
 knockback = 500.0
+pierce_amt = -1
 clip_size = 1
 reload_time = 5.0
 ready_audio = ExtResource("2_g66ul")
