@@ -20,6 +20,8 @@ func _run() -> void:
 	weapon.reload_tick = 999
 	#weapon.is_agro = false
 	weapon.aiming_tick = 0
+	weapon.process_mode = Node.PROCESS_MODE_DISABLED
+	weapon.brain.process_mode = Node.PROCESS_MODE_DISABLED
 	weapon.brain._set_moving(false)
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_IN)

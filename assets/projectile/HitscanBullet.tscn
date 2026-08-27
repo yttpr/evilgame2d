@@ -5,7 +5,7 @@
 
 [node name="HitscanBullet" type="Node2D" unique_id=13675771]
 script = ExtResource("1_qnqcv")
-collider_duration = 0.05
+collider_duration = 0.02
 bounces = true
 length = 2500.0
 type = "Cos"

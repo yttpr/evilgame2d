@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="11_57oe7"]
 [ext_resource type="Resource" uid="uid://cc5hx4rhh8ujk" path="res://assets/characters/hare_character.tres" id="11_fnjer"]
 [ext_resource type="Resource" uid="uid://j1spldbytug7" path="res://assets/characters/snail_character.tres" id="12_lxhbm"]
+[ext_resource type="Resource" uid="uid://dqrols46htm5t" path="res://assets/characters/wtmiyr_character.tres" id="13_ugcpy"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -80,6 +81,10 @@ chara = ExtResource("11_fnjer")
 [node name="Character5" parent="." unique_id=698421358 instance=ExtResource("8_sh8wr")]
 position = Vector2(1035, 94)
 chara = ExtResource("12_lxhbm")
+
+[node name="Character6" parent="." unique_id=1470378784 instance=ExtResource("8_sh8wr")]
+position = Vector2(1087, 389)
+chara = ExtResource("13_ugcpy")
 
 [node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("9_fivbj")]
 position = Vector2(512, 256)

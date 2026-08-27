@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ds27c83tgm600"]
+
+[ext_resource type="PackedScene" uid="uid://ct85dnxya0h62" path="res://assets/projectile/InverseFastLineBullet.tscn" id="1_qk1xj"]
+[ext_resource type="AudioStream" uid="uid://b386uaj2ymxb5" path="res://audio/noise/weapon/static_ready.ogg" id="2_qk1xj"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_samla"]
+[ext_resource type="Texture2D" uid="uid://cxadgjwpdlwy" path="res://sprites/weapons/ewlau.png" id="4_qk1xj"]
+
+[resource]
+script = ExtResource("3_samla")
+id = "Ewlau"
+weapon_img = ExtResource("4_qk1xj")
+bullet = ExtResource("1_qk1xj")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 800.0
+full_auto = true
+clip_size = 3
+shot_delay = 0.15
+reload_time = 1.35
+aim_length = 55.0
+ready_audio = ExtResource("2_qk1xj")
+melee = true
+melee_range = 4.0
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

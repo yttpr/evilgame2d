@@ -42,6 +42,7 @@ Movable = NodePath("..")
 speed = 500.0
 nav_agent = NodePath("NavigationAgent2D")
 process_tick = 5
+delay_time = 0.2
 metadata/_custom_type_script = "uid://b3fbim5q5oloh"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="ProjectilePathfinding" unique_id=1189708997]

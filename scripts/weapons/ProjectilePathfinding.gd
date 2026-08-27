@@ -34,6 +34,7 @@ func _set_follow(field : Node2D, need_see := false) -> void:
 	if Follow_Target != old:
 		_set_target(Vector2(Follow_Target.global_position))
 
+@export var delay_time : float
 func _ready() -> void:
 	#speed = Movable.mov_spd * randf_range(0.85, 1.15)
 	can_move = true
@@ -64,6 +65,8 @@ func _process(_delta: float) -> void:
 		else:
 			_set_target(Vector2(Follow_Target.global_position))
 	
+
+
 
 func _can_see(targetNode : Node2D) -> bool:
 	var query = PhysicsRayQueryParameters2D.create(Movable.global_position, targetNode.global_position, Manager.collision_sight.collision_mask)
@@ -104,6 +107,10 @@ func _at_target() -> bool:
 	return nav_agent.is_navigation_finished()
 
 func _physics_process(delta: float) -> void:
+	if delay_time > 0:
+		delay_time -= delta
+		return
+	
 	if !Follow_Target:
 		return
 	if !can_move:

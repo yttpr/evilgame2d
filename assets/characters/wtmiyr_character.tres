@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://dqrols46htm5t"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_12kpb"]
+[ext_resource type="Resource" uid="uid://bdh1wgfqllc25" path="res://assets/weapons/wtmiyr.tres" id="2_12kpb"]
+[ext_resource type="Resource" uid="uid://ds27c83tgm600" path="res://assets/weapons/ewlau.tres" id="3_wjujs"]
+[ext_resource type="Resource" uid="uid://cjf6tlujhodvp" path="res://assets/characters/gibs/wtmiyr_gibs.tres" id="4_12kpb"]
+[ext_resource type="Texture2D" uid="uid://bilexuc7r6oc1" path="res://sprites/characters/EvilGame2D_wtmiyr_WIP.png" id="5_12kpb"]
+[ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="6_g371v"]
+
+[resource]
+script = ExtResource("6_g371v")
+id = "Wtmiyr"
+character = "Wtmiyr"
+image = ExtResource("5_12kpb")
+HP = 10
+healthtype = "Sin"
+base_weapons = Array[ExtResource("1_12kpb")]([ExtResource("2_12kpb"), ExtResource("3_wjujs")])
+gibs = ExtResource("4_12kpb")
+metadata/_custom_type_script = "uid://csfhp445ba2j"

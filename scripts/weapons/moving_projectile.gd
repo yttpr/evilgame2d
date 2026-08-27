@@ -19,9 +19,23 @@ var collider : DamageCollider
 
 @export var point_in_dir : bool
 
+@export var inverse : bool
+#@export var inverse_dist : float
+@export var by_mouse_dist : bool
+
 func _shoot(direction : Vector2, origin : Vector2) -> void:
 	super._shoot(direction, origin)
+	if inverse:
+		#origin += direction * inverse_dist
+		origin = Manager._get_world().to_global(Manager._get_world().get_local_mouse_position())
+		direction *= -1
+	if by_mouse_dist:
+		by_distance = true
+		distance = origin.distance_to(Manager._get_world().to_global(Manager._get_world().get_local_mouse_position()))
+	
+	#super._shoot(direction, origin)
 	self.global_position = origin - _offset()
+	lastPos = self.global_position
 	#img.offset = _offset() / img.scale.x
 	
 	if point_in_dir:
@@ -61,6 +75,9 @@ func _process(delta: float) -> void:
 			self._cleanup()
 	
 	var dist = body.velocity * delta
+	if by_distance:
+		if dist.length() > distance:
+			dist = dist.normalized() * distance
 	var collision = body.move_and_collide(dist)
 	if collision:
 		if bounces:
