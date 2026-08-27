@@ -4,6 +4,7 @@ extends BaseBody
 
 
 @export var marker_offset : Vector2 = Vector2.ZERO
+@export var has_self_marker : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,3 +23,6 @@ func _on_nearest() -> void:
 	pass
 func _leave_nearest() -> void:
 	pass
+
+
+var can_interact : bool = true

@@ -185,6 +185,8 @@ func _shoot() -> void:
 	proj._set_basic_data(dmg_amt, damage_type, knockback)
 	var mouse = to_global(get_local_mouse_position())
 	var dir = pointer.global_position.direction_to(mouse)
+	if weapon.global_position.distance_to(mouse) < weapon.global_position.distance_to(pointer.global_position):
+		dir = weapon.global_position.direction_to(mouse)
 	proj._set_collision(source_name, Manager.collision_walls, Player.Hitbox)
 	proj.pierce_amt = pierce_amt
 	proj.y_change = _get_offset()

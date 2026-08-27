@@ -15,7 +15,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
 
 [node name="explosive_sin" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("shoot_from", "image")]
-collision_layer = 44
+collision_layer = 264
 collision_mask = 0
 script = ExtResource("1_6c27c")
 bullet = ExtResource("2_mrplq")
@@ -40,7 +40,7 @@ texture = ExtResource("3_6c27c")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
 navigation_polygon = SubResource("NavigationPolygon_hv2lo")
-navigation_layers = 4
+navigation_layers = 6
 
 [node name="pointer" type="Node2D" parent="." unique_id=1208534671]
 position = Vector2(0, -38)

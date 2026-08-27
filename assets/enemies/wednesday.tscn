@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://dei5rd0futd4c"]
+
+[ext_resource type="Script" uid="uid://r4tnof8jady5" path="res://scripts/player/base_body.gd" id="1_4uhe7"]
+[ext_resource type="Resource" uid="uid://bg6imla4s1eyc" path="res://assets/enemies/gibs/enigma_gibs.tres" id="2_tw43q"]
+[ext_resource type="Texture2D" uid="uid://bpq6b3tq1puq6" path="res://sprites/enemies/EvilGame2D_phone_WIP.png" id="4_4uhe7"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="5_j8v4b"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="6_t24xt"]
+[ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="8_0euah"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="9_sca66"]
+[ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="10_wj423"]
+[ext_resource type="Script" uid="uid://cnvgetguyhbas" path="res://scripts/enemy/homing_pathfinding.gd" id="11_7nduy"]
+[ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_itoq1"]
+[ext_resource type="PackedScene" uid="uid://bmbds8fjjuo7f" path="res://assets/projectile/PhoneImplosionProjectile.tscn" id="12_kppsv"]
+[ext_resource type="AudioStream" uid="uid://dl7khjxj8r282" path="res://audio/noise/enemies/phone_loading.ogg" id="13_4uhe7"]
+[ext_resource type="Script" uid="uid://b06a3qo07ufff" path="res://scripts/enemy/phone_interactible.gd" id="13_tw43q"]
+[ext_resource type="Script" uid="uid://1cayia4by8hq" path="res://scripts/objects/flicker_light.gd" id="14_tw43q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[sub_resource type="Gradient" id="Gradient_gxmte"]
+offsets = PackedFloat32Array(0, 0.8918269, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1cm6p"]
+gradient = SubResource("Gradient_gxmte")
+fill = 1
+fill_from = Vector2(0.5086806, 0.5190972)
+fill_to = Vector2(0.8350694, 0.8315972)
+
+[node name="Wednesday" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
+collision_layer = 2048
+collision_mask = 8
+script = ExtResource("1_4uhe7")
+sprites = NodePath("image")
+HP = 99
+healthtype = "Cos"
+gibs = ExtResource("2_tw43q")
+marker = NodePath("marker_holder/marker")
+mov_spd = 60
+flies = true
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "audio")]
+light_mask = 8
+texture = ExtResource("4_4uhe7")
+offset = Vector2(0, -331)
+hframes = 6
+script = ExtResource("5_j8v4b")
+body = NodePath("..")
+audio_mod = -6.0
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("6_t24xt")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]
+position = Vector2(0, -133)
+script = ExtResource("8_0euah")
+marker = NodePath("marker")
+max = 6.0
+time = 4.0
+
+[node name="marker" type="Sprite2D" parent="marker_holder" unique_id=1398509414]
+self_modulate = Color(1, 1, 0, 1)
+z_index = 5
+material = ExtResource("9_sca66")
+texture = ExtResource("10_wj423")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
+script = ExtResource("11_7nduy")
+vision_range = 800.0
+limit_range = 50.0
+max_range = 500.0
+can_target_delay = 1.0
+wander_time = 5.0
+wander_speed = 35.0
+Movable = NodePath("..")
+Weapon = NodePath("../EnemyWeapon")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+navigation_layers = 2
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="EnemyWeapon" type="Node2D" parent="." unique_id=1496392314 node_paths=PackedStringArray("weapon", "brain", "audio_player")]
+script = ExtResource("12_itoq1")
+weapon = NodePath("pointer")
+bullet = ExtResource("12_kppsv")
+source_name = "Enemy_Projectile"
+knockback = 150.0
+damage_type = "Cos"
+dmg_amt = 2
+pierce_amt = -1
+charge_time = 10.0
+max_clip = 1
+reload_time = 1.0
+move_during_charge = true
+move_during_reload = true
+brain = NodePath("../brain")
+charge_sound = ExtResource("13_4uhe7")
+audio_player = NodePath("BasicAudio")
+charge_mod = 6.0
+metadata/_custom_type_script = "uid://dap3uvgj16hat"
+
+[node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
+position = Vector2(0, -64)
+
+[node name="BasicAudio" type="AudioStreamPlayer2D" parent="EnemyWeapon" unique_id=269241872]
+script = ExtResource("6_t24xt")
+metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[node name="PhoneInteractible" type="CharacterBody2D" parent="." unique_id=2068718622 node_paths=PackedStringArray("enemy", "weapon", "base_marker", "light")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("13_tw43q")
+enemy = NodePath("..")
+rise_dist = 6000.0
+rise_time = 16.0
+weapon = NodePath("../EnemyWeapon")
+base_marker = NodePath("../marker_holder")
+light = NodePath("../light_holder")
+has_self_marker = true
+flies = true
+metadata/_custom_type_script = "uid://b06a3qo07ufff"
+
+[node name="floor_size" type="CollisionShape2D" parent="PhoneInteractible" unique_id=699828944]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="light_holder" type="Node2D" parent="." unique_id=939164862 node_paths=PackedStringArray("lights")]
+position = Vector2(-3, -82)
+script = ExtResource("14_tw43q")
+lights = [NodePath("chara_light")]
+flicker = true
+flicker_chance = 1.0
+
+[node name="chara_light" type="PointLight2D" parent="light_holder" unique_id=649078975]
+z_index = -1
+position = Vector2(0, 1)
+color = Color(1, 0.5803922, 0.5882353, 1)
+range_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_1cm6p")
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

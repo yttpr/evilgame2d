@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://b5aam42y8tvmo"]
+
+[ext_resource type="Texture2D" uid="uid://cvrtksxgynr7v" path="res://sprites/enemies/gibs/bulb.png" id="1_eydp2"]
+[ext_resource type="Texture2D" uid="uid://df8yeoluf502o" path="res://sprites/enemies/gibs/bone.png" id="2_djk3p"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="2_mwnig"]
+[ext_resource type="Texture2D" uid="uid://cs54vsp37amlj" path="res://sprites/enemies/gibs/spine_bone.png" id="3_2bnt5"]
+[ext_resource type="Texture2D" uid="uid://dtosh1b1vrevb" path="res://sprites/enemies/gibs/tooth.png" id="4_yxj37"]
+
+[resource]
+script = ExtResource("2_mwnig")
+coins = 2
+blood_amt = 3
+blood_color_2 = Color(0.51, 0, 0.1275, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_eydp2"), ExtResource("2_djk3p"), ExtResource("3_2bnt5"), ExtResource("4_yxj37")])
+img_amts = Array[int]([1, 3, 2, 2])
+weights = Array[float]([1.0, 1.0, 1.0, 1.0])
+does_rotate = Array[bool]([true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

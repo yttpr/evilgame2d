@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://e8k0wn3cv6ds"]
+
+[ext_resource type="Script" uid="uid://db5i7crm1onvk" path="res://scripts/weapons/loop_explode_projectile.gd" id="1_uwdi1"]
+[ext_resource type="PackedScene" uid="uid://c5bl2k7c85btw" path="res://assets/projectile/SunSubBullet.tscn" id="2_nlecy"]
+[ext_resource type="AudioStream" uid="uid://bc7un0a3hbqx7" path="res://audio/noise/weapon/magic_low.ogg" id="3_nlecy"]
+[ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="4_nlecy"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="5_ri0f4"]
+[ext_resource type="Texture2D" uid="uid://cqji3yd78w06p" path="res://sprites/weapons/projectiles/sun_bullet.png" id="6_uwdi1"]
+[ext_resource type="Texture2D" uid="uid://b6hkfvjyvgn02" path="res://sprites/weapons/projectiles/outlines/sun_bullet_outline.png" id="7_nlecy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_uwdi1")
+interval_time = 2.0
+bullet = ExtResource("2_nlecy")
+source_name = "Enemy_Projectile_0"
+shoot_from = NodePath("Sprite2D")
+amount = 8
+explosion_sound = ExtResource("3_nlecy")
+volume_mod = 25.0
+collision_only_player = true
+does_explode = false
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 100.0
+radius = 16.0
+rot_spd = 14.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("4_nlecy")
+audio_mod = 20.0
+death_quote = Array[String](["\"You are my sunshine...\"", "\"My only sunshine...\"", "\"You make me happy...\"", "\"When skies are grey...\"", "\"Please don't take my sunshine away...\"", "\"How innocent...\"", "\"You are the light of my world.\"", "\"This little light of mine...\"", "\"I'm gonna let it shine...\"", "\"No more shame...\"", "\"No more darkness...\"", "\"No more dread...\"", "\"No more fear...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("5_ri0f4")
+texture = ExtResource("6_uwdi1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1680362029]
+z_index = 2
+material = ExtResource("5_ri0f4")
+texture = ExtResource("7_nlecy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

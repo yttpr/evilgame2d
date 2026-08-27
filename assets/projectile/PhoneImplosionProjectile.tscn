@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bmbds8fjjuo7f"]
+
+[ext_resource type="Script" uid="uid://dtk66fo50rmrk" path="res://scripts/weapons/implosion_projectile.gd" id="1_4x3ya"]
+[ext_resource type="PackedScene" uid="uid://bxpsh7j2uw0jb" path="res://assets/projectile/NailImplosionSubBullet.tscn" id="2_4x3ya"]
+[ext_resource type="AudioStream" uid="uid://0hdqn5c3dg3m" path="res://audio/noise/weapon/wednesday_attack.ogg" id="3_3bqkm"]
+[ext_resource type="AudioStream" uid="uid://dl28u8q1f3jw5" path="res://audio/noise/weapon/gun_sin_weak.wav" id="4_xbcde"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="5_ovbc6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_4x3ya")
+out_distance = 1200.0
+offset_name = "abcdefghijklmnopqrstuvwxyz"
+bullet = ExtResource("2_4x3ya")
+source_name = "Enemy_Projectile"
+shoot_from = NodePath("Sprite2D")
+amount = 22
+randomize_pitch = true
+explosion_sound = ExtResource("3_3bqkm")
+collision_only_player = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 600.0
+radius = 16.0
+rot_spd = 14.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("4_xbcde")
+audio_mod = 10.0
+death_quote = Array[String](["\"Don't pick up. Just listen.\"", "\"She breathes...\"", "\"She screams...\"", "\"Don't announce your presence.\"", "\"Don't let her know.\"", "\"Don't speak up.\"", "\"You're such a good listener.\"", "\"Remain unaware.\"", "\"Stay ignorant.\"", "\"Eyes that don't see.\"", "\"Ears that don't hear.\"", "\"Mouth that can't speak.\"", "\"Mouth that only screams.\"", "\"No hands. No presence.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("5_ovbc6")
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

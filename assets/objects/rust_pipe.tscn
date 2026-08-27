@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d28peeqendecl"]
+
+[ext_resource type="Script" uid="uid://jcw3xalnk47g" path="res://scripts/enemy/FrameSetDestructible.gd" id="1_rhd7q"]
+[ext_resource type="Resource" uid="uid://ch13wwj3dcj4a" path="res://assets/objects/rust_gibs.tres" id="2_ha6p0"]
+[ext_resource type="Texture2D" uid="uid://bytdnsanbmb0f" path="res://sprites/objects/rust_pipe.png" id="3_rhd7q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+
+[node name="RustCeiling" type="StaticBody2D" unique_id=1582467727 node_paths=PackedStringArray("image")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_rhd7q")
+img_rot = -45.0
+HP = 999
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_ha6p0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140620617]
+light_mask = 0
+z_index = 1
+position = Vector2(1, -226)
+rotation = -0.7853982
+texture = ExtResource("3_rhd7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868069766]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2076066267]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 0

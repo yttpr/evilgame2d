@@ -3,11 +3,15 @@ extends Node2D
 @export var dist : float = 16
 @export var time : float = 5
 
+@export var random_delay : bool
+
 var source : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	source = self.global_position
+	if random_delay:
+		await get_tree().create_timer(randf_range(0, time * 2)).timeout
 	_go_up()
 
 func _go_up() -> void:

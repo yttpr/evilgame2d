@@ -38,4 +38,5 @@ func _update_nearest() -> void:
 			dist = lent
 			nearest = obj
 	
-	pathfinder._set_follow(nearest)
+	if nearest:
+		pathfinder._set_follow(nearest)

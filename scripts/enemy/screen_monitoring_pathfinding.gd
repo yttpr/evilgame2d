@@ -50,6 +50,11 @@ func _process(delta: float) -> void:
 	
 	if !Follow_Target:
 		Weapon.is_agro = false
+	
+	if superhot_weapon and Manager.Player.velocity.length() <= 0:
+		Weapon.is_agro = false
+
+@export var superhot_weapon : bool
 
 func _screen_entered() -> void:
 	on_screen = true

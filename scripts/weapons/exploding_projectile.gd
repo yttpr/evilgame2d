@@ -10,7 +10,8 @@ extends MovingProjectile
 @export var randomize_pitch : bool
 
 func _cleanup() -> void:
-	_explode()
+	if does_explode:
+		_explode()
 	super._cleanup()
 
 @export var explosion_sound : AudioStream
@@ -42,3 +43,7 @@ func _shoot_buddy(dir : Vector2) -> void:
 		proj._set_collision(source_name, Manager.collision_walls, Manager.collision_all)
 	proj.y_change = shoot_from.position.y
 	proj.call_deferred("_shoot", dir, shoot_from.global_position)
+
+
+
+@export var does_explode : bool = true

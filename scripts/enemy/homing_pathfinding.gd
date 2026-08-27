@@ -65,9 +65,13 @@ func _process(delta: float) -> void:
 	
 	#deagro
 	if !_can_see(Follow_Target):
-		Weapon.is_agro = false
+		if Weapon.break_aim_if_lost and Weapon.aiming_tick > 0:
+			#print("end by cant see")
+			Weapon.is_agro = false
 	if Movable.global_position.distance_to(Follow_Target.global_position) > max_range:
-		Weapon.is_agro = false
+		if Weapon.break_aim_if_lost and Weapon.aiming_tick > 0:
+			#print("end by out of range")
+			Weapon.is_agro = false
 	
 	if !Weapon.is_agro:
 		slow_down = false
@@ -75,7 +79,8 @@ func _process(delta: float) -> void:
 			check_tick -= delta
 			if check_tick <= 0:
 				Weapon._set_agro(Follow_Target)
-				_set_moving(false)
+				if !Weapon.move_during_charge:
+					_set_moving(false)
 		else:
 			_set_moving(true)
 			slow_down = false

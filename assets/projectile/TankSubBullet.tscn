@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ch1nn4jqj0roi"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_savsi"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_k6a0t"]
+[ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="3_rka5s"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="4_dbqk0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_savsi")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 300.0
+radius = 14.0
+rot_spd = 4.0
+pierce_amt = -1
+by_lifetime = true
+lifetime = 0.35
+audio_mod = -2.0
+make_gibs = true
+death_quote = Array[String](["\"You blew it...\"", "\"Collateral!\"", "\"Take cover!!\"", "\"Uh oh...\"", "\"Did I do that..?\"", "\"Legalize nuclear bombs.\"", "\"Spudow!\"", "\"Boom.\"", "\"Oops...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("2_k6a0t")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_rka5s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=824344362]
+z_index = 2
+material = ExtResource("2_k6a0t")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_dbqk0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

@@ -93,6 +93,7 @@ func _prep_collision_base() -> void:
 	collision_onlyEnemies = Area2D.new()
 	collision_onlyEnemies.set_collision_mask_value(1, false)
 	collision_onlyEnemies.set_collision_mask_value(6, true)
+	collision_onlyEnemies.set_collision_mask_value(9, true)
 	self.add_child(collision_onlyEnemies)
 	
 	collision_pit = Area2D.new()
@@ -175,6 +176,8 @@ var splash_noise : AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	RenderingServer.set_default_clear_color(Color.BLACK)
+	
 	AudioServer.set_bus_layout(ResourceLoader.load("res://audio/control/noise_bus.tres"))
 	
 	run_bools = {}

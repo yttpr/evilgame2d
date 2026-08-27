@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cs46f0m8df04j"]
+
+[ext_resource type="Script" uid="uid://71j5awutvofc" path="res://scripts/weapons/exploding_projectile.gd" id="1_1suew"]
+[ext_resource type="PackedScene" uid="uid://ch1nn4jqj0roi" path="res://assets/projectile/TankSubBullet.tscn" id="2_llf7g"]
+[ext_resource type="AudioStream" uid="uid://dawfia5p5hplf" path="res://audio/noise/weapon/explosion_light.ogg" id="3_ruv3n"]
+[ext_resource type="AudioStream" uid="uid://btcv6uvdu85km" path="res://audio/noise/weapon/explosion_low.ogg" id="4_1suew"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="5_0lrnf"]
+[ext_resource type="Texture2D" uid="uid://rive6cnfb6c2" path="res://sprites/weapons/projectiles/verybig_bullet.png" id="6_1suew"]
+[ext_resource type="Texture2D" uid="uid://br0tu278ig0et" path="res://sprites/weapons/projectiles/outlines/verybig_bullet_outline.png" id="7_llf7g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_1suew")
+bullet = ExtResource("2_llf7g")
+source_name = "Enemy_Projectile_0"
+shoot_from = NodePath("Sprite2D")
+amount = 16
+explosion_sound = ExtResource("3_ruv3n")
+volume_mod = 25.0
+collision_only_player = true
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 285.0
+radius = 20.0
+point_in_dir = true
+by_lifetime = true
+lifetime = 30.0
+tracer_width = 16.0
+tracer_time = 0.6
+shot_sound = ExtResource("4_1suew")
+audio_mod = 35.0
+death_quote = Array[String](["\"War.\"", "\"Nobody's to blame.\"", "\"History is only told by the victor.\"", "\"Nameless mass graves.\"", "\"Why do only I have to suffer?\"", "\"You should have to feel pain too.\"", "\"It's not just my fault...\"", "\"We were outgunned, outnumbered.\"", "\"Honor doesn't win.\"", "\"Just a number.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("5_0lrnf")
+texture = ExtResource("6_1suew")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=2109475119]
+z_index = 2
+material = ExtResource("5_0lrnf")
+texture = ExtResource("7_llf7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

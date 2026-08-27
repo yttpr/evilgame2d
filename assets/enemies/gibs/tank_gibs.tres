@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://bufspfn1utk63"]
+
+[ext_resource type="Texture2D" uid="uid://c402sdeegs6vv" path="res://sprites/ui/reload.png" id="1_ut8tr"]
+[ext_resource type="Texture2D" uid="uid://df8yeoluf502o" path="res://sprites/enemies/gibs/bone.png" id="2_gcybc"]
+[ext_resource type="Texture2D" uid="uid://nrrucdpupkvg" path="res://sprites/enemies/gibs/brain_matter_med.png" id="3_ximna"]
+[ext_resource type="Texture2D" uid="uid://b3sq8opvxn086" path="res://sprites/enemies/gibs/brain_matter_small.png" id="4_y312b"]
+[ext_resource type="Texture2D" uid="uid://cqvk621pex66l" path="res://sprites/enemies/gibs/round_eye.png" id="5_h2npr"]
+[ext_resource type="Texture2D" uid="uid://cs54vsp37amlj" path="res://sprites/enemies/gibs/spine_bone.png" id="6_o8yar"]
+[ext_resource type="Texture2D" uid="uid://2ykl16y4fnal" path="res://sprites/enemies/gibs/spine_bit.png" id="7_i238j"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="8_1u0cx"]
+[ext_resource type="Texture2D" uid="uid://dtosh1b1vrevb" path="res://sprites/enemies/gibs/tooth.png" id="8_fj4no"]
+[ext_resource type="Texture2D" uid="uid://b31568eu1tt5x" path="res://sprites/enemies/gibs/lungs.png" id="9_j4115"]
+[ext_resource type="Texture2D" uid="uid://cchqd7gvj1w0s" path="res://sprites/enemies/gibs/liver.png" id="10_m0gt8"]
+[ext_resource type="Texture2D" uid="uid://b57265iewmcua" path="res://sprites/enemies/gibs/tank/bigwheel.png" id="11_nnj7h"]
+[ext_resource type="Texture2D" uid="uid://csrapa03d3hjh" path="res://sprites/enemies/gibs/tank/smallwheel.png" id="12_lhykl"]
+[ext_resource type="Texture2D" uid="uid://dnl6uehriklro" path="res://sprites/enemies/gibs/tank/metalplate.png" id="13_ujsup"]
+[ext_resource type="Texture2D" uid="uid://g5ayj4jlifoc" path="res://sprites/enemies/gibs/tank/treadplate.png" id="14_r1yfo"]
+[ext_resource type="Texture2D" uid="uid://coh7r2du1el35" path="res://sprites/enemies/gibs/tank/handle.png" id="15_hfxa4"]
+[ext_resource type="Texture2D" uid="uid://u2uhlolyq0lp" path="res://sprites/enemies/gibs/tank/bolt.png" id="16_vjn30"]
+[ext_resource type="Texture2D" uid="uid://bboyvo1eus0ir" path="res://sprites/enemies/gibs/tank/bendpipe.png" id="17_66ens"]
+[ext_resource type="Texture2D" uid="uid://bai4m16f5cg2p" path="res://sprites/enemies/gibs/tank/straightpipe.png" id="18_pgxgc"]
+
+[resource]
+script = ExtResource("8_1u0cx")
+coins = 6
+blood_amt = 5
+blood_color_1 = Color(1, 0, 0, 1)
+blood_color_2 = Color(0.5686275, 0, 0.3529412, 1)
+floor_blood_amt = 2
+images = Array[Texture2D]([ExtResource("1_ut8tr"), ExtResource("2_gcybc"), ExtResource("3_ximna"), ExtResource("4_y312b"), ExtResource("5_h2npr"), ExtResource("6_o8yar"), ExtResource("7_i238j"), ExtResource("8_fj4no"), ExtResource("9_j4115"), ExtResource("10_m0gt8"), ExtResource("11_nnj7h"), ExtResource("12_lhykl"), ExtResource("13_ujsup"), ExtResource("14_r1yfo"), ExtResource("15_hfxa4"), ExtResource("16_vjn30"), ExtResource("17_66ens"), ExtResource("18_pgxgc")])
+img_amts = Array[int]([3, 3, 2, 3, 3, 4, 2, 2, 1, 2, 2, 4, 3, 4, 2, 3, 2, 2])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

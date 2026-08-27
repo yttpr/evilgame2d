@@ -61,7 +61,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Healing" type="StaticBody2D" parent="." unique_id=653630647 node_paths=PackedStringArray("image")]
-collision_layer = 44
+collision_layer = 264
 collision_mask = 0
 script = ExtResource("1_qdmxl")
 image = NodePath("Sprite2D")
@@ -76,7 +76,7 @@ shape = SubResource("RectangleShape2D_hv2lo")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Healing" unique_id=1958771761]
 navigation_polygon = SubResource("NavigationPolygon_hv2lo")
-navigation_layers = 4
+navigation_layers = 6
 
 [node name="floor_light" type="PointLight2D" parent="." unique_id=1192179798]
 z_index = -1

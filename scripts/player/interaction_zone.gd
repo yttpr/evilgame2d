@@ -21,6 +21,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ENTER or event.keycode == KEY_SPACE:
 			nearest._run()
+			_update_nearest()
 
 var ticks : int
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,7 +31,7 @@ func _process(delta: float) -> void:
 		ticks = 15
 		_update_nearest()
 	
-	if nearest != null:
+	if nearest != null and !nearest.has_self_marker:
 		indicator.visible = true
 		indicator.global_position = nearest.global_position + nearest.marker_offset
 	else:
@@ -58,6 +59,8 @@ func _update_nearest() -> void:
 	
 	var dist : float = INF
 	for obj in in_range:
+		if !obj.can_interact:
+			return
 		var lent = self.global_position.distance_to(obj.global_position)
 		if lent < dist:
 			dist = lent

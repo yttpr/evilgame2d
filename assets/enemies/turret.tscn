@@ -83,11 +83,13 @@ texture = ExtResource("11_l7dhh")
 
 [node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
 script = ExtResource("12_sx3x0")
-max_range = 500.0
+vision_range = 560.0
+max_range = 1500.0
 wander_speed = 0.0
 Movable = NodePath("..")
 Weapon = NodePath("../EnemyWeapon")
 nav_agent = NodePath("NavigationAgent2D")
+is_summon = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
 navigation_layers = 4

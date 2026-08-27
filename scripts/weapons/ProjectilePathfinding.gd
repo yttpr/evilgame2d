@@ -40,8 +40,8 @@ func _ready() -> void:
 	# Wait for the navigation map to be ready
 	await get_tree().physics_frame
 
-	nav_agent.path_desired_distance = 4.0
-	nav_agent.target_desired_distance = 4.0
+	nav_agent.path_desired_distance = 16.0
+	nav_agent.target_desired_distance = 32.0
 	nav_agent.max_speed = speed
 
 func _process(_delta: float) -> void:
@@ -110,6 +110,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if nav_agent.is_navigation_finished():
+		did_see = false
 		return
 
 	var next_pos := nav_agent.get_next_path_position()

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemySpawnList" format=3 uid="uid://c4qxntrhns2n4"]
+
+[ext_resource type="PackedScene" uid="uid://d35vl5itpal1t" path="res://assets/enemies/skeleton_shooter.tscn" id="1_nb524"]
+[ext_resource type="PackedScene" uid="uid://b7a6medvh0rfo" path="res://assets/enemies/camera.tscn" id="1_ol534"]
+[ext_resource type="PackedScene" uid="uid://bire7q2g1osa2" path="res://assets/enemies/windle.tscn" id="2_7ehgt"]
+[ext_resource type="PackedScene" uid="uid://dei5rd0futd4c" path="res://assets/enemies/wednesday.tscn" id="3_nb524"]
+[ext_resource type="PackedScene" uid="uid://cmswxt6owk86r" path="res://assets/enemies/pawn.tscn" id="4_kyad5"]
+[ext_resource type="PackedScene" uid="uid://c2c883yx03p43" path="res://assets/enemies/machine.tscn" id="6_1013g"]
+[ext_resource type="PackedScene" uid="uid://dw2123laj5s4i" path="res://assets/enemies/lightbulbkin.tscn" id="7_nb524"]
+[ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="8_brmtf"]
+
+[resource]
+script = ExtResource("8_brmtf")
+Enemies = Array[PackedScene]([ExtResource("1_ol534"), ExtResource("2_7ehgt"), ExtResource("3_nb524"), ExtResource("6_1013g"), ExtResource("4_kyad5"), ExtResource("1_nb524"), ExtResource("7_nb524")])
+Weights = Array[int]([4, 4, 2, 3, 4, 5, 3])
+metadata/_custom_type_script = "uid://b1js8q00adevy"

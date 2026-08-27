@@ -22,6 +22,7 @@ extends Node2D
 @export var shot_delay : float
 @export var reload_time : float
 
+@export var move_during_charge : bool
 @export var move_during_reload : bool
 @export var brain : GeneralPathfinding
 
@@ -35,6 +36,10 @@ var reload_tick : float
 var aiming_tick : float
 
 @export var walls_only : bool
+
+@export var charge_sound : AudioStream
+@export var audio_player : BasicAudio
+@export var charge_mod : float
 
 func _shoot(direction : Vector2) -> void:
 	# shoot
@@ -60,6 +65,7 @@ func _shoot(direction : Vector2) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_reload(false)
+	aiming_tick = 0
 	_update_color()
 	is_agro = false
 
@@ -71,6 +77,8 @@ func _set_agro(unit : Node2D) -> void:
 	_set_reload(false)
 	target = unit
 	_set_aim_dir()
+	if move_during_charge and brain:
+		brain._set_moving(true)
 
 func _set_aim_dir() -> void:
 	if !target:
@@ -80,6 +88,9 @@ func _set_aim_dir() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !is_agro:
+		if audio_player:
+			audio_player.stop()
+		aiming_tick = 0
 		return
 	
 	#do aiming logic
@@ -92,18 +103,25 @@ func _process(delta: float) -> void:
 	if aiming_tick > 0 and break_aim_if_lost:
 		if !_can_see(target):
 			is_agro = false
+			#print("end by internal")
 			return
-	
+	if debug:
+		print(aiming_tick)
 	if !stop_looking_while_aiming:
 		if !stop_looking_after_charge or aiming_tick > 0:
 			_set_aim_dir()
 	
 	#shoot
-	if aiming_tick <= 0 and delay_tick <= 0 and !is_reloading and current_clip > 0:
+	if aiming_tick <= 0 and delay_tick <= 0 and !is_reloading and current_clip > 0 and is_agro:
+		if audio_player:
+			audio_player.stop()
 		_shoot(aim_direction)
 	
 	if aiming_tick > 0:
 		aiming_tick -= delta
+		if aiming_tick < 0:
+			if audio_player:
+				audio_player.stop()
 	if delay_tick > 0:
 		delay_tick -= delta
 	if is_reloading:
@@ -123,6 +141,8 @@ func _set_reload(reloading : bool) -> void:
 	if reloading:
 		is_reloading = true
 		reload_tick = reload_time
+		if audio_player:
+			audio_player.stop()
 	else:
 		is_reloading = false
 		current_clip = max_clip
@@ -133,8 +153,12 @@ func _set_reload(reloading : bool) -> void:
 		aiming_tick = charge_time
 		if random_charge_time:
 			aiming_tick = randf_range(0, charge_time)
+		if aiming_tick > 0 and audio_player:
+			audio_player._play_sound(charge_sound, charge_mod)
 	if move_during_reload and brain:
 		brain._set_moving(reloading)
+	if move_during_charge and brain:
+		brain._set_moving(true)
 func _update_color() -> void:
 	if damage_type == "Sin":
 		aim_color = Manager.sin_color
@@ -225,3 +249,8 @@ func _can_see(targetNode : Node2D) -> bool:
 	if result:
 		return result.collider == targetNode
 	return true
+
+
+
+
+@export var debug : bool

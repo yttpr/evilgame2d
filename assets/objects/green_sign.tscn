@@ -23,7 +23,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
 
 [node name="Sign" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("image")]
-collision_layer = 44
+collision_layer = 264
 collision_mask = 0
 script = ExtResource("1_jk48y")
 image = NodePath("Sprite2D")
@@ -72,4 +72,4 @@ texture_scale = 2.5
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
 navigation_polygon = SubResource("NavigationPolygon_hv2lo")
-navigation_layers = 4
+navigation_layers = 6

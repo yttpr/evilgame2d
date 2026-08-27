@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://6y5we6gp0tc0"]
+
+[ext_resource type="Script" uid="uid://jcw3xalnk47g" path="res://scripts/enemy/FrameSetDestructible.gd" id="1_m6ks1"]
+[ext_resource type="Resource" uid="uid://ch13wwj3dcj4a" path="res://assets/objects/rust_gibs.tres" id="2_cums3"]
+[ext_resource type="Texture2D" uid="uid://25tvol3ycdso" path="res://sprites/objects/rust_tower.png" id="2_m6ks1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv2lo"]
+size = Vector2(128, 64)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, -42, 42, 42, -42, 42, -42, -42)])
+
+[node name="Tower" type="StaticBody2D" unique_id=653630647 node_paths=PackedStringArray("image")]
+collision_layer = 264
+collision_mask = 0
+script = ExtResource("1_m6ks1")
+HP = 999
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_cums3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562283018]
+position = Vector2(0, -128)
+texture = ExtResource("2_m6ks1")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337640463]
+shape = SubResource("RectangleShape2D_hv2lo")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 4

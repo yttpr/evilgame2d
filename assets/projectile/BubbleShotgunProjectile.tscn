@@ -29,7 +29,7 @@ lifetime = 10.0
 tracer_width = 8.0
 shot_sound = ExtResource("2_0yitt")
 make_gibs = true
-death_quote = Array[String](["\"Bubbles!!!\""])
+death_quote = Array[String](["\"Bubbles!!!\"", "\"Hi. My name is Gerald.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_8il8w")

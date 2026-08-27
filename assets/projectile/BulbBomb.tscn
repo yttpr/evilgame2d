@@ -23,7 +23,7 @@ rot_spd = 14.0
 by_lifetime = true
 lifetime = 0.01
 audio_mod = 10.0
-death_quote = Array[String](["\"You blew it...\"", "\"Collateral!\"", "\"Take cover!!\"", "\"Uh oh...\"", "\"Did I do that..?\"", "\"Legalize nuclear bombs.\"", "\"Spudow!\"", "\"Boom.\"", "\"Oops...\""])
+death_quote = Array[String](["\"You are my sunshine...\"", "\"My only sunshine...\"", "\"You make me happy...\"", "\"When skies are grey...\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("4_5prkr")

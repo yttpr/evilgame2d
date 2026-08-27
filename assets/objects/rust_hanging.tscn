@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dgii1ha4rp8rp"]
+
+[ext_resource type="Script" uid="uid://jcw3xalnk47g" path="res://scripts/enemy/FrameSetDestructible.gd" id="1_itesc"]
+[ext_resource type="Resource" uid="uid://ch13wwj3dcj4a" path="res://assets/objects/rust_gibs.tres" id="2_2dfjy"]
+[ext_resource type="Texture2D" uid="uid://usb32khlewnx" path="res://sprites/objects/rust_hangings.png" id="3_kykyh"]
+[ext_resource type="Script" uid="uid://b2aft4o34qsgs" path="res://scripts/objects/moon_animator.gd" id="4_2dfjy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hv2lo"]
+
+[node name="RustCeiling" type="StaticBody2D" unique_id=1582467727 node_paths=PackedStringArray("image")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_itesc")
+HP = 999
+image = NodePath("Sprite2D")
+gibs = ExtResource("2_2dfjy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140620617]
+light_mask = 0
+position = Vector2(1, -452)
+texture = ExtResource("3_kykyh")
+hframes = 2
+script = ExtResource("4_2dfjy")
+dist = 12.0
+time = 8.0
+random_delay = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868069766]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2076066267]
+navigation_polygon = SubResource("NavigationPolygon_hv2lo")
+navigation_layers = 0

@@ -17,10 +17,16 @@ extends BasicProjectile
 
 var collider : DamageCollider
 
+@export var point_in_dir : bool
+
 func _shoot(direction : Vector2, origin : Vector2) -> void:
 	super._shoot(direction, origin)
 	self.global_position = origin - _offset()
 	#img.offset = _offset() / img.scale.x
+	
+	if point_in_dir:
+		img.rotation = direction.angle()
+	
 	img.position = _offset()
 	body.velocity = direction * spd
 	

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://ch13wwj3dcj4a"]
+
+[ext_resource type="Texture2D" uid="uid://b0q2gqxcuqjp4" path="res://sprites/objects/gibs/rust_gear.png" id="1_yqk2h"]
+[ext_resource type="Texture2D" uid="uid://b57265iewmcua" path="res://sprites/enemies/gibs/tank/bigwheel.png" id="2_sdc5s"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="3_mlk7x"]
+[ext_resource type="Texture2D" uid="uid://dnl6uehriklro" path="res://sprites/enemies/gibs/tank/metalplate.png" id="3_svpoh"]
+[ext_resource type="Texture2D" uid="uid://u2uhlolyq0lp" path="res://sprites/enemies/gibs/tank/bolt.png" id="4_jswq5"]
+[ext_resource type="Texture2D" uid="uid://coh7r2du1el35" path="res://sprites/enemies/gibs/tank/handle.png" id="5_l4fir"]
+[ext_resource type="Texture2D" uid="uid://bai4m16f5cg2p" path="res://sprites/enemies/gibs/tank/straightpipe.png" id="6_ie7qj"]
+[ext_resource type="Texture2D" uid="uid://bboyvo1eus0ir" path="res://sprites/enemies/gibs/tank/bendpipe.png" id="7_13tnl"]
+
+[resource]
+script = ExtResource("3_mlk7x")
+images = Array[Texture2D]([ExtResource("1_yqk2h"), ExtResource("2_sdc5s"), ExtResource("3_svpoh"), ExtResource("4_jswq5"), ExtResource("5_l4fir"), ExtResource("6_ie7qj"), ExtResource("7_13tnl")])
+img_amts = Array[int]([3, 2, 5, 4, 2, 2, 2])
+weights = Array[float]([0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2])
+does_rotate = Array[bool]([true, true, true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

@@ -17,6 +17,7 @@ body = NodePath(".")
 spd = 300.0
 radius = 24.0
 rot_spd = 25.0
+make_backup_colliders = true
 pierce_amt = -1
 by_lifetime = true
 lifetime = 10.0
