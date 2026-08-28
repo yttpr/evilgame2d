@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bpogann4uuf5m"]
+
+[ext_resource type="Script" uid="uid://c76pjlipw2flx" path="res://scripts/weapons/hitscan_projectile.gd" id="1_lgfrk"]
+[ext_resource type="AudioStream" uid="uid://gl8ar22cfu3f" path="res://audio/noise/weapon/bite.wav" id="2_lgfrk"]
+
+[node name="HitscanBullet" type="Node2D" unique_id=13675771]
+script = ExtResource("1_lgfrk")
+collider_duration = 0.02
+length = 2500.0
+type = "Cos"
+dmg = 5
+knockback_mod = 3000.0
+by_lifetime = true
+lifetime = 0.5
+tracer_width = 10.0
+tracer_color = Color(1, 0, 0, 1)
+tracer_time = 0.5
+shot_sound = ExtResource("2_lgfrk")
+audio_mod = 10.0
+death_quote = Array[String](["\"Them on the outside, us on the inside.\"", "\"Don't tap on the glass.\"", "\"Peering through the window...\"", "\"Strangers in your neighborhood.\"", "\"A knock at the door...\"", "\"A wolf at the door...\"", "\"If nobody moves, nobody gets hurt.\"", "\"See nothing, say nothing.\"", "\"If you see something, say something.\"", "\"                               \"", "\"Nameless home invader.\"", "\"Someone new in the neighborhood...\""])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemySpawnList" format=3 uid="uid://e5jtmpy8qmh4"]
+
+[ext_resource type="PackedScene" uid="uid://cbqaq784ni27o" path="res://assets/enemies/hauntling.tscn" id="1_s78v8"]
+[ext_resource type="PackedScene" uid="uid://ct1ooywh5c6dt" path="res://assets/enemies/enigma.tscn" id="2_f228v"]
+[ext_resource type="PackedScene" uid="uid://dei5rd0futd4c" path="res://assets/enemies/wednesday.tscn" id="4_p4gyi"]
+[ext_resource type="PackedScene" uid="uid://cmswxt6owk86r" path="res://assets/enemies/pawn.tscn" id="4_psjmi"]
+[ext_resource type="PackedScene" uid="uid://djneu2ewdvqr6" path="res://assets/enemies/spectre.tscn" id="5_wifp4"]
+[ext_resource type="PackedScene" uid="uid://bgrwhwacrydk2" path="res://assets/enemies/nameless.tscn" id="6_v0bk0"]
+[ext_resource type="PackedScene" uid="uid://ccbcjrfch7c1l" path="res://assets/enemies/obelisk.tscn" id="7_s78v8"]
+[ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="8_84ha1"]
+
+[resource]
+script = ExtResource("8_84ha1")
+Enemies = Array[PackedScene]([ExtResource("1_s78v8"), ExtResource("2_f228v"), ExtResource("4_p4gyi"), ExtResource("5_wifp4"), ExtResource("6_v0bk0"), ExtResource("4_psjmi"), ExtResource("7_s78v8")])
+Weights = Array[int]([5, 3, 1, 5, 3, 2, 1])
+metadata/_custom_type_script = "uid://b1js8q00adevy"

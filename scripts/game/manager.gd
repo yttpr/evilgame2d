@@ -176,53 +176,124 @@ var splash_noise : AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var load_amt : float = 20.0
+	var load_cur : float = 0.0
+	
+	var loading : LoadingMenu = preload("res://assets/ui/loading_menu.tscn").instantiate()
+	loading._update_bar(load_cur / load_amt)
+	
+	Engine.time_scale = 0.0
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	RenderingServer.set_default_clear_color(Color.BLACK)
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	AudioServer.set_bus_layout(ResourceLoader.load("res://audio/control/noise_bus.tres"))
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	run_bools = {}
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	points = 0
 	coins = 0
 	base_menu = preload("res://assets/ui/menu.tscn")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	is_paused = false
 	in_menu = false
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	gibs = GibHandler.new()
 	self.add_child(gibs)
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	base_damage_icon = preload("res://assets/ui/damage_icon.tscn")
 	base_weak_icon = preload("res://assets/ui/weak_icon.tscn")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	base_hit_sound = ResourceLoader.load("res://audio/noise/ui/damage_generic.wav")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	reload_loop = ResourceLoader.load("res://audio/noise/weapon/reload_loop.wav")
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	sin_color = Color.from_rgba8(255, 0, 0)
 	cos_color = Color.from_rgba8(255, 0, 255)
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	_prep_collision_base()
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	bullet_gib = preload("res://assets/projectile/BulletGib.tscn")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	bright_mat = ResourceLoader.load("res://sprites/objects/shader/unshaded_material.tres")
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	coin_sprite = preload("res://assets/ui/coin_gib.tscn")
 	coin_noise = ResourceLoader.load("res://audio/noise/ui/coin.wav")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	Music._set_ambience(true)
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	door_noise = ResourceLoader.load("res://audio/noise/ui/door_close.ogg")
 	door_shake = ResourceLoader.load("res://audio/noise/ui/door_shake.ogg")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	ui_fail = ResourceLoader.load("res://audio/noise/ui/ui_fail.ogg")
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
 	
 	water_splash = ResourceLoader.load("res://assets/ui/water_splash.tscn")
 	splash_noise = ResourceLoader.load("res://audio/noise/ui/water_splash.ogg")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	base_heal_icon = preload("res://assets/ui/healing_icon.tscn")
 	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
+	if !is_paused:
+		Engine.time_scale = 1.0
+	loading.queue_free()
 	print("all loaded!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

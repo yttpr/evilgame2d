@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dcxdyia3t31xv"]
+
+[ext_resource type="Script" uid="uid://dpn705ynbsqky" path="res://scripts/player/loading_menu.gd" id="1_bxxs8"]
+[ext_resource type="Texture2D" uid="uid://ba6d4htuidg7e" path="res://sprites/ui/loading_bar.png" id="1_gsrbs"]
+[ext_resource type="Texture2D" uid="uid://cqe7jqgm01ns" path="res://sprites/ui/loading_image.png" id="2_bxxs8"]
+
+[node name="Loading" type="Node2D" unique_id=433024491 node_paths=PackedStringArray("bar")]
+z_index = 8
+script = ExtResource("1_bxxs8")
+bar = NodePath("bar/ColorRect")
+bar_length = 11.2
+
+[node name="bar" type="Sprite2D" parent="." unique_id=801439615]
+z_index = 18
+position = Vector2(574, 359)
+texture = ExtResource("1_gsrbs")
+
+[node name="ColorRect" type="ColorRect" parent="bar" unique_id=178797703]
+show_behind_parent = true
+offset_left = -221.0
+offset_top = -9.0
+offset_right = -181.0
+offset_bottom = 31.0
+scale = Vector2(11.2, 1.673)
+color = Color(0.80784315, 0.80784315, 0.80784315, 1)
+
+[node name="word" type="Sprite2D" parent="." unique_id=773387398]
+z_index = 18
+position = Vector2(575, 257)
+texture = ExtResource("2_bxxs8")

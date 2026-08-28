@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://ceecccgvbwc0n"]
+
+[ext_resource type="Texture2D" uid="uid://dbr50ro4o3d6u" path="res://sprites/weapons/projectiles/butterfly_bullet.png" id="1_gj1n5"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="2_80wy2"]
+[ext_resource type="Texture2D" uid="uid://c4xo4q888mpp1" path="res://sprites/weapons/projectiles/sparkle_bullet.png" id="2_87uu2"]
+
+[resource]
+script = ExtResource("2_80wy2")
+coins = 1
+blood_amt = 2
+blood_color_1 = Color(1, 1, 1, 1)
+blood_color_2 = Color(1, 1, 1, 0.53333336)
+floor_blood_amt = 2
+images = Array[Texture2D]([ExtResource("1_gj1n5"), ExtResource("2_87uu2")])
+img_amts = Array[int]([4, 6])
+weights = Array[float]([0.5, 0.3])
+does_rotate = Array[bool]([false, true])
+ignore_gravity = Array[bool]([true, true])
+unshaded = true
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

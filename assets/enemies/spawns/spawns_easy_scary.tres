@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnList" format=3 uid="uid://bs0q5sdjee4sr"]
+
+[ext_resource type="PackedScene" uid="uid://cgnu3s4j84qwl" path="res://assets/enemies/reaper.tscn" id="2_njud6"]
+[ext_resource type="PackedScene" uid="uid://bfdhp1m27uv7k" path="res://assets/enemies/sign.tscn" id="3_sik7q"]
+[ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="6_mvq2v"]
+
+[resource]
+script = ExtResource("6_mvq2v")
+Enemies = Array[PackedScene]([ExtResource("2_njud6"), ExtResource("3_sik7q")])
+Weights = Array[int]([3, 1])
+metadata/_custom_type_script = "uid://b1js8q00adevy"

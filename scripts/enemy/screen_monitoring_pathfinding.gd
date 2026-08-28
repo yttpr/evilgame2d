@@ -56,6 +56,18 @@ func _process(delta: float) -> void:
 
 @export var superhot_weapon : bool
 
+func _can_see(target : Node2D) -> bool:
+	if superhot_weapon and Manager.Player.velocity.length() <= 0:
+		return false
+	return super._can_see(target)
+func _can_target(targetNode : Node2D) -> bool:
+	if superhot_weapon and Manager.Player.velocity.length() <= 0:
+		return false
+	return super._can_target(targetNode)
+
+
+
+
 func _screen_entered() -> void:
 	on_screen = true
 func _screen_exited() -> void:

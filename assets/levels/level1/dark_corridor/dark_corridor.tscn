@@ -19,7 +19,7 @@
 y_sort_enabled = true
 script = ExtResource("1_xhnlw")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(288, 15), Vector2(3040, -2737)])
+entries = Array[Vector2]([Vector2(288, 15), Vector2(3040, -2737), Vector2(256, 1487)])
 songs = Array[AudioStream]([ExtResource("2_yk1le")])
 
 [node name="walking_layer" type="TileMapLayer" parent="." unique_id=1797222288]
@@ -117,9 +117,6 @@ position = Vector2(224, -2656)
 
 [node name="Crate7" parent="." unique_id=21539823 instance=ExtResource("10_0jtkx")]
 position = Vector2(352, -2656)
-
-[node name="WIP3" parent="." unique_id=369053226 instance=ExtResource("14_5gohp")]
-position = Vector2(288, 1504)
 
 [node name="Sign" parent="." unique_id=2085187614 instance=ExtResource("12_qf8tx")]
 position = Vector2(96, 1504)
@@ -983,3 +980,7 @@ frame_id = 1
 [node name="Tower14" parent="." unique_id=1952147998 instance=ExtResource("14_l77gu")]
 position = Vector2(3327, 2123)
 flip = true
+
+[node name="Door3" parent="." unique_id=86117691 instance=ExtResource("13_3cvrv")]
+position = Vector2(256, 1472)
+room = "res://assets/levels/level1/dark_corridor/darkworld/darkworld_1.tscn"

@@ -24,7 +24,7 @@ tracer_width = 12.0
 shot_sound = ExtResource("2_vplqn")
 audio_mod = 28.0
 make_gibs = true
-death_quote = Array[String](["\"Me when I get drafted to the skeleton war\"", "\"No bones about it!\"", "\"Headless hunter\"", "\"Gotcha.\"", "\"Nothing to report.\"", "\"Nothing of interest.\"", "\"Have some backbone.\"", "\"Everything you stand for will fall.\"", "\"Is this really all we amount to?\"", "\"Me and my groupies gonna get you!\"", "\"Why did we deserve to die?\"", "\"Is it me or you?\"", "\"Who killed you this time?\"", "\"Only following orders.\""])
+death_quote = Array[String](["\"I'm in your walls.\"", "\"I'm under your skin.\"", "\"I'm in your veins.\"", "\"I'm under your bed.\"", "\"I'm under your floorboards.\"", "\"Check under your nails.\"", "\"I'm in your head.\"", "\"Everywhere you can't see...\"", "\"Everywhere you can't hide...\"", "\"In the shadows of your house...\"", "\"In the corners of your room...\"", "\"I'm in your attic.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_d8l6r")

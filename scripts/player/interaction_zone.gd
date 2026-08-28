@@ -21,6 +21,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ENTER or event.keycode == KEY_SPACE:
 			nearest._run()
+			if nearest and !nearest.can_interact:
+				in_range.erase(nearest)
 			_update_nearest()
 
 var ticks : int

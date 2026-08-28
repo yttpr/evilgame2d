@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bsrjsghmi6dxo"]
+
+[ext_resource type="Script" uid="uid://4wak1q5sd457" path="res://scripts/objects/break_interactible.gd" id="1_rljld"]
+[ext_resource type="Texture2D" uid="uid://76b3llse1ubs" path="res://sprites/objects/candle.png" id="2_qmpsc"]
+[ext_resource type="AudioStream" uid="uid://byevc2a47rf72" path="res://audio/noise/objects/candle_out.wav" id="2_rljld"]
+[ext_resource type="Texture2D" uid="uid://cify5ymkhq01a" path="res://sprites/objects/candleLight.png" id="4_btvid"]
+[ext_resource type="Script" uid="uid://da24x1bloj80t" path="res://scripts/objects/sprite_animator.gd" id="5_w6ehh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d258k"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_gxmte"]
+offsets = PackedFloat32Array(0, 0.8918269, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.03137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1cm6p"]
+gradient = SubResource("Gradient_gxmte")
+fill = 1
+fill_from = Vector2(0.5086806, 0.5190972)
+fill_to = Vector2(0.8350694, 0.8315972)
+
+[node name="Candle" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("object")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("1_rljld")
+object = NodePath("Sprite2D/Sprite2D2")
+sound = ExtResource("2_rljld")
+vol = 10.0
+HP = 12
+points = 0
+i_frame_time = 0.0
+mov_spd = 0
+inertia_decay = 0.0
+despawn_time = -1.0
+despawn_length = -1.0
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("RectangleShape2D_d258k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932073789]
+light_mask = 8
+texture = ExtResource("2_qmpsc")
+hframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1362123960]
+light_mask = 2
+texture = ExtResource("4_btvid")
+hframes = 4
+frame = 1
+script = ExtResource("5_w6ehh")
+delay = 0.2
+randomize_start = true
+
+[node name="light_holder" type="Node2D" parent="Sprite2D/Sprite2D2" unique_id=939164862]
+
+[node name="floor_light" type="PointLight2D" parent="Sprite2D/Sprite2D2/light_holder" unique_id=178317267]
+z_index = -1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 15.0
+
+[node name="wall_light" type="PointLight2D" parent="Sprite2D/Sprite2D2/light_holder" unique_id=772052014]
+z_index = -1
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 15.0
+
+[node name="chara_light" type="PointLight2D" parent="Sprite2D/Sprite2D2/light_holder" unique_id=649078975]
+z_index = -1
+range_item_cull_mask = 8
+texture = SubResource("GradientTexture2D_1cm6p")
+texture_scale = 15.0
+
+[node name="light_light" type="PointLight2D" parent="Sprite2D/Sprite2D2/light_holder" unique_id=924867163]
+z_index = -1
+position = Vector2(0, -64)
+range_item_cull_mask = 2
+shadow_item_cull_mask = 4
+texture = SubResource("GradientTexture2D_1cm6p")

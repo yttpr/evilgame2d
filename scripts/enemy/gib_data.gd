@@ -14,3 +14,7 @@ extends Resource
 @export var img_amts : Array[int]
 @export var weights : Array[float]
 @export var does_rotate : Array[bool]
+
+@export var ignore_gravity : Array[bool]
+
+@export var unshaded : bool

@@ -13,6 +13,8 @@ var height : float = -35.0
 
 var weight : float = 1.0
 
+var floats : bool = false
+
 func _set_lifetime(delta : float) -> void:
 	var up = Manager._get_world().get_tree().create_tween()
 	up.set_ease(Tween.EASE_IN)
@@ -33,6 +35,7 @@ func _random_flip() -> void:
 	if randf_range(0.0, 1.0) < 0.5:
 		img.flip_h = true
 
+var offset : float
 func _prep(inertia : Vector2, vertical : bool = false) -> void:
 	start_tick = Manager._get_world().ticks
 	
@@ -54,8 +57,12 @@ func _prep(inertia : Vector2, vertical : bool = false) -> void:
 	var up = Manager._get_world().get_tree().create_tween()
 	up.set_ease(Tween.EASE_OUT)
 	up.set_trans(Tween.TRANS_SINE)
-	up.tween_property(img, "position", Vector2(0.0, randf_range(0, height) + i), time / 1.8)
-	up.tween_callback(_down)
+	offset = randf_range(0, height) + i
+	up.tween_property(img, "position", Vector2(0.0, offset), time / 1.8)
+	if !floats:
+		up.tween_callback(_down)
+	else:
+		up.tween_callback(_hover_up)
 
 func _down() -> void:
 	var down = Manager._get_world().get_tree().create_tween()
@@ -97,3 +104,21 @@ func _fall() -> void:
 	if Manager._check_in_pit_top(self):
 		down.parallel().tween_property(img, "position", img.position + Vector2(0, 32), 1.0)
 	down.tween_callback(self.queue_free)
+
+
+
+var hovertime : float = 0.0
+
+func _hover_up() -> void:
+	if hovertime <= 0:
+		hovertime = randf_range(3, 5)
+	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(img, "position", Vector2(0, 12 + offset), hovertime)
+	tween.tween_callback(_hover_down)
+
+func _hover_down() -> void:
+	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(img, "position", Vector2(0, offset), hovertime)
+	tween.tween_callback(_hover_up)

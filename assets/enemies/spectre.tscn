@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://djneu2ewdvqr6"]
+
+[ext_resource type="Script" uid="uid://r4tnof8jady5" path="res://scripts/player/base_body.gd" id="1_loeod"]
+[ext_resource type="Resource" uid="uid://ceecccgvbwc0n" path="res://assets/enemies/gibs/spectre_gibs.tres" id="2_qutx0"]
+[ext_resource type="AudioStream" uid="uid://upi7fe0udve8" path="res://audio/noise/enemies/butterfly_hit.wav" id="3_qutx0"]
+[ext_resource type="Texture2D" uid="uid://b0pr32017imxv" path="res://sprites/enemies/EvilGame2D_spectre_WIP.png" id="4_loeod"]
+[ext_resource type="AudioStream" uid="uid://8q02y70188j4" path="res://audio/noise/enemies/magic_ambience.wav" id="4_tstkq"]
+[ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="5_f2hu2"]
+[ext_resource type="AudioStream" uid="uid://8whutceonkld" path="res://audio/noise/enemies/butterfly_flap.wav" id="6_qutx0"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="7_omh2w"]
+[ext_resource type="Script" uid="uid://uvpai4td262g" path="res://scripts/player/character_hitbox.gd" id="8_o68vy"]
+[ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="9_ddbmr"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="10_o1smu"]
+[ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="11_1awc0"]
+[ext_resource type="Script" uid="uid://cnvgetguyhbas" path="res://scripts/enemy/homing_pathfinding.gd" id="12_7sbdy"]
+[ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="13_4ow7g"]
+[ext_resource type="Script" uid="uid://cggbgvr8o5qpn" path="res://scripts/enemy/alpha_phaser.gd" id="15_qutx0"]
+[ext_resource type="PackedScene" uid="uid://b6vbtsxabl0ej" path="res://assets/projectile/ButterflyShotgunProjectile.tscn" id="15_tstkq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
+size = Vector2(69, 61.5)
+
+[node name="Spectre" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker", "constant_noise_maker")]
+collision_layer = 544
+collision_mask = 0
+script = ExtResource("1_loeod")
+sprites = NodePath("image")
+HP = 12
+healthtype = "Sin"
+points = 2
+gibs = ExtResource("2_qutx0")
+hit_sound = ExtResource("3_qutx0")
+hit_mod = 4.0
+marker = NodePath("marker_holder/marker")
+mov_spd = 150
+inertia_decay = 0.9
+flies = true
+constant_noise_maker = NodePath("BasicAudio")
+constant_ambience = ExtResource("4_tstkq")
+ambience_volume = 2.0
+ambience_pitch = 0.7
+
+[node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
+light_mask = 8
+material = ExtResource("10_o1smu")
+texture = ExtResource("4_loeod")
+offset = Vector2(0, -50)
+hframes = 6
+script = ExtResource("5_f2hu2")
+body = NodePath("..")
+hitbox = NodePath("../hitbox")
+walk_time = 0.3
+footstep = ExtResource("6_qutx0")
+audio_mod = 9.0
+audio = NodePath("AudioStreamPlayer2D")
+step_change = 1.5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("7_omh2w")
+
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=340127500 node_paths=PackedStringArray("body")]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("8_o68vy")
+body = NodePath("..")
+hitbox_type = "Single"
+sources = Array[String](["Hitscan"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=72484899]
+position = Vector2(1.5, -30.75)
+shape = SubResource("RectangleShape2D_nubg3")
+
+[node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]
+position = Vector2(0, -133)
+script = ExtResource("9_ddbmr")
+marker = NodePath("marker")
+max = 6.0
+time = 4.0
+
+[node name="marker" type="Sprite2D" parent="marker_holder" unique_id=1398509414]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 5
+material = ExtResource("10_o1smu")
+texture = ExtResource("11_1awc0")
+
+[node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
+script = ExtResource("12_7sbdy")
+limit_range = 65.0
+max_range = 150.0
+bored_time = 6.0
+wander_chance = 0.7
+wander_speed = 50.0
+Movable = NodePath("..")
+Weapon = NodePath("../EnemyWeapon")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
+neighbor_distance = 100.0
+max_neighbors = 3
+debug_path_custom_color = Color(1, 0, 1, 1)
+
+[node name="EnemyWeapon" type="Node2D" parent="." unique_id=1496392314 node_paths=PackedStringArray("weapon", "brain")]
+script = ExtResource("13_4ow7g")
+weapon = NodePath("pointer")
+bullet = ExtResource("15_tstkq")
+source_name = "Enemy_Projectile_0"
+knockback = 200.0
+damage_type = "Sin"
+dmg_amt = 1
+charge_time = 1.0
+max_clip = 1
+reload_time = 5.0
+move_during_reload = true
+brain = NodePath("../brain")
+break_aim_if_lost = true
+stop_looking_after_charge = true
+max_aim_width = 1.0
+metadata/_custom_type_script = "uid://dap3uvgj16hat"
+
+[node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
+position = Vector2(0, -54)
+
+[node name="AlphaPhaser" type="Node2D" parent="." unique_id=1569180610 node_paths=PackedStringArray("image")]
+script = ExtResource("15_qutx0")
+image = NodePath("..")
+time = 1.8
+metadata/_custom_type_script = "uid://cggbgvr8o5qpn"
+
+[node name="BasicAudio" type="AudioStreamPlayer2D" parent="." unique_id=2019978930]
+script = ExtResource("7_omh2w")
+metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]
