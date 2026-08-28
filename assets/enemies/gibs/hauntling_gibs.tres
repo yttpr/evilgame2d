@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://2628ejbgr5go"]
+
+[ext_resource type="Texture2D" uid="uid://ciprouxf66sit" path="res://sprites/enemies/gibs/hauntling_hand.png" id="1_lu6ut"]
+[ext_resource type="Texture2D" uid="uid://bch38pu7tlvuq" path="res://sprites/enemies/gibs/hauntling_pipe.png" id="2_j30a8"]
+[ext_resource type="Texture2D" uid="uid://c402sdeegs6vv" path="res://sprites/ui/reload.png" id="3_jblgq"]
+[ext_resource type="Texture2D" uid="uid://bi1h28qacx4rb" path="res://sprites/objects/gibs/metal_shard.png" id="4_j30a8"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="4_rkkl8"]
+[ext_resource type="Texture2D" uid="uid://dtosh1b1vrevb" path="res://sprites/enemies/gibs/tooth.png" id="5_jblgq"]
+
+[resource]
+script = ExtResource("4_rkkl8")
+coins = 1
+blood_amt = 2
+blood_color_2 = Color(0.34117648, 0, 0.5529412, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_lu6ut"), ExtResource("2_j30a8"), ExtResource("3_jblgq"), ExtResource("4_j30a8"), ExtResource("5_jblgq")])
+img_amts = Array[int]([2, 3, 2, 4, 3])
+weights = Array[float]([1.0, 1.0, 1.0, 0.5, 1.0])
+does_rotate = Array[bool]([true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

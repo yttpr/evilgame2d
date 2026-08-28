@@ -14,6 +14,7 @@ func _set_color(mod : Color) -> void:
 
 func _ready() -> void:
 	tick = tick_spd
+	sprite.flip_h = randf_range(0.0, 1.0) < 0.5
 
 func _process(delta : float) -> void:
 	tick -= delta

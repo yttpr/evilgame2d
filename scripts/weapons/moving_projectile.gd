@@ -91,7 +91,8 @@ func _process(delta: float) -> void:
 				_make_backup_line(current, self.global_position + dist.normalized() * radius)
 			self._cleanup()
 	
-	_draw_tracer(current + _offset(), self.global_position + _offset())
+	if delta > 0:
+		_draw_tracer(current + _offset(), self.global_position + _offset())
 	if make_backup_colliders:
 		_make_backup_line(current, self.global_position)
 	

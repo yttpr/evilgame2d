@@ -311,6 +311,8 @@ func _process(delta: float) -> void:
 		if reload_tick <= 0:
 			_set_reload(false)
 	
+	if delta <= 0:
+		return
 	var mouse = to_global(get_local_mouse_position())
 	
 	if weapon.global_position.distance_to(mouse) < weapon.global_position.distance_to(pointer.global_position):

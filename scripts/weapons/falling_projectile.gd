@@ -53,6 +53,8 @@ func _make_collision() -> void:
 	collider._set_collision(damager)
 	collider.death_quote = death_quote
 
+@export var increase_gib_size : bool = true
 func _make_gibs() -> void:
 	var gib = Manager._make_bullet_gib(self.global_position, _offset(), tracer_color)
-	gib.scale = Vector2.ONE * 3
+	if increase_gib_size:
+		gib.scale = Vector2.ONE * 3

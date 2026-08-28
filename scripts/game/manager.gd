@@ -222,6 +222,8 @@ func _ready() -> void:
 	splash_noise = ResourceLoader.load("res://audio/noise/ui/water_splash.ogg")
 	
 	base_heal_icon = preload("res://assets/ui/healing_icon.tscn")
+	
+	print("all loaded!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

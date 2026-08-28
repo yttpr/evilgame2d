@@ -94,7 +94,7 @@ func _process(delta: float) -> void:
 		return
 	
 	#do aiming logic
-	if aiming_tick > 0 and visible_aim:
+	if aiming_tick > 0 and visible_aim and delta > 0:
 		var dir = aim_direction
 		if !stop_looking_while_aiming:
 			dir = self.global_position.direction_to(target.global_position).normalized()

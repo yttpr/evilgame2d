@@ -10,10 +10,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dq0bf"]
-vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
-agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m22xq"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
@@ -88,6 +84,30 @@ texture_region_size = Vector2i(64, 64)
 6:2/0 = 0
 6:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_yfnd5")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ghatt"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fu8hn"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mgaac"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bajbi"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lmxj"]
 texture = ExtResource("2_tl66m")
 texture_region_size = Vector2i(64, 64)
@@ -126,11 +146,13 @@ texture_region_size = Vector2i(64, 64)
 4:1/0/y_sort_origin = -32
 4:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 4:1/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+4:1/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_bajbi")
 5:1/0 = 0
 5:1/0/z_index = 3
 5:1/0/y_sort_origin = -32
 5:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 5:1/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+5:1/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_bajbi")
 8:1/0 = 0
 8:1/0/y_sort_origin = -32
 10:1/0 = 0
@@ -140,11 +162,13 @@ texture_region_size = Vector2i(64, 64)
 13:1/0/y_sort_origin = -32
 13:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 13:1/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+13:1/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_mgaac")
 14:1/0 = 0
 14:1/0/z_index = 3
 14:1/0/y_sort_origin = -32
 14:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 14:1/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+14:1/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_mgaac")
 15:1/0 = 0
 15:1/0/y_sort_origin = -32
 0:2/0 = 0
@@ -184,56 +208,67 @@ texture_region_size = Vector2i(64, 64)
 0:3/0/y_sort_origin = -32
 0:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 0:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+0:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_ghatt")
 1:3/0 = 0
 1:3/0/z_index = 3
 1:3/0/y_sort_origin = -32
 1:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 1:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+1:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_ghatt")
 2:3/0 = 0
 2:3/0/z_index = 3
 2:3/0/y_sort_origin = -32
 2:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 2:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+2:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_ghatt")
 3:3/0 = 0
 3:3/0/z_index = 3
 3:3/0/y_sort_origin = -32
 3:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 3:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+3:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_ghatt")
 6:3/0 = 0
 6:3/0/z_index = 3
 6:3/0/y_sort_origin = -32
 6:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 6:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+6:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_fu8hn")
 7:3/0 = 0
 7:3/0/z_index = 3
 7:3/0/y_sort_origin = -32
 7:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 7:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+7:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_fu8hn")
 8:3/0 = 0
 8:3/0/z_index = 3
 8:3/0/y_sort_origin = -32
 8:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 8:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+8:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_fu8hn")
 9:3/0 = 0
 9:3/0/z_index = 3
 9:3/0/y_sort_origin = -32
 9:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 9:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+9:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_fu8hn")
 10:3/0 = 0
 10:3/0/z_index = 3
 10:3/0/y_sort_origin = -32
 10:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 10:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+10:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_fu8hn")
 11:3/0 = 0
 11:3/0/z_index = 3
 11:3/0/y_sort_origin = -32
 11:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 11:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+11:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_fu8hn")
 12:3/0 = 0
 12:3/0/z_index = 3
 12:3/0/y_sort_origin = -32
 12:3/0/physics_layer_2/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
 12:3/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+12:3/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_fu8hn")
 15:3/0 = 0
 15:3/0/z_index = 3
 15:3/0/y_sort_origin = -32

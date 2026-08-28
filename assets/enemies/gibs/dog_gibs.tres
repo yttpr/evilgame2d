@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cauqlh7otfwm7" path="res://sprites/enemies/gibs/hand.png" id="2_p3o3d"]
 [ext_resource type="Texture2D" uid="uid://dm16iwxkcl8hy" path="res://sprites/enemies/gibs/branch.png" id="3_t1yjp"]
 [ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="3_wral0"]
+[ext_resource type="Texture2D" uid="uid://cs54vsp37amlj" path="res://sprites/enemies/gibs/spine_bone.png" id="4_wral0"]
+[ext_resource type="Texture2D" uid="uid://cqvk621pex66l" path="res://sprites/enemies/gibs/round_eye.png" id="5_t1yjp"]
 
 [resource]
 script = ExtResource("3_wral0")
@@ -12,8 +14,8 @@ blood_amt = 3
 blood_color_1 = Color(0.3882353, 0, 0.3372549, 1)
 blood_color_2 = Color(0, 0, 0.08627451, 1)
 floor_blood_amt = 1
-images = Array[Texture2D]([ExtResource("1_5j07w"), ExtResource("2_p3o3d"), ExtResource("3_t1yjp")])
-img_amts = Array[int]([3, 3, 5])
-weights = Array[float]([1.0, 1.6, 0.8])
-does_rotate = Array[bool]([true, true, true])
+images = Array[Texture2D]([ExtResource("1_5j07w"), ExtResource("2_p3o3d"), ExtResource("3_t1yjp"), ExtResource("4_wral0"), ExtResource("5_t1yjp")])
+img_amts = Array[int]([3, 3, 5, 3, 5])
+weights = Array[float]([1.0, 1.6, 0.8, 1.0, 1.0])
+does_rotate = Array[bool]([true, true, true, true, true])
 metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

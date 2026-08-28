@@ -83,7 +83,10 @@ func _clean() -> void:
 func enable_collision(enable : bool):
 	$CollisionShape2D.set_deferred("disabled", !enable)
 	
-	$NavigationRegion2D.enabled = !enable
+	$NavigationRegion2D.enabled = true
+	$NavigationRegion2D.set_navigation_layer_value(1, true)
+	$NavigationRegion2D.set_navigation_layer_value(2, !enable)
+	$NavigationRegion2D.set_navigation_layer_value(3, !enable)
 	
 	#if !enable:
 		#NavigationServer2D.region_set_map($NavigationRegion2D, get_world_2d().get_navigation_map())

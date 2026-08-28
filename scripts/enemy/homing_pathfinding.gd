@@ -25,6 +25,10 @@ var wander_tick : float
 
 var wandering : bool
 
+func _ready() -> void:
+	super._ready()
+	check_tick = can_target_delay
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#wander

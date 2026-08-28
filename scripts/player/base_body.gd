@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var gibs : GibData
 @export var hit_sound : AudioStream
 @export var hit_mod : float
+@export var hit_pitch : float = 1.5
 
 var audio : BasicAudio
 
@@ -59,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	
 	_make_movement(delta)
 	
-	if !flies and inertia.length() <= 0:
+	if !flies and inertia.length() <= 32:
 		_check_pit()
 	
 	if despawn_length < 0 or despawn_time < 0:
@@ -174,7 +175,7 @@ func _hit_sound(amt : int) -> void:
 		audio = BasicAudio.new()
 		Manager._get_world().add_child(audio)
 	audio.global_position = self.global_position
-	audio._play_sound(hit_sound, hit_mod, 1.5 - (amt / 10.0))
+	audio._play_sound(hit_sound, hit_mod, hit_pitch - (amt / 10.0))
 
 
 

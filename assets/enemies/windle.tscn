@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c8db188qsgnxx" path="res://assets/projectile/WindleBullet.tscn" id="15_qteuc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
-radius = 24.0
+radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
 size = Vector2(61, 73.5)

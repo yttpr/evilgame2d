@@ -41,6 +41,7 @@ func _make_gib(loc : Vector2, inertia : Vector2, img : Texture2D, weight = 1.0, 
 	var gib : GibBody = gib_base.instantiate()
 	gib.img.texture = img
 	gib.img.material = null
+	gib.img.light_mask = 8
 	#Manager._get_world().add_child(gib)
 	Manager._get_world().call_deferred("add_child", gib)
 	gib.global_position = loc

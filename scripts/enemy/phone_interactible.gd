@@ -13,6 +13,7 @@ extends BaseInteractible
 @export var light : Node2D
 
 func _run() -> void:
+	enemy.velocity = Vector2.ZERO
 	can_interact = false
 	enemy.sprites.light_mask = 0
 	#enemy.is_dead = true

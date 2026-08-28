@@ -31,6 +31,8 @@ func _process(delta: float) -> void:
 	
 	seen = _check_look_at()
 	Movable.visible = seen
+	if !seen:
+		Weapon.is_agro = false
 
 
 func _can_see(target : Node2D) -> bool:
