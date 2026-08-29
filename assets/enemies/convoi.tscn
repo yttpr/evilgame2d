@@ -38,6 +38,7 @@ mov_spd = 30
 inertia_decay = 0.1
 despawn_time = -1.0
 despawn_length = -1.0
+water_scaling = 3.0
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
 light_mask = 8

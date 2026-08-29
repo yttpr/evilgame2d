@@ -173,6 +173,7 @@ var ui_fail : AudioStream
 
 var water_splash : PackedScene
 var splash_noise : AudioStream
+var water_animation : Texture2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -282,6 +283,7 @@ func _ready() -> void:
 	
 	water_splash = ResourceLoader.load("res://assets/ui/water_splash.tscn")
 	splash_noise = ResourceLoader.load("res://audio/noise/ui/water_splash.ogg")
+	water_animation = ResourceLoader.load("res://sprites/ui/water_sheet.png")
 	
 	load_cur += 1
 	loading._update_bar(load_cur / load_amt)

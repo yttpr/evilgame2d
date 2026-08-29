@@ -39,6 +39,7 @@ gibs = ExtResource("2_tw43q")
 marker = NodePath("marker_holder/marker")
 mov_spd = 60
 flies = true
+water_scaling = 0.0
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "audio")]
 light_mask = 8

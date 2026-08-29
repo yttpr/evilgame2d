@@ -36,11 +36,27 @@ var time_to_die : float
 
 var is_player : bool
 
+@export var water_scaling : float = 1.0
+
 func _ready() -> void:
 	time_to_die = 2.0
 	inertia = Vector2(0, 0)
 	is_dead = false
 	despawn_tick = despawn_time
+	
+	if water_scaling <= 0.0:
+		return
+	await get_tree().process_frame
+	if Manager._get_world() and Manager._get_world().water_floor:
+		var splash = WaterSplashHandler.new()
+		splash.body = self
+		Manager._get_world().add_child(splash)
+		splash.texture = Manager.water_animation
+		splash.hframes = 3
+		splash.delay = 0.25
+		splash.offset = Vector2(0, -40 - 32)
+		splash.scale.x = water_scaling
+		#splash.z_index = 1
 	
 func _update_marker() -> void:
 	if marker:

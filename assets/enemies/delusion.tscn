@@ -40,6 +40,7 @@ gibs = ExtResource("2_5tttm")
 hit_sound = ExtResource("3_5tttm")
 marker = NodePath("marker_holder/marker")
 mov_spd = 90
+water_scaling = 1.5
 darkening_range = 650.0
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]

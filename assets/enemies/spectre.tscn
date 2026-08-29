@@ -38,6 +38,7 @@ marker = NodePath("marker_holder/marker")
 mov_spd = 150
 inertia_decay = 0.9
 flies = true
+water_scaling = 0.0
 constant_noise_maker = NodePath("BasicAudio")
 constant_ambience = ExtResource("4_tstkq")
 ambience_volume = 2.0

@@ -35,6 +35,7 @@ hit_mod = 10.0
 marker = NodePath("marker_holder/marker")
 mov_spd = 100
 inertia_decay = 0.9
+water_scaling = 0.0
 constant_noise_maker = NodePath("BasicAudio")
 constant_ambience = ExtResource("4_u32e4")
 ambience_volume = 6.0

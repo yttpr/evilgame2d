@@ -37,6 +37,7 @@ mov_spd = 25
 inertia_decay = 0.0
 despawn_time = -1.0
 despawn_length = -1.0
+water_scaling = 3.0
 constant_noise_maker = NodePath("BasicAudio")
 constant_ambience = ExtResource("4_uk1cx")
 ambience_volume = 6.0

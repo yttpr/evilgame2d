@@ -55,6 +55,7 @@ hit_mod = 2.0
 marker = NodePath("marker_holder/marker")
 mov_spd = 40
 inertia_decay = 0.3
+water_scaling = 2.8
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
 light_mask = 10

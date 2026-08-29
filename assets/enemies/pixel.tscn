@@ -34,6 +34,7 @@ hit_mod = 20.0
 marker = NodePath("marker_holder/marker")
 mov_spd = 9999
 flies = true
+water_scaling = 1.5
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
 light_mask = 8

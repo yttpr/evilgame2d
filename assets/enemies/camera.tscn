@@ -36,6 +36,7 @@ hit_mod = 3.0
 marker = NodePath("marker_holder/marker")
 mov_spd = 325
 flies = true
+water_scaling = 0.0
 constant_noise_maker = NodePath("BasicAudio")
 constant_ambience = ExtResource("4_txnhw")
 ambience_volume = 20.0

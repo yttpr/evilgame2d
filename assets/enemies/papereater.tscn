@@ -33,6 +33,7 @@ gibs = ExtResource("2_siko1")
 hit_sound = ExtResource("3_siko1")
 marker = NodePath("marker_holder/marker")
 mov_spd = 125
+water_scaling = 2.0
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
 light_mask = 8

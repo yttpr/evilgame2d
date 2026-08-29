@@ -43,6 +43,7 @@ hit_sound = ExtResource("4_xk10k")
 hit_mod = 2.0
 marker = NodePath("marker_holder/marker")
 mov_spd = 225
+water_scaling = 2.0
 
 [node name="image" type="Sprite2D" parent="." unique_id=974865009 node_paths=PackedStringArray("body", "hitbox", "audio")]
 light_mask = 8

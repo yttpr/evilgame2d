@@ -35,6 +35,7 @@ hit_mod = 6.0
 marker = NodePath("marker_holder/marker")
 mov_spd = 30
 inertia_decay = 0.4
+water_scaling = 2.5
 constant_noise_maker = NodePath("BasicAudio")
 constant_ambience = ExtResource("4_cx1eb")
 ambience_volume = 6.0
