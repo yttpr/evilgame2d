@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bmbds8fjjuo7f" path="res://assets/projectile/PhoneImplosionProjectile.tscn" id="12_kppsv"]
 [ext_resource type="AudioStream" uid="uid://dl7khjxj8r282" path="res://audio/noise/enemies/phone_loading.ogg" id="13_4uhe7"]
 [ext_resource type="Script" uid="uid://b06a3qo07ufff" path="res://scripts/enemy/phone_interactible.gd" id="13_tw43q"]
+[ext_resource type="AudioStream" uid="uid://cwf52rvirqhrf" path="res://audio/noise/enemies/wednesday_answer.wav" id="14_3l3sx"]
 [ext_resource type="Script" uid="uid://1cayia4by8hq" path="res://scripts/objects/flicker_light.gd" id="14_tw43q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
@@ -129,6 +130,8 @@ rise_time = 16.0
 weapon = NodePath("../EnemyWeapon")
 base_marker = NodePath("../marker_holder")
 light = NodePath("../light_holder")
+answer_noise = ExtResource("14_3l3sx")
+vol_mod = 6.0
 has_self_marker = true
 flies = true
 metadata/_custom_type_script = "uid://b06a3qo07ufff"

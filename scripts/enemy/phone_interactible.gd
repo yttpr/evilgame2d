@@ -12,7 +12,11 @@ extends BaseInteractible
 
 @export var light : Node2D
 
+@export var answer_noise : AudioStream
+@export var vol_mod : float
+
 func _run() -> void:
+	Manager._play_oneshot(enemy.global_position, answer_noise, vol_mod)
 	enemy.velocity = Vector2.ZERO
 	can_interact = false
 	enemy.sprites.light_mask = 0
