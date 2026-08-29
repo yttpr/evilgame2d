@@ -90,6 +90,12 @@ func _set_fall_in_pit(value : bool = true) -> void:
 func _check_pit() -> void:
 	if Manager._check_in_pit(self):
 		_fall()
+	elif Manager._get_world().water_floor:
+		var splash = Manager.water_splash.instantiate()
+		Manager._get_world().add_child(splash)
+		splash.scale = Vector2.ONE * 0.3
+		splash.global_position = self.global_position
+		Manager._play_oneshot(self.global_position, Manager.splash_noise, 10)
 
 func _fall() -> void:
 	if Manager._get_world().water_pits:

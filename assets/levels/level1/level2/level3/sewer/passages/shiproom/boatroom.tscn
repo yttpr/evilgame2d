@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://do3ontetdl2fy" path="res://assets/characters/player_character.tscn" id="7_1ogg7"]
 [ext_resource type="Texture2D" uid="uid://5ktpti7cirip" path="res://sprites/objects/bigboat.png" id="8_io56l"]
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="8_vkvv5"]
-[ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="9_5qwnr"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="10_0xljt"]
 [ext_resource type="Script" uid="uid://c4l3txmv6gpvl" path="res://scripts/enemy/enemy_spawner.gd" id="11_f7k04"]
 [ext_resource type="PackedScene" uid="uid://crlyfpxeb4map" path="res://assets/enemies/pumpkin.tscn" id="11_tno3c"]
@@ -21,7 +20,7 @@
 y_sort_enabled = true
 script = ExtResource("1_j4kip")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(0, -49)])
+entries = Array[Vector2]([Vector2(0, -49), Vector2(2688, -1137)])
 songs = Array[AudioStream]([ExtResource("2_ycej8"), ExtResource("3_lx3at"), ExtResource("4_mx73q")])
 volumes = Array[float]([-7.0, 0.0, -10.0, 0.0])
 water_pits = true
@@ -235,9 +234,6 @@ spawn_cap = 11
 data = ExtResource("13_u1vrd")
 spawn_time = 25.0
 metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
-
-[node name="WIP" parent="." unique_id=653630647 instance=ExtResource("9_5qwnr")]
-position = Vector2(2688, -1120)
 
 [node name="HangingLight26" parent="." unique_id=1858829282 instance=ExtResource("10_0xljt")]
 position = Vector2(2640, -1100)
@@ -567,3 +563,7 @@ frame_id = 1
 
 [node name="Metal36" parent="." unique_id=1564890329 instance=ExtResource("15_devdu")]
 position = Vector2(1208, 1164)
+
+[node name="Door2" parent="." unique_id=1675033583 instance=ExtResource("8_vkvv5")]
+position = Vector2(2688, -1152)
+room = "res://assets/levels/level1/level2/level3/sewer/passages/shiproom/drownedroom/drowning.tscn"

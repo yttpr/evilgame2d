@@ -20,7 +20,7 @@ source_name = "Enemy_Projectile_0"
 shoot_from = NodePath("Sprite2D")
 amount = 16
 explosion_sound = ExtResource("3_ruv3n")
-volume_mod = 25.0
+volume_mod = 21.0
 collision_only_player = true
 img = NodePath("Sprite2D")
 body = NodePath(".")
@@ -32,7 +32,7 @@ lifetime = 30.0
 tracer_width = 16.0
 tracer_time = 0.6
 shot_sound = ExtResource("4_1suew")
-audio_mod = 35.0
+audio_mod = 28.0
 death_quote = Array[String](["\"War.\"", "\"Nobody's to blame.\"", "\"History is only told by the victor.\"", "\"Nameless mass graves.\"", "\"Why do only I have to suffer?\"", "\"You should have to feel pain too.\"", "\"It's not just my fault...\"", "\"We were outgunned, outnumbered.\"", "\"Honor doesn't win.\"", "\"Just a number.\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]

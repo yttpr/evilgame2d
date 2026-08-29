@@ -78,3 +78,9 @@ res://assets/weapons/ewlau.tres
 res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/tankroom/manytanks.tscn
 res://assets/levels/level1/dark_corridor/darkworld/darkswap/darkbridges/exitdarkroom/exitdarkroom.tscn
 res://assets/enemies/wednesday.tscn
+res://assets/projectile/TankBullet.tscn
+res://assets/levels/level1/level2/level3/sewer/passages/shiproom/drownedroom/drowning.tscn
+res://assets/map/sewer_ground_tileset.tres
+res://assets/map/sewer_walls_tileset.tres
+res://assets/levels/level1/level2/level3/sewer/passages/shiproom/boatroom.tscn
+res://scripts/game/level.gd

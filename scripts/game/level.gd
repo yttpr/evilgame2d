@@ -15,6 +15,7 @@ var orig_color : Color
 @export var EnemySpawnLocs : Array[EnemySpawner] = []
 
 @export var water_pits : bool
+@export var water_floor : bool
 
 var ticks : int
 var time : float
