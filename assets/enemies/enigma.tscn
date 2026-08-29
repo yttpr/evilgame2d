@@ -112,6 +112,7 @@ brain = NodePath("../brain")
 visible_aim = true
 stop_looking_while_aiming = true
 max_aim_width = 3.0
+line_pierce_player = true
 line_length = 1500.0
 metadata/_custom_type_script = "uid://dap3uvgj16hat"
 

@@ -45,6 +45,7 @@ var gibs : GibHandler
 var bullet_gib : PackedScene
 
 var collision_walls : Area2D
+var collision_enemyline : Area2D
 var collision_sight : Area2D
 var collision_all : Area2D
 var collision_pierceless : Area2D
@@ -59,6 +60,12 @@ func _prep_collision_base() -> void:
 	collision_walls.set_collision_mask_value(1, false)
 	collision_walls.set_collision_mask_value(4, true)
 	self.add_child(collision_walls)
+	
+	collision_enemyline = Area2D.new()
+	collision_enemyline.set_collision_mask_value(1, false)
+	collision_enemyline.set_collision_mask_value(4, true)
+	collision_enemyline.set_collision_mask_value(3, true)
+	self.add_child(collision_enemyline)
 	
 	collision_sight = Area2D.new()
 	collision_sight.set_collision_mask_value(1, false)

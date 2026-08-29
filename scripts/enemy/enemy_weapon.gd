@@ -174,13 +174,17 @@ func _update_color() -> void:
 @export var aim_color : Color
 @export var max_aim_width : float
 @export var does_bounce : bool
+@export var line_pierce_player : bool
 @export var line_length : float
 
 func _next_line(aiming : bool, length : float, delta : float, origin: Vector2, target_point : Vector2, exclude : Array[RID]) -> Vector2:
 	
 	#var tarjet = _set_vector_magnitude(target_point, origin, length)
 	#make query
-	var query = PhysicsRayQueryParameters2D.create(origin, target_point, Manager.collision_walls.collision_mask, exclude)
+	var mask = Manager.collision_walls.collision_mask
+	if !line_pierce_player:
+		mask = Manager.collision_enemyline.collision_mask
+	var query = PhysicsRayQueryParameters2D.create(origin, target_point, mask, exclude)
 	query.collide_with_areas = true
 	query.collide_with_bodies = true
 	query.hit_from_inside = true

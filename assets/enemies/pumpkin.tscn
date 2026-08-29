@@ -115,6 +115,7 @@ walls_only = true
 visible_aim = true
 stop_looking_while_aiming = true
 max_aim_width = 3.0
+line_pierce_player = true
 line_length = 150.0
 metadata/_custom_type_script = "uid://dap3uvgj16hat"
 
