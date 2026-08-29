@@ -146,19 +146,19 @@ position = Vector2(1504, -352)
 position = Vector2(1504, -256)
 objectname = "coinshoprust1"
 pool = ExtResource("18_hqfbi")
-coin_cost = 100
+coin_cost = 300
 
 [node name="Gun2" parent="." unique_id=180004522 instance=ExtResource("17_t03r7")]
 position = Vector2(1632, -288)
 objectname = "coinshoprust2"
 pool = ExtResource("18_hqfbi")
-coin_cost = 100
+coin_cost = 300
 
 [node name="Gun3" parent="." unique_id=229487630 instance=ExtResource("17_t03r7")]
 position = Vector2(1376, -288)
 objectname = "coinshoprust3"
 pool = ExtResource("18_hqfbi")
-coin_cost = 100
+coin_cost = 300
 
 [node name="Barrel6" parent="." unique_id=1485142515 instance=ExtResource("15_lgcry")]
 position = Vector2(1696, -608)

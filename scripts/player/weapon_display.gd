@@ -81,4 +81,6 @@ func _process(delta : float) -> void:
 	if is_reloading:
 		reload.rotate(6 * delta)
 	
+	if delta <= 0.0:
+		return
 	_update_reloads()

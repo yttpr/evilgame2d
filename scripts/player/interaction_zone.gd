@@ -21,8 +21,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ENTER or event.keycode == KEY_SPACE:
 			nearest._run()
-			if nearest and !nearest.can_interact:
-				in_range.erase(nearest)
+			#if nearest and !nearest.can_interact:
+			#	in_range.erase(nearest)
 			_update_nearest()
 
 var ticks : int
@@ -62,7 +62,7 @@ func _update_nearest() -> void:
 	var dist : float = INF
 	for obj in in_range:
 		if !obj.can_interact:
-			return
+			continue
 		var lent = self.global_position.distance_to(obj.global_position)
 		if lent < dist:
 			dist = lent

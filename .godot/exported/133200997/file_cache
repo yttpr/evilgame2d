@@ -275,7 +275,7 @@ res://assets/weapons/plunger.tres::9db08b96a1ae6d227200acdcc84f5dfb::1786678230:
 res://assets/weapons/nailgun.tres::f28414e2b660c651574a6900dd6b03a9::1786604995::res://.godot/exported/133200997/export-a337a97a8959c37613e64e49d7aad8e7-nailgun.res
 res://assets/projectile/RainArrowBullet.tscn::8f38a07addc995343b18521df541a545::1787892627::res://.godot/exported/133200997/export-80bdc51f45135cb4477899a4d8f5e968-RainArrowBullet.scn
 res://assets/projectile/RandomInertiaBullet.tscn::d68e09f4bb32dfe65ee65c3061842810::1786753446::res://.godot/exported/133200997/export-e32b57306d9d1e10624b7299dc4c46c2-RandomInertiaBullet.scn
-res://assets/projectile/RandomDamageHitscan.tscn::646dcf0d1ec51d2e6ecbaf2cd08b906a::1786651605::res://.godot/exported/133200997/export-4f114da450a9aac6a0781b1473b0a8db-RandomDamageHitscan.scn
+res://assets/projectile/RandomDamageHitscan.tscn::646dcf0d1ec51d2e6ecbaf2cd08b906a::1787986133::res://.godot/exported/133200997/export-4f114da450a9aac6a0781b1473b0a8db-RandomDamageHitscan.scn
 res://assets/projectile/AnotherBouncelessHitscan.tscn::f3b38e044986c16e7c04c0cb4a4e8480::1786612169::res://.godot/exported/133200997/export-9f25f975147f6c38d69506fd382ce10a-AnotherBouncelessHitscan.scn
 res://assets/projectile/BulbBomb.tscn::9f7a8d44c487d2546914f9d89da7965a::1787789701::res://.godot/exported/133200997/export-22dd02268f97e81127b17a733cad4a59-BulbBomb.scn
 res://assets/projectile/AAnotherBouncelessHitscan.tscn::b1735c5e04127446b4973166f2abf24a::1786614642::res://.godot/exported/133200997/export-c5df79d5293b38566c71b0a411bc2a06-AAnotherBouncelessHitscan.scn
@@ -353,7 +353,7 @@ res://assets/enemies/hauntling.tscn::73923bd18d88c334b3f5e2bf95768cfd::178798387
 res://assets/enemies/nameless.tscn::50b33c8c3b7c3a2190a67dbf8b131a23::1787966125::res://.godot/exported/133200997/export-e5db8a725a703181bba817e97eac3773-nameless.scn
 res://assets/enemies/spectre.tscn::a45cfe20374592d81871179e89dda696::1787931918::res://.godot/exported/133200997/export-fce1cd4500d09f9257614dc547cd1689-spectre.scn
 res://assets/levels/level1/dark_corridor/darkworld/dark_shore/dark_shore.tscn::951afe51ee646d03d0d66b62201c32fa::1787972786::res://.godot/exported/133200997/export-9163f940e3960336dd595d2263f3aa25-dark_shore.scn
-res://assets/levels/level1/dark_corridor/darkworld/darkworld_1.tscn::caeea29be875846cc194d4e7af29f1de::1787971839::res://.godot/exported/133200997/export-89527438517d97329e17456f3e8ede3f-darkworld_1.scn
+res://assets/levels/level1/dark_corridor/darkworld/darkworld_1.tscn::caeea29be875846cc194d4e7af29f1de::1787985001::res://.godot/exported/133200997/export-89527438517d97329e17456f3e8ede3f-darkworld_1.scn
 res://assets/levels/level1/untitled/iloveyou/loveyou_corridor/iloveyou_corridor.tscn::9750080a345300b98f7d63a137d313df::1787926362::res://.godot/exported/133200997/export-57c665c32ad15128e9bf3ceddb608f65-iloveyou_corridor.scn
 res://assets/map/darkworld_ground_tileset.tres::ba17213504649a36d3db9b9ba0a3a87f::1787926802::res://.godot/exported/133200997/export-1ec6bb22e0acfeefd3b654bac9b479b1-darkworld_ground_tileset.res
 res://assets/map/darkworld_solid_ground.tres::f14aff54163cddfdc0d435e8f6b30df7::1787931185::res://.godot/exported/133200997/export-bac50f937b2c6800f842ffa2213f0279-darkworld_solid_ground.res
@@ -369,7 +369,7 @@ res://assets/enemies/medamaude.tscn::f7c8c8704a82a4f07aef9d81c2724c25::178796985
 res://assets/levels/level1/dark_corridor/darkworld/darkswap/dark_swap.tscn::12360ea70be56f4b2076cd38a60f35a5::1787980560::res://.godot/exported/133200997/export-94f0c57d8a7275821b6ddc9a5890f564-dark_swap.scn
 res://assets/projectile/NormalBullet.tscn::b3fbe3503deba026410966cfec306636::1787969091::res://.godot/exported/133200997/export-86ab6b92224fdb32fa620430b203bcc7-NormalBullet.scn
 res://assets/levels/level1/dark_corridor/darkworld/darkswap/darkbridges/dark_bridges.tscn::879436bc9cd740e78c3c71f36f459090::1787983613::res://.godot/exported/133200997/export-d7441d2f6f4eea4266f4554ffd5fb969-dark_bridges.scn
-res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_branches/rust_coinshop/rust_coinshop.tscn::e00d3d584c257d06ce73d8bd61231cce::1787977682::res://.godot/exported/133200997/export-ac441e76e3f50f9f30858c92cfa40942-rust_coinshop.scn
+res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_branches/rust_coinshop/rust_coinshop.tscn::e819f57262937c4cc74b9d9331845a06::1787985302::res://.godot/exported/133200997/export-ac441e76e3f50f9f30858c92cfa40942-rust_coinshop.scn
 res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_branches/rust_branches.tscn::74f1eb208ba9ca6f2938b745d2910a0f::1787976024::res://.godot/exported/133200997/export-f6b3a9733456fd7343189353263b29f0-rust_branches.scn
 res://assets/objects/shops/coin_shop.tscn::234b4fe219c0ae36871c4164c3ba3f0d::1787977308::res://.godot/exported/133200997/export-274889ef1b9a4bc6c395d82c24d25dea-coin_shop.scn
 res://assets/objects/shops/free_shop.tscn::562ffb87115e64504f98cbbfadd0d011::1787982969::res://.godot/exported/133200997/export-02928bdf6209173b22b0c16ebf17768c-free_shop.scn

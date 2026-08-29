@@ -69,3 +69,6 @@ res://scripts/player/player_body.gd
 res://assets/objects/shops/free_shop.tscn
 res://assets/weapons/pools/broken_gun_only.tres
 res://assets/enemies/hauntling.tscn
+res://assets/projectile/RandomDamageHitscan.tscn
+res://scripts/player/weapon_display.gd
+res://scripts/weapons/randomdamagehitscan.gd
