@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://2q05lsevsve0" path="res://audio/noise/weapon/magic_slow.ogg" id="2_yqhqo"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_f8r2t"]
 [ext_resource type="Texture2D" uid="uid://cwd62ljt2gtwa" path="res://sprites/weapons/projectiles/empty_bullet.png" id="4_c6mb8"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="5_yqhqo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 1.0
@@ -35,6 +36,11 @@ death_quote = Array[String](["\"Remnants of an ancient magic.\"", "\"Witches fro
 material = ExtResource("3_f8r2t")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_c6mb8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1728476280]
+z_index = 2
+material = ExtResource("3_f8r2t")
+texture = ExtResource("5_yqhqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
 shape = SubResource("CircleShape2D_hv2lo")

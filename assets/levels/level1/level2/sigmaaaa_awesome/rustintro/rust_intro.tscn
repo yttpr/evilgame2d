@@ -23,13 +23,12 @@
 [ext_resource type="PackedScene" uid="uid://dv87xh7ssrow6" path="res://assets/enemies/turret.tscn" id="18_dgyd0"]
 [ext_resource type="PackedScene" uid="uid://njexk3d72xp5" path="res://assets/objects/health_station.tscn" id="21_3f515"]
 [ext_resource type="Resource" uid="uid://c4qxntrhns2n4" path="res://assets/enemies/spawns/spawns_rustworld.tres" id="23_i21b0"]
-[ext_resource type="PackedScene" uid="uid://cuwmp0vyhpgua" path="res://assets/enemies/tank.tscn" id="24_gub85"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_786qi")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(-128, -113), Vector2(3680, 463)])
+entries = Array[Vector2]([Vector2(-128, -113), Vector2(3680, 463), Vector2(-5312, 1871)])
 songs = Array[AudioStream]([ExtResource("2_yjvhh"), ExtResource("3_52van"), ExtResource("4_x1jl6"), ExtResource("5_hhjrj"), ExtResource("6_f7syp")])
 volumes = Array[float]([-7.0, -5.0, -6.0, -5.0, -5.0])
 
@@ -150,9 +149,6 @@ position = Vector2(704, 1024)
 
 [node name="Crate3" parent="." unique_id=1314307099 instance=ExtResource("14_3bu81")]
 position = Vector2(3488, 928)
-
-[node name="WIP2" parent="." unique_id=237002366 instance=ExtResource("13_edyu5")]
-position = Vector2(-5312, 1888)
 
 [node name="Crate4" parent="." unique_id=1202112773 instance=ExtResource("14_3bu81")]
 position = Vector2(-2336, 5792)
@@ -1421,12 +1417,10 @@ position = Vector2(-2016, 2720)
 [node name="Crate39" parent="." unique_id=113381835 instance=ExtResource("14_3bu81")]
 position = Vector2(-1952, 2720)
 
-[node name="Tank" parent="." unique_id=1530460214 instance=ExtResource("24_gub85")]
-position = Vector2(-128, 5472)
-
-[node name="Tank2" parent="." unique_id=496951558 instance=ExtResource("24_gub85")]
-position = Vector2(-1688, 5082)
-
 [node name="Door2" parent="." unique_id=1164668709 instance=ExtResource("12_kdg1h")]
 position = Vector2(3680, 448)
 room = "res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_branches/rust_branches.tscn"
+
+[node name="Door3" parent="." unique_id=1520789983 instance=ExtResource("12_kdg1h")]
+position = Vector2(-5312, 1856)
+room = "res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/tankroom/manytanks.tscn"

@@ -10,13 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="8_fhds2"]
 [ext_resource type="PackedScene" uid="uid://wp4s4a5t2x7f" path="res://assets/objects/chance_door.tscn" id="9_elxhr"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="10_2wj1a"]
-[ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="11_g0fdd"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
 script = ExtResource("1_oe2py")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(0, 113), Vector2(0, -2417)])
+entries = Array[Vector2]([Vector2(0, 113), Vector2(0, -113)])
 songs = Array[AudioStream]([ExtResource("2_g0fdd"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5"), ExtResource("3_nk2r5")])
 volumes = Array[float]([0.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -4.0, -2.0, -2.0, -2.0, -2.0, -2.0, -4.0, -2.0, -2.0, -2.0, -2.0, -2.0])
 
@@ -64,5 +63,6 @@ weights = Array[int]([14, 1, 1, 1, 1, 1, 1])
 [node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("10_2wj1a")]
 position = Vector2(-96, 64)
 
-[node name="WIP" parent="." unique_id=653630647 instance=ExtResource("11_g0fdd")]
+[node name="Door3" parent="." unique_id=461044327 instance=ExtResource("8_fhds2")]
 position = Vector2(0, -128)
+room = "res://assets/levels/level1/playtest_scene.tscn"

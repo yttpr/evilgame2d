@@ -134,7 +134,7 @@ res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dark.tscn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks2.tscn::0eb904b9bdf652206e6b01953f1f2f84::1786234869::res://.godot/exported/133200997/export-884371b70a037f00925da1df63e7a601-hallway_blocks2.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_bridge.tscn::1b0e949ad626902f50842ddaf65d32ba::1786234900::res://.godot/exported/133200997/export-6b4379418b8387355385f2e3c20b960f-hallway_bridge.scn
 res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_null.tscn::322ee94916f9c14930ede08462eda93d::1786164239::res://.godot/exported/133200997/export-70410c02d34ba803710b3405646e2d02-hallway_null.scn
-res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dead.tscn::535cc66b1a6a5c9566ac8ddce7d74685::1786164214::res://.godot/exported/133200997/export-67bf0e4969dd06e4ca76caf540b0ea09-hallway_dead.scn
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dead.tscn::cc3af5de5a0d2a368d5dcdad95d80107::1787987354::res://.godot/exported/133200997/export-67bf0e4969dd06e4ca76caf540b0ea09-hallway_dead.scn
 res://assets/map/iloveyou_walls_tileset.tres::2176aaa0c7b4262f1dd2fb2a6c3b4c85::1787925940::res://.godot/exported/133200997/export-271fabe40e0ae3c7790ad6e6aa883dc2-iloveyou_walls_tileset.res
 res://assets/objects/chance_door.tscn::a5a363fe73e06eef2929a88d5f2c4683::1786162943::res://.godot/exported/133200997/export-9013192ddc72bab64b4a48d079813f6f-chance_door.scn
 res://assets/projectile/AirstrikeBullet.tscn::dacda84a3688f21a0201ab65eb73a614::1786597753::res://.godot/exported/133200997/export-ccac1da246c8a31dc3db0f88dc2cec0c-AirstrikeBullet.scn
@@ -315,9 +315,9 @@ res://assets/enemies/gibs/windle_gibs.tres::4ce62921ae0a7c18bef10f89e5d73ea4::17
 res://assets/enemies/spawns/spawns_rustworld.tres::c49c6a130f912cc18761330da991355e::1787788882::res://.godot/exported/133200997/export-06c96f7d1601c749a895263ad4609f36-spawns_rustworld.res
 res://assets/enemies/tank.tscn::66b0e7389086082d974f773657a71620::1787731658::res://.godot/exported/133200997/export-b11774acb7cedbfeb046d14882a90264-tank.scn
 res://assets/enemies/turret.tscn::e434614234abbf8ce237f96741fa9e20::1787731529::res://.godot/exported/133200997/export-5c9e45d8c88e5508b349b91d1362abb7-turret.scn
-res://assets/enemies/wednesday.tscn::c9258297ce8f593728ab06235d25d435::1787859380::res://.godot/exported/133200997/export-94447ed588f31f2710b34d032ca41551-wednesday.scn
+res://assets/enemies/wednesday.tscn::952fc9d570aac45e45115162edc77570::1787990128::res://.godot/exported/133200997/export-94447ed588f31f2710b34d032ca41551-wednesday.scn
 res://assets/enemies/windle.tscn::e2ada0d0e90e0999a6bfe2e89b65cec4::1787859103::res://.godot/exported/133200997/export-03a929aa09dd0ca9a591b74b7e5cb0c2-windle.scn
-res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_intro.tscn::3cf70f3f1f108710fb8ec749f36ce985::1787971183::res://.godot/exported/133200997/export-8b56e7a63582975918bbafa019587d9d-rust_intro.scn
+res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_intro.tscn::b6a7ae9807e6c30a039bf8083ce9565b::1787987799::res://.godot/exported/133200997/export-8b56e7a63582975918bbafa019587d9d-rust_intro.scn
 res://assets/map/rustworld_ground_tileset.tres::340708ce58462e6b8b0b83488be3de91::1787971168::res://.godot/exported/133200997/export-5d1c94f837fea9ed510f56bc47a99a3f-rustworld_ground_tileset.res
 res://assets/map/rustworld_walls_tileset.tres::ec5b3c1ea85b3e1e5f442bbd6b1237b3::1787971168::res://.godot/exported/133200997/export-0cc55e8d86174938ab03a5a42ccb9e59-rustworld_walls_tileset.res
 res://assets/objects/rust_pipe.tscn::0ee33e738e092143e71f005a47631baa::1787725893::res://.godot/exported/133200997/export-570ed2b561f4c241b2d154fa3e4fd8e2-rust_pipe.scn
@@ -342,8 +342,8 @@ res://assets/characters/gibs/wtmiyr_gibs.tres::41a6203a4a3bcd305c2618db25783705:
 res://assets/characters/wtmiyr_character.tres::c59a1fd45e985b041144c920769c438f::1787814093::res://.godot/exported/133200997/export-f8513ce78f434d7931ccfea383adcc88-wtmiyr_character.res
 res://assets/projectile/InverseFastLineBullet.tscn::662c3002b486c07f25a28279897ceb97::1787814779::res://.godot/exported/133200997/export-7697e5e3d8eccca977248578dfbeeecd-InverseFastLineBullet.scn
 res://assets/projectile/TwoFastLineBullet.tscn::32e2dc560809fabca76f4ec3c74f3cb3::1787814811::res://.godot/exported/133200997/export-9efeb67d0742d369f360a691bd51d4d8-TwoFastLineBullet.scn
-res://assets/weapons/ewlau.tres::dbcf0669c4464be474df8e7585e36ecc::1787857535::res://.godot/exported/133200997/export-bc3c8da5f779bc66a9772b861039ff3b-ewlau.res
-res://assets/weapons/wtmiyr.tres::c88635bb56ded97a51de485985402ace::1787857542::res://.godot/exported/133200997/export-8db60384a7c70bfde671c77ca348350b-wtmiyr.res
+res://assets/weapons/ewlau.tres::bb3a312cdb11cf680ab372a340ea3880::1787987465::res://.godot/exported/133200997/export-bc3c8da5f779bc66a9772b861039ff3b-ewlau.res
+res://assets/weapons/wtmiyr.tres::05a36bae4ccd778b82dfbd25f0b259e7::1787987465::res://.godot/exported/133200997/export-8db60384a7c70bfde671c77ca348350b-wtmiyr.res
 res://assets/enemies/gibs/hauntling_gibs.tres::135e9bd82a0a2e4f0197dd3613f272d9::1787887559::res://.godot/exported/133200997/export-e0b36e280935c60e2d1a46c7f39920eb-hauntling_gibs.res
 res://assets/enemies/gibs/nameless_gibs.tres::1de82c726bd240016366f4d6830b9a7c::1787929835::res://.godot/exported/133200997/export-b20172f5f0c99ec67179a8eb597a228f-nameless_gibs.res
 res://assets/enemies/gibs/spectre_gibs.tres::899978aff973b580d3100ea2e7e30134::1787923295::res://.godot/exported/133200997/export-9592a849ce7b2614e56fe9b2e22e0068-spectre_gibs.res
@@ -359,7 +359,7 @@ res://assets/map/darkworld_ground_tileset.tres::ba17213504649a36d3db9b9ba0a3a87f
 res://assets/map/darkworld_solid_ground.tres::f14aff54163cddfdc0d435e8f6b30df7::1787931185::res://.godot/exported/133200997/export-bac50f937b2c6800f842ffa2213f0279-darkworld_solid_ground.res
 res://assets/map/darkworld_walls_tileset.tres::658536fd6ee5c22fb1981042dd24d068::1787926829::res://.godot/exported/133200997/export-62b544b3905c58aacf56acbcb130e2eb-darkworld_walls_tileset.res
 res://assets/objects/floorcandle.tscn::c886d7911ada53f1869bee0d623190af::1787934054::res://.godot/exported/133200997/export-76f81bae8b2f16b8162b24c3a71bab50-floorcandle.scn
-res://assets/projectile/ButterflyShotgunProjectile.tscn::26d452bb48ea7454f0d808cefcdf5fdc::1787923697::res://.godot/exported/133200997/export-4c82078d05b7c97333ada583d35fee1e-ButterflyShotgunProjectile.scn
+res://assets/projectile/ButterflyShotgunProjectile.tscn::94bb03cde5c84194148d5a7cedca5b46::1787989945::res://.godot/exported/133200997/export-4c82078d05b7c97333ada583d35fee1e-ButterflyShotgunProjectile.scn
 res://assets/projectile/NamelessHitscanBullet.tscn::fdcd82e0ba879ceaefc963ea285b698a::1787929583::res://.godot/exported/133200997/export-d3e700747ec1d4eeb640bb587f428e04-NamelessHitscanBullet.scn
 res://assets/projectile/WeakCrossBullet.tscn::93b5621066512f7b5d69587c1abd39b5::1787918937::res://.godot/exported/133200997/export-d06bef13ecd9ac8a636d5d56bdbc0204-WeakCrossBullet.scn
 res://assets/ui/loading_menu.tscn::53d4cc08e6012501eda3964ff6240bf0::1787925482::res://.godot/exported/133200997/export-6a1aa5caa2a057a51f0983ab3a64eef0-loading_menu.scn
@@ -367,11 +367,13 @@ res://sprites/map/darkworld_wall_normalize.tres::04ec9a56be642f5d22b425edaf7c971
 res://assets/enemies/gibs/medamaude_gibs.tres::d293dbe1817348c3b85c5c23adf38617::1787968973::res://.godot/exported/133200997/export-72309b86283a09a240ae01c192a154a1-medamaude_gibs.res
 res://assets/enemies/medamaude.tscn::f7c8c8704a82a4f07aef9d81c2724c25::1787969859::res://.godot/exported/133200997/export-db6eed030f2cabf2e34a238212518a37-medamaude.scn
 res://assets/levels/level1/dark_corridor/darkworld/darkswap/dark_swap.tscn::12360ea70be56f4b2076cd38a60f35a5::1787980560::res://.godot/exported/133200997/export-94f0c57d8a7275821b6ddc9a5890f564-dark_swap.scn
-res://assets/projectile/NormalBullet.tscn::b3fbe3503deba026410966cfec306636::1787969091::res://.godot/exported/133200997/export-86ab6b92224fdb32fa620430b203bcc7-NormalBullet.scn
-res://assets/levels/level1/dark_corridor/darkworld/darkswap/darkbridges/dark_bridges.tscn::879436bc9cd740e78c3c71f36f459090::1787983613::res://.godot/exported/133200997/export-d7441d2f6f4eea4266f4554ffd5fb969-dark_bridges.scn
+res://assets/projectile/NormalBullet.tscn::11fe94f981f78cdfc191b285eea134b2::1787990001::res://.godot/exported/133200997/export-86ab6b92224fdb32fa620430b203bcc7-NormalBullet.scn
+res://assets/levels/level1/dark_corridor/darkworld/darkswap/darkbridges/dark_bridges.tscn::bb62af4011f3ae3738e716a3fe2fe800::1787988721::res://.godot/exported/133200997/export-d7441d2f6f4eea4266f4554ffd5fb969-dark_bridges.scn
 res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_branches/rust_coinshop/rust_coinshop.tscn::e819f57262937c4cc74b9d9331845a06::1787985302::res://.godot/exported/133200997/export-ac441e76e3f50f9f30858c92cfa40942-rust_coinshop.scn
 res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_branches/rust_branches.tscn::74f1eb208ba9ca6f2938b745d2910a0f::1787976024::res://.godot/exported/133200997/export-f6b3a9733456fd7343189353263b29f0-rust_branches.scn
 res://assets/objects/shops/coin_shop.tscn::234b4fe219c0ae36871c4164c3ba3f0d::1787977308::res://.godot/exported/133200997/export-274889ef1b9a4bc6c395d82c24d25dea-coin_shop.scn
 res://assets/objects/shops/free_shop.tscn::562ffb87115e64504f98cbbfadd0d011::1787982969::res://.godot/exported/133200997/export-02928bdf6209173b22b0c16ebf17768c-free_shop.scn
 res://assets/objects/prayer_talk.tscn::6fa47e7ab5d15faa8e99b8e3e3339912::1787977369::res://.godot/exported/133200997/export-4318edc13335bb6e1e85fd6aa7bda871-prayer_talk.scn
 res://assets/weapons/pools/broken_gun_only.tres::c850f0d25b3d9bcc60a38b10f0cf80ec::1787983044::res://.godot/exported/133200997/export-3f346bbcb2f66391293f97701a8de6bf-broken_gun_only.res
+res://assets/levels/level1/dark_corridor/darkworld/darkswap/darkbridges/exitdarkroom/exitdarkroom.tscn::af59f645a4c86c51c7852103a4e08e95::1787989856::res://.godot/exported/133200997/export-ccfbacd53fd18bba764aa09b647e641a-exitdarkroom.scn
+res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/tankroom/manytanks.tscn::6eb45d3eb47fe449943e416960b4125e::1787988566::res://.godot/exported/133200997/export-f4c2de0e3d42981aeba5de4469d38b94-manytanks.scn

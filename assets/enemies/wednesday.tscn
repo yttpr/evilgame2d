@@ -72,9 +72,9 @@ texture = ExtResource("10_wj423")
 
 [node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
 script = ExtResource("11_7nduy")
-vision_range = 800.0
-limit_range = 50.0
-max_range = 500.0
+vision_range = 1000.0
+limit_range = 32.0
+max_range = 700.0
 can_target_delay = 1.0
 wander_time = 5.0
 wander_speed = 35.0

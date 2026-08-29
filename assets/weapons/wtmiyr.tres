@@ -23,5 +23,5 @@ reload_time = 1.35
 aim_length = 55.0
 ready_audio = ExtResource("2_4w3p3")
 melee = true
-melee_range = 8.0
+melee_range = 12.0
 metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

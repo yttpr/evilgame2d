@@ -72,3 +72,9 @@ res://assets/enemies/hauntling.tscn
 res://assets/projectile/RandomDamageHitscan.tscn
 res://scripts/player/weapon_display.gd
 res://scripts/weapons/randomdamagehitscan.gd
+res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dead.tscn
+res://assets/weapons/wtmiyr.tres
+res://assets/weapons/ewlau.tres
+res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/tankroom/manytanks.tscn
+res://assets/levels/level1/dark_corridor/darkworld/darkswap/darkbridges/exitdarkroom/exitdarkroom.tscn
+res://assets/enemies/wednesday.tscn
