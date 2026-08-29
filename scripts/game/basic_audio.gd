@@ -11,6 +11,8 @@ func _play_sound(sound : AudioStream, mod : float = 0.0, pitch : float = 1.0) ->
 		return
 	self.stream = sound
 	self.volume_db = -10 + -10.0 * (1.0 - Manager.noise_vol) + mod
+	if pitch <= 0.0:
+		pitch = 0.001
 	self.pitch_scale = pitch
 	self.play()
 

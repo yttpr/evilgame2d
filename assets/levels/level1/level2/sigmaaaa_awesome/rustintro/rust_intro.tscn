@@ -29,7 +29,7 @@
 y_sort_enabled = true
 script = ExtResource("1_786qi")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(-128, -113)])
+entries = Array[Vector2]([Vector2(-128, -113), Vector2(3680, 463)])
 songs = Array[AudioStream]([ExtResource("2_yjvhh"), ExtResource("3_52van"), ExtResource("4_x1jl6"), ExtResource("5_hhjrj"), ExtResource("6_f7syp")])
 volumes = Array[float]([-7.0, -5.0, -6.0, -5.0, -5.0])
 
@@ -150,9 +150,6 @@ position = Vector2(704, 1024)
 
 [node name="Crate3" parent="." unique_id=1314307099 instance=ExtResource("14_3bu81")]
 position = Vector2(3488, 928)
-
-[node name="WIP" parent="." unique_id=1977944538 instance=ExtResource("13_edyu5")]
-position = Vector2(3712, 480)
 
 [node name="WIP2" parent="." unique_id=237002366 instance=ExtResource("13_edyu5")]
 position = Vector2(-5312, 1888)
@@ -1429,3 +1426,7 @@ position = Vector2(-128, 5472)
 
 [node name="Tank2" parent="." unique_id=496951558 instance=ExtResource("24_gub85")]
 position = Vector2(-1688, 5082)
+
+[node name="Door2" parent="." unique_id=1164668709 instance=ExtResource("12_kdg1h")]
+position = Vector2(3680, 448)
+room = "res://assets/levels/level1/level2/sigmaaaa_awesome/rustintro/rust_branches/rust_branches.tscn"

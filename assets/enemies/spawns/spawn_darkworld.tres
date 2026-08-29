@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmswxt6owk86r" path="res://assets/enemies/pawn.tscn" id="4_psjmi"]
 [ext_resource type="PackedScene" uid="uid://djneu2ewdvqr6" path="res://assets/enemies/spectre.tscn" id="5_wifp4"]
 [ext_resource type="PackedScene" uid="uid://bgrwhwacrydk2" path="res://assets/enemies/nameless.tscn" id="6_v0bk0"]
-[ext_resource type="PackedScene" uid="uid://ccbcjrfch7c1l" path="res://assets/enemies/obelisk.tscn" id="7_s78v8"]
+[ext_resource type="PackedScene" uid="uid://dnpyjlkbesi5t" path="res://assets/enemies/medamaude.tscn" id="7_s78v8"]
 [ext_resource type="Script" uid="uid://b1js8q00adevy" path="res://scripts/enemy/spawn_list.gd" id="8_84ha1"]
 
 [resource]

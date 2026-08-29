@@ -1,6 +1,6 @@
+ShopPoolData
 Shader
 EnemySpawnList
-ShopPoolData
 CharacterData
 GibData
 WeaponData

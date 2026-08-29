@@ -1,4 +1,5 @@
 C:/Cool Things/evilgame/exports/windows/
+res://assets/weapons/pools/
 res://sprites/objects/shader/
 C:/Cool Things/evilgame/exports/web/
 res://assets/objects/
@@ -6,7 +7,6 @@ res://assets/map/
 res://assets/ui/
 res://assets/enemies/spawns/
 res://sprites/enemies/gibs/
-res://assets/weapons/pools/
 res://assets/characters/
 res://audio/control/
 res://assets/characters/gibs/

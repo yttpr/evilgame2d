@@ -60,6 +60,10 @@ func _ready() -> void:
 	ui.Health._set_current_health(HP)
 	ui.Health._set_health_type(healthtype)
 	dead_cooldown = 0
+	
+	await get_tree().process_frame
+	if Manager._get_world() and !Manager._get_world().is_spawn:
+		Manager._play_oneshot(self.global_position, Manager.door_noise, 15)
 
 var dead_cooldown : float
 func _cleanup() -> void:

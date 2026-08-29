@@ -112,7 +112,7 @@ options = [NodePath("."), NodePath("../Gun3"), NodePath("../Gun5")]
 health_cost = 5
 
 [node name="Gun3" parent="." unique_id=226190807 node_paths=PackedStringArray("options") instance=ExtResource("13_qpwts")]
-position = Vector2(-96, -704)
+position = Vector2(-96, -640)
 objectname = "CoraDungeonShop2"
 pool = ExtResource("14_vhlio")
 options = [NodePath("../Gun2"), NodePath("."), NodePath("../Gun5")]

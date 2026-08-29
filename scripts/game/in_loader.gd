@@ -33,6 +33,7 @@ func _anim(revive : bool) -> void:
 		image.frame = 0
 	else:
 		image.frame = 1
+		load_time /= 2.0
 	
 	triggered = true
 	var up = get_tree().create_tween()

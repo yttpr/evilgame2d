@@ -23,6 +23,7 @@ gibs = ExtResource("2_kwqsv")
 shape = SubResource("RectangleShape2D_hv2lo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562283018]
+light_mask = 8
 texture = ExtResource("3_kwqsv")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1958771761]

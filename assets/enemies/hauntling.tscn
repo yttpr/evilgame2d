@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bgsh4eagasvle" path="res://audio/noise/enemies/hauntling_hit.wav" id="3_ef5fl"]
 [ext_resource type="Texture2D" uid="uid://bhwiax8q2433f" path="res://sprites/enemies/EvilGame2D_hauntling_WIP.png" id="4_ef5fl"]
 [ext_resource type="Script" uid="uid://c8vv5ekfq0ng4" path="res://scripts/player/player_animator.gd" id="5_2gvw2"]
-[ext_resource type="AudioStream" uid="uid://vc430uo7v28u" path="res://audio/noise/player/soft_footstep.wav" id="6_giowq"]
+[ext_resource type="AudioStream" uid="uid://dv7wb5pjwobed" path="res://audio/noise/enemies/hauntling_walk.wav" id="6_ef5fl"]
 [ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="7_mjt5x"]
 [ext_resource type="Script" uid="uid://uvpai4td262g" path="res://scripts/player/character_hitbox.gd" id="8_nt2as"]
 [ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="9_veq2w"]
@@ -44,9 +44,11 @@ hframes = 6
 script = ExtResource("5_2gvw2")
 body = NodePath("..")
 hitbox = NodePath("../hitbox")
-footstep = ExtResource("6_giowq")
+walk_time = 0.3
+footstep = ExtResource("6_ef5fl")
+audio_mod = 4.0
 audio = NodePath("AudioStreamPlayer2D")
-step_change = 1.2
+step_change = 1.35
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
 script = ExtResource("7_mjt5x")

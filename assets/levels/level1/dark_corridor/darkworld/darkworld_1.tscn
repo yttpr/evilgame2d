@@ -8,7 +8,6 @@
 [ext_resource type="TileSet" uid="uid://bwvji8iuoy1hh" path="res://assets/map/darkworld_solid_ground.tres" id="5_dgk3b"]
 [ext_resource type="PackedScene" uid="uid://do3ontetdl2fy" path="res://assets/characters/player_character.tscn" id="5_qbg5i"]
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="6_3ftwh"]
-[ext_resource type="PackedScene" uid="uid://wal36xx6tlk3" path="res://assets/objects/yield.tscn" id="7_lyman"]
 [ext_resource type="Script" uid="uid://c4l3txmv6gpvl" path="res://scripts/enemy/enemy_spawner.gd" id="8_nstme"]
 [ext_resource type="Resource" uid="uid://e5jtmpy8qmh4" path="res://assets/enemies/spawns/spawn_darkworld.tres" id="11_dgk3b"]
 
@@ -16,7 +15,7 @@
 y_sort_enabled = true
 script = ExtResource("1_walqo")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(-512, 335), Vector2(1728, 1167)])
+entries = Array[Vector2]([Vector2(-512, 335), Vector2(1728, 1167), Vector2(2080, -561)])
 songs = Array[AudioStream]([ExtResource("2_re24k"), ExtResource("3_lgqv8"), ExtResource("4_b3cxg")])
 volumes = Array[float]([0.0, 0.0, 0.0])
 
@@ -50,14 +49,12 @@ physics_quadrant_size = 64
 position = Vector2(465, 230)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=503539911]
+color = Color(0.85882354, 0.85882354, 0.85882354, 1)
 
 [node name="Door" parent="." unique_id=1971503127 instance=ExtResource("6_3ftwh")]
 position = Vector2(-512, 320)
 room = "res://assets/levels/level1/dark_corridor/dark_corridor.tscn"
 spawn_pos = 2
-
-[node name="WIP" parent="." unique_id=653630647 instance=ExtResource("7_lyman")]
-position = Vector2(2688, -544)
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1210052382]
 position = Vector2(-544, -128)
@@ -104,3 +101,7 @@ metadata/_custom_type_script = "uid://c4l3txmv6gpvl"
 [node name="Door2" parent="." unique_id=221552802 instance=ExtResource("6_3ftwh")]
 position = Vector2(1728, 1152)
 room = "res://assets/levels/level1/dark_corridor/darkworld/dark_shore/dark_shore.tscn"
+
+[node name="Door3" parent="." unique_id=1929860414 instance=ExtResource("6_3ftwh")]
+position = Vector2(2080, -576)
+room = "res://assets/levels/level1/dark_corridor/darkworld/darkswap/dark_swap.tscn"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopPoolData" format=3 uid="uid://bvpmqbhvixuqs"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_aqw02"]
+[ext_resource type="Script" uid="uid://1r25lpvdp18l" path="res://scripts/weapons/shop_pool_data.gd" id="2_kjcqg"]
+[ext_resource type="Resource" uid="uid://dfmq7eqxp1ufj" path="res://assets/weapons/brokengun.tres" id="2_nngat"]
+
+[resource]
+script = ExtResource("2_kjcqg")
+base_pool = Array[ExtResource("1_aqw02")]([ExtResource("2_nngat")])
+metadata/_custom_type_script = "uid://1r25lpvdp18l"

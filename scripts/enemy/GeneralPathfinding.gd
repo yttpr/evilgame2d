@@ -137,6 +137,7 @@ func _physics_process(delta: float) -> void:
 			SmoothLookAt(Looking, next_pos, turn_speed / delta)
 	
 	if nav_agent.avoidance_enabled:
+		nav_agent.max_speed = _get_speed()
 		var intended_velocity = direction * _get_speed()
 		nav_agent.set_velocity(intended_velocity)
 	else:

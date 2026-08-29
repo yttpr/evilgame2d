@@ -68,10 +68,12 @@ func _process(delta: float) -> void:
 		return
 	
 	#deagro
+	justcheckline = true
 	if !_can_see(Follow_Target):
 		if Weapon.break_aim_if_lost and Weapon.aiming_tick > 0:
 			#print("end by cant see")
 			Weapon.is_agro = false
+	justcheckline = false
 	if Movable.global_position.distance_to(Follow_Target.global_position) > max_range:
 		if Weapon.break_aim_if_lost and Weapon.aiming_tick > 0:
 			#print("end by out of range")
@@ -79,6 +81,7 @@ func _process(delta: float) -> void:
 	
 	if !Weapon.is_agro:
 		slow_down = false
+		justcheckline = true
 		if _can_target(Follow_Target) and Movable.global_position.distance_to(Follow_Target.global_position) <= max_range:
 			check_tick -= delta
 			if check_tick <= 0:
@@ -89,6 +92,7 @@ func _process(delta: float) -> void:
 			_set_moving(true)
 			slow_down = false
 			check_tick = can_target_delay
+		justcheckline = false
 	else:
 		check_tick = can_target_delay
 		if _can_target(Follow_Target) and Movable.global_position.distance_to(Follow_Target.global_position) <= limit_range:
@@ -101,14 +105,16 @@ func _process(delta: float) -> void:
 
 func _get_speed() -> float:
 	if slow_down:
-		return 2
+		return 0.02
 	if wandering:
 		return wander_speed
 	return super._get_speed()
 
-
+var justcheckline : bool = false
 func _can_see(target : Node2D) -> bool:
 	var ret = super._can_see(target)
+	if justcheckline:
+		return ret
 	if !ret or self.global_position.distance_to(target.global_position) > vision_range:
 		return false
 	return ret

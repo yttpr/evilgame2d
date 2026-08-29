@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c4vvrvx32vyab"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_xcbsm"]
+[ext_resource type="AudioStream" uid="uid://dntlxer44dm7q" path="res://audio/noise/weapon/magic_pop.wav" id="2_xcbsm"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_5rymh"]
+[ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_dqan6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_xcbsm")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 200.0
+radius = 12.0
+rot_spd = 6.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("2_xcbsm")
+audio_mod = 10.0
+pitch_mod = 0.7
+make_gibs = true
+death_quote = Array[String](["\"Wander infinitely.\"", "\"Lost in a world of mazes...\"", "\"Lost in a maze of worlds...\"", "\"Life as a dream...\"", "\"As if in a dream...\"", "\"Dreaming of dreams.\"", "\"Dreams of other places...\"", "\"Far away from here...\"", "\"Somewhere unknown...\"", "\"Wander into the future...\"", "\"Wander away forever...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_5rymh")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_dqan6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
