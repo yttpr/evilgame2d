@@ -8,6 +8,7 @@ extends CharacterBody2D
 var start_tick : int = -1
 var tick_time : int = 5
 
+@export var longer_time : bool
 var time : float
 var height : float = -35.0
 
@@ -46,7 +47,10 @@ func _prep(inertia : Vector2, vertical : bool = false) -> void:
 	
 	velocity = Vector2.from_angle(randf_range(0.0, 2 * PI)) * spd + (inertia)
 	velocity /= weight
-	time = randf_range(0.1, 0.5)
+	var cap : float = 0.5
+	if longer_time:
+		cap = 1.2
+	time = randf_range(0.1, cap)
 	var moving = Manager._get_world().get_tree().create_tween()
 	moving.tween_property(self, "velocity", Vector2(0, 0), time)
 	

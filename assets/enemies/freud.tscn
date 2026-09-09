@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://e5jajlehler3" path="res://scripts/enemy/screen_monitoring_pathfinding.gd" id="11_q2g43"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_ne6g4"]
 [ext_resource type="PackedScene" uid="uid://dqxkmmh0hteyn" path="res://assets/projectile/BiteBullet.tscn" id="13_q2g43"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="16_6smlg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 28.0
@@ -136,6 +137,9 @@ position = Vector2(0, -36)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1161542037]
 position = Vector2(-25, -102)
 rect = Rect2(-10, -10, 64, 128)
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("16_6smlg")]
+scale = Vector2(0.875, 0.875)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="brain" method="_screen_entered"]

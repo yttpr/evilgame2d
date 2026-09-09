@@ -23,7 +23,7 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 		self.get_parent().add_child(copy)
 		if is_player:
 			var mouse = to_global(get_local_mouse_position())
-			var dir = Manager.Player.weapon_handler.pointer.global_position.direction_to(mouse)
+			var dir = Manager.Player.weapon_handler.weapon.global_position.direction_to(mouse)
 			var loc = Manager.Player.weapon_handler.pointer.global_position
 			if Manager._check_in_wall(loc - Manager.Player.weapon_handler._get_offset_vector()):
 				loc = Manager.Player.weapon_handler.weapon.global_position

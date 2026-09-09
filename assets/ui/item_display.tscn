@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://ccjuukg8jjf1s"]
+
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="1_5kyve"]
+[ext_resource type="Script" uid="uid://56vl48vjf0y7" path="res://scripts/player/item_display.gd" id="2_5kyve"]
+[ext_resource type="Texture2D" uid="uid://c402sdeegs6vv" path="res://sprites/ui/reload.png" id="3_g2e8s"]
+[ext_resource type="Texture2D" uid="uid://c18d8o2ek2fj3" path="res://sprites/ui/damage.png" id="3_o4md2"]
+[ext_resource type="Script" uid="uid://b0ybj1gixsp4a" path="res://scripts/player/weapon_icon.gd" id="4_o4md2"]
+[ext_resource type="Texture2D" uid="uid://bxxjdfrh8vt1q" path="res://sprites/ui/coin_icon.png" id="4_rhoag"]
+[ext_resource type="Texture2D" uid="uid://dfmtgq5at0i75" path="res://sprites/ui/weapon_frame.png" id="5_rhoag"]
+[ext_resource type="Texture2D" uid="uid://cv1whfyfb0gi4" path="res://sprites/ui/item_pointer.png" id="6_5kyve"]
+[ext_resource type="Texture2D" uid="uid://dsrvia2c74crx" path="res://sprites/items/mov_spd.png" id="6_8g0u7"]
+[ext_resource type="Texture2D" uid="uid://bk8b0cpiyttpu" path="res://sprites/ui/break_icon.png" id="6_o4md2"]
+[ext_resource type="Texture2D" uid="uid://cuyrd5ruuvwqt" path="res://sprites/ui/ui_danger.png" id="7_rhoag"]
+
+[node name="ItemDisplay" type="Node2D" unique_id=1940058706 node_paths=PackedStringArray("active", "passives", "pointer", "on_active")]
+material = ExtResource("1_5kyve")
+script = ExtResource("2_5kyve")
+active = NodePath("active")
+passives = [NodePath("passive1"), NodePath("passive2")]
+pointer = NodePath("passive1/pointer")
+on_active = NodePath("active/pointer2")
+active_c = Color(1, 1, 1, 1)
+inactive_c = Color(0.5294118, 0.5294118, 0.5294118, 1)
+health_cost = ExtResource("3_o4md2")
+coin_cost = ExtResource("4_rhoag")
+cooldown_cost = ExtResource("3_g2e8s")
+item_cost = ExtResource("6_o4md2")
+danger_cost = ExtResource("7_rhoag")
+
+[node name="active" type="Node2D" parent="." unique_id=353433729 node_paths=PackedStringArray("frame", "weapon", "cooldown", "type")]
+material = ExtResource("1_5kyve")
+script = ExtResource("4_o4md2")
+frame = NodePath("frame")
+weapon = NodePath("item")
+cooldown = NodePath("cooldown")
+type = NodePath("cost")
+
+[node name="frame" type="Sprite2D" parent="active" unique_id=1515207231]
+self_modulate = Color(0.6509804, 0.6509804, 0.6509804, 1)
+material = ExtResource("1_5kyve")
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("5_rhoag")
+
+[node name="item" type="Sprite2D" parent="active" unique_id=725724225]
+z_index = 1
+material = ExtResource("1_5kyve")
+scale = Vector2(0.999, 0.999)
+texture = ExtResource("6_8g0u7")
+
+[node name="cost" type="Sprite2D" parent="active" unique_id=440153436]
+z_index = 2
+material = ExtResource("1_5kyve")
+position = Vector2(-26, 27)
+texture = ExtResource("3_g2e8s")
+
+[node name="cooldown" type="Node2D" parent="active" unique_id=103444967]
+position = Vector2(0, 42)
+
+[node name="ColorRect" type="ColorRect" parent="active/cooldown" unique_id=2123657596]
+z_index = -1
+material = ExtResource("1_5kyve")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = -84.0
+offset_right = 42.0
+grow_horizontal = 2
+color = Color(0.65, 0.65, 0.65, 0.4862745)
+
+[node name="pointer2" type="Sprite2D" parent="active" unique_id=282397565]
+material = ExtResource("1_5kyve")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_5kyve")
+offset = Vector2(0, -160)
+
+[node name="passive1" type="Node2D" parent="." unique_id=843991189 node_paths=PackedStringArray("frame", "weapon", "cooldown", "type")]
+material = ExtResource("1_5kyve")
+position = Vector2(82, 0)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_o4md2")
+frame = NodePath("frame")
+weapon = NodePath("item")
+cooldown = NodePath("cooldown")
+type = NodePath("cost")
+
+[node name="frame" type="Sprite2D" parent="passive1" unique_id=326102357]
+self_modulate = Color(0.6509804, 0.6509804, 0.6509804, 1)
+material = ExtResource("1_5kyve")
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("5_rhoag")
+
+[node name="item" type="Sprite2D" parent="passive1" unique_id=1304458719]
+z_index = 1
+material = ExtResource("1_5kyve")
+scale = Vector2(0.999, 0.999)
+texture = ExtResource("6_8g0u7")
+
+[node name="cost" type="Sprite2D" parent="passive1" unique_id=85472309]
+z_index = 2
+material = ExtResource("1_5kyve")
+position = Vector2(-26, 26.999998)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_g2e8s")
+
+[node name="cooldown" type="Node2D" parent="passive1" unique_id=1638080]
+position = Vector2(0, 42)
+
+[node name="ColorRect" type="ColorRect" parent="passive1/cooldown" unique_id=115979892]
+z_index = -1
+material = ExtResource("1_5kyve")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = -84.0
+offset_right = 42.0
+grow_horizontal = 2
+color = Color(0.65, 0.65, 0.65, 0.4862745)
+
+[node name="pointer" type="Sprite2D" parent="passive1" unique_id=165880568]
+material = ExtResource("1_5kyve")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_5kyve")
+offset = Vector2(0, -160)
+
+[node name="passive2" type="Node2D" parent="." unique_id=378797242 node_paths=PackedStringArray("frame", "weapon", "cooldown", "type")]
+material = ExtResource("1_5kyve")
+position = Vector2(156, 0)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_o4md2")
+frame = NodePath("frame")
+weapon = NodePath("item")
+cooldown = NodePath("cooldown")
+type = NodePath("cost")
+
+[node name="frame" type="Sprite2D" parent="passive2" unique_id=1555820775]
+self_modulate = Color(0.6509804, 0.6509804, 0.6509804, 1)
+material = ExtResource("1_5kyve")
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("5_rhoag")
+
+[node name="item" type="Sprite2D" parent="passive2" unique_id=852228444]
+z_index = 1
+material = ExtResource("1_5kyve")
+scale = Vector2(0.999, 0.999)
+texture = ExtResource("6_8g0u7")
+
+[node name="cost" type="Sprite2D" parent="passive2" unique_id=253210452]
+z_index = 2
+material = ExtResource("1_5kyve")
+position = Vector2(-26, 26.999998)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_g2e8s")
+
+[node name="cooldown" type="Node2D" parent="passive2" unique_id=2042512421]
+position = Vector2(0, 42)
+
+[node name="ColorRect" type="ColorRect" parent="passive2/cooldown" unique_id=69368521]
+z_index = -1
+material = ExtResource("1_5kyve")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = -84.0
+offset_right = 42.0
+grow_horizontal = 2
+color = Color(0.65, 0.65, 0.65, 0.4862745)

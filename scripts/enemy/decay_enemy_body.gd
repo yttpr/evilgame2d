@@ -18,5 +18,5 @@ func _spawn() -> void:
 
 func _on_die() -> void:
 	for i in spawn_amt:
-		_spawn()
+		self.call_deferred("_spawn")
 	super._on_die()

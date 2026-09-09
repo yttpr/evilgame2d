@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bgy244ribkjl4" path="res://sprites/objects/boarded_door.png" id="3_00b28"]
 [ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="3_wfplp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d258k"]
-size = Vector2(64, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00b28"]
+size = Vector2(64, 23)
 
 [node name="Door" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("image")]
 collision_layer = 2048
@@ -23,8 +23,9 @@ inertia_decay = 0.0
 despawn_time = -1.0
 despawn_length = -1.0
 
-[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
-shape = SubResource("RectangleShape2D_d258k")
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=305428783]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_00b28")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932073789]
 position = Vector2(0, -48)

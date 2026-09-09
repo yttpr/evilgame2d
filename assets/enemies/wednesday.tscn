@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://b06a3qo07ufff" path="res://scripts/enemy/phone_interactible.gd" id="13_tw43q"]
 [ext_resource type="AudioStream" uid="uid://cwf52rvirqhrf" path="res://audio/noise/enemies/wednesday_answer.wav" id="14_3l3sx"]
 [ext_resource type="Script" uid="uid://1cayia4by8hq" path="res://scripts/objects/flicker_light.gd" id="14_tw43q"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="16_ey36b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -31,7 +32,7 @@ fill_to = Vector2(0.8350694, 0.8315972)
 
 [node name="Wednesday" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("sprites", "marker")]
 collision_layer = 2048
-collision_mask = 8
+collision_mask = 0
 script = ExtResource("1_4uhe7")
 sprites = NodePath("image")
 HP = 99
@@ -77,7 +78,7 @@ script = ExtResource("11_7nduy")
 vision_range = 1000.0
 limit_range = 32.0
 max_range = 500.0
-can_target_delay = 1.0
+can_target_delay = 0.2
 wander_time = 5.0
 wander_speed = 35.0
 Movable = NodePath("..")
@@ -152,5 +153,8 @@ position = Vector2(0, 1)
 color = Color(1, 0.5803922, 0.5882353, 1)
 range_item_cull_mask = 8
 texture = SubResource("GradientTexture2D_1cm6p")
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("16_ey36b")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

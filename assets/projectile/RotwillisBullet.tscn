@@ -22,9 +22,10 @@ img = NodePath("Sprite2D")
 body = NodePath(".")
 spd = 400.0
 radius = 16.0
+highlighted_tracer = true
+highlight_tracer_w = 12.0
 by_lifetime = true
 lifetime = 6.666
-tracer_width = 12.0
 tracer_time = 0.3
 shot_sound = ExtResource("2_ipnbw")
 audio_mod = 10.0
@@ -32,6 +33,7 @@ make_gibs = true
 death_quote = Array[String](["\"What a beautiful projection.\"", "\"How beautiful\"", "\"Yours, truly\"", "\"What a beautiful world.\"", "\"Magnum opus\"", "\"How lovely.\"", "\"Adore me.\"", "\"A present for you.\"", "\"Would you like to watch with me?\"", "\"What a wonderful world...\"", "\"A rose... for me?\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+z_index = 2
 material = ExtResource("3_f05fo")
 texture = ExtResource("4_ipnbw")
 

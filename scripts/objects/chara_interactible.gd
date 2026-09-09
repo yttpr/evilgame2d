@@ -6,6 +6,12 @@ extends BaseInteractible
 
 func _ready() -> void:
 	self.image.texture = chara.image
+	image.always_animate = chara.idle_anims
+	if chara.idle_anims:
+		image.hframes = 8
+	else:
+		image.hframes = 6
+	image.make_footstep = chara.make_footstep
 
 func _run() -> void:
 	var old = Manager.Player.data
@@ -13,6 +19,12 @@ func _run() -> void:
 	Manager.Player.weapon_handler._reset_arrays()
 	chara = old
 	self.image.texture = chara.image
+	image.always_animate = chara.idle_anims
+	if chara.idle_anims:
+		image.hframes = 8
+	else:
+		image.hframes = 6
+	image.make_footstep = chara.make_footstep
 	
 	var s = global_position
 	self.global_position = Manager.Player.global_position
@@ -27,4 +39,9 @@ func _process(delta: float) -> void:
 	if Manager.Player.data == chara:
 		chara = ResourceLoader.load("res://assets/characters/saturn_character.tres")
 		self.image.texture = chara.image
+		if chara.idle_anims:
+			image.hframes = 8
+		else:
+			image.hframes = 6
+		image.make_footstep = chara.make_footstep
 	processed = true

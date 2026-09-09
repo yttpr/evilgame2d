@@ -53,13 +53,13 @@ func _make_collider() -> DamageCollider:
 	var collider = Manager._create_dmg_collider(dmg, type, source, Vector2.ZERO)
 	collider.radial_knockback = true
 	collider._set_parent(self)
-	collider._set_pierce(-1)
-	collider._set_circle(radius)
-	collider._set_duration(true, lasts)
 	if !player_only:
 		collider._set_collision(Manager.collision_all)
 	else:
 		collider._set_collision(Manager.collision_forEnemy)
+	collider._set_pierce(-1)
+	collider._set_circle(radius)
+	collider._set_duration(true, lasts)
 	collider.frame_buffer = 5
 	collider.death_quote = death_quote
 	return collider

@@ -12,6 +12,7 @@ var orig_color : Color
 @export var volumes : Array[float]
 
 @export var Enemies : Array[BaseBody] = []
+@export var Bosses : Array[BaseBody] = []
 @export var EnemySpawnLocs : Array[EnemySpawner] = []
 
 @export var water_pits : bool
@@ -26,9 +27,9 @@ func _ready() -> void:
 		Manager.coins += Manager.wip_coins
 		Manager.wip_coins = 0
 	orig_color = Color(canvasmodulate.color)
+	Enemies = []
+	Bosses = []
 	Manager.world = self
-	if !Enemies:
-		Enemies = []
 	if Manager.Player:
 		Music.noise.global_position = entries[Manager.spawn_loc]
 		Manager.Player.global_position = entries[Manager.spawn_loc]

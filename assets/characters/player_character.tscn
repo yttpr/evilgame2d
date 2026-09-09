@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://ddvt1wi3021wc" path="res://scripts/player/marker_animator.gd" id="11_tn02o"]
 [ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="12_ayaf2"]
 [ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="12_hembm"]
+[ext_resource type="Texture2D" uid="uid://ck67typ8ol7es" path="res://sprites/ui/ui_line.png" id="12_x2cal"]
 [ext_resource type="Resource" uid="uid://e3c04oph7jau" path="res://assets/weapons/radioscope.tres" id="12_xnclt"]
 [ext_resource type="Shader" uid="uid://cxy75qw336ti6" path="res://sprites/characters/shaders/walloutline.gdshader" id="14_dxrr8"]
 [ext_resource type="Script" uid="uid://basegtvj2kev" path="res://scripts/player/frame_copy.gd" id="14_ocs0c"]
@@ -27,10 +28,14 @@
 [ext_resource type="Script" uid="uid://wmeuqrwmgsqj" path="res://scripts/game/fps_counter.gd" id="20_tlwws"]
 [ext_resource type="PackedScene" uid="uid://y0vlg11e8aqo" path="res://assets/ui/load_in.tscn" id="21_qa25k"]
 [ext_resource type="PackedScene" uid="uid://dii3hjvpfspxj" path="res://assets/ui/player_ui.tscn" id="22_7vkm2"]
+[ext_resource type="Script" uid="uid://bqqwv4uulgqf1" path="res://scripts/player/item_handler.gd" id="25_c5j61"]
 [ext_resource type="Script" uid="uid://dfbo5cmcmn5ye" path="res://scripts/player/interaction_zone.gd" id="25_rcrbx"]
+[ext_resource type="AudioStream" uid="uid://bg07yyatg10vk" path="res://audio/noise/ui/item_break.wav" id="26_3dhyy"]
 [ext_resource type="Script" uid="uid://b4p350jv3c3hl" path="res://scripts/player/shift_shower.gd" id="29_sd4fq"]
+[ext_resource type="Texture2D" uid="uid://23uke0k47tj0" path="res://sprites/ui/ui_filled_circle.png" id="31_x2cal"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hv2lo"]
+a = Vector2(-59, 0)
 b = Vector2(100, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dxrr8"]
@@ -53,7 +58,7 @@ size = Vector2(61, 101)
 light_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
-radius = 85.41
+radius = 53.0
 
 [sub_resource type="Gradient" id="Gradient_gxmte"]
 offsets = PackedFloat32Array(0, 0.8918269, 1)
@@ -65,7 +70,12 @@ fill = 1
 fill_from = Vector2(0.5086806, 0.5190972)
 fill_to = Vector2(0.8350694, 0.8315972)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("img", "Hitbox", "camera", "ui", "weapon_handler", "sprites")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5j61"]
+shader = ExtResource("14_dxrr8")
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/outline_mod = -1.0
+
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1327791293 node_paths=PackedStringArray("img", "Hitbox", "camera", "ui", "weapon_handler", "items", "sprites")]
 collision_layer = 1030
 collision_mask = 12424
 script = ExtResource("1_kdlwy")
@@ -76,6 +86,7 @@ Hitbox = NodePath("hitbox")
 camera = NodePath("camera")
 ui = NodePath("camera/PlayerUi")
 weapon_handler = NodePath("weapon_manager")
+items = NodePath("ItemHandler")
 sprites = NodePath("image")
 HP = 10
 healthtype = "Cos"
@@ -138,14 +149,26 @@ metadata/_custom_type_script = "uid://bhrha2whv1k5o"
 position = Vector2(59, 0)
 shape = SubResource("SegmentShape2D_hv2lo")
 
+[node name="FrameCopy" type="Sprite2D" parent="image/weapon/DamageCollider" unique_id=842146234]
+modulate = Color(1, 1, 0, 1)
+material = ExtResource("12_ayaf2")
+texture = ExtResource("12_x2cal")
+script = ExtResource("14_ocs0c")
+is_hitbox = true
+metadata/_custom_type_script = "uid://basegtvj2kev"
+
 [node name="FrameCopy" type="Sprite2D" parent="image/weapon" unique_id=160983737 node_paths=PackedStringArray("source")]
 z_index = 3
 material = SubResource("ShaderMaterial_dxrr8")
 script = ExtResource("14_ocs0c")
+disable_this = true
 source = NodePath("..")
 metadata/_custom_type_script = "uid://basegtvj2kev"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="image" unique_id=1110922268]
+script = ExtResource("6_o4qoj")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="image" unique_id=1084735920]
 script = ExtResource("6_o4qoj")
 
 [node name="secondary_holder" type="Node2D" parent="image" unique_id=700194487]
@@ -162,6 +185,7 @@ hframes = 2
 z_index = 2
 material = SubResource("ShaderMaterial_sd4fq")
 script = ExtResource("14_ocs0c")
+disable_this = true
 source = NodePath("..")
 
 [node name="camera" type="Camera2D" parent="." unique_id=1559194128 node_paths=PackedStringArray("follow_node", "ui")]
@@ -174,6 +198,20 @@ ui = NodePath("PlayerUi")
 [node name="PlayerUi" parent="camera" unique_id=433024491 instance=ExtResource("22_7vkm2")]
 z_index = 6
 position = Vector2(-556, -305)
+
+[node name="Label" type="Label" parent="camera/PlayerUi" unique_id=458591197]
+z_index = 3
+material = ExtResource("12_ayaf2")
+offset_left = 13.0
+offset_top = 489.00003
+offset_right = 573.6666
+offset_bottom = 526.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.44313726)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "At full health!"
+vertical_alignment = 2
 
 [node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
 shape = SubResource("CircleShape2D_tqpvn")
@@ -189,7 +227,7 @@ shape = SubResource("RectangleShape2D_hv2lo")
 [node name="player_ear" type="AudioListener2D" parent="." unique_id=1202993138]
 current = true
 
-[node name="weapon_manager" type="Node2D" parent="." unique_id=1051347548 node_paths=PackedStringArray("Player", "weapon", "secondary", "pointer", "audio_player", "reload_icon", "melee_collider", "melee_line")]
+[node name="weapon_manager" type="Node2D" parent="." unique_id=1051347548 node_paths=PackedStringArray("Player", "weapon", "secondary", "pointer", "audio_player", "charge_audio", "reload_icon", "melee_collider", "melee_line", "melee_draw")]
 material = SubResource("CanvasItemMaterial_sheqp")
 script = ExtResource("9_088tr")
 Player = NodePath("..")
@@ -198,6 +236,7 @@ weapon = NodePath("../image/weapon")
 secondary = NodePath("../image/secondary_holder/secondary")
 pointer = NodePath("../image/weapon/end_point_marker")
 audio_player = NodePath("BasicAudio")
+charge_audio = NodePath("../image/AudioStreamPlayer2D2")
 weapons = Array[ExtResource("12_hembm")]([ExtResource("12_xnclt"), ExtResource("15_g7yvp"), ExtResource("18_gbbdu")])
 bullet = ExtResource("10_sheqp")
 source_name = "Player_Hitscan"
@@ -213,10 +252,22 @@ damage_type = "Cos"
 dmg_amt = 5
 melee_collider = NodePath("../image/weapon/DamageCollider")
 melee_line = NodePath("../image/weapon/DamageCollider/CollisionShape2D")
+melee_draw = NodePath("../image/weapon/DamageCollider/FrameCopy")
 
 [node name="BasicAudio" type="AudioStreamPlayer2D" parent="weapon_manager" unique_id=1852529134]
 script = ExtResource("6_o4qoj")
 metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[node name="ItemHandler" type="Node2D" parent="." unique_id=2136992002 node_paths=PackedStringArray("Player", "interaction", "passives", "label")]
+script = ExtResource("25_c5j61")
+Player = NodePath("..")
+interaction = NodePath("../InteractionZone")
+passives = [null, null]
+label = NodePath("../camera/PlayerUi/Label")
+break_sound = ExtResource("26_3dhyy")
+break_mod = 12.0
+label_off_time = 5.0
+metadata/_custom_type_script = "uid://bqqwv4uulgqf1"
 
 [node name="marker_holder" type="Node2D" parent="." unique_id=88777579 node_paths=PackedStringArray("marker")]
 position = Vector2(0, -133)
@@ -230,17 +281,6 @@ self_modulate = Color(1, 1, 0, 1)
 z_index = 5
 material = ExtResource("12_ayaf2")
 texture = ExtResource("11_tc657")
-
-[node name="FPS_Counter" type="Label" parent="." unique_id=1899489816]
-z_index = 10
-material = ExtResource("12_ayaf2")
-offset_left = 30.0
-offset_top = -123.0
-offset_right = 70.0
-offset_bottom = -100.0
-text = "60"
-script = ExtResource("20_tlwws")
-metadata/_custom_type_script = "uid://wmeuqrwmgsqj"
 
 [node name="LoadIn" parent="." unique_id=2117594357 instance=ExtResource("21_qa25k")]
 visible = false
@@ -277,10 +317,10 @@ position = Vector2(0, -45)
 [node name="light_holder" type="Node2D" parent="." unique_id=939164862]
 visible = false
 script = ExtResource("29_sd4fq")
+disable_this = true
 
 [node name="floor_light" type="PointLight2D" parent="light_holder" unique_id=178317267]
 z_index = -1
-color = Color(0.84, 0.84, 0.18480001, 1)
 energy = 0.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_1cm6p")
@@ -302,10 +342,38 @@ texture_scale = 2.0
 [node name="chara_light" type="PointLight2D" parent="light_holder" unique_id=649078975]
 z_index = -1
 position = Vector2(0, -75)
-color = Color(0.84, 0.84, 0.18480001, 1)
 range_item_cull_mask = 8
 texture = SubResource("GradientTexture2D_1cm6p")
 texture_scale = 2.0
+
+[node name="THEHEART" type="Node2D" parent="." unique_id=1743217144]
+show_behind_parent = true
+script = ExtResource("29_sd4fq")
+metadata/_custom_type_script = "uid://b4p350jv3c3hl"
+
+[node name="FPS_Counter" type="Label" parent="THEHEART" unique_id=1899489816]
+z_index = 10
+material = ExtResource("12_ayaf2")
+offset_left = 30.0
+offset_top = -123.0
+offset_right = 70.0
+offset_bottom = -100.0
+text = "60"
+script = ExtResource("20_tlwws")
+metadata/_custom_type_script = "uid://wmeuqrwmgsqj"
+
+[node name="Sprite2D" type="Sprite2D" parent="THEHEART" unique_id=1002018588]
+self_modulate = Color(1, 1, 0, 1)
+material = ExtResource("12_ayaf2")
+texture = ExtResource("31_x2cal")
+
+[node name="FrameCopy" type="Sprite2D" parent="THEHEART/Sprite2D" unique_id=208760454 node_paths=PackedStringArray("source")]
+z_index = 3
+material = SubResource("ShaderMaterial_c5j61")
+texture = ExtResource("31_x2cal")
+script = ExtResource("14_ocs0c")
+source = NodePath("..")
+metadata/_custom_type_script = "uid://basegtvj2kev"
 
 [connection signal="area_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]
 [connection signal="body_entered" from="image/weapon/DamageCollider" to="image/weapon/DamageCollider" method="_on_body_entered"]

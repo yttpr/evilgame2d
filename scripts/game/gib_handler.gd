@@ -17,8 +17,8 @@ var unshaded : bool
 func _make_gibs(loc : Vector2, inertia : Vector2, data : GibData) -> void:
 	unshaded = data.unshaded
 	
-	for i in data.coins:
-		_make_coin(loc, inertia)
+	for i in Manager.Player.items._check_items("DropCoins", data.coins, data):
+		_make_coin(loc, inertia, data.has_many_coins)
 	for i in data.blood_amt:
 		_make_blood(loc, inertia, data.blood_color_1, data.blood_color_2)
 	for i in data.floor_blood_amt:
@@ -40,9 +40,9 @@ func _make_gibs(loc : Vector2, inertia : Vector2, data : GibData) -> void:
 		if data.ignore_gravity and data.ignore_gravity.size() > i:
 			floats = data.ignore_gravity[i]
 		for n in data.img_amts[i]:
-			_make_gib(loc, inertia, data.images[i], weight, rotates, floats)
+			_make_gib(loc, inertia, data.images[i], weight, rotates, data.many_gibs, floats)
 
-func _make_gib(loc : Vector2, inertia : Vector2, img : Texture2D, weight = 1.0, do_rotate = true, ignore_gravity : bool = false) -> void:
+func _make_gib(loc : Vector2, inertia : Vector2, img : Texture2D, weight = 1.0, do_rotate = true, manygibs : bool = false, ignore_gravity : bool = false) -> void:
 	var gib : GibBody = gib_base.instantiate()
 	gib.img.texture = img
 	if unshaded:
@@ -57,15 +57,17 @@ func _make_gib(loc : Vector2, inertia : Vector2, img : Texture2D, weight = 1.0, 
 	if do_rotate:
 		gib._random_rotate()
 	gib._random_flip()
+	gib.longer_time = manygibs
 	gib.floats = ignore_gravity
 	gib._prep(inertia, true)
 	gib._set_fall_in_pit(true)
-func _make_coin(loc : Vector2, inertia : Vector2) -> void:
+func _make_coin(loc : Vector2, inertia : Vector2, longer_time : bool = false) -> void:
 	var gib : GibBody = Manager.coin_sprite.instantiate()
 	Manager._get_world().call_deferred("add_child", gib)
 	gib.global_position = loc
 	gib._random_rotate()
 	#gib._random_flip()
+	gib.longer_time = longer_time
 	gib._prep(inertia, true)
 	gib._set_fall_in_pit(true)
 

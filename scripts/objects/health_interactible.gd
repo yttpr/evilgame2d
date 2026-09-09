@@ -10,6 +10,8 @@ extends BaseInteractible
 @export var coin_cost : int
 @export var label : Label
 
+@export var allow_overheal : bool
+
 func _ready() -> void:
 	_hide_dialogue()
 	label.visible = false
@@ -18,35 +20,42 @@ func _ready() -> void:
 		body.skip_gibs = true
 		body._destroy()
 
+func _get_coin_cost() -> int:
+	var cost = coin_cost
+	if allow_overheal and Manager.current_hp >= ceili(Manager.Player.items._check_items("MaxHP", Manager.current_chara.HP, Manager.current_chara, Manager.Player)):
+		cost += coin_cost * (1 + Manager.current_hp - ceili(Manager.Player.items._check_items("MaxHP", Manager.current_chara.HP, Manager.current_chara, Manager.Player)))
+	return cost
+
 func _run() -> void:
 	if body.destroyed:
 		return
-	if Manager.current_hp >= Manager.current_chara.HP:
+	if !allow_overheal and Manager.current_hp >= ceili(Manager.Player.items._check_items("MaxHP", Manager.current_chara.HP, Manager.current_chara, Manager.Player)):
 		Manager._play_oneshot(self.global_position, Manager.ui_fail, 20)
 		dialogue = "Already at full health!"
 		_show_dialogue()
 		return
-	if Manager.coins < coin_cost:
+	if Manager.coins < _get_coin_cost():
 		Manager._play_oneshot(self.global_position, Manager.ui_fail, 20)
 		dialogue = "Not enough coins!"
 		_show_dialogue()
 		return
-	if coin_cost > 0:
-		Manager.coins -= coin_cost
+	if _get_coin_cost() > 0:
+		Manager.coins -= _get_coin_cost()
 	
 	Manager.current_hp += 1
 	Manager.Player.HP += 1
 	Manager.Player.ui.Health._set_current_health(Manager.current_hp)
 	Manager._play_oneshot(self.global_position, sound, audio_mod)
 	Manager._make_heal_popup(1, Manager.Player.global_position, Manager.Player.healthtype == "Sin")
+	label.text = str(_get_coin_cost()) + " Coins"
 
 func _on_nearest() -> void:
 	if body.destroyed:
 		return
 	if tween:
 		tween.kill()
-	if coin_cost > 0:
-		label.text = str(coin_cost) + " Coins"
+	if _get_coin_cost() > 0:
+		label.text = str(_get_coin_cost()) + " Coins"
 		label.visible = true
 		label.modulate = Color.WHITE
 	else:

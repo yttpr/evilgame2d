@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://mep56pp1iy2m"]
+
+[ext_resource type="Texture2D" uid="uid://bwknfsut1ork6" path="res://sprites/items/healpot.png" id="1_k88k1"]
+[ext_resource type="Script" uid="uid://c8q4dmvc4yubl" path="res://scripts/items/uniques/healpot_item.gd" id="2_wfjk8"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="3_nrehs"]
+
+[resource]
+script = ExtResource("3_nrehs")
+id = "Healpot"
+image = ExtResource("1_k88k1")
+active = true
+logic = ExtResource("2_wfjk8")
+cost_type = "Item"
+check_player_health = true
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

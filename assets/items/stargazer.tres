@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dtsbyvaixt4tn"]
+
+[ext_resource type="Texture2D" uid="uid://dfm1tim0sare" path="res://sprites/items/slowdown.png" id="1_ev883"]
+[ext_resource type="Script" uid="uid://08fah564bxcb" path="res://scripts/items/uniques/slowdown_item.gd" id="2_d38go"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="3_kbev7"]
+
+[resource]
+script = ExtResource("3_kbev7")
+id = "Stargazer"
+image = ExtResource("1_ev883")
+active = true
+logic = ExtResource("2_d38go")
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

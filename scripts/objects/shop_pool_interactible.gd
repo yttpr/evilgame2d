@@ -9,6 +9,8 @@ extends WeaponInteractible
 func _close_options() -> void:
 	if options:
 		for option in options:
+			if !option:
+				continue
 			if option == self:
 				continue
 			Manager._set_run_bool(option.objectname, true)
@@ -47,6 +49,10 @@ func _get_weapon() -> void:
 	for item in pool.unlocks:
 		if Manager._check_save_bool(item.id) and !Manager._check_run_bool(item.id):
 			list.append(item)
+	if Manager.Player.items._check_items("AllowStarters", false):
+		for item in pool.starters:
+			if !Manager._check_run_bool(item.id):
+				list.append(item)
 	if list.size() <= 0:
 		list.assign(pool.base_pool)
 		for item in pool.unlocks:
@@ -67,6 +73,7 @@ func _run() -> void:
 	if health_cost > 0:
 		Manager.Player._get_hit(health_cost, "NULL", "Shop", Vector2.ZERO)
 	if coin_cost > 0:
+		Manager._play_oneshot(self.global_position, Manager.purchase_noise, 10)
 		Manager.coins -= coin_cost
 	
 	Manager._play_oneshot(self.global_position, weapon.ready_audio, weapon.audio_mod)

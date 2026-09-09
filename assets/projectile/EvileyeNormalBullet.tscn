@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bkg53gr157gie"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_skmbj"]
+[ext_resource type="AudioStream" uid="uid://by0jeqlyb1dw5" path="res://audio/noise/weapon/magic_med.wav" id="2_ejpgv"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_nbjgc"]
+[ext_resource type="Texture2D" uid="uid://b21mtas1qx4o3" path="res://sprites/weapons/projectiles/eyeball_bullet.png" id="3_skmbj"]
+[ext_resource type="Texture2D" uid="uid://bhync4ihgqd3" path="res://sprites/weapons/projectiles/outlines/eyeball_bullet_outline.png" id="4_nbjgc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_skmbj")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 100.0
+radius = 16.0
+rot_spd = 22.0
+by_lifetime = true
+lifetime = 25.0
+shot_sound = ExtResource("2_ejpgv")
+audio_mod = -10.0
+make_gibs = true
+death_quote = Array[String](["\"EVILEYE.\"", "\"As you decay... I'll still be here.\"", "\"As the world falls apart... I'll be watching.\"", "\"I'll always be here.\"", "\"I'll always be watching.\"", "\"Watching as you rot away.\"", "\"As your body slowly fades...\"", "\"The world crumbles around you.\"", "\"The world falls apart.\"", "\"Goodbye. I'll always love you.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("2_nbjgc")
+texture = ExtResource("3_skmbj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1590454589]
+z_index = 2
+material = ExtResource("2_nbjgc")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_nbjgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

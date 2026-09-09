@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dt2q5k4lc3jv" path="res://sprites/objects/locked_door.png" id="2_cslkr"]
 [ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="3_cicf5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d258k"]
-size = Vector2(64, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cslkr"]
+size = Vector2(64, 23)
 
 [node name="Door" type="CharacterBody2D" unique_id=1327791293]
 collision_layer = 2048
@@ -19,8 +19,9 @@ inertia_decay = 0.0
 despawn_time = -1.0
 despawn_length = -1.0
 
-[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
-shape = SubResource("RectangleShape2D_d258k")
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=926663605]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_cslkr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932073789]
 position = Vector2(0, -48)

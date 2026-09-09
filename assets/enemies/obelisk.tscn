@@ -14,9 +14,10 @@
 [ext_resource type="Script" uid="uid://cvil36t7bqgcp" path="res://scripts/enemy/wander_pathfinding.gd" id="12_fty68"]
 [ext_resource type="Script" uid="uid://lquf71t2cxfs" path="res://scripts/enemy/flipselfhealth_weapon.gd" id="13_m4yfk"]
 [ext_resource type="PackedScene" uid="uid://bphp4go574kc1" path="res://assets/projectile/SlowerTriangle.tscn" id="14_m4yfk"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="15_cx1eb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
-radius = 24.0
+radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
 size = Vector2(85, 103.5)
@@ -132,5 +133,8 @@ position = Vector2(0, -96)
 [node name="BasicAudio" type="AudioStreamPlayer2D" parent="." unique_id=1115785093]
 script = ExtResource("7_7yeuu")
 metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("15_cx1eb")]
+scale = Vector2(0.938, 0.938)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

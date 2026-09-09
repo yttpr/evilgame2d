@@ -12,11 +12,13 @@ func _ready() -> void:
 func _go_up() -> void:
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_SINE)
 	tween.tween_property(marker, "position", Vector2(0, max), time)
 	tween.tween_callback(_go_down)
 
 func _go_down() -> void:
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_SINE)
 	tween.tween_property(marker, "position", Vector2.ZERO, time)
 	tween.tween_callback(_go_up)

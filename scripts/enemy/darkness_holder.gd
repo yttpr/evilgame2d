@@ -6,6 +6,7 @@ extends Sprite2D
 @export var movable : BaseBody
 
 func _ready() -> void:
+	self.visible = true
 	self.modulate.a = 0.0
 	await get_tree().process_frame
 	self.get_parent().remove_child(self)

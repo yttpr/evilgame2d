@@ -16,6 +16,6 @@ damage_amt = 12
 damage_type = "Sin"
 knockback = 2500.0
 clip_size = 1
-reload_time = 6.0
+reload_time = 5.0
 ready_audio = ExtResource("2_lya1w")
 metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

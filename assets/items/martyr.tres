@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cvff1h2j5p286"]
+
+[ext_resource type="Texture2D" uid="uid://c5x0kvvmvgutb" path="res://sprites/items/globaliframes.png" id="1_2gatm"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="2_er388"]
+
+[resource]
+script = ExtResource("2_er388")
+id = "Martyr"
+image = ExtResource("1_2gatm")
+addition_mod = Dictionary[String, float]({
+"GlobalIFrames": 1.0
+})
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

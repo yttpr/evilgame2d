@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://dxoh2iesb50mw"]
+
+[ext_resource type="Texture2D" uid="uid://df8yeoluf502o" path="res://sprites/enemies/gibs/bone.png" id="1_trljn"]
+[ext_resource type="Texture2D" uid="uid://c0arcnok6ru58" path="res://sprites/characters/gibs/saea_charm.png" id="2_lmfx4"]
+[ext_resource type="Texture2D" uid="uid://cs54vsp37amlj" path="res://sprites/enemies/gibs/spine_bone.png" id="3_1rd1x"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="4_1rd1x"]
+[ext_resource type="Texture2D" uid="uid://byoinkest3kip" path="res://sprites/enemies/gibs/anatomical_heart.png" id="5_b4g47"]
+[ext_resource type="Texture2D" uid="uid://ddqbq7q7va5oc" path="res://sprites/enemies/gibs/feather.png" id="6_vuspg"]
+[ext_resource type="Texture2D" uid="uid://b3sq8opvxn086" path="res://sprites/enemies/gibs/brain_matter_small.png" id="7_iy1n4"]
+
+[resource]
+script = ExtResource("4_1rd1x")
+blood_amt = 3
+blood_color_1 = Color(0.8509804, 0, 0, 1)
+blood_color_2 = Color(0.34117648, 0, 0.08627451, 1)
+floor_blood_amt = 1
+images = Array[Texture2D]([ExtResource("1_trljn"), ExtResource("3_1rd1x"), ExtResource("5_b4g47"), ExtResource("7_iy1n4"), ExtResource("6_vuspg"), ExtResource("2_lmfx4")])
+img_amts = Array[int]([2, 2, 1, 2, 5, 1])
+weights = Array[float]([1.0, 1.0, 1.0, 1.0, 0.1, 5.0])
+does_rotate = Array[bool]([true, true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

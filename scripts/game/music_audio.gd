@@ -4,6 +4,10 @@ extends AudioStreamPlayer
 
 @export var ambience : Array[AudioStream]
 @export var ambi_vols : Array[float]
+
+@export var boss_track : AudioStream
+@export var boss_vol : float = 0.0
+
 var current_ambient_index : int
 func _next_song() -> void:
 	if Manager.world:
@@ -35,6 +39,9 @@ func _set_ambience(value : bool) -> void:
 func _process(delta: float) -> void:
 	if play_ambience:
 		if !playing:
+			if boss_track and Manager._get_world().Bosses.size() > 0:
+				_play_sound(boss_track, boss_vol)
+				return
 			_next_song()
 			if ambience.size() <= 0:
 				return

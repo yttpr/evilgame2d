@@ -6,10 +6,13 @@ extends Sprite2D
 @export var hitbox : Area2D
 @export var walk_time : float = 0.15
 
+@export var make_footstep : bool = true
 @export var footstep : AudioStream
 @export var audio_mod : float = 6
 @export var audio : BasicAudio
 @export var step_change : float
+
+@export var always_animate : bool = false
 
 func _ready() -> void:
 	down = true
@@ -45,24 +48,41 @@ func _process(delta: float) -> void:
 			down = true
 	
 	if body.velocity.length() < 5:
-		walk = 1
-		pace = walk_time
-		if down and reg != 0:
-			self.frame = 0
-			reg = 0
-		elif !down and reg != 1:
-			self.frame = 1
-			reg = 1
+		if always_animate:
+			pace -= delta
+			if pace <= 0:
+				if walk > 0:
+					walk = 0
+				else:
+					walk = 1
+				pace = walk_time
+		else:
+			walk = 1
+			pace = walk_time
+		if down:
+			if walk == 1 and reg != 0:
+				self.frame = 0
+				reg = 0
+			elif walk == 0 and reg != 6:
+				self.frame = 6
+				reg = 6
+		elif !down:
+			if walk == 1 and reg != 1:
+				self.frame = 1
+				reg = 1
+			elif walk == 0 and reg != 7:
+				self.frame = 7
+				reg = 7
 	else:
 		pace -= delta
 		if pace <= 0:
 			if walk > 0:
 				walk = 0
-				if footstep:
+				if footstep and make_footstep:
 					audio._play_sound(footstep, audio_mod)
 			else:
 				walk = 1
-				if footstep:
+				if footstep and make_footstep:
 					audio._play_sound(footstep, audio_mod, step_change)
 			pace = walk_time
 		

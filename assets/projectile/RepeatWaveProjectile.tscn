@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b6nxoggg83twb"]
+
+[ext_resource type="Script" uid="uid://61ld5bdfi4e3" path="res://scripts/weapons/multi_shoot_projectile.gd" id="1_bxcwg"]
+[ext_resource type="PackedScene" uid="uid://bk1hlctl2mw1b" path="res://assets/projectile/WaveBullet.tscn" id="2_eahtx"]
+
+[node name="RepeatWaveProjectile" type="Node2D" unique_id=117261030]
+script = ExtResource("1_bxcwg")
+bullet = ExtResource("2_eahtx")
+source_name = "Player_Projectile_9"
+amount = 2
+is_player = true
+collision_only_enemy = true
+death_quote = Array[String](["\"The ocean washed over your grave...\"", "\"The ocean washed open your grave...\"", "\"On a glass beach...\""])
+metadata/_custom_type_script = "uid://61ld5bdfi4e3"

@@ -12,6 +12,7 @@ extends MovingProjectile
 
 
 @export var original = true
+@export var name_mod : String = "abcdefghijklmnopqrstuvwxyz"
 
 func _ready() -> void:
 	if abs(shoot_range) > PI*2:
@@ -34,6 +35,7 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 		var copy : ShotgunProjectile = self.duplicate()
 		copy.visible = true
 		copy.original = false
+		copy.source += "_" + name_mod[i]
 		self.get_parent().add_child(copy)
 		copy._shoot(Vector2.from_angle(base_angle + split * i), origin)
 		

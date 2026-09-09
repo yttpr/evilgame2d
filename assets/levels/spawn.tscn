@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://cc5hx4rhh8ujk" path="res://assets/characters/hare_character.tres" id="11_fnjer"]
 [ext_resource type="Resource" uid="uid://j1spldbytug7" path="res://assets/characters/snail_character.tres" id="12_lxhbm"]
 [ext_resource type="Resource" uid="uid://dqrols46htm5t" path="res://assets/characters/wtmiyr_character.tres" id="13_ugcpy"]
+[ext_resource type="Resource" uid="uid://b3n7m546358us" path="res://assets/characters/saea_character.tres" id="14_yiqvs"]
 [ext_resource type="PackedScene" uid="uid://6j1ubrcvxxax" path="res://assets/objects/barrel.tscn" id="16_plllv"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
@@ -61,7 +62,7 @@ color = Color(0.28, 0.28, 0.28, 1)
 
 [node name="Door" parent="." unique_id=1990926029 instance=ExtResource("7_kqqd6")]
 position = Vector2(768, 896)
-room = "res://assets/levels/level1/playtest_scene.tscn"
+room = "res://assets/levels/level1/item_draw.tscn"
 
 [node name="Character" parent="." unique_id=1719363745 instance=ExtResource("8_sh8wr")]
 position = Vector2(732, 332)
@@ -86,6 +87,10 @@ chara = ExtResource("12_lxhbm")
 [node name="Character6" parent="." unique_id=1470378784 instance=ExtResource("8_sh8wr")]
 position = Vector2(1087, 389)
 chara = ExtResource("13_ugcpy")
+
+[node name="Character7" parent="." unique_id=674998734 instance=ExtResource("8_sh8wr")]
+position = Vector2(560, 152)
+chara = ExtResource("14_yiqvs")
 
 [node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("9_fivbj")]
 position = Vector2(512, 256)

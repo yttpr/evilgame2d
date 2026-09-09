@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cnu7g54hfqnvu"]
+
+[ext_resource type="Script" uid="uid://db5i7crm1onvk" path="res://scripts/weapons/loop_explode_projectile.gd" id="1_l0k04"]
+[ext_resource type="PackedScene" uid="uid://b7wawklabk3pe" path="res://assets/projectile/EvileyeSpreadSubBullet.tscn" id="2_l0k04"]
+[ext_resource type="AudioStream" uid="uid://bc7un0a3hbqx7" path="res://audio/noise/weapon/magic_low.ogg" id="3_3fc7e"]
+[ext_resource type="AudioStream" uid="uid://pged00w656s0" path="res://audio/noise/weapon/magic_launch.wav" id="4_jwbmt"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="5_2wklv"]
+[ext_resource type="Texture2D" uid="uid://b21mtas1qx4o3" path="res://sprites/weapons/projectiles/eyeball_bullet.png" id="6_l0k04"]
+[ext_resource type="Texture2D" uid="uid://bhync4ihgqd3" path="res://sprites/weapons/projectiles/outlines/eyeball_bullet_outline.png" id="7_sw2f6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("shoot_from", "img", "body")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_l0k04")
+interval_time = 3.5
+bullet = ExtResource("2_l0k04")
+source_name = "Enemy_Projectile_9"
+shoot_from = NodePath("Sprite2D")
+amount = 6
+explosion_sound = ExtResource("3_3fc7e")
+volume_mod = 15.0
+collision_only_player = true
+does_explode = false
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 65.0
+radius = 16.0
+rot_spd = 3.0
+by_lifetime = true
+lifetime = 10.0
+shot_sound = ExtResource("4_jwbmt")
+audio_mod = 10.0
+death_quote = Array[String](["\"EVILEYE.\"", "\"As you decay... I'll still be here.\"", "\"As the world falls apart... I'll be watching.\"", "\"I'll always be here.\"", "\"I'll always be watching.\"", "\"Watching as you rot away.\"", "\"As your body slowly fades...\"", "\"The world crumbles around you.\"", "\"The world falls apart.\"", "\"Goodbye. I'll always love you.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("5_2wklv")
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6_l0k04")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1680362029]
+z_index = 2
+material = ExtResource("5_2wklv")
+texture = ExtResource("7_sw2f6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

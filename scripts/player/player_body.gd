@@ -5,28 +5,35 @@ extends BaseBody
 @export var data : CharacterData
 
 @export var character : String
-@export var img : Sprite2D
+@export var img : CharacterAnimator
 @export var Hitbox : Area2D
 @export var camera : PlayerCamera
 @export var ui : PlayerStatsDisplay
 @export var weapon_handler : WeaponManager
+@export var items : ItemHandler
 
 func _set_data(chara : CharacterData) -> void:
 	var reset = Manager.current_chara != chara
 	if reset:
-		Manager.current_hp = chara.HP
+		Manager.current_hp = ceili(items._check_items("MaxHP", chara.HP, chara, self))
 	Manager.current_chara = chara
 	data = chara
 	character = chara.character
 	img.texture = chara.image
-	HP = chara.HP
+	img.always_animate = chara.idle_anims
+	if chara.idle_anims:
+		img.hframes = 8
+	else:
+		img.hframes = 6
+	img.make_footstep = chara.make_footstep
+	HP = ceili(items._check_items("MaxHP", chara.HP, chara, self))
 	HP = Manager.current_hp
 	healthtype = chara.healthtype
 	hit_sound = chara.hurt_sound
 	hit_mod = chara.audio_mod
 	gibs = chara.gibs
 	# health ui
-	ui.Health._set_max_health(chara.HP)
+	ui.Health._set_max_health(ceili(items._check_items("MaxHP", chara.HP, chara, self)))
 	ui.Health._set_current_health(HP)
 	ui.Health._set_health_type(healthtype)
 	# weapons
@@ -48,7 +55,7 @@ func _ready() -> void:
 	if Manager.current_weapons and Manager.current_weapons.size() > 0:
 		self.weapon_handler.weapons.assign(Manager.current_weapons)
 	if Manager.current_hp <= 0:
-		Manager.current_hp = data.HP
+		Manager.current_hp = ceili(items._check_items("MaxHP", data.HP, data, self))
 		Manager._reset_points()
 		Manager.coins = 0
 	
@@ -56,7 +63,7 @@ func _ready() -> void:
 	HP = Manager.current_hp
 	super._ready()
 	img.visible = true
-	ui.Health._set_max_health(data.HP)
+	ui.Health._set_max_health(ceili(items._check_items("MaxHP", data.HP, data, self)))
 	ui.Health._set_current_health(HP)
 	ui.Health._set_health_type(healthtype)
 	dead_cooldown = 0
@@ -75,13 +82,17 @@ func _cleanup() -> void:
 	Manager.coins = 0
 	Manager.current_hp = data.HP
 	Manager.current_weapons.assign(data.base_weapons)
+	Manager._on_dead()
 # movement
 func get_input() -> void:
 	if is_dead or Manager.is_paused or Manager.lock_input:
 		velocity = Vector2.ZERO
 		return
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = input_direction * mov_spd
+	velocity = input_direction * _get_spd()
+func _get_spd() -> float:
+	return items._check_items("GetSpd", mov_spd, null, self)
+
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -92,13 +103,17 @@ func _physics_process(delta: float) -> void:
 func _can_hit(amt : int, type : String, source : String) -> bool:
 	if is_dead:
 		return false
-	return true
+	return items._check_items("CanHit", true, {"amt" : amt, "type" : type, "source" : source}, self)
 
 func _on_hit(amt : int, type : String, source : String) -> void:
 	super._on_hit(amt, type, source)
 	ui.Health._reduce_health(amt)
 	Manager.current_hp = HP
+	items._check_items("OnHit", HP, {"amt" : amt, "type" : type, "source" : source}, self)
 
+func _modify_hit(amt : int, type : String, source : String) -> int:
+	var temp = super._modify_hit(amt, type, source)
+	return items._check_items("ModifyHit", temp, {"amt" : amt, "type" : type, "source" : source}, self)
 
 var death_quotes : Array[String]
 func _set_deathquotes(quotes : Array[String]) -> void:
@@ -109,15 +124,29 @@ var global_i_frame : float
 func _check_i_frame(source : String) -> bool:
 	# nahh
 	if global_i_frame <= 0:
-		global_i_frame += global_i_time
+		global_i_frame += items._check_items("GlobalIFrames", global_i_time, source, self)
 		return super._check_i_frame(source)
 	return false
 
+var col_val : float = 1.0
+var dec_col : bool = true
 func _process(delta : float) -> void:
 	if dead_cooldown > 0:
 		dead_cooldown -= delta
 	super._process(delta)
-	return
+	#return
 	if global_i_frame > 0:
 		global_i_frame -= delta
-	
+		if col_val >= 0.7:
+			dec_col = true
+		if col_val <= 0.4:
+			dec_col = false
+		if dec_col:
+			col_val -= delta * 0.5
+		else:
+			col_val += delta * 0.5
+	else:
+		col_val = 1.0
+		dec_col = true
+	img.self_modulate = Color(col_val, col_val, col_val, 1.0)
+	weapon_handler.weapon.self_modulate = img.self_modulate

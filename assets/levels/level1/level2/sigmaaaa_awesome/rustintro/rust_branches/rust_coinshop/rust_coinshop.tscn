@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bpbt17mons5ov" path="res://assets/objects/explosive_sin.tscn" id="22_t5775"]
 [ext_resource type="PackedScene" uid="uid://bvuwmt5gbsm04" path="res://assets/objects/prayer_talk.tscn" id="23_vguoi"]
 [ext_resource type="PackedScene" uid="uid://b7a6medvh0rfo" path="res://assets/enemies/camera.tscn" id="29_w6n4a"]
+[ext_resource type="PackedScene" uid="uid://covpl7kfrdfti" path="res://assets/objects/item_pickup.tscn" id="30_njyqt"]
 
 [node name="Level" type="Node2D" unique_id=1232676836 node_paths=PackedStringArray("canvasmodulate")]
 y_sort_enabled = true
@@ -145,18 +146,6 @@ position = Vector2(1504, -352)
 [node name="Gun" parent="." unique_id=73825114 instance=ExtResource("17_t03r7")]
 position = Vector2(1504, -256)
 objectname = "coinshoprust1"
-pool = ExtResource("18_hqfbi")
-coin_cost = 300
-
-[node name="Gun2" parent="." unique_id=180004522 instance=ExtResource("17_t03r7")]
-position = Vector2(1632, -288)
-objectname = "coinshoprust2"
-pool = ExtResource("18_hqfbi")
-coin_cost = 300
-
-[node name="Gun3" parent="." unique_id=229487630 instance=ExtResource("17_t03r7")]
-position = Vector2(1376, -288)
-objectname = "coinshoprust3"
 pool = ExtResource("18_hqfbi")
 coin_cost = 300
 
@@ -374,3 +363,11 @@ position = Vector2(-1630, 866)
 
 [node name="Camera2" parent="." unique_id=1394468777 instance=ExtResource("29_w6n4a")]
 position = Vector2(2781, 955)
+
+[node name="Item" parent="." unique_id=1759039140 instance=ExtResource("30_njyqt")]
+position = Vector2(1632, -288)
+objectname = "rustcoinshopitem2"
+
+[node name="Item2" parent="." unique_id=781510898 instance=ExtResource("30_njyqt")]
+position = Vector2(1376, -288)
+objectname = "rustcoinshopitem1"

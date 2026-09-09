@@ -6,6 +6,7 @@ extends BasicProjectile
 
 @export var bounces : bool
 @export var length : float
+@export var hit_multiple_times : bool
 
 @export var stop_enemies : bool
 
@@ -46,6 +47,9 @@ func _next_line(length : float, origin: Vector2, target_point : Vector2, exclude
 		var aim = orig.bounce(result.normal)
 		var finish = _set_vector_magnitude(aim, Vector2.ZERO, length)
 		
+		if hit_multiple_times:
+			source += "_b"
+		
 		return _next_line(length, result.position + finish.normalized(), result.position + finish, [])
 	
 	_draw_tracer(origin + _offset(), target_point + _offset())
@@ -60,9 +64,21 @@ func _make_collider(orig : Vector2, target : Vector2) -> DamageCollider:
 	var col = Manager._create_dmg_collider(dmg, type, source, (orig.direction_to(target)) * knockback_mod)
 	col._set_to_world()
 	col.pierce = pierce_amt
-	col._set_line(orig, target + orig.direction_to(target) * 32)
+	col._set_collision(damager)
+	col._set_line(orig, target)
 	col.frame_buffer = 5
 	col._set_duration(true, collider_duration)
+	col.death_quote = death_quote
+	_make_backup_collider(orig, target)
+	return col
+func _make_backup_collider(orig : Vector2, target : Vector2) -> DamageCollider:
+	var col = Manager._create_dmg_collider(dmg, type, source, (orig.direction_to(target)) * knockback_mod)
+	col.is_backup = true
+	col._set_to_world()
 	col._set_collision(damager)
+	col.pierce = pierce_amt
+	col._set_line(target, target + orig.direction_to(target) * 32)
+	col.frame_buffer = 5
+	col._set_duration(true, collider_duration)
 	col.death_quote = death_quote
 	return col

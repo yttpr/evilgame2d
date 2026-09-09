@@ -67,7 +67,7 @@ func _process(delta : float) -> void:
 	var screen_pos = Vector2(575, 275)
 	screen_pos = Manager.Player.get_global_transform_with_canvas().get_origin()
 	#screen_pos = screen_pos
-	screen_pos += Vector2(0, -50)
+	screen_pos += Vector2(0, -45)
 	#var thex = get_tree().root.content_scale_size.x / 1152
 	#var they = get_tree().root.content_scale_size.y / 648
 	#screen_pos.x *= thex

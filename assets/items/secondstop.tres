@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dngwh36obasoo"]
+
+[ext_resource type="Texture2D" uid="uid://bqnfhwboeadvi" path="res://sprites/items/knockback_up.png" id="1_5k353"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="2_h1t37"]
+
+[resource]
+script = ExtResource("2_h1t37")
+id = "SecondStop"
+image = ExtResource("1_5k353")
+multi_mod = Dictionary[String, float]({
+"GetDmgKnockback": 3.0
+})
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

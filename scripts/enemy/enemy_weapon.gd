@@ -175,6 +175,7 @@ func _update_color() -> void:
 @export var max_aim_width : float
 @export var does_bounce : bool
 @export var line_pierce_player : bool
+@export var line_pierce_wall : bool
 @export var line_length : float
 
 func _next_line(aiming : bool, length : float, delta : float, origin: Vector2, target_point : Vector2, exclude : Array[RID]) -> Vector2:
@@ -182,8 +183,12 @@ func _next_line(aiming : bool, length : float, delta : float, origin: Vector2, t
 	#var tarjet = _set_vector_magnitude(target_point, origin, length)
 	#make query
 	var mask = Manager.collision_walls.collision_mask
+	if line_pierce_wall:
+		mask = 0
 	if !line_pierce_player:
 		mask = Manager.collision_enemyline.collision_mask
+		if line_pierce_wall:
+			mask = Manager.collision_onlyPlayer.collision_mask
 	var query = PhysicsRayQueryParameters2D.create(origin, target_point, mask, exclude)
 	query.collide_with_areas = true
 	query.collide_with_bodies = true
@@ -233,6 +238,8 @@ func _draw_line(time: float, color : Color, width : float, orig : Vector2, pos :
 	line.material = Manager._tracer_mat()
 	line.y_sort_enabled = true
 	line.show_behind_parent = true
+	if line_pierce_wall:
+		line.z_index = 2
 	
 	get_tree().create_timer(time * 2).timeout.connect(line.queue_free)
 	#line.queue_free()

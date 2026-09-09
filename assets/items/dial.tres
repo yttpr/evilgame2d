@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bcp00fa0k2n2a"]
+
+[ext_resource type="Texture2D" uid="uid://bj67oihmqwown" path="res://sprites/items/auto_reload.png" id="1_yqx7t"]
+[ext_resource type="Script" uid="uid://cltlvbnseirwc" path="res://scripts/items/uniques/autoreloader.gd" id="2_f1w7l"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="2_yqx7t"]
+
+[resource]
+script = ExtResource("2_yqx7t")
+id = "Dial"
+image = ExtResource("1_yqx7t")
+logic = ExtResource("2_f1w7l")
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

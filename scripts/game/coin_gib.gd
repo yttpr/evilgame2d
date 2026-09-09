@@ -42,6 +42,7 @@ func _done() -> void:
 	if Manager.Player.is_dead:
 		self.queue_free()
 		return
+	Manager.Player.items._check_items("GainCoin", 1)
 	Manager.coins += 1
 	Manager.wip_coins -= 1
 	var gib = Manager._make_bullet_gib(self.global_position, Vector2.ZERO, self.modulate)

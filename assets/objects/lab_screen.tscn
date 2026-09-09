@@ -54,7 +54,7 @@ texture_scale = 4.5
 [node name="light_light" type="PointLight2D" parent="Sprite2D" unique_id=1263555659]
 z_index = -1
 position = Vector2(-1, 57)
-scale = Vector2(1, 0.5)
+scale = Vector2(1, 0.55)
 range_item_cull_mask = 2
 shadow_item_cull_mask = 4
 texture = SubResource("GradientTexture2D_ckb7j")

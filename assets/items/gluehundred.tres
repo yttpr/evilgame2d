@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dg6j85drvex6b"]
+
+[ext_resource type="Texture2D" uid="uid://deai0r7d06jm3" path="res://sprites/items/maxhealth.png" id="1_0ggcb"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="2_5fed0"]
+
+[resource]
+script = ExtResource("2_5fed0")
+id = "GlueHundred"
+image = ExtResource("1_0ggcb")
+addition_mod = Dictionary[String, float]({
+"MaxHP": 2.0
+})
+reset_player = true
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

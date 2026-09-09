@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b6lsy2pgcslek"]
+
+[ext_resource type="Texture2D" uid="uid://clvu6j44yp1bj" path="res://sprites/items/quick_reload.png" id="1_104hc"]
+[ext_resource type="Script" uid="uid://dx4dovqlr4ak8" path="res://scripts/items/uniques/quickreload_active.gd" id="2_uxlyf"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="3_08epp"]
+
+[resource]
+script = ExtResource("3_08epp")
+id = "Springlocks"
+image = ExtResource("1_104hc")
+active = true
+logic = ExtResource("2_uxlyf")
+cost_type = "Cooldown"
+cost_amt = 15.0
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

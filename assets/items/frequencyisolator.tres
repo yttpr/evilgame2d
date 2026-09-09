@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://doxbr2y767q2a"]
+
+[ext_resource type="Texture2D" uid="uid://k32s7v3tec03" path="res://sprites/items/shield.png" id="1_gkul2"]
+[ext_resource type="Script" uid="uid://cefaox4hclswk" path="res://scripts/items/uniques/shield_item.gd" id="2_gkul2"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="3_80m1n"]
+
+[resource]
+script = ExtResource("3_80m1n")
+id = "FrequencyIsolator"
+image = ExtResource("1_gkul2")
+logic = ExtResource("2_gkul2")
+cost_type = "Cooldown"
+cost_amt = 120.0
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

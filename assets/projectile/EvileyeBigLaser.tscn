@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b7d7ipmdgkkys"]
+
+[ext_resource type="Script" uid="uid://cgrn5tmob1ihe" path="res://scripts/weapons/summon_projectile.gd" id="1_ppnqt"]
+[ext_resource type="PackedScene" uid="uid://b7tkuuuj3vt7k" path="res://assets/projectile/EvileyeLaserSubBullet.tscn" id="2_ppnqt"]
+[ext_resource type="AudioStream" uid="uid://cuas681yu3a2o" path="res://audio/noise/weapon/magic_shoot.ogg" id="3_o77dw"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="4_rj2c7"]
+[ext_resource type="Texture2D" uid="uid://bwvecayy8io22" path="res://sprites/weapons/projectiles/eye_spawn_bullet.png" id="5_63dxa"]
+
+[node name="ProjectileBullet" type="Node2D" unique_id=1660456756 node_paths=PackedStringArray("img", "shoot_from")]
+script = ExtResource("1_ppnqt")
+bullet = ExtResource("2_ppnqt")
+img = NodePath("Sprite2D")
+shoot_from = NodePath("Sprite2D")
+interval = 0.05
+start_delay = 1.2
+shoot_cycle = true
+rotate_rate = 0.1
+visible_start_aim = true
+max_aim_width = 10.0
+pass_through_walls = true
+hover_time = 8.0
+by_lifetime = true
+lifetime = 64.0
+shot_sound = ExtResource("3_o77dw")
+audio_mod = 6.0
+make_gibs = true
+death_quote = Array[String](["\"You can't escape the end.\"", "\"Death is inevitable.\"", "\"Rot and decay.\"", "\"Decay comes for all.\"", "\"The stench of rot.\"", "\"Don't fight the inevitable.\"", "\"Just accept death.\"", "\"There's nothing left for you.\"", "\"Everything will fall.\"", "\"The universe crumbles.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("4_rj2c7")
+scale = Vector2(2, 2)
+texture = ExtResource("5_63dxa")

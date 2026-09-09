@@ -16,7 +16,7 @@ script = ExtResource("1_jax38")
 img = NodePath("Sprite2D")
 body = NodePath(".")
 spd = 125.0
-radius = 32.0
+radius = 20.0
 rot_spd = 32.0
 bounces = true
 by_lifetime = true
@@ -24,7 +24,7 @@ lifetime = 15.0
 shot_sound = ExtResource("2_jax38")
 audio_mod = 10.0
 make_gibs = true
-death_quote = Array[String](["\"In the forest... there's nothing in the forest...\"", "\"Hidden amongst the trees...\"", "\"Pareidolia\"", "\"If you can't see it, it can't see you\"", "\"Don't go into the woods at dark...\"", "\"Ignore screams in the woods, no matter how human they sound.\"", "\"Is it quiet? I don't want to hear that thing...\"", "\"Why does it look like that!?\"", "\"It... it kind of looks like me...\"", "\"That's not me! I'm not like that!\"", "\"There's something out there in the forest...\"", "\"I can feel eyes all over me when I'm out there...\""])
+death_quote = Array[String](["\"In the forest... there's nothing in the forest...\"", "\"Hidden amongst the trees...\"", "\"Pareidolia\"", "\"...The forest is quiet today...\"", "\"Don't go into the woods at dark...\"", "\"Ignore screams in the woods, no matter how human they sound.\"", "\"Is it quiet? I don't want to hear that thing...\"", "\"Why does it look like that!?\"", "\"It... it kind of looks like me...\"", "\"That's not me! I'm not like that!\"", "\"There's something out there in the forest...\"", "\"I can feel eyes all over me when I'm out there...\""])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
 material = ExtResource("3_njdad")

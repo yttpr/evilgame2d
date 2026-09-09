@@ -23,6 +23,7 @@ func _offset() -> Vector2:
 @export var tracer_width : float
 @export var tracer_color : Color
 @export var tracer_time : float
+@export var tracer_fade : bool
 
 @export var shot_sound : AudioStream
 @export var audio_mod : float
@@ -77,10 +78,16 @@ func _draw_tracer(orig : Vector2, pos : Vector2) -> void:
 	line.material = Manager._tracer_mat()
 	line.y_sort_enabled = true
 	line.show_behind_parent = true
+	line.z_index = self.z_index
 	
 	# tween
 	var tween = get_tree().create_tween()
-	tween.tween_property(line, "width", 0, tracer_time)
+	if !tracer_fade:
+		tween.tween_property(line, "width", 0, tracer_time)
+	else:
+		var fade = Color(line.modulate)
+		fade.a = 0.0
+		tween.tween_property(line, "modulate", fade, tracer_time)
 	tween.tween_callback(line.queue_free)
 	
 	#await get_tree().create_timer(tracer_time).timeout
@@ -101,9 +108,23 @@ func _process(delta: float) -> void:
 	
 	lastPos = self.global_position
 
-func _hit_made() -> bool:
+func _hit_made(location : Vector2 = Vector2.ZERO) -> bool:
 	return false
 
+var boss_active : bool
+func _physics_process(delta: float) -> void:
+	if delta <= 0:
+		return
+	if !source.contains("Enemy"):
+		return
+	if !boss_active:
+		if Manager._get_world().Bosses.size() > 0:
+			boss_active = true
+	else:
+		if Manager._get_world().Bosses.size() <= 0:
+			if make_gibs:
+				_make_gibs()
+			self.queue_free()
 
 func _make_gibs() -> void:
 	Manager._make_bullet_gib(self.global_position, _offset(), tracer_color)

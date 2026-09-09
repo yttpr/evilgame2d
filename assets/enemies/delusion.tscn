@@ -16,6 +16,7 @@
 [ext_resource type="Shader" uid="uid://bgg6sm3pvrnaf" path="res://sprites/objects/shader/shadow.gdshader" id="14_48tcn"]
 [ext_resource type="Texture2D" uid="uid://cebiwfqnu1rex" path="res://sprites/objects/shader/allshadow.png" id="14_g2in3"]
 [ext_resource type="Script" uid="uid://d2ni2jiq1r080" path="res://scripts/enemy/darkness_holder.gd" id="15_48tcn"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="17_hnv3s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -129,7 +130,8 @@ metadata/_custom_type_script = "uid://dap3uvgj16hat"
 position = Vector2(0, -64)
 
 [node name="DarknessHolder" type="Sprite2D" parent="." unique_id=1393680597 node_paths=PackedStringArray("movable")]
-z_index = 5
+light_mask = 3
+z_index = 1
 material = SubResource("ShaderMaterial_hnv3s")
 scale = Vector2(50, 50)
 texture = ExtResource("14_g2in3")
@@ -137,5 +139,8 @@ script = ExtResource("15_48tcn")
 range = 1000.0
 movable = NodePath("..")
 metadata/_custom_type_script = "uid://d2ni2jiq1r080"
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("17_hnv3s")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

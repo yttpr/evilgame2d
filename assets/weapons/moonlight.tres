@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c6r15ck1tx8cg"]
+
+[ext_resource type="PackedScene" uid="uid://bykk74qji8d" path="res://assets/projectile/AcceleratingHomingBullet.tscn" id="1_spaou"]
+[ext_resource type="AudioStream" uid="uid://b386uaj2ymxb5" path="res://audio/noise/weapon/static_ready.ogg" id="2_spaou"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_by0j1"]
+[ext_resource type="Texture2D" uid="uid://cgnvdccws0mqd" path="res://sprites/weapons/moonlight_weapon.png" id="4_spaou"]
+
+[resource]
+script = ExtResource("3_by0j1")
+id = "Moonlight"
+weapon_img = ExtResource("4_spaou")
+bullet = ExtResource("1_spaou")
+bullet_type = "Projectile_9"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 1500.0
+full_auto = true
+clip_size = 6
+shot_delay = 0.15
+reload_time = 1.8
+skip_auto_reload = true
+ready_audio = ExtResource("2_spaou")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

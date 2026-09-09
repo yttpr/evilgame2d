@@ -26,11 +26,27 @@
 [ext_resource type="Resource" uid="uid://5uymiii7ai7w" path="res://assets/weapons/listener.tres" id="27_ayt2s"]
 [ext_resource type="Resource" uid="uid://dyti3lkaiq5cg" path="res://assets/weapons/uniform.tres" id="28_ebyef"]
 [ext_resource type="Resource" uid="uid://bytkg60cc2wau" path="res://assets/weapons/harmony.tres" id="29_0xgjf"]
+[ext_resource type="Resource" uid="uid://nxm37u7fyw6g" path="res://assets/weapons/bubblewand.tres" id="29_6nvdi"]
+[ext_resource type="Resource" uid="uid://0apo3ny7w7rh" path="res://assets/weapons/cascade.tres" id="30_2ddoi"]
+[ext_resource type="Resource" uid="uid://bn1ng0f277ttl" path="res://assets/weapons/drowninghigh.tres" id="31_72mix"]
 [ext_resource type="Resource" uid="uid://dmnd4hu1muhna" path="res://assets/weapons/raygun.tres" id="31_jns40"]
+[ext_resource type="Resource" uid="uid://ds27c83tgm600" path="res://assets/weapons/ewlau.tres" id="32_c1q10"]
 [ext_resource type="Resource" uid="uid://c0qlsdru3h3w1" path="res://assets/weapons/bulb.tres" id="32_s485h"]
+[ext_resource type="Resource" uid="uid://bfaey6lhdydcd" path="res://assets/weapons/eye_friend.tres" id="33_7g445"]
+[ext_resource type="Resource" uid="uid://5v41agjoyo5q" path="res://assets/weapons/flamethrower.tres" id="34_i6po8"]
+[ext_resource type="Resource" uid="uid://dx7kg1pmnmpuy" path="res://assets/weapons/gerald.tres" id="35_w7lh8"]
+[ext_resource type="Resource" uid="uid://drm67rm73bpch" path="res://assets/weapons/huntsman.tres" id="36_m7ccn"]
+[ext_resource type="Resource" uid="uid://dtjsxardpuhvt" path="res://assets/weapons/loophell.tres" id="37_odjow"]
+[ext_resource type="Resource" uid="uid://e3c04oph7jau" path="res://assets/weapons/radioscope.tres" id="38_skxnb"]
+[ext_resource type="Resource" uid="uid://dcbtfqlnh03y4" path="res://assets/weapons/rocket_launcher.tres" id="39_qjiht"]
+[ext_resource type="Resource" uid="uid://cmjw3ypxm44ph" path="res://assets/weapons/shotgun.tres" id="40_3gcn0"]
+[ext_resource type="Resource" uid="uid://bvt3ui5lie6ak" path="res://assets/weapons/swarm.tres" id="41_s7l0k"]
+[ext_resource type="Resource" uid="uid://bdh1wgfqllc25" path="res://assets/weapons/wtmiyr.tres" id="42_5s0rf"]
+[ext_resource type="Resource" uid="uid://c6r15ck1tx8cg" path="res://assets/weapons/moonlight.tres" id="43_2ddoi"]
+[ext_resource type="Resource" uid="uid://c0sbe74eon172" path="res://assets/weapons/waves.tres" id="44_72mix"]
 
 [resource]
 script = ExtResource("2_tnldn")
 base_pool = Array[ExtResource("1_mg8pj")]([ExtResource("3_2hqdi"), ExtResource("23_oyy8j"), ExtResource("9_4uboy"), ExtResource("15_2qtt3"), ExtResource("17_bmnly"), ExtResource("10_tfivx"), ExtResource("14_kh2pp"), ExtResource("21_oyy8j"), ExtResource("17_4jcdd"), ExtResource("19_gxv3y"), ExtResource("22_vgffk"), ExtResource("7_v5xo6"), ExtResource("4_luth6"), ExtResource("18_gxv3y"), ExtResource("5_2hqdi"), ExtResource("11_8cnpj"), ExtResource("13_i7uva"), ExtResource("2_5dysp"), ExtResource("12_lbqd3"), ExtResource("25_oataj"), ExtResource("26_u0uno"), ExtResource("27_ayt2s"), ExtResource("28_ebyef"), ExtResource("29_0xgjf"), ExtResource("31_jns40"), ExtResource("32_s485h")])
-unlocks = Array[ExtResource("1_mg8pj")]([ExtResource("23_oyy8j")])
+starters = Array[ExtResource("1_mg8pj")]([ExtResource("29_6nvdi"), ExtResource("30_2ddoi"), ExtResource("31_72mix"), ExtResource("32_c1q10"), ExtResource("33_7g445"), ExtResource("34_i6po8"), ExtResource("35_w7lh8"), ExtResource("36_m7ccn"), ExtResource("37_odjow"), ExtResource("38_skxnb"), ExtResource("39_qjiht"), ExtResource("40_3gcn0"), ExtResource("41_s7l0k"), ExtResource("42_5s0rf"), ExtResource("43_2ddoi"), ExtResource("44_72mix")])
 metadata/_custom_type_script = "uid://1r25lpvdp18l"

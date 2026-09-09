@@ -17,7 +17,7 @@
 y_sort_enabled = true
 script = ExtResource("1_hnkha")
 canvasmodulate = NodePath("CanvasModulate")
-entries = Array[Vector2]([Vector2(-64, -305)])
+entries = Array[Vector2]([Vector2(-64, -305), Vector2(1760, -305)])
 songs = Array[AudioStream]([ExtResource("2_i4q77"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113"), ExtResource("3_r0113")])
 volumes = Array[float]([0.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -4.0, -2.0, -2.0, -2.0, -2.0, -2.0, -4.0, -2.0, -2.0, -2.0, -2.0, -2.0])
 
@@ -119,3 +119,7 @@ position = Vector2(-402, 229)
 
 [node name="HangingLight13" parent="." unique_id=1447863 instance=ExtResource("9_4jwpj")]
 position = Vector2(492, -174)
+
+[node name="Door2" parent="." unique_id=47999567 instance=ExtResource("13_kfqce")]
+position = Vector2(1760, -320)
+room = "res://assets/levels/level1/untitled/iloveyou/loveyou_corridor/iloveyoubridges/iloveyoubridges.tscn"

@@ -1,3 +1,5 @@
+ItemPoolData
+ItemData
 ShopPoolData
 Shader
 EnemySpawnList

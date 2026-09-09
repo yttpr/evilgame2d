@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="6_ge6w0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d258k"]
-size = Vector2(64, 64)
+size = Vector2(64, 23)
 
 [node name="Door" type="CharacterBody2D" unique_id=1327791293]
 collision_layer = 2048
@@ -19,7 +19,8 @@ inertia_decay = 0.0
 despawn_time = -1.0
 despawn_length = -1.0
 
-[node name="floor_size" type="CollisionShape2D" parent="." unique_id=43118541]
+[node name="floor_size" type="CollisionShape2D" parent="." unique_id=929822289]
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_d258k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932073789]

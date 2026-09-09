@@ -17,4 +17,4 @@ tracer_color = Color(1, 0, 0, 1)
 tracer_time = 0.5
 shot_sound = ExtResource("2_lgfrk")
 audio_mod = 10.0
-death_quote = Array[String](["\"Them on the outside, us on the inside.\"", "\"Don't tap on the glass.\"", "\"Peering through the window...\"", "\"Strangers in your neighborhood.\"", "\"A knock at the door...\"", "\"A wolf at the door...\"", "\"If nobody moves, nobody gets hurt.\"", "\"See nothing, say nothing.\"", "\"If you see something, say something.\"", "\"                               \"", "\"Nameless home invader.\"", "\"Someone new in the neighborhood...\""])
+death_quote = Array[String](["\"Them on the outside, us on the inside.\"", "\"Don't tap on the glass.\"", "\"Peering through the window...\"", "\"They can only see you if you move.\"", "\"A knock at the door...\"", "\"A wolf at the door...\"", "\"If nobody moves, nobody gets hurt.\"", "\"If you encounter one, try playing dead.\"", "\"If you see something, say something.\"", "\"                               \"", "\"Stay still.\"", "\"Play limp? Maybe then they won't notice you...\""])

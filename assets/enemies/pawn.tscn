@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="11_8txig"]
 [ext_resource type="Script" uid="uid://e5jajlehler3" path="res://scripts/enemy/screen_monitoring_pathfinding.gd" id="12_g8qmg"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="13_uorrr"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="14_03im0"]
 [ext_resource type="PackedScene" uid="uid://jy6raxjrwmua" path="res://assets/projectile/KnifeBullet.tscn" id="14_101tp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
@@ -78,9 +79,9 @@ texture = ExtResource("11_8txig")
 
 [node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
 script = ExtResource("12_g8qmg")
-vision_range = 1000.0
+vision_range = 700.0
 limit_range = 350.0
-max_range = 1200.0
+max_range = 850.0
 can_target_delay = 0.2
 bored_time = 5.0
 wander_chance = 0.4
@@ -118,6 +119,9 @@ position = Vector2(0, -64)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1023676733]
 position = Vector2(-23, -113)
 rect = Rect2(-10, -10, 64, 128)
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("14_03im0")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="brain" method="_screen_entered"]

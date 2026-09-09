@@ -13,9 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://c1uf1nupvtyjy" path="res://sprites/ui/marker.png" id="11_g34us"]
 [ext_resource type="Script" uid="uid://cvil36t7bqgcp" path="res://scripts/enemy/wander_pathfinding.gd" id="12_y8dge"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="13_irwrx"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="14_cox4e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
-radius = 24.0
+radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nubg3"]
 size = Vector2(86, 104.5)
@@ -124,10 +125,13 @@ metadata/_custom_type_script = "uid://dap3uvgj16hat"
 position = Vector2(0, -96)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=538654963]
-collision_layer = 8192
+collision_layer = 8208
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1409852168]
 shape = SubResource("RectangleShape2D_djhds")
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("14_cox4e")]
+scale = Vector2(0.938, 0.938)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

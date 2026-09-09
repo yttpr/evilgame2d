@@ -101,6 +101,8 @@ func _process(delta: float) -> void:
 		else:
 			slow_down = false
 			nav_agent.max_speed = _get_speed()
+		if Movable.global_position.distance_to(Follow_Target.global_position) > max_range:
+			Weapon.is_agro = false
 
 
 func _get_speed() -> float:

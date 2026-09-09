@@ -3,6 +3,7 @@ class_name GibData
 extends Resource
 
 @export var coins : int
+@export var has_many_coins : bool
 
 @export var blood_amt : int
 @export var blood_color_1 : Color
@@ -15,6 +16,7 @@ extends Resource
 @export var weights : Array[float]
 @export var does_rotate : Array[bool]
 
+@export var many_gibs : bool
 @export var ignore_gravity : Array[bool]
 
 @export var unshaded : bool

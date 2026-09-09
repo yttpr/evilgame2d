@@ -18,6 +18,8 @@ extends Area2D
 
 @export var death_quote : Array[String]
 
+@export var is_backup : bool
+
 var frame_buffer : int = 0
 var lifetime : bool
 
@@ -39,10 +41,39 @@ func _make_collider() -> void:
 func _set_circle(radius : float) -> void:
 	collider.shape = CircleShape2D.new()
 	collider.shape.radius = radius
+	
+	#if is_backup:
+		#return
+	var img = FrameCopy.new()
+	img.is_hitbox = true
+	img.texture = ResourceLoader.load("res://sprites/ui/ui_circle.png")
+	img.scale = Vector2.ONE * (radius / 32.0)
+	img.modulate = Color.YELLOW
+	if !get_collision_mask_value(3):
+		img.modulate = Color(1.0, 1.0, 1.0, 0.2)
+	img.material = Manager.bright_mat
+	img.z_index = 3
+	self.add_child(img)
+	img.position = Vector2.ZERO
 func _set_line(first : Vector2, second : Vector2) -> void:
 	collider.shape = SegmentShape2D.new()
 	collider.shape.a = first
 	collider.shape.b = second
+	#if is_backup:
+		#return
+	var img = FrameCopy.new()
+	img.is_hitbox = true
+	img.texture = ResourceLoader.load("res://sprites/ui/ui_line.png")
+	img.rotation = first.direction_to(second).angle()
+	img.global_scale = Vector2(first.distance_to(second) / 32.0, 1.0)
+	img.modulate = Color.YELLOW
+	if !get_collision_mask_value(3):
+		img.modulate = Color(1.0, 1.0, 1.0, 0.2)
+	img.material = Manager.bright_mat
+	self.add_child(img)
+	img.global_position = first
+	img.z_index = 3
+
 
 func _set_parent(newparent : Node2D) -> void:
 	newparent.add_child(self)
@@ -84,7 +115,7 @@ func _on_body_entered(body) -> void:
 				k = Vector2.from_angle(randf_range(0.0, 2*PI)) * inertia.length()
 		if body._get_hit(damage_amt, damage_type, damage_source, k):
 			if projectile:
-				projectile._hit_made()
+				projectile._hit_made(body.global_position)
 			if pierce == 0:
 				#collider.disabled = true
 				self.queue_free()

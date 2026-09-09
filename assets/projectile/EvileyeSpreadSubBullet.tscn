@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b7wawklabk3pe"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_iybn0"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_5eeqf"]
+[ext_resource type="Texture2D" uid="uid://cwd62ljt2gtwa" path="res://sprites/weapons/projectiles/empty_bullet.png" id="3_iybn0"]
+[ext_resource type="Texture2D" uid="uid://cx2ob63umhepj" path="res://sprites/weapons/projectiles/outlines/empty_bullet_outline.png" id="4_l41cf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_iybn0")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 100.0
+radius = 6.0
+rot_spd = 2.0
+pierce_amt = -1
+by_lifetime = true
+lifetime = 10.0
+audio_mod = -2.0
+make_gibs = true
+death_quote = Array[String](["\"EVILEYE.\"", "\"As you decay... I'll still be here.\"", "\"As the world falls apart... I'll be watching.\"", "\"I'll always be here.\"", "\"I'll always be watching.\"", "\"Watching as you rot away.\"", "\"As your body slowly fades...\"", "\"The world crumbles around you.\"", "\"The world falls apart.\"", "\"Goodbye. I'll always love you.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("2_5eeqf")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iybn0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=824344362]
+z_index = 2
+material = ExtResource("2_5eeqf")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_l41cf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

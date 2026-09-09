@@ -7,5 +7,5 @@ extends VSlider
 func _ready() -> void:
 	value = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index(bus_name))
 
-func _on_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), linear_to_db(value))
+func _on_value_changed(newvalue: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), linear_to_db(newvalue))

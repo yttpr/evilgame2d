@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://carx8j8x1t1ui"]
+
+[ext_resource type="Texture2D" uid="uid://df8yeoluf502o" path="res://sprites/enemies/gibs/bone.png" id="1_s5a4j"]
+[ext_resource type="Texture2D" uid="uid://c0annyevibuje" path="res://sprites/enemies/gibs/inthedark_hat.png" id="2_s5a4j"]
+[ext_resource type="Texture2D" uid="uid://cs54vsp37amlj" path="res://sprites/enemies/gibs/spine_bone.png" id="3_6j7yw"]
+[ext_resource type="Texture2D" uid="uid://byoinkest3kip" path="res://sprites/enemies/gibs/anatomical_heart.png" id="4_s5a4j"]
+[ext_resource type="Texture2D" uid="uid://bwi4wxbnwwej" path="res://sprites/objects/gibs/wood_gib_1.png" id="5_6j7yw"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="5_cpkue"]
+[ext_resource type="Texture2D" uid="uid://b4umhmtjsu4lq" path="res://sprites/objects/gibs/wood_gib_2.png" id="6_h1xlf"]
+[ext_resource type="Texture2D" uid="uid://cqtorl303b3wr" path="res://sprites/enemies/gibs/blobl.png" id="7_h1xlf"]
+[ext_resource type="Texture2D" uid="uid://dm16iwxkcl8hy" path="res://sprites/enemies/gibs/branch.png" id="8_cpkue"]
+
+[resource]
+script = ExtResource("5_cpkue")
+coins = 75
+has_many_coins = true
+blood_amt = 4
+floor_blood_amt = 2
+images = Array[Texture2D]([ExtResource("1_s5a4j"), ExtResource("2_s5a4j"), ExtResource("3_6j7yw"), ExtResource("4_s5a4j"), ExtResource("5_6j7yw"), ExtResource("6_h1xlf"), ExtResource("7_h1xlf"), ExtResource("8_cpkue")])
+img_amts = Array[int]([3, 1, 2, 1, 3, 4, 6, 4])
+weights = Array[float]([0.6, 3.0, 0.5, 0.3, 0.2, 0.2, 0.1, 0.1])
+does_rotate = Array[bool]([true, false, true, true, true, true, true, true])
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

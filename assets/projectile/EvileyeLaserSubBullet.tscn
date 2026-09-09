@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b7tkuuuj3vt7k"]
+
+[ext_resource type="Script" uid="uid://c76pjlipw2flx" path="res://scripts/weapons/hitscan_projectile.gd" id="1_0af5m"]
+[ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="2_n1h0l"]
+
+[node name="HitscanBullet" type="Node2D" unique_id=13675771]
+z_index = 2
+script = ExtResource("1_0af5m")
+collider_duration = 0.05
+length = 2000.0
+type = "Cos"
+dmg = 1
+knockback_mod = 800.0
+by_lifetime = true
+lifetime = 0.15
+tracer_width = 25.0
+tracer_color = Color(1, 0, 0, 1)
+tracer_time = 0.1
+shot_sound = ExtResource("2_n1h0l")
+audio_mod = -8.0
+pitch_mod = 0.6
+death_quote = Array[String](["\"You can't escape the end.\"", "\"Death is inevitable.\"", "\"Rot and decay.\"", "\"Decay comes for all.\"", "\"The stench of rot.\"", "\"Don't fight the inevitable.\"", "\"Just accept death.\"", "\"There's nothing left for you.\"", "\"Everything will fall.\"", "\"The universe crumbles.\""])

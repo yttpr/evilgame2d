@@ -12,6 +12,7 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 		for i in spawns:
 			var copy : FirelineProjectile = self.duplicate()
 			copy.spawns = 0
+			copy.source += "_" + source_mod[i]
 			copy.visible = true
 			self.get_parent().add_child(copy)
 			copy.gravity += dif_mod * (i + 1)

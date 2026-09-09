@@ -4,6 +4,11 @@ extends HomingPathfinding
 
 var has_heard : bool
 
+@export var alert_image : Sprite2D
+@export var alert_sound : AudioStream
+@export var alert_mod : float
+@export var alert_player : BasicAudio
+
 func _wander() -> void:
 	super._wander()
 	has_heard = false
@@ -31,3 +36,16 @@ func _unique_can_see(targetNode : Node2D) -> bool:
 	if result:
 		return result.collider == targetNode
 	return true
+
+
+
+func _process(delta: float) -> void:
+	if has_heard:
+		if !alert_player.playing:
+			alert_player._play_sound(alert_sound, alert_mod)
+		alert_image.visible = true
+	else:
+		alert_image.visible = false
+		alert_player.stop()
+	
+	super._process(delta)

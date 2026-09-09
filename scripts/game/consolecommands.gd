@@ -29,6 +29,12 @@ func _on_text_submitted(command : String) -> void:
 			print("invalid weapon")
 			return
 		Manager.Player.weapon_handler._swap_weapon(weapon, Manager.current_gun_index)
+	if args[0] == "additem" or args[0] == "setitem":
+		var item : ItemData = ResourceLoader.load("res://assets/items/" + args[1] + ".tres")
+		if !item:
+			print("invalid item")
+			return
+		Manager.Player.items._set_item(Manager.current_item_index, item)
 	if args[0] == "setenemy" or args[0] == "addenemy" or args[0] == "getenemy":
 		var enemy : PackedScene = ResourceLoader.load("res://assets/enemies/" + args[1] + ".tscn")
 		if !enemy:
@@ -38,8 +44,8 @@ func _on_text_submitted(command : String) -> void:
 	if args[0] == "money":
 		Manager.coins += int(args[1])
 	if args[0] == "heal":
-		Manager.current_hp = 10
-		Manager.Player.HP = 10
+		Manager.current_hp = ceili(Manager.Player.items._check_items("MaxHP", Manager.current_chara.HP, Manager.current_chara, Manager.Player))
+		Manager.Player.HP = ceili(Manager.Player.items._check_items("MaxHP", Manager.current_chara.HP, Manager.current_chara, Manager.Player))
 		Manager.Player.ui.Health._set_current_health(Manager.current_hp)
 
 

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://qcih3xaued0q"]
+
+[ext_resource type="Texture2D" uid="uid://cwhisxigvxdjx" path="res://sprites/items/greed.png" id="1_lkff1"]
+[ext_resource type="Script" uid="uid://cgcf8ltabcbec" path="res://scripts/items/uniques/break_on_damage_item.gd" id="2_o48qf"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="3_aaigw"]
+
+[resource]
+script = ExtResource("3_aaigw")
+id = "Greed"
+image = ExtResource("1_lkff1")
+logic = ExtResource("2_o48qf")
+addition_mod = Dictionary[String, float]({
+"DropCoins": 1.0
+})
+cost_type = "Item"
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

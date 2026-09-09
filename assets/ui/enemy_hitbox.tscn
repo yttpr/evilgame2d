@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cslq5nolrttiq"]
+
+[ext_resource type="Script" uid="uid://b4p350jv3c3hl" path="res://scripts/player/shift_shower.gd" id="1_bumt1"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="2_j1nbi"]
+[ext_resource type="Texture2D" uid="uid://6eenxej25p6m" path="res://sprites/ui/ui_med_circle.png" id="3_vc8pq"]
+[ext_resource type="Shader" uid="uid://cxy75qw336ti6" path="res://sprites/characters/shaders/walloutline.gdshader" id="4_sry76"]
+[ext_resource type="Texture2D" uid="uid://cyixqre14qjko" path="res://sprites/ui/ui_filled_med_circle.png" id="5_bumt1"]
+[ext_resource type="Script" uid="uid://basegtvj2kev" path="res://scripts/player/frame_copy.gd" id="6_33lvr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wj2qd"]
+shader = ExtResource("4_sry76")
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/outline_mod = -1.0
+
+[node name="ImageHitbox" type="Node2D" unique_id=1922032395]
+show_behind_parent = true
+script = ExtResource("1_bumt1")
+metadata/_custom_type_script = "uid://b4p350jv3c3hl"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=855846736]
+self_modulate = Color(1, 1, 0, 1)
+material = ExtResource("2_j1nbi")
+texture = ExtResource("3_vc8pq")
+
+[node name="FrameCopy" type="Sprite2D" parent="Sprite2D" unique_id=1283911135 node_paths=PackedStringArray("source")]
+z_index = 3
+material = SubResource("ShaderMaterial_wj2qd")
+texture = ExtResource("5_bumt1")
+script = ExtResource("6_33lvr")
+source = NodePath("..")
+metadata/_custom_type_script = "uid://basegtvj2kev"

@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cnvgetguyhbas" path="res://scripts/enemy/homing_pathfinding.gd" id="11_rtvco"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_oolkj"]
 [ext_resource type="PackedScene" uid="uid://c4vvrvx32vyab" path="res://assets/projectile/NormalBullet.tscn" id="13_ijjo7"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="15_ea3pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -108,11 +109,11 @@ bullet = ExtResource("13_ijjo7")
 source_name = "Enemy_Projectile"
 knockback = 200.0
 damage_type = "Cos"
-dmg_amt = 1
+dmg_amt = 2
 charge_time = 1.0
-max_clip = 10
-shot_delay = 0.5
-reload_time = 0.5
+max_clip = 9
+shot_delay = 0.4
+reload_time = 0.6
 move_during_charge = true
 move_during_reload = true
 brain = NodePath("../brain")
@@ -124,5 +125,8 @@ metadata/_custom_type_script = "uid://dap3uvgj16hat"
 
 [node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
 position = Vector2(0, -76)
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("15_ea3pv")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

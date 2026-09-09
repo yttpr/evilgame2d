@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cnvgetguyhbas" path="res://scripts/enemy/homing_pathfinding.gd" id="11_064hf"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_r3nfs"]
 [ext_resource type="PackedScene" uid="uid://e8k0wn3cv6ds" path="res://assets/projectile/SunBullet.tscn" id="13_hsihs"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="15_yd2dq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -168,5 +169,8 @@ color = Color(0.84, 0.84, 0.18480001, 1)
 range_item_cull_mask = 8
 texture = SubResource("GradientTexture2D_1cm6p")
 texture_scale = 2.0
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("15_yd2dq")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

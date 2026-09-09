@@ -6,14 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://vr3jpgvci4g5" path="res://assets/ui/ammo_display.tscn" id="4_jpny2"]
 [ext_resource type="PackedScene" uid="uid://bwxexvw4cc7vo" path="res://assets/ui/coin_display.tscn" id="5_6bn6x"]
 [ext_resource type="PackedScene" uid="uid://dybvlgu6ut326" path="res://assets/ui/consolecommands.tscn" id="6_ghacf"]
+[ext_resource type="PackedScene" uid="uid://ccjuukg8jjf1s" path="res://assets/ui/item_display.tscn" id="6_u305o"]
 
-[node name="PlayerUi" type="Node2D" unique_id=433024491 node_paths=PackedStringArray("Health", "Ammo", "Weapons", "Coins")]
+[node name="PlayerUi" type="Node2D" unique_id=433024491 node_paths=PackedStringArray("Health", "Ammo", "Weapons", "Coins", "Items")]
 z_index = 8
 script = ExtResource("1_wvmx2")
 Health = NodePath("HealthDisplay")
 Ammo = NodePath("AmmoDisplay")
 Weapons = NodePath("WeaponDisplay")
 Coins = NodePath("CoinDisplay")
+Items = NodePath("ItemDisplay")
 
 [node name="HealthDisplay" parent="." unique_id=687447478 instance=ExtResource("2_5x73h")]
 position = Vector2(26, 24)
@@ -27,6 +29,9 @@ position = Vector2(28, 157)
 [node name="CoinDisplay" parent="." unique_id=2051199142 instance=ExtResource("5_6bn6x")]
 position = Vector2(1029, 615)
 scale = Vector2(2, 2)
+
+[node name="ItemDisplay" parent="." unique_id=1916568172 instance=ExtResource("6_u305o")]
+position = Vector2(57, 590)
 
 [node name="consolecommands" parent="." unique_id=2135377785 instance=ExtResource("6_ghacf")]
 offset_left = 14.0

@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cm65td6b47s58" path="res://scripts/enemy/warp_homing_pathfinding.gd" id="11_xjbfi"]
 [ext_resource type="Script" uid="uid://bgdji5fj2vtao" path="res://scripts/enemy/alternating_enemy_weapon.gd" id="12_xjbfi"]
 [ext_resource type="PackedScene" uid="uid://d0fls0kew8msc" path="res://assets/projectile/SlowerProjectileBullet.tscn" id="13_gvf2x"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="14_gvf2x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -125,5 +126,8 @@ metadata/_custom_type_script = "uid://dap3uvgj16hat"
 
 [node name="pointer" type="Node2D" parent="EnemyWeapon" unique_id=2028482985]
 position = Vector2(0, -50)
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("14_gvf2x")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

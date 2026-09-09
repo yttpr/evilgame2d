@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bykk74qji8d"]
+
+[ext_resource type="Script" uid="uid://bbho4lt4dljbn" path="res://scripts/weapons/homing_accelerating_projectile.gd" id="1_3jkdr"]
+[ext_resource type="AudioStream" uid="uid://cuas681yu3a2o" path="res://audio/noise/weapon/magic_shoot.ogg" id="2_3jkdr"]
+[ext_resource type="AudioStream" uid="uid://bo10f63fhkw4i" path="res://audio/noise/weapon/magic_snipe.ogg" id="2_cx1ae"]
+[ext_resource type="AudioStream" uid="uid://bgfa3edwr3e6j" path="res://audio/noise/weapon/loop_magic_charge.wav" id="3_q3ujd"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_t4fww"]
+[ext_resource type="Texture2D" uid="uid://b41bypham81im" path="res://sprites/weapons/projectiles/moon_bullet.png" id="4_cx1ae"]
+[ext_resource type="Script" uid="uid://dbrac607rkeer" path="res://scripts/game/basic_audio.gd" id="6_d1taf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("charge_audio", "detection", "img", "body")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_3jkdr")
+accelration_rate = 0.5
+extra_mouse_logic = true
+extra_mouse_rate = 2.5
+img_accel_rate = 1.7
+release_sound = ExtResource("2_3jkdr")
+release_mod = 3.0
+increase_pierce_time = 0.9
+set_tracer_time = 0.1
+tracer_threshold = 4000.0
+charge_audio = NodePath("BasicAudio")
+chargeup_sound = ExtResource("3_q3ujd")
+charge_sound_mod = -2.5
+charge_sound_min_pitch = 1.0
+charge_sound_max_pitch = 3.15
+make_afterimages = true
+detection = NodePath("Area2D")
+turn_spd = 0.1
+img_rotate_spd = 8.0
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 15.0
+radius = 32.0
+make_backup_colliders = true
+highlighted_tracer = true
+highlight_tracer_w = 32.0
+by_lifetime = true
+lifetime = 15.0
+tracer_width = 32.0
+shot_sound = ExtResource("2_cx1ae")
+audio_mod = 6.0
+make_gibs = true
+death_quote = Array[String](["\"The moon.\"", "\"The sky.\"", "\"The stars.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+z_index = 2
+material = ExtResource("3_t4fww")
+texture = ExtResource("4_cx1ae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=449690862]
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=735677100]
+polygon = PackedVector2Array(1800, -850, 1800, 850, 0, 0)
+
+[node name="BasicAudio" type="AudioStreamPlayer2D" parent="." unique_id=2008036213]
+script = ExtResource("6_d1taf")
+metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[connection signal="body_entered" from="Area2D" to="." method="_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_body_exited"]

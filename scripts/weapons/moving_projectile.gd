@@ -52,11 +52,11 @@ func _make_the_collider() -> void:
 	collider = Manager._create_dmg_collider(dmg, type, source, body.velocity.normalized() * knockback_mod)
 	collider.name = "Collider"
 	collider._set_parent(self)
+	collider._set_collision(damager)
 	collider._set_pierce(-1)
 	collider._make_collider()
 	collider._set_circle(radius)
 	collider._set_duration(false, 0)
-	collider._set_collision(damager)
 	collider.death_quote = death_quote
 	collider.projectile = self
 
@@ -98,7 +98,7 @@ func _process(delta: float) -> void:
 	
 	super._process(delta)
 
-func _hit_made() -> bool:
+func _hit_made(position : Vector2 = Vector2.ZERO) -> bool:
 	if pierce_amt == 0:
 		collider.collider.set_deferred("disabled", true)
 		self._cleanup()
@@ -109,12 +109,55 @@ func _hit_made() -> bool:
 
 func _make_backup_line(orig : Vector2, target : Vector2) -> DamageCollider:
 	var col = Manager._create_dmg_collider(dmg, type, source, (orig.direction_to(target)) * knockback_mod)
+	col.is_backup = true
 	col._set_to_world()
 	col.pierce = pierce_amt
-	col._set_line(orig, target)
+	col._set_collision(damager)
+	col._set_line(orig, target + orig.direction_to(target) * knockback_mod / 60.0)
 	col.frame_buffer = 2
 	col._set_duration(true, 0.03)
-	col._set_collision(damager)
 	col.death_quote = death_quote
 	col.projectile = self
 	return col
+
+
+@export var highlighted_tracer : bool
+@export var highlight_tracer_w : float = 1.0
+func _draw_tracer(orig : Vector2, pos : Vector2) -> void:
+	super._draw_tracer(orig, pos)
+	if !highlighted_tracer:
+		return
+	if tracer_time <= 0:
+		return
+	
+	if pos.y > orig.y:
+		var temp = pos
+		pos = orig
+		orig = temp
+	
+	var line = Line2D.new()
+	Manager._get_world().add_child(line)
+	line.global_position = orig - _offset()
+	line.global_rotation = 0
+	#line.position = self.position
+	line.add_point(Vector2.ZERO + _offset())
+	line.add_point((pos - _offset()) - line.global_position + _offset())
+	line.width = highlight_tracer_w
+	line.modulate = tracer_color
+	line.material = Manager._tracer_mat()
+	line.y_sort_enabled = true
+	line.show_behind_parent = true
+	line.z_index = 2
+	
+	# tween
+	var tween = get_tree().create_tween()
+	if !tracer_fade:
+		tween.tween_property(line, "width", 0, tracer_time)
+	else:
+		var fade = Color(line.modulate)
+		fade.a = 0.0
+		tween.tween_property(line, "modulate", fade, tracer_time)
+	tween.tween_callback(line.queue_free)
+	
+	#await get_tree().create_timer(tracer_time).timeout
+	#line.queue_free()

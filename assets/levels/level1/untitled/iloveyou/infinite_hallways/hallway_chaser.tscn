@@ -7,7 +7,6 @@
 [ext_resource type="TileSet" uid="uid://oacgil812dq3" path="res://assets/map/basic_ground_tileset.tres" id="5_8c1rm"]
 [ext_resource type="TileSet" uid="uid://b76il6ogf74ud" path="res://assets/map/iloveyou_walls_tileset.tres" id="6_nuioc"]
 [ext_resource type="PackedScene" uid="uid://do3ontetdl2fy" path="res://assets/characters/player_character.tscn" id="7_mbyws"]
-[ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="8_kpws8"]
 [ext_resource type="PackedScene" uid="uid://wp4s4a5t2x7f" path="res://assets/objects/chance_door.tscn" id="9_qgfg4"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="10_gqvku"]
 [ext_resource type="PackedScene" uid="uid://b711c87l3q4l7" path="res://assets/enemies/lullaby.tscn" id="11_xgmgc"]
@@ -51,16 +50,17 @@ physics_quadrant_size = 64
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=503539911]
 color = Color(0.6117647, 0.6117647, 0.6117647, 1)
 
-[node name="Door" parent="." unique_id=2013703163 instance=ExtResource("8_kpws8")]
+[node name="Door" parent="." unique_id=157443429 instance=ExtResource("9_qgfg4")]
 position = Vector2(0, 128)
-room = "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_base.tscn"
-spawn_pos = 1
+paths = Array[String](["res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks2.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_bridge.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_chaser.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dark.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_null.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lightless.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_sign.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_black.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_morechasers.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_barrel.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_forward.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_screwdriver.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_safe_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lights.tscn"])
+exits = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+weights = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Door2" parent="." unique_id=15817301 instance=ExtResource("9_qgfg4")]
+[node name="Door2" parent="." unique_id=779337283 instance=ExtResource("9_qgfg4")]
 position = Vector2(0, -2432)
-paths = Array[String](["res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_base.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks2.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_bridge.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_chaser.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dark.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_null.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lightless.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_sign.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_black.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_morechasers.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_barrel.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_forward.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_screwdriver.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_safe_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lights.tscn"])
-exits = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-weights = Array[int]([0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+paths = Array[String](["res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks2.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_blocks.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_bridge.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_chaser.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_dark.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_null.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lightless.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_sign.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_black.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_morechasers.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_barrel.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_forward.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_screwdriver.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_safe_maze.tscn", "res://assets/levels/level1/untitled/iloveyou/infinite_hallways/hallway_lights.tscn"])
+exits = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+weights = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
 [node name="HangingLight" parent="." unique_id=1485522281 instance=ExtResource("10_gqvku")]
 position = Vector2(-96, 64)

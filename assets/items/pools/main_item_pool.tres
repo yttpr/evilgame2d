@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemPoolData" format=3 uid="uid://3vk7ko2ejr4m"]
+
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="1_u7bvx"]
+[ext_resource type="Script" uid="uid://wit6uv4lanen" path="res://scripts/items/itempooldata.gd" id="2_ad3v2"]
+[ext_resource type="Resource" uid="uid://bwt0inyj3ulwm" path="res://assets/items/glasscompass.tres" id="2_lshid"]
+[ext_resource type="Resource" uid="uid://bcp00fa0k2n2a" path="res://assets/items/dial.tres" id="3_lshid"]
+[ext_resource type="Resource" uid="uid://doxbr2y767q2a" path="res://assets/items/frequencyisolator.tres" id="4_l72ju"]
+[ext_resource type="Resource" uid="uid://dg6j85drvex6b" path="res://assets/items/gluehundred.tres" id="5_bisva"]
+[ext_resource type="Resource" uid="uid://cvff1h2j5p286" path="res://assets/items/martyr.tres" id="6_ncwbt"]
+[ext_resource type="Resource" uid="uid://mep56pp1iy2m" path="res://assets/items/healpot.tres" id="7_12101"]
+[ext_resource type="Resource" uid="uid://dtsbyvaixt4tn" path="res://assets/items/stargazer.tres" id="8_5iqji"]
+[ext_resource type="Resource" uid="uid://b6lsy2pgcslek" path="res://assets/items/springlocks.tres" id="9_p2erp"]
+[ext_resource type="Resource" uid="uid://cjrjo5jt7odkf" path="res://assets/items/stalkinglens.tres" id="10_hcuts"]
+[ext_resource type="Resource" uid="uid://qcih3xaued0q" path="res://assets/items/greed.tres" id="11_qnl1n"]
+[ext_resource type="Resource" uid="uid://klhs8ir7r8to" path="res://assets/items/silverbullet.tres" id="12_6t6b0"]
+[ext_resource type="Resource" uid="uid://c67lm87rmon1b" path="res://assets/items/hexedscope.tres" id="13_6njqv"]
+[ext_resource type="Resource" uid="uid://dngwh36obasoo" path="res://assets/items/secondstop.tres" id="14_ft5b7"]
+
+[resource]
+script = ExtResource("2_ad3v2")
+base_pool = Array[ExtResource("1_u7bvx")]([ExtResource("2_lshid"), ExtResource("3_lshid"), ExtResource("4_l72ju"), ExtResource("5_bisva"), ExtResource("6_ncwbt"), ExtResource("7_12101"), ExtResource("8_5iqji"), ExtResource("9_p2erp"), ExtResource("10_hcuts"), ExtResource("11_qnl1n"), ExtResource("12_6t6b0"), ExtResource("13_6njqv"), ExtResource("14_ft5b7")])
+metadata/_custom_type_script = "uid://wit6uv4lanen"

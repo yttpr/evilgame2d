@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://klhs8ir7r8to"]
+
+[ext_resource type="Texture2D" uid="uid://dvq61yxvafj2n" path="res://sprites/items/silverbullet.png" id="1_lawp0"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="2_lawp0"]
+[ext_resource type="Script" uid="uid://pvdrphmce02o" path="res://scripts/items/uniques/bloodbulletsitem.gd" id="2_smkxp"]
+
+[resource]
+script = ExtResource("2_lawp0")
+id = "SilverBullet"
+image = ExtResource("1_lawp0")
+logic = ExtResource("2_smkxp")
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

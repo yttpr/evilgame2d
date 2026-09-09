@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bd735p6cybl02"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_fgn8f"]
+[ext_resource type="AudioStream" uid="uid://dyrrpejx5xgwo" path="res://audio/noise/weapon/magic_heavy.wav" id="2_w2qqb"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_grjwk"]
+[ext_resource type="Texture2D" uid="uid://cu68a1iu5ayl3" path="res://sprites/weapons/projectiles/skull_bullet.png" id="4_8rivy"]
+[ext_resource type="Texture2D" uid="uid://dqwidfos6jy46" path="res://sprites/weapons/projectiles/outlines/skull_bullet_outline.png" id="5_p1uhc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_fgn8f")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 400.0
+radius = 15.0
+rot_spd = 9.0
+by_lifetime = true
+lifetime = 10.0
+tracer_width = 8.0
+tracer_time = 0.5
+shot_sound = ExtResource("2_w2qqb")
+audio_mod = 15.0
+make_gibs = true
+death_quote = Array[String](["\"Get closer to me!\"", "\"Come closer...\"", "\"Come.\"", "\"Follow me.\"", "\"Don't you want to see me?\"", "\"You came here.\"", "\"It's your game.\"", "\"It's your play!\"", "\"Don't be shy!\"", "\"Come look at me.\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+z_index = 2
+material = ExtResource("3_grjwk")
+texture = ExtResource("4_8rivy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1681656760]
+material = ExtResource("3_grjwk")
+texture = ExtResource("5_p1uhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

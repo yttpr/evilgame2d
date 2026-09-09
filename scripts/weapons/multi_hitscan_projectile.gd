@@ -11,8 +11,11 @@ func _shoot(direction : Vector2, origin : Vector2) -> void:
 	
 	var angle = direction.angle()
 	
+	source += "_a"
+	
 	for i in shot_amount:
 		_make_shot(Vector2.from_angle(angle + randf_range(shot_variance * -1, shot_variance)), origin)
+		source += "a"
 
 func _make_shot(direction : Vector2, origin : Vector2) -> void:
 	_next_line(length, origin - _offset(), origin - _offset() + direction * length, [])

@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://e5jajlehler3" path="res://scripts/enemy/screen_monitoring_pathfinding.gd" id="11_8y17n"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_5gqt0"]
 [ext_resource type="PackedScene" uid="uid://5opr4mem67ww" path="res://assets/projectile/AirstrikeBullet.tscn" id="13_aqhb8"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="14_ucklc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -91,6 +92,7 @@ wander_speed = 400.0
 Movable = NodePath("..")
 Weapon = NodePath("../EnemyWeapon")
 nav_agent = NodePath("NavigationAgent2D")
+require_only_sight_targetting = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="brain" unique_id=54911781]
 navigation_layers = 4
@@ -126,6 +128,9 @@ position = Vector2(0, -64)
 position = Vector2(-23, -149)
 scale = Vector2(1, 1.4)
 rect = Rect2(-10, -10, 64, 128)
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("14_ucklc")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="brain" method="_screen_entered"]

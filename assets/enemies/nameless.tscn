@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://e5jajlehler3" path="res://scripts/enemy/screen_monitoring_pathfinding.gd" id="11_qbflr"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="12_uykx8"]
 [ext_resource type="PackedScene" uid="uid://bpogann4uuf5m" path="res://assets/projectile/NamelessHitscanBullet.tscn" id="13_rhap8"]
+[ext_resource type="Script" uid="uid://d30iede7yooq" path="res://scripts/enemy/moving_phaser.gd" id="14_juyah"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="15_arqbl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -82,6 +84,7 @@ texture = ExtResource("10_m1yjb")
 
 [node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
 script = ExtResource("11_qbflr")
+screen_min_dist = 1200.0
 superhot_weapon = true
 vision_range = 650.0
 limit_range = 350.0
@@ -127,6 +130,14 @@ position = Vector2(0, -47)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1023676733]
 position = Vector2(-23, -113)
 rect = Rect2(-10, -10, 64, 128)
+
+[node name="MovingPhaser" type="Node2D" parent="." unique_id=1013841168 node_paths=PackedStringArray("body")]
+script = ExtResource("14_juyah")
+body = NodePath("..")
+metadata/_custom_type_script = "uid://d30iede7yooq"
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("15_arqbl")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="brain" method="_screen_entered"]

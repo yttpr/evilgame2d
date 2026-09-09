@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://d1371wafrc7hb"]
+
+[ext_resource type="PackedScene" uid="uid://b7d7ipmdgkkys" path="res://assets/projectile/EvileyeBigLaser.tscn" id="1_5w1nj"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_k4juj"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_76wr6"]
+[ext_resource type="Texture2D" uid="uid://pkw34oukcabh" path="res://sprites/weapons/placeholder_weapon.png" id="4_bsvxf"]
+
+[resource]
+script = ExtResource("3_76wr6")
+id = "Placeholder"
+weapon_img = ExtResource("4_bsvxf")
+bullet = ExtResource("1_5w1nj")
+bullet_type = "Projectile"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Sin"
+knockback = 800.0
+full_auto = true
+clip_size = 1
+shot_delay = 0.2
+reload_time = 2.0
+aim_length = 225.0
+ready_audio = ExtResource("2_k4juj")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

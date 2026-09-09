@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cjrjo5jt7odkf"]
+
+[ext_resource type="Texture2D" uid="uid://bkwvpkgftj5ql" path="res://sprites/items/ammo_up.png" id="1_27wkr"]
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="2_4fgi1"]
+
+[resource]
+script = ExtResource("2_4fgi1")
+id = "StalkingLens"
+image = ExtResource("1_27wkr")
+addition_mod = Dictionary[String, float]({
+"MaxClip": 1.0
+})
+reset_player = true
+metadata/_custom_type_script = "uid://dpfdpn0uv0xmi"

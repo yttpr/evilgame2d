@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cq1brg3g4m7ni" path="res://scripts/game/damage_animator.gd" id="3_qqcdv"]
 
 [node name="HealIcon" type="Sprite2D" unique_id=1192352144]
+z_index = 2
 y_sort_enabled = true
 material = ExtResource("1_mhh7a")
 texture = ExtResource("2_mhh7a")

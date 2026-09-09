@@ -19,6 +19,7 @@ func _botton_pressed() -> void:
 			Manager.current_weapons.assign(Manager.current_chara.base_weapons)
 			if Manager.current_gun_index >= Manager.current_weapons.size():
 				Manager.current_gun_index = 0
+			Manager.Player.items._clear_items()
 		else:
 			Manager._toggle_pause()
 		GlobalNoise._play_sound(audio, 0, 0.7)

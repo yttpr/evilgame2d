@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="13_4ow7g"]
 [ext_resource type="Script" uid="uid://cggbgvr8o5qpn" path="res://scripts/enemy/alpha_phaser.gd" id="15_qutx0"]
 [ext_resource type="PackedScene" uid="uid://b6vbtsxabl0ej" path="res://assets/projectile/ButterflyShotgunProjectile.tscn" id="15_tstkq"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="17_2i8lo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 24.0
@@ -93,7 +94,8 @@ texture = ExtResource("11_1awc0")
 [node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
 script = ExtResource("12_7sbdy")
 limit_range = 65.0
-max_range = 150.0
+max_range = 125.0
+can_target_delay = 0.1
 bored_time = 6.0
 wander_chance = 0.7
 wander_speed = 50.0
@@ -113,11 +115,11 @@ debug_path_custom_color = Color(1, 0, 1, 1)
 script = ExtResource("13_4ow7g")
 weapon = NodePath("pointer")
 bullet = ExtResource("15_tstkq")
-source_name = "Enemy_Projectile_0"
+source_name = "Enemy_Projectile"
 knockback = 200.0
 damage_type = "Sin"
 dmg_amt = 1
-charge_time = 1.0
+charge_time = 0.5
 max_clip = 1
 reload_time = 5.0
 move_during_reload = true
@@ -139,5 +141,8 @@ metadata/_custom_type_script = "uid://cggbgvr8o5qpn"
 [node name="BasicAudio" type="AudioStreamPlayer2D" parent="." unique_id=2019978930]
 script = ExtResource("7_omh2w")
 metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("17_2i8lo")]
+scale = Vector2(0.75, 0.75)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

@@ -58,6 +58,11 @@ func _ready() -> void:
 		splash.scale.x = water_scaling
 		#splash.z_index = 1
 	
+	if boss_track:
+		Music.boss_track = boss_track
+		Music.boss_vol = boss_vol
+		Music.stop()
+	
 func _update_marker() -> void:
 	if marker:
 		marker.self_modulate = Color.WHITE
@@ -76,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	
 	_make_movement(delta)
 	
-	if !flies and inertia.length() <= 32:
+	if !flies and (inertia.length() <= 16.0 or velocity.length() <= 16.0):
 		_check_pit()
 	
 	if despawn_length < 0 or despawn_time < 0:
@@ -90,8 +95,8 @@ func _physics_process(delta: float) -> void:
 	despawn_tick -= delta
 
 func _make_movement(delta : float = 0.0) -> void:
-	if inertia_decay == 0:
-		inertia *= 0
+	if inertia_decay <= 0.5:
+		inertia *= 1.0 - (1.0 - inertia_decay) * delta * 60
 	velocity += inertia
 	inertia *= 1.0 - (1.0 - inertia_decay) * delta * 60
 	if inertia.length() < 0.5:
@@ -107,9 +112,15 @@ func _die() -> void:
 
 func _cleanup() -> void:
 	is_dead = true
+	Manager.Player.items._check_items("EnemyDie", self.global_position, self)
 	Manager._get_world().Enemies.erase(self)
+	if is_boss:
+		Manager._get_world().Bosses.erase(self)
 	if constant_noise_maker:
 		constant_noise_maker.stop()
+	if boss_track and Manager._get_world().Bosses.size() <= 0:
+		Music.boss_track = null
+		Music.stop()
 	self.queue_free()
 
 func _on_die() -> void:
@@ -120,6 +131,8 @@ func _on_die() -> void:
 
 var universal_i_frames : float
 func _get_hit(amt : int, type : String, source : String, mov : Vector2, extra : bool = false) -> bool:
+	if amt <= 0:
+		return false
 	if !_check_i_frame(source):
 		return false
 	if !_can_hit(amt, type, source):
@@ -161,7 +174,7 @@ func _check_i_frame(source : String) -> bool:
 	if !i_frames.has(source):
 		i_frames.set(source, i_frame_time)
 		if source.contains("9"):
-			i_frames.set(source, i_frame_time * 5)
+			i_frames.set(source, i_frame_time * 10)
 	elif i_frames[source] > 0:
 		return false
 	
@@ -210,6 +223,9 @@ func _fall() -> void:
 		Manager._play_oneshot(self.global_position, Manager.splash_noise, 20)
 	is_falling = true
 	is_dead = true
+	if !sprites:
+		self._pit_finish()
+		return
 	var down = get_tree().create_tween()
 	down.tween_property(sprites, "scale", Vector2.ZERO, 1.0)
 	if Manager._check_in_pit_top(self):
@@ -243,3 +259,8 @@ func _update_ambience() -> void:
 @export var constant_ambience : AudioStream
 @export var ambience_volume : float
 @export var ambience_pitch : float = 1.0
+
+
+@export var boss_track : AudioStream
+@export var boss_vol : float
+@export var is_boss : bool = false

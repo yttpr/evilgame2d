@@ -14,6 +14,10 @@ var nearest : Node2D
 func _ready() -> void:
 	in_range = []
 
+func _shoot(direction : Vector2, origin : Vector2) -> void:
+	super._shoot(direction, origin)
+	detection.rotation = direction.angle()
+
 func _process(delta : float) -> void:
 	super._process(delta)
 	if img_rotate_spd != 0.0:
@@ -33,6 +37,7 @@ func _process(delta : float) -> void:
 			angle -= max(turn_spd * delta, result)
 		if img_rotate_spd == 0.0:
 			img.rotation = angle
+		detection.rotation = angle
 		body.velocity = Vector2.from_angle(angle) * body.velocity.length()
 
 func _get_angle(current : float, target : float) -> float:

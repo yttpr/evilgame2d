@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cj3hntfwafbw3"]
+
+[ext_resource type="Script" uid="uid://cfqi0oul21vbm" path="res://scripts/weapons/moving_projectile.gd" id="1_vuetd"]
+[ext_resource type="AudioStream" uid="uid://bc7un0a3hbqx7" path="res://audio/noise/weapon/magic_low.ogg" id="2_8bg8o"]
+[ext_resource type="Material" uid="uid://deaiqobly2dbe" path="res://sprites/objects/shader/unshaded_material.tres" id="3_oqfyd"]
+[ext_resource type="Texture2D" uid="uid://dewms2ugm4s4o" path="res://sprites/weapons/projectiles/round_bullet.png" id="4_jnmet"]
+[ext_resource type="Texture2D" uid="uid://bakac40mmrjpx" path="res://sprites/weapons/projectiles/outlines/thick_empty_bullet_outline.png" id="5_8bg8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
+radius = 1.0
+
+[node name="ProjectileBullet" type="CharacterBody2D" unique_id=178175801 node_paths=PackedStringArray("img", "body")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_vuetd")
+img = NodePath("Sprite2D")
+body = NodePath(".")
+spd = 100.0
+radius = 6.0
+rot_spd = 8.0
+by_lifetime = true
+lifetime = 25.0
+shot_sound = ExtResource("2_8bg8o")
+make_gibs = true
+death_quote = Array[String](["\"IN THE DARK.\"", "\"NOWHERE TO RUN.\"", "\"NOWHERE TO HIDE.\"", "\"Don't follow strangers.\"", "\"Someone new in town...\"", "\"Someone unknown in town...\"", "\"Creepers in the night...\"", "\"Think of the kids!\"", "\"Don't stay out at night.\"", "\"IN THE BLACK.\"", "\"IN THE COLD.\"", "\"IN THE NIGHT.\"", "\"New moon...\"", "\"Darkness wants...\"", "\"Darkness knows...\"", "\"Darkness sees you...\""])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458183932]
+material = ExtResource("3_oqfyd")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_jnmet")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1590454589]
+z_index = 2
+material = ExtResource("3_oqfyd")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_8bg8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551581519]
+shape = SubResource("CircleShape2D_hv2lo")

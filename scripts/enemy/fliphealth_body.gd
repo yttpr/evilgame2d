@@ -9,6 +9,9 @@ func _on_hit(amt : int, type : String, source : String) -> void:
 	if cooldown_tick > 0:
 		return
 	cooldown_tick = cooldown_time
+	self.call_deferred("_flip_health")
+
+func _flip_health() -> void:
 	if healthtype == "Sin":
 		healthtype = "Cos"
 	else:

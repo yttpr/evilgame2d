@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c0sbe74eon172"]
+
+[ext_resource type="PackedScene" uid="uid://b6nxoggg83twb" path="res://assets/projectile/RepeatWaveProjectile.tscn" id="1_vp5u0"]
+[ext_resource type="AudioStream" uid="uid://bgfa3edwr3e6j" path="res://audio/noise/weapon/loop_magic_charge.wav" id="2_3buf8"]
+[ext_resource type="AudioStream" uid="uid://bdslbaoib6h7m" path="res://audio/noise/weapon/gun_ready.ogg" id="2_acg62"]
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="3_3buf8"]
+[ext_resource type="Texture2D" uid="uid://c35w4uqxnvh4j" path="res://sprites/weapons/waves_weapon.png" id="4_vp5u0"]
+
+[resource]
+script = ExtResource("3_3buf8")
+id = "Waves"
+weapon_img = ExtResource("4_vp5u0")
+bullet = ExtResource("1_vp5u0")
+bullet_type = "Projectile_9"
+weapon_type = "Bullet"
+damage_amt = 1
+damage_type = "Cos"
+knockback = 200.0
+pierce_amt = 2
+clip_size = 2
+shot_delay = 1.0
+reload_time = 3.0
+has_chargeup = true
+charge_time = 1.0
+charge_line_length = 5.0
+charge_line_width = 15.0
+chargeup_sound = ExtResource("2_3buf8")
+charge_sound_mod = 2.5
+charge_sound_max_pitch = 3.15
+ready_audio = ExtResource("2_acg62")
+metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

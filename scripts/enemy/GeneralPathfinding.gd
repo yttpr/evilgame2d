@@ -45,6 +45,8 @@ func _ready() -> void:
 		await get_tree().process_frame
 	if !is_summon:
 		Manager._get_world().Enemies.append(Movable)
+	if Movable.is_boss:
+		Manager._get_world().Bosses.append(Movable)
 
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
@@ -88,7 +90,10 @@ func _can_see(targetNode : Node2D) -> bool:
 	if result:
 		return result.collider == targetNode
 	return true
+@export var require_only_sight_targetting : bool
 func _can_target(targetNode : Node2D) -> bool:
+	if require_only_sight_targetting:
+		return _can_see(targetNode)
 	var query = PhysicsRayQueryParameters2D.create(Movable.global_position, targetNode.global_position, Manager.collision_walls.collision_mask)
 	query.collide_with_areas = true
 	query.collide_with_bodies = true

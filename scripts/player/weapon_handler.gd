@@ -8,6 +8,7 @@ extends Node2D
 @export var secondary : Sprite2D
 @export var pointer : Node2D
 @export var audio_player : BasicAudio
+@export var charge_audio : BasicAudio
 
 var gun_index = 0
 @export var weapons : Array[WeaponData]
@@ -27,12 +28,26 @@ var delay_ticking : Array[float]
 @export var shot_delay : float
 @export var reload_icon : Sprite2D
 @export var reload_time : float
+@export var skip_auto_reload : bool
 
 #for bullet info
 @export var knockback : float
 @export var damage_type : String
 @export var dmg_amt : int
 @export var pierce_amt : int
+
+#chargeup
+@export var do_charge : bool
+@export var chargeup_time : float
+var charge_tick : float
+@export var charge_line_length : float
+@export var charge_line_width : float
+
+#chargeup audio
+@export var chargeup_sound : AudioStream
+@export var charge_sound_mod : float
+@export var charge_sound_min_pitch : float
+@export var charge_sound_max_pitch : float
 
 var current_clip : int
 var alt_clip : int
@@ -46,9 +61,12 @@ var reload_tick : float
 
 @export var melee_collider : DamageCollider
 @export var melee_line : CollisionShape2D
+@export var melee_draw : FrameCopy
 func _set_melee(enabled : bool, length : float) -> void:
 	melee_line.set_deferred("disabled", !enabled)
 	melee_line.shape.b.x = length
+	melee_draw.scale.x = (length + 59.0) / 32.0
+	melee_collider.visible = enabled
 	melee_collider.damage_amt = weapons[gun_index].damage_amt
 	melee_collider.damage_type = weapons[gun_index].damage_type
 	melee_collider.inertia = Vector2(weapons[gun_index].knockback, 0)
@@ -61,10 +79,19 @@ func _set_data(data : WeaponData) -> void:
 	damage_type = data.damage_type
 	knockback = data.knockback
 	pierce_amt = data.pierce_amt
+	do_charge = data.has_chargeup
+	chargeup_time = data.charge_time
+	charge_line_length = data.charge_line_length
+	charge_line_width = data.charge_line_width
+	chargeup_sound = data.chargeup_sound
+	charge_sound_mod = data.charge_sound_mod
+	charge_sound_min_pitch = data.charge_sound_min_pitch
+	charge_sound_max_pitch = data.charge_sound_max_pitch
 	run_full_auto = data.full_auto
-	max_clip = data.clip_size
+	max_clip = ceili(Player.items._check_items("MaxClip", data.clip_size, data, self))
 	shot_delay = data.shot_delay
 	reload_time = data.reload_time
+	skip_auto_reload= data.skip_auto_reload
 	does_bounce = data.aim_bounces
 	line_length = data.aim_length
 	_update_color()
@@ -179,10 +206,26 @@ func _input(event: InputEvent) -> void:
 			return
 		_shoot()
 
+@export var source_mod : String = "abcdefghijklmnopqrstuvwxyz"
+var source_index : int = 0
+
 func _shoot() -> void:
+	if current_clip <= 0:
+		return
+	if do_charge and charge_tick > 0:
+		#print("charging")
+		return
+	
+	charge_tick = chargeup_time
+	if do_charge and chargeup_sound:
+		charge_audio.stop()
+	
 	var proj : BasicProjectile = bullet.instantiate()
 	Manager._get_world().add_child(proj)
-	proj._set_basic_data(dmg_amt, damage_type, knockback)
+	var damage = ceili(Player.items._check_items("GetDmgAmt", dmg_amt, weapons[gun_index], self))
+	var use_type = Player.items._check_items("GetDmgType", damage_type, weapons[gun_index], self)
+	var knock = Player.items._check_items("GetDmgKnockback", knockback, weapons[gun_index], self)
+	proj._set_basic_data(damage, use_type, knock)
 	var mouse = to_global(get_local_mouse_position())
 	var dir = pointer.global_position.direction_to(mouse)
 	if weapon.global_position.distance_to(mouse) < weapon.global_position.distance_to(pointer.global_position):
@@ -193,12 +236,17 @@ func _shoot() -> void:
 	var loc = pointer.global_position
 	if Manager._check_in_wall(loc - _get_offset_vector()):
 		loc = weapon.global_position
+	proj.source += "_" + source_mod[source_index]
 	proj._shoot(dir, loc)
+	
+	source_index += 1
+	if source_index >= source_mod.length():
+		source_index = 0
 	
 	current_clip -= 1
 	Player.ui.Ammo._spend_loaded(1)
 	delay_tick += shot_delay
-	if current_clip <= 0:
+	if current_clip <= 0 and !skip_auto_reload:
 		_set_reload(true)
 	
 	Manager._get_world()._post_alert("PlayerShoot", self, damage_type)
@@ -236,7 +284,7 @@ func _reset_arrays() -> void:
 	delay_ticking = []
 	for weapon in weapons:
 		reload_lefts.append(0)
-		remaining_clips.append(weapon.clip_size)
+		remaining_clips.append(ceili(Player.items._check_items("MaxClip", weapon.clip_size, weapon, self)))
 		delay_ticking.append(0)
 
 func _add_weapon(data : WeaponData) -> void:
@@ -245,7 +293,7 @@ func _add_weapon(data : WeaponData) -> void:
 	weapons.append(data)
 	Player.ui.Weapons._set_weapons_data(weapons)
 	reload_lefts.append(0)
-	remaining_clips.append(data.clip_size)
+	remaining_clips.append(ceili(Player.items._check_items("MaxClip", data.clip_size, data, self)))
 	delay_ticking.append(0)
 	Manager.current_weapons.assign(weapons)
 	_change_weapon(weapons.size() - 1)
@@ -255,7 +303,7 @@ func _swap_weapon(data : WeaponData, id : int) -> void:
 	weapons[id] = data
 	Player.ui.Weapons._set_weapons_data(weapons)
 	reload_lefts[id] = 0
-	remaining_clips[id] = data.clip_size
+	remaining_clips[id] = ceili(Player.items._check_items("MaxClip", data.clip_size, data, self))
 	delay_ticking[id] = 0
 	reload_tick = 0
 	if id == gun_index:
@@ -264,6 +312,8 @@ func _swap_weapon(data : WeaponData, id : int) -> void:
 	Manager.current_weapons.assign(weapons)
 
 func _set_reload(reloading : bool, reset_alt : bool = true) -> void:
+	charge_audio.stop()
+	charge_tick = chargeup_time
 	if Player.ui.Ammo.clip != max_clip:
 		Player.ui.Ammo._set_clip_size(max_clip)
 	if reloading:
@@ -298,8 +348,21 @@ func _update_color() -> void:
 func _process(delta: float) -> void:
 	if Player.is_dead:
 		audio_player.stop()
+		charge_audio.stop()
 		return
 	
+	if !mouse_down and do_charge:
+		if charge_tick <= 0:
+			_shoot()
+		charge_tick += delta
+		if charge_tick > chargeup_time:
+			charge_tick = chargeup_time
+			if charge_audio.playing:
+				charge_audio.stop()
+	elif do_charge and charge_tick > 0:
+		charge_tick -= delta
+		if charge_tick <= 0:
+			charge_tick = 0
 	if run_full_auto and mouse_down and delay_tick <= 0 and !is_reloading and !weapons[gun_index].inert and Manager.world:
 		_shoot()
 	
@@ -313,18 +376,33 @@ func _process(delta: float) -> void:
 	
 	if delta <= 0:
 		return
+	melee_collider.global_position = Player.global_position
+	if current_clip <= 0 and !is_reloading and !mouse_down and !weapons[gun_index].inert:
+		_set_reload(true)
+	
 	var mouse = to_global(get_local_mouse_position())
+	#var ori = Vector2.ZERO
+	#if weapon.global_position.distance_to(mouse) < weapon.global_position.distance_to(pointer.global_position):
+		#ori = pointer.global_position - weapon.global_position
+	
+	if do_charge and charge_tick < chargeup_time and charge_line_length > 0.0 and !is_reloading:
+		_next_line(true, charge_line_length, charge_line_width * (1.0 - charge_tick / chargeup_time), delta, pointer.global_position - _get_offset_vector(), _sub_mouse_loc(mouse) - _get_offset_vector(), [])
+		if !charge_audio.playing and chargeup_sound:
+			charge_audio._play_sound(chargeup_sound, charge_sound_mod, charge_sound_min_pitch)
+		elif chargeup_sound:
+			charge_audio.pitch_scale = charge_sound_min_pitch + (1.0 - charge_tick / chargeup_time) * (charge_sound_max_pitch - charge_sound_min_pitch)
+		#_next_line(true, line_length, aim_width, delta, pointer.global_position - _get_offset_vector(), _process_mouse_loc(mouse) - _get_offset_vector(), [])
 	
 	if weapon.global_position.distance_to(mouse) < weapon.global_position.distance_to(pointer.global_position):
 		return
 	
-	if !is_reloading and !Player.is_dead:
-		_next_line(true, line_length, delta, pointer.global_position - _get_offset_vector(), _process_mouse_loc(mouse) - _get_offset_vector(), [])
+	if !is_reloading and !Player.is_dead and line_length > 0.0:
+		_next_line(true, line_length, aim_width, delta, pointer.global_position - _get_offset_vector(), _process_mouse_loc(mouse) - _get_offset_vector(), [])
 
 
 
 #aiming stuff
-func _next_line(aiming : bool, length : float, delta : float, origin: Vector2, target_point : Vector2, exclude : Array[RID]) -> Vector2:
+func _next_line(aiming : bool, length : float, width : float, delta : float, origin: Vector2, target_point : Vector2, exclude : Array[RID]) -> Vector2:
 	
 	#var tarjet = _set_vector_magnitude(target_point, origin, length)
 	#make query
@@ -341,7 +419,7 @@ func _next_line(aiming : bool, length : float, delta : float, origin: Vector2, t
 		#result.position -= _get_offset_vector()
 		
 		if aiming:
-			_draw_line(delta, aim_color, aim_width, origin, result.position)
+			_draw_line(delta, aim_color, width, origin, result.position)
 		
 		# get bounce vector
 		var orig = result.position - origin
@@ -352,10 +430,10 @@ func _next_line(aiming : bool, length : float, delta : float, origin: Vector2, t
 		var aim = orig.bounce(result.normal)
 		var finish = _set_vector_magnitude(aim, Vector2.ZERO, length)
 		
-		return _next_line(aiming, length, delta, result.position + finish.normalized(), result.position + finish, [])
+		return _next_line(aiming, length, width, delta, result.position + finish.normalized(), result.position + finish, [])
 	
 	if aiming:
-		_draw_line(delta, aim_color, aim_width, origin, target_point)
+		_draw_line(delta, aim_color, width, origin, target_point)
 	
 	return target_point
 
@@ -384,6 +462,8 @@ func _draw_line(time: float, color : Color, width : float, orig : Vector2, pos :
 
 func _process_mouse_loc(location : Vector2) -> Vector2:
 	return pointer.global_position + _set_vector_magnitude(location, pointer.global_position, line_length)
+func _sub_mouse_loc(location : Vector2) -> Vector2:
+	return pointer.global_position + _set_vector_magnitude(location, weapon.global_position, charge_line_length)
 
 func _set_vector_magnitude(vector : Vector2, origin : Vector2, length : float) -> Vector2:
 	return origin.direction_to(vector) * length

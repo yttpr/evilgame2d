@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cnvgetguyhbas" path="res://scripts/enemy/homing_pathfinding.gd" id="12_064xy"]
 [ext_resource type="Script" uid="uid://dap3uvgj16hat" path="res://scripts/enemy/enemy_weapon.gd" id="13_mjcio"]
 [ext_resource type="PackedScene" uid="uid://cs46f0m8df04j" path="res://assets/projectile/TankBullet.tscn" id="14_xw3sy"]
+[ext_resource type="PackedScene" uid="uid://cslq5nolrttiq" path="res://assets/ui/enemy_hitbox.tscn" id="15_uk1cx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv2lo"]
 radius = 31.0
@@ -127,5 +128,8 @@ position = Vector2(0, -68)
 [node name="BasicAudio" type="AudioStreamPlayer2D" parent="." unique_id=328292830]
 script = ExtResource("7_aipyi")
 metadata/_custom_type_script = "uid://dbrac607rkeer"
+
+[node name="ImageHitbox" parent="." unique_id=1922032395 instance=ExtResource("15_uk1cx")]
+scale = Vector2(0.969, 0.969)
 
 [connection signal="velocity_computed" from="brain/NavigationAgent2D" to="brain" method="_on_navigation_agent_2d_velocity_computed"]

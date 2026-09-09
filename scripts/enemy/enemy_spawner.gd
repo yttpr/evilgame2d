@@ -35,15 +35,14 @@ func _process(delta: float) -> void:
 	if spawn_tick <= 0:
 		spawn_tick = spawn_time
 		if _can_spawn():
-			_spawn_enemy(_get_random_enemy_data())
+			_spawn_random_enemy()
 
 
 func _can_spawn() -> bool:
-	if self.global_position.distance_to(Manager.Player.global_position) < range_from_player:
-		return false
-	if Manager._get_world().Enemies.size() >= spawn_cap:
-		return false
-	return true
+	return Manager._get_world().Enemies.size() < spawn_cap and _check_range()
+
+func _check_range() -> bool:
+	return self.global_position.distance_to(Manager.Player.global_position) >= range_from_player
 
 func _get_random_enemy_data() -> PackedScene:
 	return data.Enemies[_get_id()]
@@ -53,3 +52,6 @@ func _spawn_enemy(reference : PackedScene) -> BaseBody:
 	enemy.global_position = self.global_position
 	Manager._get_world().add_child(enemy)
 	return enemy
+
+func _spawn_random_enemy() -> BaseBody:
+	return _spawn_enemy(_get_random_enemy_data())

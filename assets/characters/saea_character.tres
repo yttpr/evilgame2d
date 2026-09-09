@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://b3n7m546358us"]
+
+[ext_resource type="Script" uid="uid://bgp4l7nl10lfi" path="res://scripts/weapons/weapon_data.gd" id="1_15oi2"]
+[ext_resource type="Resource" uid="uid://c6r15ck1tx8cg" path="res://assets/weapons/moonlight.tres" id="2_15oi2"]
+[ext_resource type="Resource" uid="uid://c0sbe74eon172" path="res://assets/weapons/waves.tres" id="3_fbrtx"]
+[ext_resource type="Resource" uid="uid://dxoh2iesb50mw" path="res://assets/characters/gibs/saea_gibs.tres" id="4_15oi2"]
+[ext_resource type="Texture2D" uid="uid://beieugkjjfa7" path="res://sprites/characters/EvilGame2D_saea_Wip.png" id="5_15oi2"]
+[ext_resource type="Script" uid="uid://csfhp445ba2j" path="res://scripts/player/character_data.gd" id="6_dnjpo"]
+
+[resource]
+script = ExtResource("6_dnjpo")
+id = "Saea"
+character = "Saea"
+image = ExtResource("5_15oi2")
+idle_anims = true
+make_footstep = false
+HP = 10
+healthtype = "Cos"
+base_weapons = Array[ExtResource("1_15oi2")]([ExtResource("2_15oi2"), ExtResource("3_fbrtx")])
+gibs = ExtResource("4_15oi2")
+metadata/_custom_type_script = "uid://csfhp445ba2j"

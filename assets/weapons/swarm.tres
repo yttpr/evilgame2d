@@ -17,6 +17,6 @@ damage_type = "Cos"
 knockback = 400.0
 clip_size = 7
 shot_delay = 0.2
-reload_time = 4.0
+reload_time = 3.0
 ready_audio = ExtResource("2_qtdfc")
 metadata/_custom_type_script = "uid://bgp4l7nl10lfi"

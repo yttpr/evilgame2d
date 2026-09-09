@@ -16,10 +16,12 @@ func _process(delta: float) -> void:
 		ready_tick = 0
 		cascade_amount -= 1
 		var copy : CascadeProjectile = self.duplicate()
+		#copy.source += "_a"
 		copy._make_the_collider()
 		self.get_parent().add_child(copy)
 		copy.velocity = self.velocity.length() * Vector2.from_angle(self.velocity.angle() + cascade_mod)
 		var dob : CascadeProjectile = self.duplicate()
+		#dob.source += "_b"
 		dob._make_the_collider()
 		self.get_parent().add_child(dob)
 		dob.velocity = self.velocity.length() * Vector2.from_angle(self.velocity.angle() - cascade_mod)

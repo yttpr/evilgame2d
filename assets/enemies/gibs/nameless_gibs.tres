@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("5_u3lh7")
-coins = 1
+coins = 2
 blood_color_2 = Color(0.34117648, 0, 0.08627451, 1)
 images = Array[Texture2D]([ExtResource("1_8hdnm"), ExtResource("2_ok2fi"), ExtResource("3_5c7hi"), ExtResource("4_8hdnm")])
 img_amts = Array[int]([6, 4, 6, 1])

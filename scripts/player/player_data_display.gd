@@ -6,6 +6,7 @@ extends Node2D
 @export var Ammo : AmmoDisplay
 @export var Weapons : WeaponDisplay
 @export var Coins : Node2D
+@export var Items : ItemDisplay
 
 var corner : Vector2
 
@@ -20,7 +21,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _update_offset() -> void:
-	Manager.Camera.ui_offset = Vector2(get_tree().root.content_scale_size.x / -2, get_tree().root.content_scale_size.y / -2)
+	Manager.Camera.ui_offset = Vector2(get_tree().root.content_scale_size.x / -2.0, get_tree().root.content_scale_size.y / -2.0)
 	
 	var xratio = float(get_viewport().size.x) / get_tree().root.content_scale_size.x
 	var yratio = float(get_viewport().size.y) / get_tree().root.content_scale_size.y

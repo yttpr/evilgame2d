@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="GibData" format=3 uid="uid://ntnhj5qr83g"]
+
+[ext_resource type="Texture2D" uid="uid://rvjrsqhnnqa2" path="res://sprites/enemies/gibs/small_flesh.png" id="2_7x1o6"]
+[ext_resource type="Texture2D" uid="uid://byoinkest3kip" path="res://sprites/enemies/gibs/anatomical_heart.png" id="3_47q7i"]
+[ext_resource type="Texture2D" uid="uid://2ykl16y4fnal" path="res://sprites/enemies/gibs/spine_bit.png" id="3_poxgo"]
+[ext_resource type="Script" uid="uid://cg2xf6ds8o6hj" path="res://scripts/enemy/gib_data.gd" id="5_s3bkk"]
+
+[resource]
+script = ExtResource("5_s3bkk")
+coins = 150
+has_many_coins = true
+blood_amt = 10
+blood_color_1 = Color(0.8509804, 0, 0, 1)
+blood_color_2 = Color(0.16862746, 0, 0.039215688, 1)
+floor_blood_amt = 5
+images = Array[Texture2D]([ExtResource("3_poxgo"), ExtResource("2_7x1o6"), ExtResource("3_47q7i")])
+img_amts = Array[int]([15, 40, 1])
+weights = Array[float]([0.5, 0.5, 1.0])
+does_rotate = Array[bool]([true, true, true])
+many_gibs = true
+metadata/_custom_type_script = "uid://cg2xf6ds8o6hj"

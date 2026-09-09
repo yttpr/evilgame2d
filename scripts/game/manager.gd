@@ -3,7 +3,10 @@ extends Node
 var lock_input : bool
 
 var run_bools : Dictionary = {}
+##deprecated
 var save_bools : Dictionary = {}
+
+var achievements : AchievementHandler
 
 var origin_scene : String = "res://assets/levels/spawn.tscn"
 var spawn_loc : int
@@ -12,6 +15,9 @@ var current_hp : int
 var current_gun_index : int = -1
 var current_chara : CharacterData
 var current_weapons : Array[WeaponData]
+var current_item_index : int = 0
+var current_active : ItemData
+var current_passives : Array[ItemData]
 
 var current_zoom : float = -1
 
@@ -54,6 +60,7 @@ var collision_onlyPlayer : Area2D
 var collision_onlyEnemies : Area2D
 var collision_pit : Area2D
 var collision_pit_top : Area2D
+var collision_nothing : Area2D
 
 func _prep_collision_base() -> void:
 	collision_walls = Area2D.new()
@@ -112,6 +119,10 @@ func _prep_collision_base() -> void:
 	collision_pit_top.set_collision_mask_value(1, false)
 	collision_pit_top.set_collision_mask_value(13, true)
 	self.add_child(collision_pit_top)
+	
+	collision_nothing = Area2D.new()
+	collision_nothing.set_collision_mask_value(1, false)
+	self.add_child(collision_nothing)
 
 var base_menu : PackedScene
 var menu : MenuHandler
@@ -121,6 +132,7 @@ var in_menu : bool
 var bright_mat : Material
 var coin_sprite : PackedScene
 var coin_noise : AudioStream
+var purchase_noise : AudioStream
 
 var door_noise : AudioStream
 var door_shake : AudioStream
@@ -153,6 +165,7 @@ func _unpause() -> void:
 	_open_menu(false)
 
 func _open_menu(value : bool) -> void:
+	_save_config_data()
 	if value:
 		if !in_menu:
 			if !menu:
@@ -167,6 +180,7 @@ func _open_menu(value : bool) -> void:
 			if menu:
 				menu._exit()
 
+var show_hitboxes : bool
 func _input(event):
 	if lock_input:
 		return
@@ -175,6 +189,8 @@ func _input(event):
 		#zoom in
 		if event.keycode == KEY_ESCAPE or event.keycode == KEY_BACKSPACE or event.keycode == KEY_P:
 			_toggle_pause()
+		elif event.keycode == KEY_CTRL:
+			show_hitboxes = !show_hitboxes
 
 var ui_fail : AudioStream
 
@@ -184,7 +200,7 @@ var water_animation : Texture2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var load_amt : float = 20.0
+	var load_amt : float = 24.0
 	var load_cur : float = 0.0
 	
 	var loading : LoadingMenu = preload("res://assets/ui/loading_menu.tscn").instantiate()
@@ -195,12 +211,30 @@ func _ready() -> void:
 	load_cur += 1
 	loading._update_bar(load_cur / load_amt)
 	
+	_load_config_data()
+	_get_default_config_data()
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
+	_load_save_data()
+	_save_save_data()
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	
 	load_cur += 1
 	loading._update_bar(load_cur / load_amt)
 	
 	AudioServer.set_bus_layout(ResourceLoader.load("res://audio/control/noise_bus.tres"))
+	_get_config_audio_data()
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
+	_load_scores_data()
 	
 	load_cur += 1
 	loading._update_bar(load_cur / load_amt)
@@ -219,6 +253,12 @@ func _ready() -> void:
 	
 	is_paused = false
 	in_menu = false
+	
+	load_cur += 1
+	loading._update_bar(load_cur / load_amt)
+	
+	achievements = AchievementHandler.new()
+	self.add_child(achievements)
 	
 	load_cur += 1
 	loading._update_bar(load_cur / load_amt)
@@ -268,6 +308,7 @@ func _ready() -> void:
 	
 	coin_sprite = preload("res://assets/ui/coin_gib.tscn")
 	coin_noise = ResourceLoader.load("res://audio/noise/ui/coin.wav")
+	purchase_noise = ResourceLoader.load("res://audio/noise/ui/ui_purchase.wav")
 	
 	load_cur += 1
 	loading._update_bar(load_cur / load_amt)
@@ -317,7 +358,7 @@ func _notification(what):
 		_pause()
 
 func _tracer_mat() -> Material:
-	return ResourceLoader.load("res://sprites/objects/shader/unshaded_material.tres")
+	return bright_mat
 
 func _create_dmg_collider(amt : int, type : String, source : String, inertia : Vector2) -> DamageCollider:
 	var collider = DamageCollider.new()
@@ -390,6 +431,12 @@ func _make_bullet_gib(loc : Vector2, offset : Vector2, color : Color) -> BulletG
 	gib._set_color(color)
 	return gib
 
+func _get_health_color(type : String) -> Color:
+	if type == "Sin":
+		return sin_color
+	elif type == "Cos":
+		return cos_color
+	return Color.WHITE
 
 func _check_in_pit(targetNode : Node2D) -> bool:
 	var query = PhysicsRayQueryParameters2D.create(targetNode.global_position, targetNode.global_position + Vector2(0, 500), Manager.collision_pit.collision_mask)
@@ -431,6 +478,8 @@ func _check_in_wall(pos : Vector2) -> bool:
 func _reset_points() -> void:
 	points = 0
 func _add_points(amt : int) -> void:
+	if Player and Player.is_dead:
+		return
 	points += amt
 
 
@@ -447,30 +496,110 @@ func _check_run_bool(arg : String) -> bool:
 		return run_bools[arg]
 	return false
 
-func _update_save_data() -> void:
-	if !save_bools:
-		save_bools = {}
-func _set_save_bool(arg : String, value : bool) -> void:
-	save_bools[arg] = value
+
+var save_config : ConfigFile
+func _get_save_path() -> String:
+	if OS.get_name() == "Web":
+		return "user://save.ini"
+	return "res://save.ini"
+func _load_save_data() -> void:
+	if !save_config:
+		save_config = ConfigFile.new()
+	var err = save_config.load(_get_save_path())
+func _save_save_data() -> void:
+	if !save_config:
+		return
+	save_config.save(_get_save_path())
+func _set_save_bool(arg : String, value : bool, tofile : bool = false) -> void:
+	if !save_config:
+		_load_save_data()
+	save_config._set_value("game", arg, value)
+	if tofile:
+		_save_save_data()
 func _check_save_bool(arg : String) -> bool:
-	if !save_bools:
+	if !save_config:
 		return false
-	if save_bools.has(arg):
-		return save_bools[arg]
+	if save_config.has_section_key("game", arg):
+		return save_config.get_value("game", arg, false)
 	return false
 
 var run_data : Dictionary = {}
 func _set_run_arg(arg : String, value : Variant) -> void:
 	run_data[arg] = value
-func _get_run_arg(arg : String) -> Variant:
+func _get_run_arg(arg : String, default : Variant = null) -> Variant:
 	if !run_data:
-		return null
+		return default
 	if run_data.has(arg):
 		return run_data[arg]
-	return null
+	return default
 
-func _make_afterimage(img : Sprite2D, lifetime : float = 0.8) -> void:
+func _make_afterimage(img : Sprite2D, lifetime : float = 0.8) -> AfterImage:
+	var node = Node2D.new()
+	_get_world().add_child(node)
 	var a : AfterImage = AfterImage.new()
-	_get_world().add_child(a)
+	node.add_child(a)
 	a._copy_info(img)
-	a._set_lifetime(lifetime)
+	node.global_position = img.global_position
+	a._set_lifetime(lifetime, node)
+	return a
+
+var configuration : ConfigFile
+func _get_config_path() -> String:
+	if OS.get_name() == "Web":
+		return "user://config.ini"
+	return "res://config.ini"
+
+func _load_config_data() -> void:
+	if !configuration:
+		configuration = ConfigFile.new()
+	configuration.load(_get_config_path())
+func _save_config_data() -> void:
+	if !configuration:
+		return
+	configuration.set_value("config", "zoom", current_zoom)
+	configuration.set_value("config", "item", current_item_index)
+	configuration.set_value("config", "music", AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")))
+	configuration.set_value("config", "noise", AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Noise")))
+	configuration.set_value("config", "character", current_chara.id.to_lower())
+	configuration.save(_get_config_path())
+func _get_default_config_data() -> void:
+	current_zoom = configuration.get_value("config", "zoom", -1)
+	current_item_index = configuration.get_value("config", "item", 0)
+	_get_config_audio_data()
+	var charaName = configuration.get_value("config", "character", "saturn")
+	current_chara = ResourceLoader.load("res://assets/characters/" + charaName + "_character.tres")
+	current_weapons.assign(current_chara.base_weapons)
+func _get_config_audio_data() -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(configuration.get_value("config", "music", 1.0)))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Noise"), linear_to_db(configuration.get_value("config", "noise", 1.0)))
+
+
+
+func _on_dead() -> void:
+	_save_config_data()
+	_save_current_score()
+
+
+
+
+
+# scores
+var score_data : ConfigFile
+func _get_score_path() -> String:
+	if OS.get_name() == "Web":
+		return "user://scores.ini"
+	return "res://scores.ini"
+func _load_scores_data() -> void:
+	if !score_data:
+		score_data = ConfigFile.new()
+	score_data.load(_get_score_path())
+func _save_scores_data() -> void:
+	if !score_data:
+		return
+	score_data.save(_get_score_path())
+func _save_current_score() -> void:
+	if !score_data:
+		_load_scores_data()
+	if score_data.get_value("scores", current_chara.id.to_lower()) < points:
+		score_data.set_value("scores", current_chara.id.to_lower(), points)
+		_save_scores_data()
