@@ -122,7 +122,8 @@ func _set_deathquotes(quotes : Array[String]) -> void:
 var global_i_frame : float
 @export var global_i_time : float = 0
 func _check_i_frame(source : String) -> bool:
-	# nahh
+	if source == "Shop" or source == "Item":
+		return true
 	if global_i_frame <= 0:
 		global_i_frame += items._check_items("GlobalIFrames", global_i_time, source, self)
 		return super._check_i_frame(source)
@@ -142,9 +143,9 @@ func _process(delta : float) -> void:
 		if col_val <= 0.4:
 			dec_col = false
 		if dec_col:
-			col_val -= delta * 0.5
+			col_val -= delta * 2.0
 		else:
-			col_val += delta * 0.5
+			col_val += delta * 2.0
 	else:
 		col_val = 1.0
 		dec_col = true

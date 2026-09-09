@@ -4,6 +4,8 @@ extends BasicItem
 
 func _pass(parameter : String, input : Variant, args : Variant, caller : Node2D) -> Variant:
 	if parameter == "CanHit" and input and (cooldown_tick <= 0.0 or iframes > 0.0):
+		if args.type == "NULL":
+			return true
 		if cooldown_tick <= 0.0:
 			iframes += 0.05
 		Manager._play_oneshot(Manager.Player.global_position, ResourceLoader.load("res://audio/noise/ui/ui_block.wav"), 6.0)

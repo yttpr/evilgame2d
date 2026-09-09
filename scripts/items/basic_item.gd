@@ -54,7 +54,7 @@ func _try_perform_active() -> void:
 
 func _process_cost() -> void:
 	if data.cost_type == "Heart":
-		Manager.Player._get_hit(floori(data.cost_amt), "NULL", "Shop", Vector2.ZERO)
+		Manager.Player._get_hit(floori(data.cost_amt), "NULL", "Item", Vector2.ZERO)
 	elif data.cost_type == "Coin":
 		Manager._play_oneshot(self.global_position, Manager.purchase_noise, 6.0)
 		Manager.coins -= floori(data.cost_amt)
