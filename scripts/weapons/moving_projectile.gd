@@ -113,7 +113,7 @@ func _make_backup_line(orig : Vector2, target : Vector2) -> DamageCollider:
 	col._set_to_world()
 	col.pierce = pierce_amt
 	col._set_collision(damager)
-	col._set_line(orig, target + orig.direction_to(target) * knockback_mod / 60.0)
+	col._set_line(orig, target + orig.direction_to(target) * abs(knockback_mod) / 60.0)
 	col.frame_buffer = 2
 	col._set_duration(true, 0.03)
 	col.death_quote = death_quote

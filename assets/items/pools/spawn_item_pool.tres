@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemPoolData" format=3 uid="uid://bllspo3ak0cq2"]
+
+[ext_resource type="Script" uid="uid://dpfdpn0uv0xmi" path="res://scripts/items/item_data.gd" id="1_5udck"]
+[ext_resource type="Script" uid="uid://wit6uv4lanen" path="res://scripts/items/itempooldata.gd" id="2_5mnyp"]
+[ext_resource type="Resource" uid="uid://bcp00fa0k2n2a" path="res://assets/items/dial.tres" id="2_28kkj"]
+[ext_resource type="Resource" uid="uid://bwt0inyj3ulwm" path="res://assets/items/glasscompass.tres" id="3_28kkj"]
+
+[resource]
+script = ExtResource("2_5mnyp")
+base_pool = Array[ExtResource("1_5udck")]([ExtResource("2_28kkj"), ExtResource("3_28kkj")])
+metadata/_custom_type_script = "uid://wit6uv4lanen"

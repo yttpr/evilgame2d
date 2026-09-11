@@ -89,6 +89,8 @@ func _set_data(data : WeaponData) -> void:
 	charge_sound_max_pitch = data.charge_sound_max_pitch
 	run_full_auto = data.full_auto
 	max_clip = ceili(Player.items._check_items("MaxClip", data.clip_size, data, self))
+	if data.inert:
+		max_clip = 0
 	shot_delay = data.shot_delay
 	reload_time = data.reload_time
 	skip_auto_reload= data.skip_auto_reload
@@ -138,7 +140,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_R and !is_reloading:
-			_set_reload(true)
+			_set_reload(current_clip < max_clip)
 		if event.keycode == KEY_TAB:
 			_change_weapon(gun_index + 1)
 		#get numkeys
@@ -284,7 +286,10 @@ func _reset_arrays() -> void:
 	delay_ticking = []
 	for weapon in weapons:
 		reload_lefts.append(0)
-		remaining_clips.append(ceili(Player.items._check_items("MaxClip", weapon.clip_size, weapon, self)))
+		var amt = ceili(Player.items._check_items("MaxClip", weapon.clip_size, weapon, self))
+		if weapon.inert:
+			amt = 0
+		remaining_clips.append(amt)
 		delay_ticking.append(0)
 
 func _add_weapon(data : WeaponData) -> void:
@@ -293,7 +298,10 @@ func _add_weapon(data : WeaponData) -> void:
 	weapons.append(data)
 	Player.ui.Weapons._set_weapons_data(weapons)
 	reload_lefts.append(0)
-	remaining_clips.append(ceili(Player.items._check_items("MaxClip", data.clip_size, data, self)))
+	var amt = ceili(Player.items._check_items("MaxClip", data.clip_size, data, self))
+	if data.inert:
+		amt = 0
+	remaining_clips.append(amt)
 	delay_ticking.append(0)
 	Manager.current_weapons.assign(weapons)
 	_change_weapon(weapons.size() - 1)
@@ -304,6 +312,8 @@ func _swap_weapon(data : WeaponData, id : int) -> void:
 	Player.ui.Weapons._set_weapons_data(weapons)
 	reload_lefts[id] = 0
 	remaining_clips[id] = ceili(Player.items._check_items("MaxClip", data.clip_size, data, self))
+	if data.inert:
+		remaining_clips[id] = 0
 	delay_ticking[id] = 0
 	reload_tick = 0
 	if id == gun_index:
@@ -336,6 +346,14 @@ func _set_reload(reloading : bool, reset_alt : bool = true) -> void:
 		Player.ui.Ammo._set_loaded_amt(current_clip)
 		delay_tick = 0.0
 	Player.ui.Weapons._set_reloading(reloading)
+func _silent_end_reload() -> void:
+	reload_icon.visible = false
+	if audio_player.stream == Manager.reload_loop:
+		audio_player.stop()
+	is_reloading = false
+	reload_tick = 0.0
+	Player.ui.Ammo._set_loaded_amt(current_clip)
+	Player.ui.Weapons._set_reloading(false)
 func _update_color() -> void:
 	if damage_type == "Sin":
 		aim_color = Manager.sin_color
@@ -350,7 +368,8 @@ func _process(delta: float) -> void:
 		audio_player.stop()
 		charge_audio.stop()
 		return
-	
+	if current_clip >= max_clip:
+		_silent_end_reload()
 	if !mouse_down and do_charge:
 		if charge_tick <= 0:
 			_shoot()

@@ -11,6 +11,8 @@ var weapon : ItemData
 @export var health_cost : int
 @export var coin_cost : int
 
+@export var save_only_taken : bool
+
 @export var load_audio : AudioStream
 @export var audio_mod : float
 
@@ -51,21 +53,33 @@ func _ready() -> void:
 	image.texture = weapon.image
 	label.visible = false
 
+@export var include_starters : bool
+@export var separate_pool : bool
 func _get_weapon() -> void:
+	var ex = ""
+	if separate_pool:
+		ex = "__"
 	var list = []
 	for item in pool.base_pool:
-		if !Manager._check_run_bool(item.id):
+		if !Manager._check_run_bool(item.id + ex):
 			list.append(item)
 	for item in pool.unlocks:
-		if Manager._check_save_bool(item.id) and !Manager._check_run_bool(item.id):
+		if Manager._check_save_bool(item.id) and !Manager._check_run_bool(item.id + ex):
 			list.append(item)
+	if include_starters:
+		for item in pool.starters:
+			if !Manager._check_run_bool(item.id + ex):
+				list.append(item)
 	if list.size() <= 0:
 		list.assign(pool.base_pool)
 		for item in pool.unlocks:
 			if Manager._check_save_bool(item.id):
 				list.append(item)
 	weapon = list[randi_range(0, list.size() - 1)]
-	Manager._set_run_bool(weapon.id, true)
+	if !save_only_taken:
+		Manager._set_run_bool(weapon.id, true)
+	if separate_pool:
+		Manager._set_run_bool(weapon.id + ex, true)
 
 
 func _load_weapon(id : String) -> ItemData:
@@ -87,6 +101,8 @@ func _run() -> void:
 		if Manager.Player.items.active:
 			var current = Manager.Player.items.active.data
 			Manager.Player.items._set_item(-1, weapon)
+			if save_only_taken:
+				Manager._set_run_bool(weapon.id, true)
 			weapon = current
 			image.texture = weapon.image
 			health_cost = 0
@@ -96,12 +112,16 @@ func _run() -> void:
 			Manager._set_run_arg(objectname + "_hearts", health_cost)
 		else:
 			Manager.Player.items._set_item(-1, weapon)
+			if save_only_taken:
+				Manager._set_run_bool(weapon.id, true)
 			Manager._set_run_bool(self.objectname, true)
 			self.queue_free()
 	else:
 		if Manager.Player.items.passives[Manager.current_item_index]:
 			var current = Manager.Player.items.passives[Manager.current_item_index].data
 			Manager.Player.items._set_item(Manager.current_item_index, weapon)
+			if save_only_taken:
+				Manager._set_run_bool(weapon.id, true)
 			weapon = current
 			image.texture = weapon.image
 			health_cost = 0
@@ -111,6 +131,8 @@ func _run() -> void:
 			Manager._set_run_arg(objectname + "_hearts", health_cost)
 		else:
 			Manager.Player.items._set_item(Manager.current_item_index, weapon)
+			if save_only_taken:
+				Manager._set_run_bool(weapon.id, true)
 			Manager._set_run_bool(self.objectname, true)
 			self.queue_free()
 	

@@ -88,8 +88,9 @@ texture = ExtResource("11_j2jtw")
 
 [node name="brain" type="Node2D" parent="." unique_id=1073078734 node_paths=PackedStringArray("Movable", "Weapon", "nav_agent")]
 script = ExtResource("12_064xy")
-limit_range = 400.0
-max_range = 560.0
+vision_range = 2000.0
+limit_range = 600.0
+max_range = 1000.0
 can_target_delay = 1.0
 wander_time = 5.0
 wander_speed = 20.0
@@ -115,9 +116,10 @@ source_name = "Enemy_Projectile"
 knockback = 100.0
 damage_type = "Sin"
 dmg_amt = 1
-charge_time = 1.5
-max_clip = 1
-reload_time = 5.0
+charge_time = 1.0
+max_clip = 3
+shot_delay = 0.3
+reload_time = 1.5
 move_during_reload = true
 brain = NodePath("../brain")
 metadata/_custom_type_script = "uid://dap3uvgj16hat"

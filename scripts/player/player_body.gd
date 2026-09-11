@@ -109,7 +109,8 @@ func _on_hit(amt : int, type : String, source : String) -> void:
 	super._on_hit(amt, type, source)
 	ui.Health._reduce_health(amt)
 	Manager.current_hp = HP
-	items._check_items("OnHit", HP, {"amt" : amt, "type" : type, "source" : source}, self)
+	if source != "Shop" and source != "Item":
+		items._check_items("OnHit", HP, {"amt" : amt, "type" : type, "source" : source}, self)
 
 func _modify_hit(amt : int, type : String, source : String) -> int:
 	var temp = super._modify_hit(amt, type, source)

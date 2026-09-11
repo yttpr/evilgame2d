@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bfsm8dh25fslt" path="res://assets/objects/shops/free_shop.tscn" id="10_swl1g"]
 [ext_resource type="PackedScene" uid="uid://covpl7kfrdfti" path="res://assets/objects/item_pickup.tscn" id="11_hdoqq"]
 [ext_resource type="PackedScene" uid="uid://doixcjk2sjcyo" path="res://assets/objects/door.tscn" id="12_62s6v"]
+[ext_resource type="Resource" uid="uid://bllspo3ak0cq2" path="res://assets/items/pools/spawn_item_pool.tres" id="12_arsug"]
 [ext_resource type="PackedScene" uid="uid://cnfhgvboy6531" path="res://assets/objects/hanging_light.tscn" id="13_oxmsw"]
 [ext_resource type="PackedScene" uid="uid://df2wlh6wycupb" path="res://assets/objects/single_use_door.tscn" id="14_f6f1e"]
 
@@ -78,19 +79,27 @@ position = Vector2(-160, -480)
 position = Vector2(-160, -416)
 objectname = "ItemStarter1"
 coin_cost = 0
+save_only_taken = true
 options = [NodePath("."), NodePath("../Item2"), NodePath("../Item3")]
+include_starters = false
 
 [node name="Item2" parent="." unique_id=317810530 node_paths=PackedStringArray("options") instance=ExtResource("11_hdoqq")]
 position = Vector2(-256, -448)
 objectname = "ItemStarter2"
+pool = ExtResource("12_arsug")
 coin_cost = 0
+save_only_taken = true
 options = [NodePath("../Item"), NodePath("."), NodePath("../Item3")]
+separate_pool = true
 
 [node name="Item3" parent="." unique_id=883973914 node_paths=PackedStringArray("options") instance=ExtResource("11_hdoqq")]
 position = Vector2(-64, -448)
 objectname = "ItemStarter3"
+pool = ExtResource("12_arsug")
 coin_cost = 0
+save_only_taken = true
 options = [NodePath("../Item"), NodePath("../Item2"), NodePath(".")]
+separate_pool = true
 
 [node name="Barrel" parent="." unique_id=1797133462 instance=ExtResource("9_nutio")]
 position = Vector2(160, -480)

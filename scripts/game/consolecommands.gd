@@ -4,7 +4,7 @@ extends LineEdit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Manager.lock_input = false
+	Manager.in_console = false
 	self.visible = false
 	text_submitted.connect(self._on_text_submitted)
 
@@ -51,11 +51,11 @@ func _on_text_submitted(command : String) -> void:
 
 func _in_focus() -> void:
 	self.visible = true
-	Manager.lock_input = true
+	Manager.in_console = true
 	current_enemy = null
 func _not_focus() -> void:
 	self.visible = false
-	Manager.lock_input = false
+	Manager.in_console = false
 
 
 

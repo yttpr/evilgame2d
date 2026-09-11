@@ -18,5 +18,6 @@
 
 [resource]
 script = ExtResource("2_ad3v2")
-base_pool = Array[ExtResource("1_u7bvx")]([ExtResource("2_lshid"), ExtResource("3_lshid"), ExtResource("4_l72ju"), ExtResource("5_bisva"), ExtResource("6_ncwbt"), ExtResource("7_12101"), ExtResource("8_5iqji"), ExtResource("9_p2erp"), ExtResource("10_hcuts"), ExtResource("11_qnl1n"), ExtResource("12_6t6b0"), ExtResource("13_6njqv"), ExtResource("14_ft5b7")])
+base_pool = Array[ExtResource("1_u7bvx")]([ExtResource("4_l72ju"), ExtResource("5_bisva"), ExtResource("6_ncwbt"), ExtResource("7_12101"), ExtResource("8_5iqji"), ExtResource("9_p2erp"), ExtResource("10_hcuts"), ExtResource("11_qnl1n"), ExtResource("12_6t6b0"), ExtResource("13_6njqv"), ExtResource("14_ft5b7")])
+starters = Array[ExtResource("1_u7bvx")]([ExtResource("3_lshid"), ExtResource("2_lshid")])
 metadata/_custom_type_script = "uid://wit6uv4lanen"

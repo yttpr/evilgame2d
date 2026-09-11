@@ -22,6 +22,8 @@ extends Control
 var current_tween : Tween
 var quote_tween : Tween
 
+var suicided : bool
+
 func _animate_border(state : String) -> void:
 	if current_tween:
 		current_tween.kill()
@@ -71,7 +73,7 @@ func _animate_border(state : String) -> void:
 		quote_tween.tween_property(death_handler, "scale", qend, time)
 
 
-func _enter() -> void:
+func _enter(ignore_tween : bool = false) -> void:
 	self.scale = Vector2.ONE / Manager.Player.camera.zoom.x
 	
 	if Manager.Player.is_dead:
@@ -81,11 +83,12 @@ func _enter() -> void:
 	else:
 		death_handler.visible = false
 	
-	if current_tween:
+	if current_tween and !ignore_tween:
 		current_tween.kill()
 	border.scale = leave_size
 	border.visible = true
-	_animate_border("Enter")
+	if !ignore_tween:
+		_animate_border("Enter")
 	in_audio = false
 	for slider in audiosliders:
 		slider.visible = false
@@ -103,6 +106,11 @@ func _enter() -> void:
 		if button is ContinueButton:
 			var c : ContinueButton = button
 			c._play_sound()
+		if button is SuicideButton:
+			if Manager.Player.is_dead:
+				var s : SuicideButton = button
+				s.visible = false
+				s.disabled = true
 	if Manager.Player.is_dead:
 		for slider in audiosliders:
 			slider.visible = false
@@ -112,6 +120,13 @@ func _enter() -> void:
 			if slider is BaseButton:
 				var b : BaseButton = slider
 				b.disabled = false
+	if suicided:
+		for button in buttons:
+			button.visible = false
+			if button is BaseButton:
+				var b : BaseButton = button
+				button.disabled = true
+
 func _wane() -> void:
 	_animate_border("2")
 func _wax() -> void:

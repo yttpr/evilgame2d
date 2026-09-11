@@ -17,6 +17,7 @@ pool = ExtResource("2_ewn7x")
 image = NodePath("image")
 coin_cost = 50
 load_audio = ExtResource("3_4wes1")
+include_starters = true
 label = NodePath("Label")
 label_off_time = 0.5
 marker_offset = Vector2(0, 100)

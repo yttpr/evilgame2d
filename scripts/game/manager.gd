@@ -1,6 +1,10 @@
 extends Node
 
-var lock_input : bool
+var lock_input : bool :
+	get:
+		return in_console or in_terminal
+var in_console : bool
+var in_terminal : bool
 
 var run_bools : Dictionary = {}
 ##deprecated
@@ -158,11 +162,11 @@ func _pause() -> void:
 	
 	_open_menu(true)
 
-func _unpause() -> void:
+func _unpause(onlypause : bool = false) -> void:
 	is_paused = false
 	Engine.time_scale = 1
-	
-	_open_menu(false)
+	if !onlypause:
+		_open_menu(false)
 
 func _open_menu(value : bool) -> void:
 	_save_config_data()
@@ -352,6 +356,7 @@ func _process(delta: float) -> void:
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Dying"), AudioServer.get_bus_volume_db(1) - delta * 2)
 	else:
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Dying"), 1)
+	amt_played_hurt = 0
 
 func _notification(what):
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
@@ -365,8 +370,11 @@ func _create_dmg_collider(amt : int, type : String, source : String, inertia : V
 	collider._detail(amt, type, source, inertia)
 	return collider
 
+var amt_played_hurt : int
 func _make_damage_popup(amt : int, loc : Vector2, is_sin : bool) -> void:
-	_play_oneshot(loc, base_hit_sound, min(25.0 + amt * 2, 35), max(1.5 - (amt / 10.0), -2))
+	if amt_played_hurt < 10:
+		_play_oneshot(loc, base_hit_sound, min(25.0 + amt * 2, 35), max(1.5 - (amt / 10.0), -2))
+		amt_played_hurt+= 1
 	
 	for i in amt:
 		_create_damage(loc, is_sin)
@@ -600,6 +608,6 @@ func _save_scores_data() -> void:
 func _save_current_score() -> void:
 	if !score_data:
 		_load_scores_data()
-	if score_data.get_value("scores", current_chara.id.to_lower()) < points:
+	if score_data.has_section_key("scores", current_chara.id.to_lower()) and score_data.get_value("scores", current_chara.id.to_lower()) < points:
 		score_data.set_value("scores", current_chara.id.to_lower(), points)
 		_save_scores_data()
